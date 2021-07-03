@@ -41,20 +41,21 @@ class API(object):
     allowed_methods = ['post', 'get', 'delete']
     content_type_specified = True
 
-    def __init__(self, oauth_token, wikirate_api_url=WIKIRATE_API_URL):
+    def __init__(self, oauth_token, wikirate_api_url=WIKIRATE_API_URL, auth=()):
         self.oauth_token = oauth_token
         self.wikirate_api_url = wikirate_api_url
+        self.auth = auth
         self.session = requests.Session()
 
     @property
     def headers(self):
         headers = {
-            "content-type": "application/json"
+            "content-type": "application/json",
+            'X-API-Key': self.oauth_token
         }
         return headers
 
     def request(self, method, path, headers, params):
-        params['api_key'] = self.oauth_token
         method = method.strip().lower()
         if method not in self.allowed_methods:
             msg = "The '{0}' method is not accepted by the WikiRate " \
@@ -63,7 +64,7 @@ class API(object):
 
         # if an error was returned throw an exception
         try:
-            response = self.session.request(method, path, params=params, headers=headers)
+            response = self.session.request(method, path, auth=self.auth, params=params, headers=headers)
         except Exception as e:
             raise WikiRate4PyException(f'Failed to send request: {e}').with_traceback(sys.exc_info()[2])
         finally:
