@@ -13,7 +13,8 @@ from wikirate4py.exceptions import IllegalHttpMethod, BadRequestException, Unaut
     WikiRate4PyException
 from wikirate4py.models import (Company, Topic, Metric, ResearchGroup, CompanyGroup, Source, CompanyItem, MetricItem,
                                 Answer,
-                                ResearchGroupItem, RelationshipAnswer, SourceItem, TopicItem, AnswerItem)
+                                ResearchGroupItem, RelationshipAnswer, SourceItem, TopicItem, AnswerItem,
+                                CompanyGroupItem)
 
 log = logging.getLogger(__name__)
 
@@ -158,6 +159,10 @@ class API(object):
     @objectify(CompanyGroup)
     def get_company_group(self, id):
         return self.get("/~{0}.json".format(id))
+
+    @objectify(CompanyGroupItem, True)
+    def get_company_groups(self, **kwargs):
+        return self.get("/Company_Groups.json", endpoint_params=('limit', 'offset'), **kwargs)
 
     @objectify(Source)
     def get_source(self, id):
