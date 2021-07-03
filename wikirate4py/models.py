@@ -192,9 +192,24 @@ class CompanyGroup(WikiRateEntity):
 
         self.id = int(data["id"])
         self.name = data["name"]
-        self.members = data["content"]
+        self.members = data.get("companies", {}).get("content", [])
         self.members_links = data["links"]
         self.url = data.get("html_url")
+
+
+class CompanyGroupItem(WikiRateEntity):
+    __slots__ = (
+        "id", "name", "url", "members", "members_links", "raw")
+
+    def __init__(self, data):
+        self.raw = data
+        if data["type"] != 'Company Group':
+            raise WikiRate4PyException('Invalid type of entity')
+
+        self.id = int(data["id"])
+        self.name = data["name"]
+        self.members = data.get("companies", {}).get("content", [])
+        self.url = data.get("url").replace('.json', '')
 
 
 class Source(WikiRateEntity):
