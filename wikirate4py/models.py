@@ -214,7 +214,8 @@ class CompanyGroupItem(WikiRateEntity):
 
 class Source(WikiRateEntity):
     __slots__ = (
-        "id", "name", "url", "file_url", "report_type", "raw")
+        "id", "name", "title", "description", "url", "original_source", "file_url", "year", "metrics", "companies",
+        "report_type", "created_at", "updated_at", "raw")
 
     def __init__(self, data):
         self.raw = data
@@ -222,15 +223,24 @@ class Source(WikiRateEntity):
             raise WikiRate4PyException('Invalid type of entity')
 
         self.id = int(data["id"])
-        self.name = data["name"]
-        self.file_url = data.get("file_url")
-        self.report_type = data.get("report_type")
+        self.name = data.get("name")
+        self.title = data.get("title", {}).get("content")
+        self.description = data.get("description", {}).get("content")
+        self.file_url = data.get("file", {}).get("content")
+        self.original_source = data.get("link", {}).get("content")
+        self.year = data.get("year", {}).get("content")
+        self.report_type = data.get("report_type", {}).get("content")
+        self.metrics = data.get("metric", {}).get("content")
+        self.companies = data.get("company", {}).get("content")
+        self.created_at = data.get("created_at")
+        self.updated_at = data.get("updated_at")
         self.url = data.get("html_url")
 
 
 class SourceItem(WikiRateEntity):
     __slots__ = (
-        "id", "name", "url", "file_url", "report_type", "raw")
+        "id", "name", "title", "description", "url", "original_source", "file_url", "year", "metrics", "companies",
+        "report_type", "created_at", "updated_at", "raw")
 
     def __init__(self, data):
         self.raw = data
@@ -238,10 +248,13 @@ class SourceItem(WikiRateEntity):
             raise WikiRate4PyException('Invalid type of entity')
 
         self.id = int(data["id"])
-        self.name = data["name"]
-        self.file_url = data.get("file_url")
+        self.name = data.get("name")
+        self.title = data.get("title")
+        self.file_url = data.get("file")
+        self.original_source = data.get("link")
+        self.year = data.get("year")
         self.report_type = data.get("report_type")
-        self.url = data.get("url").replace(".json", "json")
+        self.url = data.get("url").replace(".json", "")
 
 
 class Answer(WikiRateEntity):
