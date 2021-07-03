@@ -199,7 +199,7 @@ class CompanyGroup(WikiRateEntity):
 
 class CompanyGroupItem(WikiRateEntity):
     __slots__ = (
-        "id", "name", "url", "members", "members_links", "raw")
+        "id", "name", "url", "members", "raw")
 
     def __init__(self, data):
         self.raw = data
@@ -208,7 +208,7 @@ class CompanyGroupItem(WikiRateEntity):
 
         self.id = int(data["id"])
         self.name = data["name"]
-        self.members = data.get("companies", {}).get("content", [])
+        self.members = data.get("companies", [])
         self.url = data.get("url").replace('.json', '')
 
 
