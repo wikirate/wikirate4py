@@ -268,17 +268,99 @@ class API(object):
         elif entity is Project:
             return self.get_projects(name=name, **kwargs)
 
+    @objectify(SourceItem, True)
+    def search_source_by_url(self, url):
+        kwargs = {
+            "query[url]": url
+        }
+        return self.get("/Source_by_url.json",
+                        endpoint_params='query[url]',
+                        filters=(),
+                        **kwargs)
+
     @objectify(Company)
-    def create_company(self, name, headquarters) -> Company:
-        data = {
+    def add_company(self, name, headquarters, **kwargs) -> Company:
+        if name is None or headquarters is None:
+            raise WikiRate4PyException('A WikiRate company is defined by a name and headquarters, please be sure you '
+                                       'have defined both while trying to create a new company')
+        optional_params = ('oar_id', 'wikipedia', 'open_corporates')
+        params = {
             "card[type]": "Company",
-            "card[skip]": "update_oc_mapping_due_to_headquarters_entry",
             "card[name]": name,
             "card[subcards][+headquarters]": headquarters,
             "format": "json",
             "success[format]": "json"
         }
-        return self.post("/card/create", data)
+
+        for k, arg in kwargs.items():
+            if arg is None:
+                continue
+            if k not in optional_params:
+                log.warning(f'Unexpected parameter: {k}')
+            else:
+                params['card[subcards][+' + k + ']'] = str(arg)
+        log.debug("PARAMS: %r", params)
+        if 'open_corporates' not in kwargs:
+            params['card[skip]'] = "update_oc_mapping_due_to_headquarters_entry"
+
+        return self.post("/card/create", params)
+
+    @objectify(Answer)
+    def add_research_metric_answer(self, **kwargs):
+        required_params = ('metric_designer', 'metric_name', 'company', 'year', 'value', 'source')
+
+        for k in required_params:
+            if k not in kwargs:
+                raise WikiRate4PyException("""Invalid set of params! You need to define all the following params to import 
+                a new research answer: """ + required_params.__str__())
+
+        company_identifier = '~' + str(kwargs['company']) if isinstance(kwargs['company'], int) else kwargs[
+            'company'].replace(' ', '_')
+        params = {
+            "card[type]": "Answer",
+            "card[name]": kwargs['metric_designer'] + '+' + kwargs['metric_name'] + '+' + company_identifier + '+' +
+                          str(kwargs['year']),
+            "card[subcards][+:value]": kwargs['value'],
+            "card[subcards][+:source]": kwargs['source'],
+            "format": "json",
+            "success[format]": "json"
+        }
+        if kwargs.get('comment') is not None:
+            params['card[subcards][+:discussion]'] = str(kwargs['comment'])
+        log.debug("PARAMS: %r", params)
+
+        return self.post("/card/create", params)
+
+    @objectify(Answer)
+    def update_research_metric_answer(self, **kwargs):
+        required_params = ('metric_designer', 'metric_name', 'company', 'year')
+        optional_params = ('value', 'source', 'comment')
+
+        for k in required_params:
+            if k not in kwargs:
+                raise WikiRate4PyException("""Invalid set of params! You need to define all the following params to import 
+                    a new research answer: """ + required_params.__str__())
+
+        company_identifier = '~' + str(kwargs['company']) if isinstance(kwargs['company'], int) else kwargs[
+            'company'].replace(' ', '_')
+        params = {
+            "card[type]": "Answer",
+            "card[name]": kwargs['metric_designer'] + '+' + kwargs['metric_name'] + '+' + company_identifier + '+' +
+                          str(kwargs['year']),
+            "format": "json",
+            "success[format]": "json"
+        }
+
+        print(kwargs)
+        for k in kwargs.keys():
+            if k == 'comment':
+                params['card[subcards][+:discussion]'] = str(kwargs[k])
+            elif k not in required_params and k in optional_params:
+                params['card[subcards][+:' + k + ']'] = str(kwargs[k])
+
+        log.debug("PARAMS: %r", params)
+
+        return self.post("/card/update", params)
 
     def delete_company(self, id):
         return self.delete("/~{0}".format(id))
