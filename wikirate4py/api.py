@@ -1,6 +1,7 @@
 import functools
 import logging
 import sys
+import re
 
 import requests
 from os import environ
@@ -14,7 +15,7 @@ from wikirate4py.exceptions import IllegalHttpMethod, BadRequestException, Unaut
 from wikirate4py.models import (Company, Topic, Metric, ResearchGroup, CompanyGroup, Source, CompanyItem, MetricItem,
                                 Answer,
                                 ResearchGroupItem, RelationshipAnswer, SourceItem, TopicItem, AnswerItem,
-                                CompanyGroupItem)
+                                CompanyGroupItem, RelationshipAnswerItem, Region, Project, ProjectItem)
 
 log = logging.getLogger(__name__)
 
@@ -89,7 +90,7 @@ class API(object):
         # else return the response
         return response
 
-    def get(self, path, endpoint_params=(), **kwargs):
+    def get(self, path, endpoint_params=(), filters=(), **kwargs):
         headers = self.headers
         if 'content-type' in headers:
             headers.pop('content-type')
@@ -98,13 +99,20 @@ class API(object):
         for k, arg in kwargs.items():
             if arg is None:
                 continue
-            if k not in endpoint_params:
+            if k not in endpoint_params and k not in filters:
                 log.warning(f'Unexpected parameter: {k}')
-            params[k] = str(arg)
+            if k in filters:
+                if k == 'value_from' or k == 'value_to':
+                    params['filter[value]' + '[' + re.sub(r'.*_', '', k) + ']'] = str(arg)
+                else:
+                    params['filter[' + k + ']'] = str(arg)
+            else:
+                params[k] = str(arg)
         log.debug("PARAMS: %r", params)
 
         # Get the function path
         path = self.format_path(path, self.wikirate_api_url)
+        print(path)
         return self.request('get', path, headers=headers, params=params or {})
 
     def post(self, path, params={}):
@@ -125,60 +133,72 @@ class API(object):
             return urljoin(wikirate_api_url, path.lstrip('/'))
 
     @objectify(Company)
-    def get_company(self, id) -> Company:
-        return self.get("/~{0}.json".format(id))
+    def get_company(self, identifier) -> Company:
+        if isinstance(identifier, int):
+            return self.get("/~{0}.json".format(identifier))
+        else:
+            return self.get("/{0}.json".format(identifier.replace(" ", "_")))
 
     @objectify(CompanyItem, list=True)
     def get_companies(self, **kwargs):
-        return self.get("/Company.json", endpoint_params=('limit', 'offset'), **kwargs)
+        return self.get("/Company.json", endpoint_params=('limit', 'offset'),
+                        filters=('project', 'name', 'company_group', 'country', 'bookmark'),
+                        **kwargs)
 
     @objectify(Topic)
-    def get_topic(self, id):
-        return self.get("/~{0}.json".format(id))
+    def get_topic(self, identifier):
+        if isinstance(identifier, int):
+            return self.get("/~{0}.json".format(identifier))
+        else:
+            return self.get("/{0}.json".format(identifier.replace(" ", "_")))
 
     @objectify(TopicItem, True)
     def get_topics(self, **kwargs):
-        return self.get("/Topics.json", endpoint_params=('limit', 'offset'), **kwargs)
+        return self.get("/Topics.json", endpoint_params=('limit', 'offset'), filters='name', **kwargs)
 
     @objectify(Metric)
-    def get_metric(self, id):
-        return self.get("/~{0}.json".format(id));
+    def get_metric(self, identifier):
+        if isinstance(identifier, int):
+            return self.get("/~{0}.json".format(identifier))
+        else:
+            return self.get("/{0}.json".format(identifier.replace(" ", "_")))
 
     @objectify(MetricItem, list=True)
     def get_metrics(self, **kwargs):
-        return self.get("/Metrics.json", endpoint_params=('limit', 'offset'), **kwargs)
+        return self.get("/Metrics.json", endpoint_params=('limit', 'offset'), filters='name', **kwargs)
 
     @objectify(ResearchGroup)
-    def get_research_group(self, id):
-        return self.get("/~{0}.json".format(id))
+    def get_research_group(self, identifier):
+        if isinstance(identifier, int):
+            return self.get("/~{0}.json".format(identifier))
+        else:
+            return self.get("/{0}.json".format(identifier.replace(" ", "_")))
 
     @objectify(ResearchGroupItem, list=True)
     def get_research_groups(self, **kwargs):
-        return self.get("/Research_Groups.json", endpoint_params=('limit', 'offset'), **kwargs)
+        return self.get("/Research_Groups.json", endpoint_params=('limit', 'offset'), filters='name', **kwargs)
 
     @objectify(CompanyGroup)
-    def get_company_group(self, id):
-        return self.get("/~{0}.json".format(id))
+    def get_company_group(self, identifier):
+        if isinstance(identifier, int):
+            return self.get("/~{0}.json".format(identifier))
+        else:
+            return self.get("/{0}.json".format(identifier.replace(" ", "_")))
 
     @objectify(CompanyGroupItem, True)
     def get_company_groups(self, **kwargs):
-        return self.get("/Company_Groups.json", endpoint_params=('limit', 'offset'), **kwargs)
+        return self.get("/Company_Groups.json", endpoint_params=('limit', 'offset'), filters='name', **kwargs)
 
     @objectify(Source)
-    def get_source(self, id):
-        return self.get("/~{0}.json".format(id))
+    def get_source(self, identifier):
+        if isinstance(identifier, int):
+            return self.get("/~{0}.json".format(identifier))
+        else:
+            return self.get("/{0}.json".format(identifier.replace(" ", "_")))
 
     @objectify(SourceItem, True)
     def get_sources(self, **kwargs):
         return self.get("/Sources.json", endpoint_params=('limit', 'offset'), **kwargs)
-
-    @objectify(Company)
-    def get_company_by_name(self, name):
-        return self.get("/{0}.json".format(name.replace(" ", "_")))
-
-    @objectify(Topic)
-    def get_topic_by_name(self, name):
-        return self.get("/{0}.json".format(name))
 
     @objectify(Answer)
     def get_answer(self, id):
@@ -186,16 +206,67 @@ class API(object):
 
     @objectify(AnswerItem, True)
     def get_answers(self, id, **kwargs):
-        return self.get("/~{0}+Answer.json".format(id), endpoint_params=('limit', 'offset'), **kwargs)
+        return self.get("/~{0}+Answer.json".format(id), endpoint_params=('limit', 'offset'),
+                        filters=(
+                            'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
+                            'updater', 'outliers', 'source', 'verification', 'project', 'bookmark'), **kwargs)
 
     @objectify(AnswerItem, True)
     def get_answers(self, metric_name, metric_designer, **kwargs):
-        return self.get("/~{0}+{1}+Answer.json".format(metric_designer, metric_name),
-                        endpoint_params=('limit', 'offset'), **kwargs)
+        return self.get(
+            "/~{0}+{1}+Answer.json".format(metric_designer.replace(" ", "_"), metric_name.replace(" ", "_")),
+            endpoint_params=('limit', 'offset'),
+            filters=(
+                'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
+                'updater', 'outliers', 'source', 'verification', 'project', 'bookmark'), **kwargs)
 
     @objectify(RelationshipAnswer)
     def get_relationship_answer(self, id):
         return self.get("/~{0}.json".format(id))
+
+    @objectify(RelationshipAnswerItem, True)
+    def get_relationship_answers(self, id, **kwargs):
+        return self.get("/~{0}+Relationship_Answer.json".format(id),
+                        endpoint_params=('limit', 'offset'), filters=(
+                'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
+                'updater', 'outliers', 'source', 'verification', 'project', 'bookmark'), **kwargs)
+
+    @objectify(RelationshipAnswerItem, True)
+    def get_relationship_answers(self, metric_name, metric_designer, **kwargs):
+        return self.get("/~{0}+{1}+Relationship_Answer.json".format(metric_designer.replace(" ", "_"),
+                                                                    metric_name.replace(" ", "_")),
+                        endpoint_params=('limit', 'offset'), filters=(
+                'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
+                'updater', 'outliers', 'source', 'verification', 'project', 'bookmark'), **kwargs)
+
+    @objectify(Project)
+    def get_project(self, identifier):
+        if isinstance(identifier, int):
+            return self.get("/~{0}.json".format(identifier))
+        else:
+            return self.get("/{0}.json".format(identifier.replace(" ", "_")))
+
+    @objectify(ProjectItem, True)
+    def get_projects(self, **kwargs):
+        return self.get("/Projects.json", endpoint_params=('limit', 'offset'), filters='name', **kwargs)
+
+    @objectify(Region, True)
+    def get_regions(self, **kwargs):
+        return self.get("/Region.json", **kwargs)
+
+    def search_by_name(self, entity, name, **kwargs):
+        if entity is Company:
+            return self.get_companies(name=name, **kwargs)
+        elif entity is Metric:
+            return self.get_metrics(name=name, **kwargs)
+        elif entity is Topic:
+            return self.get_topics(name=name, **kwargs)
+        elif entity is CompanyGroup:
+            return self.get_company_groups(name=name, **kwargs)
+        elif entity is ResearchGroup:
+            return self.get_research_groups(name=name, **kwargs)
+        elif entity is Project:
+            return self.get_projects(name=name, **kwargs)
 
     @objectify(Company)
     def create_company(self, name, headquarters) -> Company:
