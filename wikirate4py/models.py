@@ -59,6 +59,37 @@ class Topic(WikiRateEntity):
         self.url = data.get("html_url")
 
 
+class Project(WikiRateEntity):
+    __slots__ = ("id", "name", "metrics", "companies", "answers", "created_at", "updated_at", "url", "raw")
+
+    def __init__(self, data):
+        self.raw = data
+        if data["type"]["id"] != 39830:
+            raise WikiRate4PyException('Invalid type of entity')
+
+        self.id = int(data["id"])
+        self.name = data["name"]
+        self.metrics = data.get("metrics", {}).get("content", [])
+        self.companies = data.get("companies", {}).get("content", [])
+        self.answers = [AnswerItem(item) for item in data.get("items", {})]
+        self.created_at = data.get("created_at")
+        self.updated_at = data.get("updated_at")
+        self.url = data.get("html_url")
+
+
+class ProjectItem(WikiRateEntity):
+    __slots__ = ("id", "name", "url", "raw")
+
+    def __init__(self, data):
+        self.raw = data
+        if data["type"] != 'Project':
+            raise WikiRate4PyException('Invalid type of entity')
+
+        self.id = int(data["id"])
+        self.name = data["name"]
+        self.url = data.get("url").replace(".json", "")
+
+
 class TopicItem(WikiRateEntity):
     __slots__ = ("id", "name", "metrics", "projects", "bookmarkers", "url", "raw")
 
@@ -305,7 +336,7 @@ class AnswerItem(WikiRateEntity):
 
 class RelationshipAnswer(WikiRateEntity):
     __slots__ = (
-        "id", "metric", "company", "value", "year", "comments", "sources", "checked_by",
+        "id", "metric", "value", "year", "comments", "sources", "checked_by",
         "subject_company_name", "subject_company_id", "object_company_name", "object_company_id", "check_requested",
         "url", "raw")
 
@@ -331,3 +362,42 @@ class RelationshipAnswer(WikiRateEntity):
         self.subject_company_id = data.get("subject_company").get("id")
         self.object_company_id = data.get("object_company").get("id")
         self.url = data.get("html_url")
+
+
+class RelationshipAnswerItem(WikiRateEntity):
+    __slots__ = (
+        "id", "metric", "value", "year", "comments", "sources",
+        "subject_company_name", "object_company_name",
+        "url", "raw")
+
+    def __init__(self, data):
+        self.raw = data
+        if data["type"] != 'Relationship Answer':
+            raise WikiRate4PyException('Invalid type of entity')
+
+        self.id = int(data["id"])
+        fields = data.get("name").split("+")
+        self.metric = fields[0] + "+" + fields[1]
+        self.value = data.get("value")
+        self.year = data.get("year")
+        self.comments = data.get("comments")
+        self.sources = []
+        for s in data.get("sources", []):
+            self.sources.append(s.get("name"))
+        self.subject_company_name = data.get("subject_company")
+        self.object_company_name = data.get("object_company")
+        self.url = data.get("url").replace(".json", "")
+
+
+class Region(WikiRateEntity):
+    __slots__ = (
+        "id", "name", "url", "raw")
+
+    def __init__(self, data):
+        self.raw = data
+        if data["type"] != 'Region':
+            raise WikiRate4PyException('Invalid type of entity')
+
+        self.id = int(data["id"])
+        self.name = data.get("name")
+        self.url = data.get("url").replace(".json", "")
