@@ -125,9 +125,9 @@ class Metric(WikiRateEntity):
         self.about = h.handle(data.get("about").get("content", ""))
         self.methodology = h.handle(data.get("methodology").get("content", ""))
         self.value_type = data.get("value_type").get("content")
-        self.value_options = data.get("value_options").get("content")
+        self.value_options = data.get("value_options", {}).get("content", [])
         if len(self.value_options) == 1 and self.value_options[0] == "Unknown":
-            self.value_options = None
+            self.value_options = []
         self.report_type = data.get("report_type").get("content")
         self.metric_type = data.get("metric_type").get("content")
         self.research_policy = data.get("research_policy").get("content")
