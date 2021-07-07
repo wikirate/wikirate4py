@@ -154,7 +154,7 @@ class API(object):
 
     @objectify(TopicItem, True)
     def get_topics(self, **kwargs):
-        return self.get("/Topics.json", endpoint_params=('limit', 'offset'), filters='name', **kwargs)
+        return self.get("/Topics.json", endpoint_params=('limit', 'offset'), filters=('name',), **kwargs)
 
     @objectify(Metric)
     def get_metric(self, identifier):
@@ -165,7 +165,7 @@ class API(object):
 
     @objectify(MetricItem, list=True)
     def get_metrics(self, **kwargs):
-        return self.get("/Metrics.json", endpoint_params=('limit', 'offset'), filters='name', **kwargs)
+        return self.get("/Metrics.json", endpoint_params=('limit', 'offset'), filters=('name',), **kwargs)
 
     @objectify(ResearchGroup)
     def get_research_group(self, identifier):
@@ -176,7 +176,7 @@ class API(object):
 
     @objectify(ResearchGroupItem, list=True)
     def get_research_groups(self, **kwargs):
-        return self.get("/Research_Groups.json", endpoint_params=('limit', 'offset'), filters='name', **kwargs)
+        return self.get("/Research_Groups.json", endpoint_params=('limit', 'offset'), filters=('name',), **kwargs)
 
     @objectify(CompanyGroup)
     def get_company_group(self, identifier):
@@ -187,7 +187,7 @@ class API(object):
 
     @objectify(CompanyGroupItem, True)
     def get_company_groups(self, **kwargs):
-        return self.get("/Company_Groups.json", endpoint_params=('limit', 'offset'), filters='name', **kwargs)
+        return self.get("/Company_Groups.json", endpoint_params=('limit', 'offset'), filters=('name',), **kwargs)
 
     @objectify(Source)
     def get_source(self, identifier):
@@ -248,7 +248,7 @@ class API(object):
 
     @objectify(ProjectItem, True)
     def get_projects(self, **kwargs):
-        return self.get("/Projects.json", endpoint_params=('limit', 'offset'), filters='name', **kwargs)
+        return self.get("/Projects.json", endpoint_params=('limit', 'offset'), filters=('name',), **kwargs)
 
     @objectify(Region, True)
     def get_regions(self, **kwargs):
@@ -337,7 +337,7 @@ class API(object):
         optional_params = ('value', 'source', 'comment')
 
         for k in required_params:
-            if k not in kwargs:
+            if k not in kwargs or kwargs.get(k) is None:
                 raise WikiRate4PyException("""Invalid set of params! You need to define all the following params to import 
                     a new research answer: """ + required_params.__str__())
 
@@ -350,14 +350,124 @@ class API(object):
             "format": "json",
             "success[format]": "json"
         }
-
-        print(kwargs)
         for k in kwargs.keys():
             if k == 'comment':
                 params['card[subcards][+:discussion]'] = str(kwargs[k])
             elif k not in required_params and k in optional_params:
                 params['card[subcards][+:' + k + ']'] = str(kwargs[k])
 
+        log.debug("PARAMS: %r", params)
+
+        return self.post("/card/update", params)
+
+    @objectify(RelationshipAnswer)
+    def add_relationship_metric_answer(self, **kwargs):
+        required_params = (
+            'metric_designer', 'metric_name', 'subject_company', 'object_company', 'year', 'value', 'source')
+
+        for k in required_params:
+            if k not in kwargs:
+                raise WikiRate4PyException("""Invalid set of params! You need to define all the following params to import 
+                    a new research answer: """ + required_params.__str__())
+
+        subject_company_identifier = '~' + str(kwargs['subject_company']) \
+            if isinstance(kwargs['subject_company'], int) else kwargs['subject_company'].replace(' ', '_')
+        object_company_identifier = '~' + str(kwargs['object_company']) \
+            if isinstance(kwargs['object_company'], int) else kwargs['object_company'].replace(' ', '_')
+        params = {
+            "card[type]": "Relationship_Answer",
+            "card[name]": kwargs['metric_designer'].replace(" ", "_") + '+' + kwargs[
+                'metric_name'].replace(" ", "_") + '+' + subject_company_identifier +
+                          '+' + str(kwargs['year']) + '+' + object_company_identifier,
+            "card[subcards][+:value]": kwargs['value'],
+            "card[subcards][+:source]": kwargs['source'],
+            "format": "json",
+            "success[format]": "json"
+        }
+        if kwargs.get('comment') is not None:
+            params['card[subcards][+:discussion]'] = str(kwargs['comment'])
+        log.debug("PARAMS: %r", params)
+
+        return self.post("/card/create", params)
+
+    @objectify(RelationshipAnswer)
+    def update_relationship_metric_answer(self, **kwargs):
+        required_params = ('metric_designer', 'metric_name', 'subject_company', 'year', 'object_company')
+        optional_params = ('value', 'source', 'comment')
+
+        for k in required_params:
+            if k not in kwargs or kwargs.get(k) is None:
+                raise WikiRate4PyException("""Invalid set of params! You need to define all the following params to import 
+                        a new research answer: """ + required_params.__str__())
+
+        subject_company_identifier = '~' + str(kwargs['subject_company']) \
+            if isinstance(kwargs['subject_company'], int) else kwargs['subject_company'].replace(' ', '_')
+        object_company_identifier = '~' + str(kwargs['object_company']) \
+            if isinstance(kwargs['object_company'], int) else kwargs['object_company'].replace(' ', '_')
+        params = {
+            "card[type]": "Relationship_Answer",
+            "card[name]": kwargs['metric_designer'].replace(" ", "_") + '+' + kwargs[
+                'metric_name'].replace(" ", "_") + '+' + subject_company_identifier +
+                          '+' + str(kwargs['year']) + '+' + object_company_identifier,
+            "format": "json",
+            "success[format]": "json"
+        }
+
+        for k in kwargs.keys():
+            if k == 'comment':
+                params['card[subcards][+:discussion]'] = str(kwargs[k])
+            elif k not in required_params and k in optional_params:
+                params['card[subcards][+:' + k + ']'] = str(kwargs[k])
+
+        log.debug("PARAMS: %r", params)
+
+        return self.post("/card/update", params)
+
+    @objectify(Source)
+    def add_source(self, **kwargs):
+        required_params = ('url', 'title')
+        optional_params = ('company', 'report_type', 'year')
+
+        for k in required_params:
+            if k not in kwargs:
+                raise WikiRate4PyException("""Invalid set of params! You need to define all the following params to import 
+                    a new source in WikiRate platform: """ + required_params.__str__())
+
+        params = {
+            "card[type]": "Source",
+            "card[subcards][+title]": kwargs['title'],
+            "card[subcards][+link]": kwargs['url'],
+            "card[skip]": "requirements",
+            "format": "json",
+            "success[format]": "json"
+        }
+        for k in kwargs.keys():
+            if k in optional_params:
+                params['card[subcards][+' + k + ']'] = str(kwargs[k])
+        log.debug("PARAMS: %r", params)
+
+        return self.post("/card/create", params)
+
+    @objectify(Source)
+    def update_source(self, **kwargs):
+        required_params = ('name',)
+        optional_params = ('company', 'report_type', 'year', 'title')
+
+        for k in required_params:
+            if k not in kwargs:
+                raise WikiRate4PyException("""Invalid set of params! You need to define all the following params to import 
+                        a new source in WikiRate platform: """ + required_params.__str__())
+
+        params = {
+            "card[type]": "Source",
+            "card[name]": kwargs['name'],
+            "card[skip]": "requirements",
+            "format": "json",
+            "success[format]": "json"
+        }
+        for k in kwargs.keys():
+            if k in optional_params and k != 'url':
+                params['card[subcards][+' + k + ']'] = str(kwargs[k])
         log.debug("PARAMS: %r", params)
 
         return self.post("/card/update", params)
