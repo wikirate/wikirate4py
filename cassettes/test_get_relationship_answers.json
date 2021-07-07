@@ -1,0 +1,82 @@
+{
+    "version": 1,
+    "interactions": [
+        {
+            "request": {
+                "method": "GET",
+                "uri": "https://staging.wikirate.org/~Commons+Supplier_of+Relationship_Answer.json?filter%5Bcountry%5D=United+Kingdom&limit=10",
+                "body": null,
+                "headers": {
+                    "User-Agent": [
+                        "python-requests/2.25.1"
+                    ],
+                    "Accept-Encoding": [
+                        "gzip, deflate"
+                    ],
+                    "Accept": [
+                        "*/*"
+                    ],
+                    "Connection": [
+                        "keep-alive"
+                    ]
+                }
+            },
+            "response": {
+                "status": {
+                    "code": 200,
+                    "message": "OK"
+                },
+                "headers": {
+                    "X-Runtime": [
+                        "0.164910"
+                    ],
+                    "Server": [
+                        "Apache/2.4.29 (Ubuntu) Phusion_Passenger/6.0.4 OpenSSL/1.1.1"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Access-Control-Allow-Origin": [
+                        "*"
+                    ],
+                    "Connection": [
+                        "Keep-Alive"
+                    ],
+                    "ETag": [
+                        "W/\"2d2a6e9a4eccea4c7cfb16a9ce9b981e\""
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=Ui9OZ0F1TFJqNDYrbHNycTVUeTBmSUM5OFpRQWdmUFlpc0ttaGU2ZzV2V2hxbE1BVG5YOHNNQTYwVkc4Q0lFN2swQ21hT281TDFxU2QvRmlGb2FVbXR1VHlsOUF4Z3lvbVBDM1FDRjF0Z2ROejRJUFJGYm4zMWg4b3h2OStPUFYtLVUyS0JzV2hweTB2TzVqTGxNSmtpRGc9PQ%3D%3D--73efa4d0d5c009e700cb16e5351574e57ac097ff; path=/; HttpOnly"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
+                    "Date": [
+                        "Wed, 07 Jul 2021 22:32:22 GMT"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger 6.0.4"
+                    ],
+                    "Status": [
+                        "200 OK"
+                    ],
+                    "Cache-Control": [
+                        "max-age=0, private, must-revalidate"
+                    ],
+                    "X-Request-Id": [
+                        "5dcba7fd-6c84-44c1-bdda-38f4e69c30b4"
+                    ],
+                    "Keep-Alive": [
+                        "timeout=5, max=100"
+                    ]
+                },
+                "body": {
+                    "string": "{\n  \"id\": null,\n  \"name\": \"~Commons+Supplier of+Relationship Answer\",\n  \"type\": {\n    \"id\": 3,\n    \"name\": \"RichText\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/RichText.json\",\n    \"codename\": \"basic\"\n  },\n  \"url\": \"https://staging.wikirate.org/~Commons+Supplier_of+Relationship_Answer.json?filter%5Bcountry%5D=United+Kingdom&limit=10\",\n  \"content\": \"\",\n  \"items\": [\n    {\n      \"id\": 7144229,\n      \"name\": \"Commons+Supplied By+The Walt Disney Company+2019+InterContinental Hotels Group\",\n      \"type\": \"Relationship Answer\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+The_Walt_Disney_Company+2019+InterContinental_Hotels_Group.json\",\n      \"content\": \"\",\n      \"year\": \"2019\",\n      \"value\": \"Tier 1 Supplier\",\n      \"import\": false,\n      \"comments\": null,\n      \"subject_company\": \"The Walt Disney Company\",\n      \"object_company\": \"InterContinental Hotels Group\"\n    },\n    {\n      \"id\": 3297071,\n      \"name\": \"Commons+Supplied By+The Walt Disney Company+2016+Walkers Shortbread Ltd\",\n      \"type\": \"Relationship Answer\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+The_Walt_Disney_Company+2016+Walkers_Shortbread_Ltd.json\",\n      \"content\": \"\",\n      \"year\": \"2016\",\n      \"value\": \"Tier 1 Supplier\",\n      \"import\": true,\n      \"comments\": null,\n      \"subject_company\": \"The Walt Disney Company\",\n      \"object_company\": \"Walkers Shortbread Ltd\"\n    },\n    {\n      \"id\": 6993438,\n      \"name\": \"Commons+Supplied By+The Walt Disney Company+2019+Walkers Shortbread Ltd\",\n      \"type\": \"Relationship Answer\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+The_Walt_Disney_Company+2019+Walkers_Shortbread_Ltd.json\",\n      \"content\": \"\",\n      \"year\": \"2019\",\n      \"value\": \"Tier 1 Supplier\",\n      \"import\": false,\n      \"comments\": null,\n      \"subject_company\": \"The Walt Disney Company\",\n      \"object_company\": \"Walkers Shortbread Ltd\"\n    },\n    {\n      \"id\": 7143986,\n      \"name\": \"Commons+Supplied By+Marks and Spencer Group plc+2020+AJ & RG Barber\",\n      \"type\": \"Relationship Answer\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+Marks_and_Spencer_Group_plc+2020+AJ_RG_Barber.json\",\n      \"content\": \"\",\n      \"year\": \"2020\",\n      \"value\": \"Tier 1 Supplier\",\n      \"import\": false,\n      \"comments\": null,\n      \"subject_company\": \"Marks and Spencer Group plc\",\n      \"object_company\": \"AJ & RG Barber\"\n    },\n    {\n      \"id\": 6188418,\n      \"name\": \"Commons+Supplied By+Marks and Spencer Group plc+2020+Adnams plc\",\n      \"type\": \"Relationship Answer\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+Marks_and_Spencer_Group_plc+2020+Adnams_plc.json\",\n      \"content\": \"\",\n      \"year\": \"2020\",\n      \"value\": \"Tier 1 Supplier\",\n      \"import\": true,\n      \"comments\": null,\n      \"subject_company\": \"Marks and Spencer Group plc\",\n      \"object_company\": \"Adnams plc\"\n    },\n    {\n      \"id\": 6189189,\n      \"name\": \"Commons+Supplied By+Marks and Spencer Group plc+2020+Dawnfresh Seafoods Ltd\",\n      \"type\": \"Relationship Answer\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+Marks_and_Spencer_Group_plc+2020+Dawnfresh_Seafoods_Ltd.json\",\n      \"content\": \"\",\n      \"year\": \"2020\",\n      \"value\": \"Tier 1 Supplier\",\n      \"import\": true,\n      \"comments\": null,\n      \"subject_company\": \"Marks and Spencer Group plc\",\n      \"object_company\": \"Dawnfresh Seafoods Ltd\"\n    },\n    {\n      \"id\": 7143960,\n      \"name\": \"Commons+Supplied By+Marks and Spencer Group plc+2020+A Gomez Ltd\",\n      \"type\": \"Relationship Answer\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+Marks_and_Spencer_Group_plc+2020+A_Gomez_Ltd.json\",\n      \"content\": \"\",\n      \"year\": \"2020\",\n      \"value\": \"Tier 1 Supplier\",\n      \"import\": false,\n      \"comments\": null,\n      \"subject_company\": \"Marks and Spencer Group plc\",\n      \"object_company\": \"A Gomez Ltd\"\n    },\n    {\n      \"id\": 6186661,\n      \"name\": \"Commons+Supplied By+Marks and Spencer Group plc+2020+Belfield Furnishings Ltd\",\n      \"type\": \"Relationship Answer\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+Marks_and_Spencer_Group_plc+2020+Belfield_Furnishings_Ltd.json\",\n      \"content\": \"\",\n      \"year\": \"2020\",\n      \"value\": \"Tier 1 Supplier\",\n      \"import\": true,\n      \"comments\": null,\n      \"subject_company\": \"Marks and Spencer Group plc\",\n      \"object_company\": \"Belfield Furnishings Ltd\"\n    },\n    {\n      \"id\": 3297617,\n      \"name\": \"Commons+Supplied By+The Walt Disney Company+2016+1NE Project Solution Ltd\",\n      \"type\": \"Relationship Answer\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+The_Walt_Disney_Company+2016+1NE_Project_Solution_Ltd.json\",\n      \"content\": \"\",\n      \"year\": \"2016\",\n      \"value\": \"Tier 1 Supplier\",\n      \"import\": true,\n      \"comments\": null,\n      \"subject_company\": \"The Walt Disney Company\",\n      \"object_company\": \"1NE Project Solution Ltd\"\n    },\n    {\n      \"id\": 3299982,\n      \"name\": \"Commons+Supplied By+The Walt Disney Company+2016+Kingfisher Graphics LLP\",\n      \"type\": \"Relationship Answer\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+The_Walt_Disney_Company+2016+Kingfisher_Graphics_LLP.json\",\n      \"content\": \"\",\n      \"year\": \"2016\",\n      \"value\": \"Tier 1 Supplier\",\n      \"import\": true,\n      \"comments\": null,\n      \"subject_company\": \"The Walt Disney Company\",\n      \"object_company\": \"Kingfisher Graphics LLP\"\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n    {\n      \"id\": 3411173,\n      \"name\": \"Commons\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/Commons.json\"\n    },\n    {\n      \"id\": 2929014,\n      \"name\": \"Supplier of\",\n      \"type\": \"Metric Title\",\n      \"url\": \"https://staging.wikirate.org/Supplier_of.json\"\n    },\n    {\n      \"id\": 2534606,\n      \"name\": \"Relationship Answer\",\n      \"type\": \"Cardtype\",\n      \"url\": \"https://staging.wikirate.org/Relationship_Answer.json\",\n      \"codename\": \"relationship_answer\"\n    },\n    {\n      \"id\": 2929015,\n      \"name\": \"Commons+Supplier of\",\n      \"type\": \"Metric\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplier_of.json\",\n      \"codename\": \"commons_supplier_of\"\n    }\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Commons+Supplier_of+Relationship_Answer\",\n  \"created_at\": null,\n  \"updated_at\": null,\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Commons+Supplier_of+Relationship_Answer.json?filter%5Bcountry%5D=United+Kingdom&item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2021-07-08 00:32:22 +0200\"\n}"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,82 @@
+{
+    "version": 1,
+    "interactions": [
+        {
+            "request": {
+                "method": "GET",
+                "uri": "https://staging.wikirate.org/Topics.json?limit=10",
+                "body": null,
+                "headers": {
+                    "User-Agent": [
+                        "python-requests/2.25.1"
+                    ],
+                    "Accept-Encoding": [
+                        "gzip, deflate"
+                    ],
+                    "Accept": [
+                        "*/*"
+                    ],
+                    "Connection": [
+                        "keep-alive"
+                    ]
+                }
+            },
+            "response": {
+                "status": {
+                    "code": 200,
+                    "message": "OK"
+                },
+                "headers": {
+                    "X-Runtime": [
+                        "0.317462"
+                    ],
+                    "Server": [
+                        "Apache/2.4.29 (Ubuntu) Phusion_Passenger/6.0.4 OpenSSL/1.1.1"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Access-Control-Allow-Origin": [
+                        "*"
+                    ],
+                    "Connection": [
+                        "Keep-Alive"
+                    ],
+                    "ETag": [
+                        "W/\"404a4061e505eaaef07614a1e82ee5e7\""
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=S1FWenJ6R3h0R1QvbjZSOHdxYkxGYlAxKzdiMCszOFhra0laaitwN0FoOEZrbmQxZEpjcU9kWEs5VkorSHlBWXBrT3gwQjdjemtIbTFRL2tteEJwZm1NSVUzenRkWHRRWW14eXVPMDNXNmdJeEJEdlF2WWlFNlNSZXB2WnBkQ1YtLXhhM1pUQmhwRkRyd3p3c2Iyei96NlE9PQ%3D%3D--da0c6a9f77bb644e5829fef2d104295417db5643; path=/; HttpOnly"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
+                    "Date": [
+                        "Wed, 07 Jul 2021 22:32:32 GMT"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger 6.0.4"
+                    ],
+                    "Status": [
+                        "200 OK"
+                    ],
+                    "Cache-Control": [
+                        "max-age=0, private, must-revalidate"
+                    ],
+                    "X-Request-Id": [
+                        "2854252a-33d7-4e29-8f97-cd519820fb31"
+                    ],
+                    "Keep-Alive": [
+                        "timeout=5, max=100"
+                    ]
+                },
+                "body": {
+                    "string": "{\n  \"id\": 1010,\n  \"name\": \"Topic\",\n  \"type\": {\n    \"id\": 5,\n    \"name\": \"Cardtype\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Cardtype.json\",\n    \"codename\": \"cardtype\"\n  },\n  \"url\": \"https://staging.wikirate.org/Topics.json?limit=10\",\n  \"codename\": \"wikirate_topic\",\n  \"items\": [\n    {\n      \"id\": 5821691,\n      \"name\": \"Abuse\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Abuse.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 0,\n      \"metrics\": 3,\n      \"projects\": 0\n    },\n    {\n      \"id\": 45466,\n      \"name\": \"Accident\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Accident.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 0,\n      \"metrics\": 6,\n      \"projects\": 0\n    },\n    {\n      \"id\": 22719,\n      \"name\": \"advertising\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/advertising.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 0,\n      \"metrics\": 2,\n      \"projects\": 1\n    },\n    {\n      \"id\": 2718970,\n      \"name\": \"Affordability and Access\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Affordability_and_Access.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 0,\n      \"metrics\": 4,\n      \"projects\": 0\n    },\n    {\n      \"id\": 1787640,\n      \"name\": \"agriculture\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/agriculture.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 0,\n      \"metrics\": 0,\n      \"projects\": 3\n    },\n    {\n      \"id\": 2651586,\n      \"name\": \"Air & Climate\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Air_Climate.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 0,\n      \"metrics\": 26,\n      \"projects\": 1\n    },\n    {\n      \"id\": 627,\n      \"name\": \"Air Pollution\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Air_Pollution.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 0,\n      \"metrics\": 4,\n      \"projects\": 0\n    },\n    {\n      \"id\": 6397644,\n      \"name\": \"Alliance for Corporate Transparency: EUKI Research 2020\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Alliance_for_Corporate_Transparency_EUKI_Research_2020.json\",\n      \"content\": \"<p>{{Alliance for Corporate Transparency 2020 EUKI Research|open}}</span></p>\",\n      \"bookmarkers\": 0,\n      \"metrics\": 67,\n      \"projects\": 0\n    },\n    {\n      \"id\": 1246,\n      \"name\": \"Animal Welfare\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Animal_Welfare.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 2,\n      \"metrics\": 69,\n      \"projects\": 3\n    },\n    {\n      \"id\": 40491,\n      \"name\": \"Annual Reporting\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Annual_Reporting.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 0,\n      \"metrics\": 37,\n      \"projects\": 1\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Topic\",\n  \"created_at\": \"2012-04-17 22:33:44 UTC\",\n  \"updated_at\": \"2020-03-31 12:16:30 UTC\",\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Topic.json?item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2021-07-08 00:32:32 +0200\"\n}"
+                }
+            }
+        }
+    ]
+}

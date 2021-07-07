@@ -1,0 +1,82 @@
+{
+    "version": 1,
+    "interactions": [
+        {
+            "request": {
+                "method": "GET",
+                "uri": "https://staging.wikirate.org/Sources.json?limit=10",
+                "body": null,
+                "headers": {
+                    "User-Agent": [
+                        "python-requests/2.25.1"
+                    ],
+                    "Accept-Encoding": [
+                        "gzip, deflate"
+                    ],
+                    "Accept": [
+                        "*/*"
+                    ],
+                    "Connection": [
+                        "keep-alive"
+                    ]
+                }
+            },
+            "response": {
+                "status": {
+                    "code": 200,
+                    "message": "OK"
+                },
+                "headers": {
+                    "X-Runtime": [
+                        "8.224340"
+                    ],
+                    "Server": [
+                        "Apache/2.4.29 (Ubuntu) Phusion_Passenger/6.0.4 OpenSSL/1.1.1"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Access-Control-Allow-Origin": [
+                        "*"
+                    ],
+                    "Connection": [
+                        "Keep-Alive"
+                    ],
+                    "ETag": [
+                        "W/\"bf50d86117587f3155dafa9d94edf6fd\""
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=bnIvUDlaMUR3eXdmTXFQbnNYWWRzLytvbkNINDdKeHQ2WS9LYnUxamVxdjNiekErN2NyS1hkV2w2NXBUcFBveVBRUUVNSVY2eGVJazVQcDg4U1NpOVZ6eVpwYnVaVXYxVWlGSmhqc1FpcFF3RkJxcGFPWmIrZVlPQ2tmVDVNMlgtLWNSMzByOTJrdko2VzlDbWMzdUdxSWc9PQ%3D%3D--9bc86b2ca83b2cee6fd525e2f10ab957627fff1b; path=/; HttpOnly"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
+                    "Date": [
+                        "Wed, 07 Jul 2021 22:32:23 GMT"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger 6.0.4"
+                    ],
+                    "Status": [
+                        "200 OK"
+                    ],
+                    "Cache-Control": [
+                        "max-age=0, private, must-revalidate"
+                    ],
+                    "X-Request-Id": [
+                        "f3476171-2df5-4a98-a40c-52504c4d2ef5"
+                    ],
+                    "Keep-Alive": [
+                        "timeout=5, max=100"
+                    ]
+                },
+                "body": {
+                    "string": "{\n  \"id\": 629,\n  \"name\": \"Source\",\n  \"type\": {\n    \"id\": 5,\n    \"name\": \"Cardtype\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Cardtype.json\",\n    \"codename\": \"cardtype\"\n  },\n  \"url\": \"https://staging.wikirate.org/Sources.json?limit=10\",\n  \"codename\": \"source\",\n  \"items\": [\n    {\n      \"id\": 786512,\n      \"name\": \"ArcelorMittal+Pollution & Toxics\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/ArcelorMittal+Pollution_Toxics.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/786515/12677377.pdf\",\n      \"link\": \"\",\n      \"report_type\": \"\",\n      \"title\": \"EXTERNAL AUDIT REPORT IN FULFILMENT OF THE WASTE MANAGEMENT LICENSE FOR THE DECOMISSIONING AND REMEDIATION OF THE KLIP WASTE SITE AT ARCELORMITTAL VEREENIGING WORKS\",\n      \"year\": \"\"\n    },\n    {\n      \"id\": 3480460,\n      \"name\": \"10-k 2013\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/10_k_2013.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/3480463/14341091.pdf\",\n      \"link\": \"http://www.pginvestor.com/Cache/18823762.pdf\",\n      \"report_type\": \"\",\n      \"title\": \"PG 10-k Report 2013\",\n      \"year\": \"\"\n    },\n    {\n      \"id\": 3480434,\n      \"name\": \"10-k 2015\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/10_k_2015.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/3480437/14341050.pdf\",\n      \"link\": \"http://www.pginvestor.com/Cache/30866951.PDF?O=PDF&T=&Y=&D=&FID=30866951&iid=4004124\",\n      \"report_type\": \"\",\n      \"title\": \"\",\n      \"year\": \"\"\n    },\n    {\n      \"id\": 3463195,\n      \"name\": \"2006 Annual Report\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/2006_Annual_Report.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/3463196/14315890.pdf\",\n      \"link\": \"\",\n      \"report_type\": \"\",\n      \"title\": \"\",\n      \"year\": \"\"\n    },\n    {\n      \"id\": 2890442,\n      \"name\": \"2008 Sustainability Report\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/2008_Sustainability_Report.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/2890444/13126528.pdf\",\n      \"link\": \"\",\n      \"report_type\": [\n        \"Corporate Social Responsibility Report\"\n      ],\n      \"title\": \"\",\n      \"year\": [\n        \"2008\"\n      ]\n    },\n    {\n      \"id\": 2900562,\n      \"name\": \"2012-2013 LG Electronics Sustainability Report\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/2012_2013_LG_Electronics_Sustainability_Report.json\",\n      \"file\": \"\",\n      \"link\": \"http://www.lge.co.kr/common/download.jsp?path=/cokr/asset/data/sustainability/&fileName=2012-2013LGSREngfull.pdf&originFileName=2012-2013LGSREngfull.pdf\",\n      \"report_type\": [\n        \"Corporate Social Responsibility Report\"\n      ],\n      \"title\": \"\",\n      \"year\": [\n        \"2012\"\n      ]\n    },\n    {\n      \"id\": 2899145,\n      \"name\": \"2013-2014 LG Electronics Sustainability Report\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/2013_2014_LG_Electronics_Sustainability_Report.json\",\n      \"file\": \"\",\n      \"link\": \"http://www.lge.co.kr/common/download.jsp?path=/cokr/asset/data/sustainability/&fileName=2013-2014_LGE-SR-E-Fullpages.pdf&originFileName=2013-2014_LGE-SR-E-Fullpages.pdf\",\n      \"report_type\": [\n        \"Corporate Social Responsibility Report\"\n      ],\n      \"title\": \"\",\n      \"year\": [\n        \"2013\"\n      ]\n    },\n    {\n      \"id\": 3595442,\n      \"name\": \"2015 report\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/2015_report.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/3595443/14678217.pdf\",\n      \"link\": \"\",\n      \"report_type\": \"\",\n      \"title\": \"\",\n      \"year\": \"\"\n    },\n    {\n      \"id\": 2906958,\n      \"name\": \"2016 Air France CSR Report\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/2016_Air_France_CSR_Report.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/2907149/13172338.pdf\",\n      \"link\": \"http://csrreport2016.airfranceklm.com/wp-content/uploads/pdfs/en/CSR-Report-Air-France-KLM-2016.pdf\",\n      \"report_type\": [\n        \"Corporate Social Responsibility Report\",\n        \"Communication on Progress\"\n      ],\n      \"title\": \"2016 Air France CSR Report\",\n      \"year\": \"\"\n    },\n    {\n      \"id\": 2906916,\n      \"name\": \"2016 Air France Environmental Indicators\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/2016_Air_France_Environmental_Indicators.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/2906918/13171700.pdf\",\n      \"link\": \"\",\n      \"report_type\": [\n        \"Communication on Progress\",\n        \"Corporate Social Responsibility Report\",\n        \"Sustainability Report\"\n      ],\n      \"title\": \"Air France Environmental Indicators 2016\",\n      \"year\": [\n        \"2016\"\n      ]\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Source\",\n  \"created_at\": \"2012-03-13 19:59:55 UTC\",\n  \"updated_at\": \"2020-03-31 12:16:30 UTC\",\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Source.json?item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2021-07-08 00:32:31 +0200\"\n}"
+                }
+            }
+        }
+    ]
+}

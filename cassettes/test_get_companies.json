@@ -1,0 +1,82 @@
+{
+    "version": 1,
+    "interactions": [
+        {
+            "request": {
+                "method": "GET",
+                "uri": "https://staging.wikirate.org/Company.json?limit=10",
+                "body": null,
+                "headers": {
+                    "User-Agent": [
+                        "python-requests/2.25.1"
+                    ],
+                    "Accept-Encoding": [
+                        "gzip, deflate"
+                    ],
+                    "Accept": [
+                        "*/*"
+                    ],
+                    "Connection": [
+                        "keep-alive"
+                    ]
+                }
+            },
+            "response": {
+                "status": {
+                    "code": 200,
+                    "message": "OK"
+                },
+                "headers": {
+                    "X-Runtime": [
+                        "12.771629"
+                    ],
+                    "Server": [
+                        "Apache/2.4.29 (Ubuntu) Phusion_Passenger/6.0.4 OpenSSL/1.1.1"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Access-Control-Allow-Origin": [
+                        "*"
+                    ],
+                    "Connection": [
+                        "Keep-Alive"
+                    ],
+                    "ETag": [
+                        "W/\"bea34acf0db0c846de76bdfab70e0bda\""
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=NzR4SkhZd1BJSGNkYUVaM1BKak5vUnF3bC9vRllOMzg5U0tsSmZKRmxhamtWczd3L2FTWEo0MERjRG5oM2hUVEVsMEVLQTFnaWsxVGdHR1BiZE91WkZ6c2drQ0d6UDZaV3I3Nnp5eTJtOCttd2ZFNHBkb3NJOXE4ZkxhTDhxU00tLWFDVURycDF4NFhYM3BEQ0Vjdk92N3c9PQ%3D%3D--2872a3f3289ca4e6aefedf0782884759278a7af2; path=/; HttpOnly"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
+                    "Date": [
+                        "Wed, 07 Jul 2021 22:32:00 GMT"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger 6.0.4"
+                    ],
+                    "Status": [
+                        "200 OK"
+                    ],
+                    "Cache-Control": [
+                        "max-age=0, private, must-revalidate"
+                    ],
+                    "X-Request-Id": [
+                        "dd437b2d-b14f-4b59-93aa-d0e37b93eb6e"
+                    ],
+                    "Keep-Alive": [
+                        "timeout=5, max=100"
+                    ]
+                },
+                "body": {
+                    "string": "{\n  \"id\": 651,\n  \"name\": \"Company\",\n  \"type\": {\n    \"id\": 5,\n    \"name\": \"Cardtype\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Cardtype.json\",\n    \"codename\": \"cardtype\"\n  },\n  \"url\": \"https://staging.wikirate.org/Company.json?limit=10\",\n  \"codename\": \"wikirate_company\",\n  \"items\": [\n    {\n      \"id\": 5155544,\n      \"name\": \"Landis+Gyr AG\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/Landis+Gyr_AG.json\",\n      \"wikipedia\": null,\n      \"open_corporates\": \"425292\",\n      \"alias\": [\n\n      ],\n      \"headquarters\": \"Switzerland\",\n      \"oar_id\": null,\n      \"sec_cik\": null\n    },\n    {\n      \"id\": 5404639,\n      \"name\": \"ME+EM\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/ME+EM.json\",\n      \"wikipedia\": null,\n      \"open_corporates\": null,\n      \"alias\": [\n        \"ME+EM\"\n      ],\n      \"headquarters\": null,\n      \"oar_id\": null,\n      \"sec_cik\": null\n    },\n    {\n      \"id\": 6206304,\n      \"name\": \"*Bacgiang Bgg Garment Corporation closed\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/*Bacgiang_Bgg_Garment_Corporation_closed.json\",\n      \"wikipedia\": null,\n      \"open_corporates\": null,\n      \"alias\": [\n\n      ],\n      \"headquarters\": \"Vietnam\",\n      \"oar_id\": \"VN20200292ECB60\",\n      \"sec_cik\": null\n    },\n    {\n      \"id\": 6291667,\n      \"name\": \"1&1 DRILLISCH AG\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/1_1_DRILLISCH_AG.json\",\n      \"wikipedia\": \"1&1 Drillisch\",\n      \"open_corporates\": null,\n      \"alias\": [\n\n      ],\n      \"headquarters\": \"Germany\",\n      \"oar_id\": null,\n      \"sec_cik\": null\n    },\n    {\n      \"id\": 3075179,\n      \"name\": \"1-800-Flowers\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/1_800_Flowers.json\",\n      \"wikipedia\": \"1-800-Flowers\",\n      \"open_corporates\": \"2239934\",\n      \"alias\": [\n        \"1-800-Flowers\"\n      ],\n      \"headquarters\": \"New York (United States)\",\n      \"oar_id\": null,\n      \"sec_cik\": null\n    },\n    {\n      \"id\": 6236468,\n      \"name\": \"1Bite\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/1Bite.json\",\n      \"wikipedia\": null,\n      \"open_corporates\": null,\n      \"alias\": [\n\n      ],\n      \"headquarters\": null,\n      \"oar_id\": null,\n      \"sec_cik\": null\n    },\n    {\n      \"id\": 3297616,\n      \"name\": \"1NE Project Solution Ltd\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/1NE_Project_Solution_Ltd.json\",\n      \"wikipedia\": null,\n      \"open_corporates\": \"05841983\",\n      \"alias\": [\n\n      ],\n      \"headquarters\": \"United Kingdom\",\n      \"oar_id\": null,\n      \"sec_cik\": null\n    },\n    {\n      \"id\": 6236458,\n      \"name\": \"1 plus-Produkte Handelsgesellschaft mbH\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/1_plus_Produkte_Handelsgesellschaft_mbH.json\",\n      \"wikipedia\": null,\n      \"open_corporates\": null,\n      \"alias\": [\n\n      ],\n      \"headquarters\": null,\n      \"oar_id\": null,\n      \"sec_cik\": null\n    },\n    {\n      \"id\": 3051363,\n      \"name\": \"1PM Industries Inc\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/1PM_Industries_Inc.json\",\n      \"wikipedia\": null,\n      \"open_corporates\": null,\n      \"alias\": [\n        \"1pm Industries\"\n      ],\n      \"headquarters\": null,\n      \"oar_id\": null,\n      \"sec_cik\": null\n    },\n    {\n      \"id\": 6834502,\n      \"name\": \"1Sharpe Capital LLC\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/1Sharpe_Capital_LLC.json\",\n      \"wikipedia\": null,\n      \"open_corporates\": null,\n      \"alias\": [\n\n      ],\n      \"headquarters\": null,\n      \"oar_id\": null,\n      \"sec_cik\": null\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Company\",\n  \"created_at\": \"2012-03-14 21:04:07 UTC\",\n  \"updated_at\": \"2020-12-02 14:59:08 UTC\",\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Company.json?item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2021-07-08 00:32:13 +0200\"\n}"
+                }
+            }
+        }
+    ]
+}
