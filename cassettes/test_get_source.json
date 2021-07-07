@@ -1,0 +1,85 @@
+{
+    "version": 1,
+    "interactions": [
+        {
+            "request": {
+                "method": "GET",
+                "uri": "https://dev.wikirate.org/Source_000105228.json",
+                "body": null,
+                "headers": {
+                    "User-Agent": [
+                        "python-requests/2.25.1"
+                    ],
+                    "Accept-Encoding": [
+                        "gzip, deflate"
+                    ],
+                    "Accept": [
+                        "*/*"
+                    ],
+                    "Connection": [
+                        "keep-alive"
+                    ]
+                }
+            },
+            "response": {
+                "status": {
+                    "code": 200,
+                    "message": "OK"
+                },
+                "headers": {
+                    "X-Powered-By": [
+                        "Phusion Passenger 6.0.4"
+                    ],
+                    "Status": [
+                        "200 OK"
+                    ],
+                    "Access-Control-Allow-Origin": [
+                        "*"
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "Vary": [
+                        "Origin"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=S1RxUnhrY1FQRm4rY1Q0UjJveTdmZ0RodEI4SUt6N3B5Mk1UV1JyK0dmUG80b3J1TzBaSzBXMWJZT0Y2c3QwbzN3Smw2VVU1NXdDSXRQL2tYTHRWQWZhZ0w1YWRvU0tVbFVhcHdvOXRITkE5NzBwTzZYbTk3MGxQQmlCaG9OMWYtLVdlTjE1aTJYaXFWKzdlVGljSTBPMHc9PQ%3D%3D--e30c39fa615f13b724ccb5edd2b979e1b438ca95; path=/; HttpOnly"
+                    ],
+                    "X-Request-Id": [
+                        "ad5666dd-d799-44fc-b137-c01a838d1cf9"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Date": [
+                        "Wed, 07 Jul 2021 15:42:28 GMT"
+                    ],
+                    "X-Runtime": [
+                        "0.146979"
+                    ],
+                    "Cache-Control": [
+                        "max-age=0, private, must-revalidate"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
+                    "Keep-Alive": [
+                        "timeout=5, max=100"
+                    ],
+                    "Connection": [
+                        "Keep-Alive"
+                    ],
+                    "Server": [
+                        "Apache/2.4.29 (Ubuntu) Phusion_Passenger/6.0.4 OpenSSL/1.1.1"
+                    ],
+                    "ETag": [
+                        "W/\"55ab5fd4e60cc3541f440c5deb3d0d19\""
+                    ]
+                },
+                "body": {
+                    "string": "{\n  \"id\": 7323596,\n  \"name\": \"Source-000105228\",\n  \"type\": {\n    \"id\": 629,\n    \"name\": \"Source\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://dev.wikirate.org/Source.json\",\n    \"codename\": \"source\"\n  },\n  \"url\": \"https://dev.wikirate.org/Source_000105228.json\",\n  \"file\": {\n    \"id\": 7323597,\n    \"name\": \"Source-000105228+File\",\n    \"type\": \"File\",\n    \"url\": \"https://dev.wikirate.org/Source_000105228+File.json\",\n    \"content\": \"https://dq06ugkuram52.cloudfront.net/files/7323597/24952452.pdf\"\n  },\n  \"link\": {\n    \"id\": 7323602,\n    \"name\": \"Source-000105228+Link\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://dev.wikirate.org/Source_000105228+Link.json\",\n    \"content\": \"https://www.ringtons.co.uk/pride-in-our-supply-base-i248\"\n  },\n  \"report_type\": {\n    \"id\": 7323599,\n    \"name\": \"Source-000105228+Report Type\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://dev.wikirate.org/Source_000105228+Report_Type.json\",\n    \"content\": [\n      \"Supplier List\"\n    ]\n  },\n  \"title\": {\n    \"id\": 7323598,\n    \"name\": \"Source-000105228+Title\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://dev.wikirate.org/Source_000105228+Title.json\",\n    \"content\": \" Ringtons Limited Tea Supplier List 2021\"\n  },\n  \"year\": {\n    \"id\": 7323601,\n    \"name\": \"Source-000105228+Year\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://dev.wikirate.org/Source_000105228+Year.json\",\n    \"content\": [\n      \"2021\"\n    ]\n  },\n  \"items\": [\n\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://dev.wikirate.org/Source_000105228\",\n  \"created_at\": \"2021-05-06 15:51:49 UTC\",\n  \"updated_at\": \"2021-05-06 15:51:49 UTC\",\n  \"description\": {\n    \"id\": null,\n    \"name\": \"Source-000105228+description\",\n    \"type\": \"RichText\",\n    \"url\": \"https://dev.wikirate.org/Source_000105228+description.json?card%5Bname%5D=Source-000105228%2Bdescription\"\n  },\n  \"discussion\": {\n    \"id\": null,\n    \"name\": \"Source-000105228+Discussion\",\n    \"type\": \"RichText\",\n    \"url\": \"https://dev.wikirate.org/Source_000105228+Discussion.json?card%5Bname%5D=Source-000105228%2BDiscussion\"\n  },\n  \"company\": {\n    \"id\": 7323600,\n    \"name\": \"Source-000105228+Company\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://dev.wikirate.org/Source_000105228+Company.json\",\n    \"content\": [\n      \"Ringtons Limited\"\n    ]\n  },\n  \"metric\": {\n    \"id\": null,\n    \"name\": \"Source-000105228+Metric\",\n    \"type\": \"Search\",\n    \"url\": \"https://dev.wikirate.org/Source_000105228+Metric.json\",\n    \"content\": [\n\n    ]\n  },\n  \"answer\": {\n    \"id\": null,\n    \"name\": \"Source-000105228+Answer\",\n    \"type\": \"Search\",\n    \"url\": \"https://dev.wikirate.org/Source_000105228+Answer.json\"\n  },\n  \"requested_at\": \"2021-07-07 17:42:28 +0200\"\n}"
+                }
+            }
+        }
+    ]
+}

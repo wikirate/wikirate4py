@@ -1,0 +1,85 @@
+{
+    "version": 1,
+    "interactions": [
+        {
+            "request": {
+                "method": "GET",
+                "uri": "https://dev.wikirate.org/~7324421.json",
+                "body": null,
+                "headers": {
+                    "User-Agent": [
+                        "python-requests/2.25.1"
+                    ],
+                    "Accept-Encoding": [
+                        "gzip, deflate"
+                    ],
+                    "Accept": [
+                        "*/*"
+                    ],
+                    "Connection": [
+                        "keep-alive"
+                    ]
+                }
+            },
+            "response": {
+                "status": {
+                    "code": 200,
+                    "message": "OK"
+                },
+                "headers": {
+                    "X-Powered-By": [
+                        "Phusion Passenger 6.0.4"
+                    ],
+                    "Cache-Control": [
+                        "max-age=0, private, must-revalidate"
+                    ],
+                    "Access-Control-Allow-Origin": [
+                        "*"
+                    ],
+                    "Status": [
+                        "200 OK"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
+                    "X-Request-Id": [
+                        "498a5145-a5cc-4be4-815a-3f7aaca4f589"
+                    ],
+                    "X-Runtime": [
+                        "0.249569"
+                    ],
+                    "Server": [
+                        "Apache/2.4.29 (Ubuntu) Phusion_Passenger/6.0.4 OpenSSL/1.1.1"
+                    ],
+                    "Connection": [
+                        "Keep-Alive"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=b2E5RUNOMEE2L0kxQ0RSZkFhc3ZJUHMxS3Ftc3ZRQVJodTlBVlh1a044bTh6ZzlXenJkZ29QY3ovenIvUERvMC90TUNET1ZwZWpsV2tydVBrTjFnMDNRUW56dnBmUkorWXVuY2QyV3hKVDI0dDlCRVFUdDhMdk1pSDNFS2VROEotLWFKWVlvQUVpVHljRmVEUVY5WGtxT2c9PQ%3D%3D--1b892af0bbf00e98a23b9daea00761177f616cfd; path=/; HttpOnly"
+                    ],
+                    "Vary": [
+                        "Origin"
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "ETag": [
+                        "W/\"ece1d6c3d809f459965e9aa5bf20b941\""
+                    ],
+                    "Keep-Alive": [
+                        "timeout=5, max=100"
+                    ],
+                    "Date": [
+                        "Wed, 07 Jul 2021 15:25:37 GMT"
+                    ]
+                },
+                "body": {
+                    "string": "{\n  \"id\": 7324421,\n  \"name\": \"Responsible Sourcing Network+Signatory Turkmen Cotton Pledge+Adidas AG+2021\",\n  \"type\": {\n    \"id\": 43678,\n    \"name\": \"Answer\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://dev.wikirate.org/Answer.json\",\n    \"codename\": \"metric_answer\"\n  },\n  \"url\": \"https://dev.wikirate.org/~7324421.json\",\n  \"metric\": \"Responsible Sourcing Network+Signatory Turkmen Cotton Pledge\",\n  \"company\": \"Adidas AG\",\n  \"year\": 2021,\n  \"value\": \"Yes\",\n  \"comments\": \"Signed: 07/13/18 Laureen van Breen[https://wikirate.org/Laureen_van_Breen].....2021-05-06 17:43:29 UTC\",\n  \"record_url\": \"https://dev.wikirate.org/Responsible_Sourcing_Network+Signatory_Turkmen_Cotton_Pledge+Adidas_AG.json\",\n  \"items\": [\n\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n    {\n      \"id\": 5340653,\n      \"name\": \"Responsible Sourcing Network\",\n      \"type\": \"Company\",\n      \"url\": \"https://dev.wikirate.org/Responsible_Sourcing_Network.json\"\n    },\n    {\n      \"id\": 5340896,\n      \"name\": \"Signatory Turkmen Cotton Pledge\",\n      \"type\": \"Metric Title\",\n      \"url\": \"https://dev.wikirate.org/Signatory_Turkmen_Cotton_Pledge.json\"\n    },\n    {\n      \"id\": 7217,\n      \"name\": \"Adidas AG\",\n      \"type\": \"Company\",\n      \"url\": \"https://dev.wikirate.org/Adidas_AG.json\"\n    },\n    {\n      \"id\": 6532613,\n      \"name\": \"2021\",\n      \"type\": \"Year\",\n      \"url\": \"https://dev.wikirate.org/2021.json\"\n    },\n    {\n      \"id\": 5340897,\n      \"name\": \"Responsible Sourcing Network+Signatory Turkmen Cotton Pledge\",\n      \"type\": \"Metric\",\n      \"url\": \"https://dev.wikirate.org/Responsible_Sourcing_Network+Signatory_Turkmen_Cotton_Pledge.json\"\n    },\n    {\n      \"id\": 5343389,\n      \"name\": \"Responsible Sourcing Network+Signatory Turkmen Cotton Pledge+Adidas AG\",\n      \"type\": \"Record\",\n      \"url\": \"https://dev.wikirate.org/Responsible_Sourcing_Network+Signatory_Turkmen_Cotton_Pledge+Adidas_AG.json\"\n    }\n  ],\n  \"html_url\": \"https://dev.wikirate.org/Responsible_Sourcing_Network+Signatory_Turkmen_Cotton_Pledge+Adidas_AG+2021\",\n  \"created_at\": \"2021-05-06 17:43:29 UTC\",\n  \"updated_at\": \"2021-05-06 17:43:29 UTC\",\n  \"sources\": [\n    {\n      \"id\": 5343255,\n      \"name\": \"Source-000086994\",\n      \"type\": \"Source\",\n      \"url\": \"https://dev.wikirate.org/Source_000086994.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/5343256/20558613.pdf\",\n      \"link\": \"https://www.sourcingnetwork.org/turkmensignatories\",\n      \"report_type\": [\n        \"Aggregate Data Report\"\n      ],\n      \"title\": \"\",\n      \"year\": [\n        \"2020\"\n      ]\n    }\n  ],\n  \"checked_by\": {\n    \"id\": null,\n    \"name\": \"Responsible Sourcing Network+Signatory Turkmen Cotton Pledge+Adidas AG+2021+checked by\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://dev.wikirate.org/Responsible_Sourcing_Network+Signatory_Turkmen_Cotton_Pledge+Adidas_AG+2021+checked_by.json\",\n    \"content\": [\n\n    ],\n    \"checks\": 0,\n    \"check_requested\": false\n  },\n  \"requested_at\": \"2021-07-07 17:25:37 +0200\"\n}"
+                }
+            }
+        }
+    ]
+}

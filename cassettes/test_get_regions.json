@@ -1,0 +1,85 @@
+{
+    "version": 1,
+    "interactions": [
+        {
+            "request": {
+                "method": "GET",
+                "uri": "https://dev.wikirate.org/Region.json",
+                "body": null,
+                "headers": {
+                    "User-Agent": [
+                        "python-requests/2.25.1"
+                    ],
+                    "Accept-Encoding": [
+                        "gzip, deflate"
+                    ],
+                    "Accept": [
+                        "*/*"
+                    ],
+                    "Connection": [
+                        "keep-alive"
+                    ]
+                }
+            },
+            "response": {
+                "status": {
+                    "code": 200,
+                    "message": "OK"
+                },
+                "headers": {
+                    "Access-Control-Allow-Origin": [
+                        "*"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Status": [
+                        "200 OK"
+                    ],
+                    "Vary": [
+                        "Origin"
+                    ],
+                    "Date": [
+                        "Wed, 07 Jul 2021 15:32:13 GMT"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger 6.0.4"
+                    ],
+                    "Keep-Alive": [
+                        "timeout=5, max=100"
+                    ],
+                    "Server": [
+                        "Apache/2.4.29 (Ubuntu) Phusion_Passenger/6.0.4 OpenSSL/1.1.1"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=aWJyYUNiNEVpTUEvUWIwMjgxVkJhTy90cjJDZlBzSGF0eG1UZmNQNWozTUFVSXdNNmZod08xZjVKNnM1TmsvSkVBSFVMK1FJd2dJMWMwalMvUDNWallrMWxzN1hEcldFY1k2LzNKajM3dmxEYlk2L29oUkFNdFV3bUNtellpazUtLVZGUUNLVFdDSlRnYUY0ZzJNL1FrZmc9PQ%3D%3D--f8ad49a18b8016c6b5fe4a9039dd12317a46d7d4; path=/; HttpOnly"
+                    ],
+                    "Connection": [
+                        "Keep-Alive"
+                    ],
+                    "X-Request-Id": [
+                        "5f0e4323-18ef-43c6-b558-0f63b56d5e54"
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
+                    "ETag": [
+                        "W/\"7276e72adeef3c07a8c989d7beb0c245\""
+                    ],
+                    "X-Runtime": [
+                        "0.099871"
+                    ],
+                    "Cache-Control": [
+                        "max-age=0, private, must-revalidate"
+                    ]
+                },
+                "body": {
+                    "string": "{\n  \"id\": 7044738,\n  \"name\": \"Region\",\n  \"type\": {\n    \"id\": 5,\n    \"name\": \"Cardtype\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://dev.wikirate.org/Cardtype.json\",\n    \"codename\": \"cardtype\"\n  },\n  \"url\": \"https://dev.wikirate.org/Region.json\",\n  \"codename\": \"region\",\n  \"items\": [\n    {\n      \"id\": 2917787,\n      \"name\": \"Abu Dhabi (United Arab Emirates)\",\n      \"type\": \"Region\",\n      \"url\": \"https://dev.wikirate.org/Abu_Dhabi_United_Arab_Emirates.json\"\n    },\n    {\n      \"id\": 2917789,\n      \"name\": \"Afghanistan\",\n      \"type\": \"Region\",\n      \"url\": \"https://dev.wikirate.org/Afghanistan.json\"\n    },\n    {\n      \"id\": 2918065,\n      \"name\": \"Ajman (United Arab Emirates)\",\n      \"type\": \"Region\",\n      \"url\": \"https://dev.wikirate.org/Ajman_United_Arab_Emirates.json\"\n    },\n    {\n      \"id\": 2917968,\n      \"name\": \"Alabama (United States)\",\n      \"type\": \"Region\",\n      \"url\": \"https://dev.wikirate.org/Alabama_United_States.json\"\n    },\n    {\n      \"id\": 2917798,\n      \"name\": \"\u00c5land Islands\",\n      \"type\": \"Region\",\n      \"url\": \"https://dev.wikirate.org/\u00c5land_Islands.json\"\n    },\n    {\n      \"id\": 2917967,\n      \"name\": \"Alaska (United States)\",\n      \"type\": \"Region\",\n      \"url\": \"https://dev.wikirate.org/Alaska_United_States.json\"\n    },\n    {\n      \"id\": 2917792,\n      \"name\": \"Albania\",\n      \"type\": \"Region\",\n      \"url\": \"https://dev.wikirate.org/Albania.json\"\n    },\n    {\n      \"id\": 2917816,\n      \"name\": \"Alberta (Canada)\",\n      \"type\": \"Region\",\n      \"url\": \"https://dev.wikirate.org/Alberta_Canada.json\"\n    },\n    {\n      \"id\": 2917841,\n      \"name\": \"Algeria\",\n      \"type\": \"Region\",\n      \"url\": \"https://dev.wikirate.org/Algeria.json\"\n    },\n    {\n      \"id\": 2917796,\n      \"name\": \"American Samoa\",\n      \"type\": \"Region\",\n      \"url\": \"https://dev.wikirate.org/American_Samoa.json\"\n    },\n    {\n      \"id\": 7165393,\n      \"name\": \"Andaman and Nicobar Islands\",\n      \"type\": \"Region\",\n      \"url\": \"https://dev.wikirate.org/Andaman_and_Nicobar_Islands.json\"\n    },\n    {\n      \"id\": 7165253,\n      \"name\": \"Andhra Pradesh\",\n      \"type\": \"Region\",\n      \"url\": \"https://dev.wikirate.org/Andhra_Pradesh.json\"\n    },\n    {\n      \"id\": 2917786,\n      \"name\": \"Andorra\",\n      \"type\": \"Region\",\n      \"url\": \"https://dev.wikirate.org/Andorra.json\"\n    },\n    {\n      \"id\": 2917794,\n      \"name\": \"Angola\",\n      \"type\": \"Region\",\n      \"url\": \"https://dev.wikirate.org/Angola.json\"\n    },\n    {\n      \"id\": 2917791,\n      \"name\": \"Anguilla\",\n      \"type\": \"Region\",\n      \"url\": \"https://dev.wikirate.org/Anguilla.json\"\n    },\n    {\n      \"id\": 2918033,\n      \"name\": \"Anhui (China)\",\n      \"type\": \"Region\",\n      \"url\": \"https://dev.wikirate.org/Anhui_China.json\"\n    },\n    {\n      \"id\": 2917795,\n      \"name\": \"Antarctica\",\n      \"type\": \"Region\",\n      \"url\": \"https://dev.wikirate.org/Antarctica.json\"\n    },\n    {\n      \"id\": 2917790,\n      \"name\": \"Antigua and Barbuda\",\n      \"type\": \"Region\",\n      \"url\": \"https://dev.wikirate.org/Antigua_and_Barbuda.json\"\n    },\n    {\n      \"id\": 14400,\n      \"name\": \"Argentina\",\n      \"type\": \"Region\",\n      \"url\": \"https://dev.wikirate.org/Argentina.json\"\n    },\n    {\n      \"id\": 2917970,\n      \"name\": \"Arizona (United States)\",\n      \"type\": \"Region\",\n      \"url\": \"https://dev.wikirate.org/Arizona_United_States.json\"\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://dev.wikirate.org/Region\",\n  \"created_at\": \"2021-03-12 04:19:16 UTC\",\n  \"updated_at\": \"2021-03-12 04:19:16 UTC\",\n  \"paging\": {\n    \"next\": \"https://dev.wikirate.org/Region.json?item=name&limit=20&offset=20\"\n  },\n  \"requested_at\": \"2021-07-07 17:32:13 +0200\"\n}"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,85 @@
+{
+    "version": 1,
+    "interactions": [
+        {
+            "request": {
+                "method": "GET",
+                "uri": "https://dev.wikirate.org/~7261680.json",
+                "body": null,
+                "headers": {
+                    "User-Agent": [
+                        "python-requests/2.25.1"
+                    ],
+                    "Accept-Encoding": [
+                        "gzip, deflate"
+                    ],
+                    "Accept": [
+                        "*/*"
+                    ],
+                    "Connection": [
+                        "keep-alive"
+                    ]
+                }
+            },
+            "response": {
+                "status": {
+                    "code": 200,
+                    "message": "OK"
+                },
+                "headers": {
+                    "Access-Control-Allow-Origin": [
+                        "*"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Status": [
+                        "200 OK"
+                    ],
+                    "Vary": [
+                        "Origin"
+                    ],
+                    "Date": [
+                        "Wed, 07 Jul 2021 15:32:13 GMT"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger 6.0.4"
+                    ],
+                    "Keep-Alive": [
+                        "timeout=5, max=100"
+                    ],
+                    "Server": [
+                        "Apache/2.4.29 (Ubuntu) Phusion_Passenger/6.0.4 OpenSSL/1.1.1"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=aWdHTTV4Mkt0ZjdiMm54bnVZRmRQbmUxaXRqSlBmUlpCRzNsN25xRFNZeHl1QVdtbTZXeHc1UXBOK3c0S21lM0VXdHlXa2hWbkxiMzVXUTBCQmpWRTJXRWFLYzdrK2plUHRoUW84MDc2bU5hRVZVOUdwSzdVVUZmRGhBMEcrNXctLTFuV1U5bmVwR0dLM2taeFlpY1JmN2c9PQ%3D%3D--d51ca11bcce4dfce91d632c8e3656d4ff52a175a; path=/; HttpOnly"
+                    ],
+                    "Connection": [
+                        "Keep-Alive"
+                    ],
+                    "X-Request-Id": [
+                        "cbad49ff-f2df-419e-a756-297f4aed38ae"
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
+                    "ETag": [
+                        "W/\"3f584958433a0a0b4ab2a4dbe1b4b316\""
+                    ],
+                    "X-Runtime": [
+                        "0.267777"
+                    ],
+                    "Cache-Control": [
+                        "max-age=0, private, must-revalidate"
+                    ]
+                },
+                "body": {
+                    "string": "{\n  \"id\": 7261680,\n  \"name\": \"Commons+Supplied By+Target+2021+Liberty Mills Limited\",\n  \"type\": {\n    \"id\": 2534606,\n    \"name\": \"Relationship Answer\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://dev.wikirate.org/Relationship_Answer.json\",\n    \"codename\": \"relationship_answer\"\n  },\n  \"url\": \"https://dev.wikirate.org/~7261680.json\",\n  \"content\": \"\",\n  \"year\": \"2021\",\n  \"value\": \"Tier 1 Supplier\",\n  \"import\": false,\n  \"comments\": null,\n  \"subject_company\": {\n    \"id\": 42625,\n    \"name\": \"Target\",\n    \"type\": \"Company\",\n    \"url\": \"https://dev.wikirate.org/Target.json\",\n    \"wikipedia\": \"Target Corporation\",\n    \"open_corporates\": \"897f2a7c-a5d4-e011-a886-001ec94ffe7f\",\n    \"alias\": [\n      \"Target USA\",\n      \"Target Corporation\"\n    ],\n    \"headquarters\": \"Minnesota (United States)\",\n    \"oar_id\": null,\n    \"sec_cik\": \"0000027419\"\n  },\n  \"object_company\": {\n    \"id\": 3462751,\n    \"name\": \"Liberty Mills Limited\",\n    \"type\": \"Company\",\n    \"url\": \"https://dev.wikirate.org/Liberty_Mills_Limited.json\",\n    \"wikipedia\": null,\n    \"open_corporates\": null,\n    \"alias\": [\n\n    ],\n    \"headquarters\": \"Pakistan\",\n    \"oar_id\": \"PK2020218D9Y165\",\n    \"sec_cik\": null\n  },\n  \"items\": [\n\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n    {\n      \"id\": 3411173,\n      \"name\": \"Commons\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://dev.wikirate.org/Commons.json\"\n    },\n    {\n      \"id\": 2929008,\n      \"name\": \"Supplied By\",\n      \"type\": \"Metric Title\",\n      \"url\": \"https://dev.wikirate.org/Supplied_By.json\"\n    },\n    {\n      \"id\": 42625,\n      \"name\": \"Target\",\n      \"type\": \"Company\",\n      \"url\": \"https://dev.wikirate.org/Target.json\"\n    },\n    {\n      \"id\": 6532613,\n      \"name\": \"2021\",\n      \"type\": \"Year\",\n      \"url\": \"https://dev.wikirate.org/2021.json\"\n    },\n    {\n      \"id\": 3462751,\n      \"name\": \"Liberty Mills Limited\",\n      \"type\": \"Company\",\n      \"url\": \"https://dev.wikirate.org/Liberty_Mills_Limited.json\"\n    },\n    {\n      \"id\": 2929009,\n      \"name\": \"Commons+Supplied By\",\n      \"type\": \"Metric\",\n      \"url\": \"https://dev.wikirate.org/Commons+Supplied_By.json\",\n      \"codename\": \"commons_supplied_by\"\n    },\n    {\n      \"id\": 7178878,\n      \"name\": \"Commons+Supplied By+Target\",\n      \"type\": \"Record\",\n      \"url\": \"https://dev.wikirate.org/Commons+Supplied_By+Target.json\"\n    },\n    {\n      \"id\": 7179236,\n      \"name\": \"Commons+Supplied By+Target+2021\",\n      \"type\": \"Answer\",\n      \"url\": \"https://dev.wikirate.org/Commons+Supplied_By+Target+2021.json\"\n    }\n  ],\n  \"html_url\": \"https://dev.wikirate.org/Commons+Supplied_By+Target+2021+Liberty_Mills_Limited\",\n  \"created_at\": \"2021-04-02 10:39:43 UTC\",\n  \"updated_at\": \"2021-04-02 10:39:43 UTC\",\n  \"sources\": [\n    {\n      \"id\": 7175279,\n      \"name\": \"Source-000104212\",\n      \"type\": \"Source\",\n      \"url\": \"https://dev.wikirate.org/Source_000104212.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/7175280/24702899.pdf\",\n      \"link\": \"\",\n      \"report_type\": [\n        \"Supplier List\",\n        \"Company Website\"\n      ],\n      \"title\": \"Target Supplier List 2021\",\n      \"year\": [\n        \"2021\"\n      ]\n    }\n  ],\n  \"checked_by\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplied By+Target+2021+Liberty Mills Limited+checked by\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://dev.wikirate.org/Commons+Supplied_By+Target+2021+Liberty_Mills_Limited+checked_by.json\",\n    \"content\": [\n\n    ],\n    \"checks\": 0,\n    \"check_requested\": false\n  },\n  \"requested_at\": \"2021-07-07 17:32:13 +0200\"\n}"
+                }
+            }
+        }
+    ]
+}

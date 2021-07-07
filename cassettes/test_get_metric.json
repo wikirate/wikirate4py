@@ -1,0 +1,85 @@
+{
+    "version": 1,
+    "interactions": [
+        {
+            "request": {
+                "method": "GET",
+                "uri": "https://dev.wikirate.org/Commons+Supplier_of.json",
+                "body": null,
+                "headers": {
+                    "User-Agent": [
+                        "python-requests/2.25.1"
+                    ],
+                    "Accept-Encoding": [
+                        "gzip, deflate"
+                    ],
+                    "Accept": [
+                        "*/*"
+                    ],
+                    "Connection": [
+                        "keep-alive"
+                    ]
+                }
+            },
+            "response": {
+                "status": {
+                    "code": 200,
+                    "message": "OK"
+                },
+                "headers": {
+                    "X-Powered-By": [
+                        "Phusion Passenger 6.0.4"
+                    ],
+                    "Cache-Control": [
+                        "max-age=0, private, must-revalidate"
+                    ],
+                    "Access-Control-Allow-Origin": [
+                        "*"
+                    ],
+                    "Status": [
+                        "200 OK"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
+                    "X-Request-Id": [
+                        "6c1fbac3-e270-4b41-8c36-1636728c6da0"
+                    ],
+                    "X-Runtime": [
+                        "0.232971"
+                    ],
+                    "Server": [
+                        "Apache/2.4.29 (Ubuntu) Phusion_Passenger/6.0.4 OpenSSL/1.1.1"
+                    ],
+                    "Connection": [
+                        "Keep-Alive"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=dmd3SUMyLzVVOWFEaXpMSEIwZVE3dGkrUXhtSXlVOWMyUGFNdnVVb0dyTDVxNWJxTXdFTER1dVA3NVZONU53SkVpQ05PZ2pFc1VTK1FsZE5ENk8zbkNNN3hSQXVHSWdmbFM3YXBDOEgxendrbWVrYzIzaUxCclhkUk04MURJRkEtLXk0UWNmcHY1cnJ1NGdTTEQ2ZFBGamc9PQ%3D%3D--27ea2326147fe03a268bb39fe4a4f7920c52f9dc; path=/; HttpOnly"
+                    ],
+                    "Vary": [
+                        "Origin"
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "ETag": [
+                        "W/\"25fe86768e9e47bd8d0574a425223757\""
+                    ],
+                    "Keep-Alive": [
+                        "timeout=5, max=100"
+                    ],
+                    "Date": [
+                        "Wed, 07 Jul 2021 15:25:38 GMT"
+                    ]
+                },
+                "body": {
+                    "string": "{\n  \"id\": 2929015,\n  \"name\": \"Commons+Supplier of\",\n  \"type\": {\n    \"id\": 43576,\n    \"name\": \"Metric\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://dev.wikirate.org/Metric.json\",\n    \"codename\": \"metric\"\n  },\n  \"url\": \"https://dev.wikirate.org/Commons+Supplier_of.json\",\n  \"codename\": \"commons_supplier_of\",\n  \"designer\": \"Commons\",\n  \"title\": \"Supplier of\",\n  \"question\": {\n    \"id\": 3430734,\n    \"name\": \"Commons+Supplier of+Questions\",\n    \"type\": \"PlainText\",\n    \"url\": \"https://dev.wikirate.org/Commons+Supplier_of+Questions.json\",\n    \"content\": \"Which companies does this\u00a0supplier supply to?\"\n  },\n  \"metric_type\": {\n    \"id\": 2929016,\n    \"name\": \"Commons+Supplier of+*metric type\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://dev.wikirate.org/Commons+Supplier_of+*metric_type.json\",\n    \"content\": \"Inverse Relationship\"\n  },\n  \"about\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+About\",\n    \"type\": \"RichText\",\n    \"url\": \"https://dev.wikirate.org/Commons+Supplier_of+About.json\"\n  },\n  \"methodology\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+methodology\",\n    \"type\": \"RichText\",\n    \"url\": \"https://dev.wikirate.org/Commons+Supplier_of+methodology.json\"\n  },\n  \"value_type\": {\n    \"id\": 3430735,\n    \"name\": \"Commons+Supplier of+value type\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://dev.wikirate.org/Commons+Supplier_of+value_type.json\",\n    \"content\": null\n  },\n  \"value_options\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+value options\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://dev.wikirate.org/Commons+Supplier_of+value_options.json\"\n  },\n  \"report_type\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+Report Type\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://dev.wikirate.org/Commons+Supplier_of+Report_Type.json\"\n  },\n  \"research_policy\": {\n    \"id\": 3430733,\n    \"name\": \"Commons+Supplier of+Research Policy\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://dev.wikirate.org/Commons+Supplier_of+Research_Policy.json\",\n    \"content\": \"Community Assessed\"\n  },\n  \"unit\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+unit\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://dev.wikirate.org/Commons+Supplier_of+unit.json\"\n  },\n  \"range\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+Range\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://dev.wikirate.org/Commons+Supplier_of+Range.json\"\n  },\n  \"hybrid\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+hybrid\",\n    \"type\": \"Toggle\",\n    \"url\": \"https://dev.wikirate.org/Commons+Supplier_of+hybrid.json\"\n  },\n  \"topics\": {\n    \"id\": 3430732,\n    \"name\": \"Commons+Supplier of+Topic\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://dev.wikirate.org/Commons+Supplier_of+Topic.json\",\n    \"content\": [\n      \"Suppliers\",\n      \"Supply Chain\"\n    ]\n  },\n  \"scores\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+Score\",\n    \"type\": \"Search\",\n    \"url\": \"https://dev.wikirate.org/Commons+Supplier_of+Score.json\"\n  },\n  \"formula\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+Formula\",\n    \"type\": \"PlainText\",\n    \"url\": \"https://dev.wikirate.org/Commons+Supplier_of+Formula.json\"\n  },\n  \"answers\": 63326,\n  \"bookmarkers\": 1,\n  \"projects\": 3,\n  \"calculations\": [\n\n  ],\n  \"answers_url\": \"https://dev.wikirate.org/Commons+Supplier_of+Answer.json\",\n  \"items\": [\n\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n    {\n      \"id\": 3411173,\n      \"name\": \"Commons\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://dev.wikirate.org/Commons.json\"\n    },\n    {\n      \"id\": 2929014,\n      \"name\": \"Supplier of\",\n      \"type\": \"Metric Title\",\n      \"url\": \"https://dev.wikirate.org/Supplier_of.json\"\n    }\n  ],\n  \"html_url\": \"https://dev.wikirate.org/Commons+Supplier_of\",\n  \"created_at\": \"2017-07-09 22:47:20 UTC\",\n  \"updated_at\": \"2019-02-15 08:26:28 UTC\",\n  \"requested_at\": \"2021-07-07 17:25:38 +0200\"\n}"
+                }
+            }
+        }
+    ]
+}
