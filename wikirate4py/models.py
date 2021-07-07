@@ -162,8 +162,10 @@ class MetricItem(WikiRateEntity):
         self.designer = data["designer"]
         self.name = data["title"]
         self.question = data.get("question")
-        self.about = h.handle(data.get("about"))
-        self.methodology = h.handle(data.get("methodology"))
+        if data.get("about") is not None:
+            self.about = h.handle(data.get("about", " "))
+        if data.get("methodology") is not None:
+            self.methodology = h.handle(data.get("methodology", ""))
         self.value_type = data.get("value_type")
         self.value_options = data.get("value_options")
         if len(self.value_options) == 1 and self.value_options[0] == "Unknown":
@@ -176,7 +178,7 @@ class MetricItem(WikiRateEntity):
         self.hybrid = data.get("hybrid")
         self.topics = data.get("topics")
         self.scores = data.get("scores")
-        self.formula = data.get("formula").get("formula")
+        self.formula = data.get("formula")
         self.answers = data.get("answers")
         self.bookmarkers = data.get("bookmarkers")
         self.projects = data.get("projects")
