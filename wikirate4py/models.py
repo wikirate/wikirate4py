@@ -108,7 +108,7 @@ class TopicItem(WikiRateEntity):
 
 class Metric(WikiRateEntity):
     __slots__ = (
-        "id", "name", "designer", "metric_type", "about", "methodology", "value_type",
+        "id", "name", "designer", "question", "metric_type", "about", "methodology", "value_type",
         "value_options", "report_type", "research_policy", "unit", "range", "hybrid", "topics", "scores",
         "formula", "answers", "bookmarkers", "projects", "calculations", "answers_url", "url", "raw")
 
@@ -121,6 +121,7 @@ class Metric(WikiRateEntity):
         self.id = int(data["id"])
         self.designer = data["designer"]
         self.name = data["title"]
+        self.question = data.get("question", {}).get("content")
         self.about = h.handle(data.get("about").get("content", ""))
         self.methodology = h.handle(data.get("methodology").get("content", ""))
         self.value_type = data.get("value_type").get("content")
@@ -147,7 +148,7 @@ class Metric(WikiRateEntity):
 
 class MetricItem(WikiRateEntity):
     __slots__ = (
-        "id", "name", "designer", "metric_type", "about", "methodology", "value_type",
+        "id", "name", "designer", "question", "metric_type", "about", "methodology", "value_type",
         "value_options", "report_type", "research_policy", "unit", "range", "hybrid", "topics", "scores",
         "formula", "answers", "bookmarkers", "projects", "calculations", "answers_url", "url", "raw")
 
@@ -160,6 +161,7 @@ class MetricItem(WikiRateEntity):
         self.id = int(data["id"])
         self.designer = data["designer"]
         self.name = data["title"]
+        self.question = data.get("question")
         self.about = h.handle(data.get("about"))
         self.methodology = h.handle(data.get("methodology"))
         self.value_type = data.get("value_type")
