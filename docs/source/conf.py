@@ -13,8 +13,12 @@
 import os
 import sys
 
+
 sys.path.insert(0, os.path.abspath('../..'))
 sys.path.insert(0, os.path.abspath('..'))
+sys.path.insert(0, os.path.abspath('.'))
+
+import wikirate4py
 
 # -- Project information -----------------------------------------------------
 
@@ -28,11 +32,18 @@ author = 'Vasiliki Gkatziaki'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'myst_parser',
     'sphinx.ext.autodoc',
     'sphinx.ext.autosectionlabel',
     'sphinx.ext.intersphinx',
     'sphinx.ext.napoleon'
 ]
+
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/3', None),
+    'aiohttp': ('https://docs.aiohttp.org/en/stable/', None),
+    'requests': ('https://docs.python-requests.org/en/stable/', None)
+}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -47,14 +58,18 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'default'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-version = '1.0.0'
-release = '1.0.0'
+htmlhelp_basename = 'wikirate4pydoc'
+
+from wikirate4py import __version__
+
+version = __version__
+release = __version__
 
 locale_dirs = ['locale/']
