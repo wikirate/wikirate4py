@@ -1,0 +1,837 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>API Reference &#8212; wikirate4py 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="api-reference">
+<h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
+<section id="company-methods">
+<h2>Company Methods<a class="headerlink" href="#company-methods" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.get_company">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_company</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identifier</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.get_company" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a company based on the given identifier (name or number)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>identifier</strong> – two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Company</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.get_companies">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_companies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.get_companies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of WikiRate Companies</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>offset</strong> – default value 0, the (zero-based) offset of the first item in the collection to return</p></li>
+<li><p><strong>limit</strong> – default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">CompanyItem</span></code>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">API.add_company(name,</span> <span class="pre">headquarters,</span> <span class="pre">*,</span>&#160; <span class="pre">oar_id,</span> <span class="pre">oar_id,</span> <span class="pre">open_corporates)</span></span></dt>
+<dd><p>Creates and Returns a company given the company name and headquarters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – company name</p></li>
+<li><p><strong>headquarters</strong> – name of the region the headquarters of the company is located</p></li>
+<li><p><strong>wikipedia</strong> – company’s wikipedia page url</p></li>
+<li><p><strong>oar_id</strong> – company’s identifier on <a class="reference external" href="https://openapparel.org">https://openapparel.org</a></p></li>
+<li><p><strong>open_corporates</strong> – company’s identifier on <a class="reference external" href="https://opencorporates.com/">https://opencorporates.com/</a></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Company</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.delete_company">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">delete_company</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.delete_company" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a company based on the given numeric identifier</p>
+</dd></dl>
+
+</section>
+<section id="metric-methods">
+<h2>Metric Methods<a class="headerlink" href="#metric-methods" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.get_metric">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_metric</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identifier</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.get_metric" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a WikiRate Metric based on the given identifier (name or number)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>identifier</strong> – two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Metric</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.get_metrics">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.get_metrics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of WikiRate Metrics</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>offset</strong> – default value 0, the (zero-based) offset of the first item in the collection to return</p></li>
+<li><p><strong>limit</strong> – default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">MetricItem</span></code>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="answer-methods">
+<h2>Answer Methods<a class="headerlink" href="#answer-methods" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.get_answer">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_answer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.get_answer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a metric answer given its numeric identifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> – numeric identifier of the metric answer</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Company</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.get_answers">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_answers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metric_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_designer</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company_group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_from</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_to</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updated</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updater</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outliers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verification</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bookmark</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.get_answers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of WikiRate Answers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metric_name</strong> – name of relationship metric</p></li>
+<li><p><strong>metric_designer</strong> – name of relationship metric designer</p></li>
+<li><p><strong>offset</strong> – default value 0, the (zero-based) offset of the first item in the collection to return</p></li>
+<li><p><strong>limit</strong> – default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.</p></li>
+<li><p><strong>year</strong> – answer year</p></li>
+<li><p><strong>status</strong> – <cite>all</cite>, <cite>exists</cite> (researched), <cite>known</cite>, <cite>unknown</cite>, or <cite>none</cite> (not researched)</p></li>
+<li><p><strong>company_group</strong> – company group name, restricts to answers with companies belonging in the specified company group</p></li>
+<li><p><strong>country</strong> – country name, restricts to answers with companies located in the specified country</p></li>
+<li><p><strong>value</strong> – answer value to match</p></li>
+<li><p><strong>value_from</strong> – restricts to answers with value greater than equal the specified value</p></li>
+<li><p><strong>value_to</strong> – restricts to answers with value less than equal the specified value</p></li>
+<li><p><strong>updated</strong> – <cite>today</cite>, <cite>week</cite> (this week), <cite>month</cite> (this month)</p></li>
+<li><p><strong>updater</strong> – <ul>
+<li><p><cite>wikirate_team</cite>, restricts to answers updated by the WikiRate team</p></li>
+<li><p><cite>current_user</cite>, restricts to answers updated by you</p></li>
+</ul>
+</p></li>
+<li><p><strong>outliers</strong> – get either <cite>only</cite> answers considered as outliers or get answers after <cite>exclude</cite> the outliers</p></li>
+<li><p><strong>source</strong> – source name, restricts to answers citing the specified source</p></li>
+<li><p><strong>verification</strong> – <dl class="simple">
+<dt>restricts to answers mapped to the defined verification level:</dt><dd><ul>
+<li><p><cite>steward_added</cite>: answers added by account with “steward” status</p></li>
+<li><p><cite>flagged</cite>: answers which have been flagged by the Researcher adding the answer to request verification</p></li>
+<li><p><cite>community_added</cite>: answers added by community members (e.g. students / volunteers)</p></li>
+<li><p><cite>community_verified</cite>: answers verified by community members (e.g. students / volunteers)</p></li>
+<li><p><cite>steward_verified</cite>: answers verified by account with “steward” status</p></li>
+<li><p><cite>current_user</cite>: answers verified by you</p></li>
+<li><p><cite>wikirate_team</cite>: answers verified by WikiRate team</p></li>
+</ul>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>project</strong> – project name, restrict to answers connected to the specified WikiRate project</p></li>
+<li><p><strong>bookmark</strong> – <ul>
+<li><p><cite>bookmark</cite>, restrict to answers you have bookmarked</p></li>
+<li><p><cite>nobookmark</cite>, restrict to answers you have not bookmarked</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">AnswerItem</span></code>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.add_research_metric_answer">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">add_research_metric_answer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metric_designer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.add_research_metric_answer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates and Returns a company given the company name and headquarters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metric_name</strong> – name of metric</p></li>
+<li><p><strong>metric_designer</strong> – name of metric designer</p></li>
+<li><p><strong>company</strong> – company the answer is assigned to</p></li>
+<li><p><strong>year</strong> – reporting year</p></li>
+<li><p><strong>value</strong> – value of the answer</p></li>
+<li><p><strong>source</strong> – source name</p></li>
+<li><p><strong>comment</strong> – comment on the imported metric answer</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Answer</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.update_research_metric_answer">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">update_research_metric_answer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metric_designer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.update_research_metric_answer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates and Returns an existing metric answer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metric_name</strong> – name of metric</p></li>
+<li><p><strong>metric_designer</strong> – name of metric designer</p></li>
+<li><p><strong>company</strong> – company the answer is assigned to</p></li>
+<li><p><strong>year</strong> – reporting year</p></li>
+<li><p><strong>value</strong> – new value</p></li>
+<li><p><strong>source</strong> – new source name</p></li>
+<li><p><strong>comment</strong> – new comment on the metric answer</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Answer</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="relationship-answer-methods">
+<h2>Relationship Answer Methods<a class="headerlink" href="#relationship-answer-methods" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.get_relationship_answer">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_relationship_answer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.get_relationship_answer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a relationship metric answer given its numeric identifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> – numeric identifier of the relationship metric answer</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">RelationshipAnswer</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.get_relationship_answers">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_relationship_answers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metric_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_designer</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company_group</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_from</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_to</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updated</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updater</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outliers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verification</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bookmark</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.get_relationship_answers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of WikiRate Relationship Answers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metric_name</strong> – name of relationship metric</p></li>
+<li><p><strong>metric_designer</strong> – name of relationship metric designer</p></li>
+<li><p><strong>offset</strong> – default value 0, the (zero-based) offset of the first item in the collection to return</p></li>
+<li><p><strong>limit</strong> – default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.</p></li>
+<li><p><strong>year</strong> – answer year</p></li>
+<li><p><strong>status</strong> – <cite>all</cite>, <cite>exists</cite> (researched), <cite>known</cite>, <cite>unknown</cite>, or <cite>none</cite> (not researched)</p></li>
+<li><p><strong>company_group</strong> – company group name, restricts to relationship answers with subject companies belonging in the specified company group</p></li>
+<li><p><strong>country</strong> – country name, restricts to relationship answers with subject companies located in the specified country</p></li>
+<li><p><strong>value</strong> – answer value to match</p></li>
+<li><p><strong>value_from</strong> – restricts to relationship answers with value greater than equal the specified value</p></li>
+<li><p><strong>value_to</strong> – restricts to relationship answers with value less than equal the specified value</p></li>
+<li><p><strong>updated</strong> – <cite>today</cite>, <cite>week</cite> (this week), <cite>month</cite> (this month)</p></li>
+<li><p><strong>updater</strong> – <ul>
+<li><p><cite>wikirate_team</cite>, restricts to relationship answers updated by the WikiRate team</p></li>
+<li><p><cite>current_user</cite>, restricts to relationship answers updated by you</p></li>
+</ul>
+</p></li>
+<li><p><strong>outliers</strong> – get either <cite>only</cite> relationship answers considered as outliers or get answers after <cite>exclude</cite> the outliers</p></li>
+<li><p><strong>source</strong> – source name, restricts to answers citing the specified source</p></li>
+<li><p><strong>verification</strong> – <dl class="simple">
+<dt>restricts to relationship answers mapped to the defined verification level:</dt><dd><ul>
+<li><p><cite>steward_added</cite>: relationship answers added by account with “steward” status</p></li>
+<li><p><cite>flagged</cite>: relationship answers which have been flagged by the Researcher adding the answer to request verification</p></li>
+<li><p><cite>community_added</cite>: relationship answers added by community members (e.g. students / volunteers)</p></li>
+<li><p><cite>community_verified</cite>: relationship answers verified by community members (e.g. students / volunteers)</p></li>
+<li><p><cite>steward_verified</cite>: relationship answers verified by account with “steward” status</p></li>
+<li><p><cite>current_user</cite>: relationship answers verified by you</p></li>
+<li><p><cite>wikirate_team</cite>: relationship answers verified by WikiRate team</p></li>
+</ul>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>project</strong> – project name, restrict to relationship answers connected to the specified WikiRate project</p></li>
+<li><p><strong>bookmark</strong> – <ul>
+<li><p><cite>bookmark</cite>, restrict to relationship answers you have bookmarked</p></li>
+<li><p><cite>nobookmark</cite>, restrict to relationship answers you have not bookmarked</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">RelationshipAnswerItem</span></code>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.add_relationship_metric_answer">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">add_relationship_metric_answer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metric_designer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.add_relationship_metric_answer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates and Returns an existing relationship metric answer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metric_name</strong> – name of metric</p></li>
+<li><p><strong>metric_designer</strong> – name of metric designer</p></li>
+<li><p><strong>subject_company</strong> – subject company name of the updated answer</p></li>
+<li><p><strong>object_company</strong> – object company name of the updated answer</p></li>
+<li><p><strong>year</strong> – reporting year</p></li>
+<li><p><strong>value</strong> – value of the relationship metric answer</p></li>
+<li><p><strong>source</strong> – source name</p></li>
+<li><p><strong>comment</strong> – comment on the imported metric answer</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">RelationshipAnswer</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.update_relationship_metric_answer">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">update_relationship_metric_answer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metric_designer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.update_relationship_metric_answer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates and Returns an existing relationship metric answer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metric_name</strong> – name of metric</p></li>
+<li><p><strong>metric_designer</strong> – name of metric designer</p></li>
+<li><p><strong>subject_company</strong> – subject company name of the updated answer</p></li>
+<li><p><strong>object_company</strong> – object company name of the updated answer</p></li>
+<li><p><strong>year</strong> – reporting year</p></li>
+<li><p><strong>value</strong> – new value</p></li>
+<li><p><strong>source</strong> – new source name</p></li>
+<li><p><strong>comment</strong> – new comment on the metric answer</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">RelationshipAnswer</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="source-methods">
+<h2>Source methods<a class="headerlink" href="#source-methods" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.get_source">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identifier</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.get_source" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a WikiRate Source based on the given identifier (name or number)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>identifier</strong> – two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Source</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.get_sources">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_sources</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.get_sources" title="Permalink to this definition">¶</a></dt>
+<dd><p>get_company_groups(<a href="#id1"><span class="problematic" id="id2">*</span></a>, offset, limit)
+Returns a list of WikiRate Sources</p>
+<blockquote>
+<div><blockquote>
+<div><dl class="simple">
+<dt>offset</dt><dd><p>default value 0, the (zero-based) offset of the first item in the collection to return</p>
+</dd>
+<dt>limit</dt><dd><p>default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.</p>
+</dd>
+</dl>
+</div></blockquote>
+<blockquote>
+<div><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Source</span></code>]</p>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.add_source">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">add_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">report_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.add_source" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates and Returns an existing relationship metric answer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> – url of the original source</p></li>
+<li><p><strong>title</strong> – give a title on the source</p></li>
+<li><p><strong>company</strong> – comment on the imported metric answer</p></li>
+<li><p><strong>report_type</strong> – source name</p></li>
+<li><p><strong>year</strong> – reporting year</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Source</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.update_source">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">update_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">report_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.update_source" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates and Returns an existing relationship metric answer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – source name</p></li>
+<li><p><strong>title</strong> – updated source title</p></li>
+<li><p><strong>company</strong> – updated reporting company</p></li>
+<li><p><strong>report_type</strong> – updated report type</p></li>
+<li><p><strong>year</strong> – updated reporting year</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Source</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="search-methods">
+<h2>Search methods<a class="headerlink" href="#search-methods" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.search_by_name">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">search_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.search_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Searches for a Company or Metric or Topic or Company Group or Research Group or Project by a given name.
+If offset and limit are not defined it returns the first 20 search results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>entity</strong> – <dl class="simple">
+<dt>allowed entities:</dt><dd><ul>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Company</span></code>,</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Metric</span></code>,</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Topic</span></code>,</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">CompanyGroup</span></code>,</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResearchGroup</span></code>,</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Project</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>name</strong> – search term</p></li>
+<li><p><strong>offset</strong> – default value 0, the (zero-based) offset of the first item in the collection to return</p></li>
+<li><p><strong>limit</strong> – default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><ul>
+<li><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code> of <code class="xref py py-class docutils literal notranslate"><span class="pre">CompanyItem</span></code>, or</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code> of <code class="xref py py-class docutils literal notranslate"><span class="pre">MetricItem</span></code>, or</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code> of <code class="xref py py-class docutils literal notranslate"><span class="pre">TopicItem</span></code>, or</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code> of <code class="xref py py-class docutils literal notranslate"><span class="pre">CompanyGroupItem</span></code>, or</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code> of <code class="xref py py-class docutils literal notranslate"><span class="pre">ResearchGroupItem</span></code>, or</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code> of <code class="xref py py-class docutils literal notranslate"><span class="pre">ProjectItem</span></code></p></li>
+</ul>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.search_source_by_url">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">search_source_by_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.search_source_by_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Searches for a WikiRare Source based on a given url.
+If offset and limit are not defined it returns the first 20 search results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> – as a search term</p></li>
+<li><p><strong>offset</strong> – default value 0, the (zero-based) offset of the first item in the collection to return</p></li>
+<li><p><strong>limit</strong> – default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Source</span></code>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="topic-methods">
+<h2>Topic Methods<a class="headerlink" href="#topic-methods" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.get_topic">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_topic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identifier</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.get_topic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a WikiRate Topic based on the given identifier (name or number)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>identifier</strong> – two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Topic</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.get_topics">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_topics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.get_topics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of WikiRate Topics</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>offset</strong> – default value 0, the (zero-based) offset of the first item in the collection to return</p></li>
+<li><p><strong>limit</strong> – default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">TopicItem</span></code>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="research-group-methods">
+<h2>Research Group Methods<a class="headerlink" href="#research-group-methods" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.get_research_group">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_research_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identifier</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.get_research_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a WikiRate Research Group based on the given identifier (name or number)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>identifier</strong> – two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ResearchGroup</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.get_research_groups">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_research_groups</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.get_research_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of WikiRate Research Groups</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>offset</strong> – default value 0, the (zero-based) offset of the first item in the collection to return</p></li>
+<li><p><strong>limit</strong> – default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ResearchGroupItem</span></code>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="company-group-methods">
+<h2>Company Group Methods<a class="headerlink" href="#company-group-methods" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.get_company_group">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_company_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identifier</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.get_company_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a WikiRate Company Group based on the given identifier (name or number)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>identifier</strong> – two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">CompanyGroup</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.get_company_groups">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_company_groups</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.get_company_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of WikiRate Company Groups</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>offset</strong> – default value 0, the (zero-based) offset of the first item in the collection to return</p></li>
+<li><p><strong>limit</strong> – default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">CompanyGroupItem</span></code>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="project-methods">
+<h2>Project Methods<a class="headerlink" href="#project-methods" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.get_project">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_project</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">identifier</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.get_project" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a WikiRate Project based on the given identifier (name or number)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>identifier</strong> – two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Project</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.get_projects">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_projects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.get_projects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of WikiRate Projects</p>
+<blockquote>
+<div><dl class="simple">
+<dt>offset</dt><dd><p>default value 0, the (zero-based) offset of the first item in the collection to return</p>
+</dd>
+<dt>limit</dt><dd><p>default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ProjectItem</span></code>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="region-methods">
+<h2>Region Methods<a class="headerlink" href="#region-methods" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="wikirate4py.API.get_regions">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_regions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.get_regions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the list of all geographic regions we use in WikiRate platform</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>offset</strong> – default value 0, the (zero-based) offset of the first item in the collection to return</p></li>
+<li><p><strong>limit</strong> – default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Region</span></code>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">wikirate4py</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#company-methods">Company Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#metric-methods">Metric Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#answer-methods">Answer Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#relationship-answer-methods">Relationship Answer Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#source-methods">Source methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#search-methods">Search methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#topic-methods">Topic Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#research-group-methods">Research Group Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#company-group-methods">Company Group Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#project-methods">Project Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#region-methods">Region Methods</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="installation.html" title="previous chapter">Installation</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, WikiRate.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/api.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
