@@ -55,9 +55,7 @@ html_theme = 'alabaster'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-from wikirate4py import __version__
-
-version = __version__
-release = __version__
+version = '1.0.0'
+release = '1.0.0'
 
 locale_dirs = ['locale/']
