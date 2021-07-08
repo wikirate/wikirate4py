@@ -12,6 +12,7 @@
 #
 import os
 import sys
+import html2text
 
 sys.path.insert(0, os.path.abspath('../..'))
 
@@ -27,6 +28,7 @@ author = 'Vasiliki Gkatziaki'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'myst_parser',
     'sphinx.ext.autodoc',
     'sphinx.ext.autosectionlabel',
     'sphinx.ext.intersphinx',
