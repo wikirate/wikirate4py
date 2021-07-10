@@ -134,16 +134,17 @@ class API(object):
     @objectify(Company)
     def get_company(self, identifier) -> Company:
         """get_company(identifier)
-            Returns a company based on the given identifier (name or number)
 
-            Parameters
-            ----------
-            identifier
-               two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+        Returns a company based on the given identifier (name or number)
 
-            Returns
-            -------
-               :py:class:`~wikirate4py.models.Company`
+        Parameters
+        ----------
+        identifier
+            two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+
+        Returns
+        -------
+            :py:class:`~wikirate4py.models.Company`
         """
         if isinstance(identifier, int):
             return self.get("/~{0}.json".format(identifier))
@@ -153,20 +154,21 @@ class API(object):
     @objectify(CompanyItem, list=True)
     def get_companies(self, **kwargs):
         """get_companies(*, offset, limit)
-             Returns a list of WikiRate Companies
 
-              Parameters
-              ----------
-                offset
-                    default value 0, the (zero-based) offset of the first item in the collection to return
-                limit
-                    default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
+        Returns a list of WikiRate Companies
 
-              Returns
-              -------
-                :py:class:`List`\[:class:`~wikirate4py.models.CompanyItem`]
+        Parameters
+        ----------
+        offset
+            default value 0, the (zero-based) offset of the first item in the collection to return
+        limit
+            default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
 
-              """
+        Returns
+        -------
+            :py:class:`List`\[:class:`~wikirate4py.models.CompanyItem`]
+
+        """
         return self.get("/Company.json", endpoint_params=('limit', 'offset'),
                         filters=('project', 'name', 'company_group', 'country', 'bookmark'),
                         **kwargs)
@@ -174,16 +176,17 @@ class API(object):
     @objectify(Topic)
     def get_topic(self, identifier):
         """get_topic(identifier)
-            Returns a WikiRate Topic based on the given identifier (name or number)
 
-            Parameters
-            ----------
-            identifier
-                two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+        Returns a WikiRate Topic based on the given identifier (name or number)
 
-            Returns
-            -------
-                :py:class:`~wikirate4py.models.Topic`
+        Parameters
+        ----------
+        identifier
+            two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+
+        Returns
+        -------
+            :py:class:`~wikirate4py.models.Topic`
         """
         if isinstance(identifier, int):
             return self.get("/~{0}.json".format(identifier))
@@ -193,35 +196,37 @@ class API(object):
     @objectify(TopicItem, True)
     def get_topics(self, **kwargs):
         """get_topics(*, offset, limit)
-             Returns a list of WikiRate Topics
 
-              Parameters
-              ----------
-                offset
-                    default value 0, the (zero-based) offset of the first item in the collection to return
-                limit
-                    default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
+        Returns a list of WikiRate Topics
 
-              Returns
-              -------
-                :py:class:`List`\[:class:`~wikirate4py.models.TopicItem`]
+        Parameters
+        ----------
+        offset
+            default value 0, the (zero-based) offset of the first item in the collection to return
+        limit
+            default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
 
-              """
+        Returns
+        -------
+        :py:class:`List`\[:class:`~wikirate4py.models.TopicItem`]
+
+        """
         return self.get("/Topics.json", endpoint_params=('limit', 'offset'), filters=('name',), **kwargs)
 
     @objectify(Metric)
     def get_metric(self, identifier):
         """get_metric(identifier)
-            Returns a WikiRate Metric based on the given identifier (name or number)
 
-            Parameters
-            ----------
-            identifier
-                two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+        Returns a WikiRate Metric based on the given identifier (name or number)
 
-            Returns
-            -------
-                :py:class:`~wikirate4py.models.Metric`
+        Parameters
+        ----------
+        identifier
+            two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+
+        Returns
+        -------
+            :py:class:`~wikirate4py.models.Metric`
         """
         if isinstance(identifier, int):
             return self.get("/~{0}.json".format(identifier))
@@ -231,35 +236,37 @@ class API(object):
     @objectify(MetricItem, list=True)
     def get_metrics(self, **kwargs):
         """get_metrics(*, offset, limit)
-             Returns a list of WikiRate Metrics
 
-              Parameters
-              ----------
-                offset
-                    default value 0, the (zero-based) offset of the first item in the collection to return
-                limit
-                    default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
+        Returns a list of WikiRate Metrics
 
-              Returns
-              -------
-                :py:class:`List`\[:class:`~wikirate4py.models.MetricItem`]
+        Parameters
+        ----------
+        offset
+            default value 0, the (zero-based) offset of the first item in the collection to return
+        limit
+            default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
 
-              """
+        Returns
+        -------
+            :py:class:`List`\[:class:`~wikirate4py.models.MetricItem`]
+
+        """
         return self.get("/Metrics.json", endpoint_params=('limit', 'offset'), filters=('name',), **kwargs)
 
     @objectify(ResearchGroup)
     def get_research_group(self, identifier):
         """get_research_group(identifier)
-            Returns a WikiRate Research Group based on the given identifier (name or number)
 
-            Parameters
-            ----------
-            identifier
-                two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+        Returns a WikiRate Research Group based on the given identifier (name or number)
 
-            Returns
-            -------
-                :py:class:`~wikirate4py.models.ResearchGroup`
+        Parameters
+        ----------
+        identifier
+            two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+
+        Returns
+        -------
+            :py:class:`~wikirate4py.models.ResearchGroup`
         """
         if isinstance(identifier, int):
             return self.get("/~{0}.json".format(identifier))
@@ -269,35 +276,36 @@ class API(object):
     @objectify(ResearchGroupItem, list=True)
     def get_research_groups(self, **kwargs):
         """get_research_groups(*, offset, limit)
-             Returns a list of WikiRate Research Groups
 
-              Parameters
-              ----------
-                offset
-                    default value 0, the (zero-based) offset of the first item in the collection to return
-                limit
-                    default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
+        Returns a list of WikiRate Research Groups
 
-              Returns
-              -------
-                :py:class:`List`\[:class:`~wikirate4py.models.ResearchGroupItem`]
+        Parameters
+        ----------
+        offset
+            default value 0, the (zero-based) offset of the first item in the collection to return
+        limit
+            default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
 
-              """
+        Returns
+        -------
+            :py:class:`List`\[:class:`~wikirate4py.models.ResearchGroupItem`]
+        """
         return self.get("/Research_Groups.json", endpoint_params=('limit', 'offset'), filters=('name',), **kwargs)
 
     @objectify(CompanyGroup)
     def get_company_group(self, identifier):
         """get_company_group(identifier)
-            Returns a WikiRate Company Group based on the given identifier (name or number)
 
-            Parameters
-            ----------
-            identifier
-                two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+        Returns a WikiRate Company Group based on the given identifier (name or number)
 
-            Returns
-            -------
-                :py:class:`~wikirate4py.models.CompanyGroup`
+        Parameters
+        ----------
+        identifier
+            two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+
+        Returns
+        -------
+            :py:class:`~wikirate4py.models.CompanyGroup`
         """
         if isinstance(identifier, int):
             return self.get("/~{0}.json".format(identifier))
@@ -307,35 +315,37 @@ class API(object):
     @objectify(CompanyGroupItem, True)
     def get_company_groups(self, **kwargs):
         """get_company_groups(*, offset, limit)
-             Returns a list of WikiRate Company Groups
 
-              Parameters
-              ----------
-                offset
-                    default value 0, the (zero-based) offset of the first item in the collection to return
-                limit
-                    default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
+        Returns a list of WikiRate Company Groups
 
-              Returns
-              -------
-                :py:class:`List`\[:class:`~wikirate4py.models.CompanyGroupItem`]
+        Parameters
+        ----------
+        offset
+            default value 0, the (zero-based) offset of the first item in the collection to return
+        limit
+            default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
 
-              """
+        Returns
+        -------
+            :py:class:`List`\[:class:`~wikirate4py.models.CompanyGroupItem`]
+
+        """
         return self.get("/Company_Groups.json", endpoint_params=('limit', 'offset'), filters=('name',), **kwargs)
 
     @objectify(Source)
     def get_source(self, identifier):
         """get_source(identifier)
-            Returns a WikiRate Source based on the given identifier (name or number)
 
-            Parameters
-            ----------
-            identifier
-                two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+        Returns a WikiRate Source based on the given identifier (name or number)
 
-            Returns
-            -------
-                :py:class:`~wikirate4py.models.Source`
+        Parameters
+        ----------
+        identifier
+            two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+
+        Returns
+        -------
+            :py:class:`~wikirate4py.models.Source`
         """
         if isinstance(identifier, int):
             return self.get("/~{0}.json".format(identifier))
@@ -344,36 +354,37 @@ class API(object):
 
     @objectify(SourceItem, True)
     def get_sources(self, **kwargs):
-        """get_company_groups(*, offset, limit)
-             Returns a list of WikiRate Sources
+        """get_sources(*, offset, limit)
 
-              Parameters
-              ----------
-                offset
-                    default value 0, the (zero-based) offset of the first item in the collection to return
-                limit
-                    default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
+        Returns a list of WikiRate Sources
 
-              Returns
-              -------
-                :py:class:`List`\[:class:`~wikirate4py.models.Source`]
+        Parameters
+        ----------
+        offset
+            default value 0, the (zero-based) offset of the first item in the collection to return
+        limit
+            default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
 
+        Returns
+        -------
+            :py:class:`List`\[:class:`~wikirate4py.models.Source`]
         """
         return self.get("/Sources.json", endpoint_params=('limit', 'offset'), **kwargs)
 
     @objectify(Answer)
     def get_answer(self, id):
         """get_answer(id)
-            Returns a metric answer given its numeric identifier.
 
-            Parameters
-            ----------
-            id
-               numeric identifier of the metric answer
+        Returns a metric answer given its numeric identifier.
 
-            Returns
-            -------
-               :py:class:`~wikirate4py.models.Company`
+        Parameters
+        ----------
+        id
+            numeric identifier of the metric answer
+
+        Returns
+        -------
+            :py:class:`~wikirate4py.models.Company`
         """
         return self.get("/~{0}.json".format(id))
 
@@ -381,75 +392,75 @@ class API(object):
     def get_answers(self, id, **kwargs):
         """get_answers(id, *, offset, limit, year, status, company_group, country, value, value_from, value_to, \
                        updated, updater, outliers, source, verification, project, bookmark)
-             Returns a list of WikiRate Answers
 
-                Parameters
-                ----------
-                  id
-                    numeric metric identifier
+        Returns a list of WikiRate Answers
 
-                  offset
-                    default value 0, the (zero-based) offset of the first item in the collection to return
+        Parameters
+        ----------
+        id
+            numeric metric identifier
 
-                  limit
-                     default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
+        offset
+            default value 0, the (zero-based) offset of the first item in the collection to return
 
-                  year
-                    answer year
+        limit
+            default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
 
-                  status
-                    `all`, `exists` (researched), `known`, `unknown`, or `none` (not researched)
+        year
+            answer year
 
-                  company_group
-                    company group name, restricts to answers with companies belonging in the specified company group
+        status
+            `all`, `exists` (researched), `known`, `unknown`, or `none` (not researched)
 
-                  country
-                    country name, restricts to answers with companies located in the specified country
+        company_group
+            company group name, restricts to answers with companies belonging in the specified company group
 
-                  value
-                    answer value to match
+        country
+            country name, restricts to answers with companies located in the specified country
 
-                  value_from
-                    restricts to answers with value greater than equal the specified value
+        value
+            answer value to match
 
-                  value_to
-                    restricts to answers with value less than equal the specified value
+        value_from
+            restricts to answers with value greater than equal the specified value
 
-                  updated
-                    `today`, `week` (this week), `month` (this month)
+        value_to
+            restricts to answers with value less than equal the specified value
 
-                  updater
-                    - `wikirate_team`, restricts to answers updated by the WikiRate team
-                    - `current_user`, restricts to answers updated by you
+        updated
+            `today`, `week` (this week), `month` (this month)
 
-                  outliers
-                    get either `only` answers considered as outliers or get answers after `exclude` the outliers
+        updater
+            - `wikirate_team`, restricts to answers updated by the WikiRate team
+            - `current_user`, restricts to answers updated by you
 
-                  source
-                    source name, restricts to answers citing the specified source
+        outliers
+            get either `only` answers considered as outliers or get answers after `exclude` the outliers
 
-                  verification
-                    restricts to answers mapped to the defined verification level:
-                        - `steward_added`: answers added by account with "steward" status
-                        - `flagged`: answers which have been flagged by the Researcher adding the answer to request verification
-                        - `community_added`: answers added by community members (e.g. students / volunteers)
-                        - `community_verified`: answers verified by community members (e.g. students / volunteers)
-                        - `steward_verified`: answers verified by account with "steward" status
-                        - `current_user`: answers verified by you
-                        - `wikirate_team`: answers verified by WikiRate team
+        source
+            source name, restricts to answers citing the specified source
 
-                  project
-                    project name, restrict to answers connected to the specified WikiRate project
+        verification
+            restricts to answers mapped to the defined verification level:
+                - `steward_added`: answers added by account with "steward" status
+                - `flagged`: answers which have been flagged by the Researcher adding the answer to request verification
+                - `community_added`: answers added by community members (e.g. students / volunteers)
+                - `community_verified`: answers verified by community members (e.g. students / volunteers)
+                - `steward_verified`: answers verified by account with "steward" status
+                - `current_user`: answers verified by you
+                - `wikirate_team`: answers verified by WikiRate team
 
-                  bookmark
-                    - `bookmark`, restrict to answers you have bookmarked
-                    - `nobookmark`, restrict to answers you have not bookmarked
+        project
+            project name, restrict to answers connected to the specified WikiRate project
 
-              Returns
-              -------
-                :py:class:`List`\[:class:`~wikirate4py.models.AnswerItem`]
+        bookmark
+            - `bookmark`, restrict to answers you have bookmarked
+            - `nobookmark`, restrict to answers you have not bookmarked
 
-              """
+        Returns
+        -------
+        :py:class:`List`\[:class:`~wikirate4py.models.AnswerItem`]
+        """
         return self.get("/~{0}+Answer.json".format(id), endpoint_params=('limit', 'offset'),
                         filters=(
                             'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
@@ -459,77 +470,78 @@ class API(object):
     def get_answers(self, metric_name, metric_designer, **kwargs):
         """get_answers(metric_name, metric_designer, *, offset, limit, year, status, company_group, country, value, value_from, value_to, \
                        updated, updater, outliers, source, verification, project, bookmark)
-             Returns a list of WikiRate Answers
 
-             Parameters
-             ----------
-             metric_name
-                name of relationship metric
-             metric_designer
-                name of relationship metric designer
+        Returns a list of WikiRate Answers
 
-             offset
-                 default value 0, the (zero-based) offset of the first item in the collection to return
+        Parameters
+        ----------
+        metric_name
+            name of relationship metric
+        metric_designer
+            name of relationship metric designer
 
-             limit
-                  default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
+        offset
+            default value 0, the (zero-based) offset of the first item in the collection to return
 
-             year
-                answer year
+        limit
+            default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
 
-             status
-                `all`, `exists` (researched), `known`, `unknown`, or `none` (not researched)
+        year
+            answer year
 
-             company_group
-                company group name, restricts to answers with companies belonging in the specified company group
+        status
+            `all`, `exists` (researched), `known`, `unknown`, or `none` (not researched)
 
-             country
-                country name, restricts to answers with companies located in the specified country
+        company_group
+            company group name, restricts to answers with companies belonging in the specified company group
 
-             value
-                answer value to match
+        country
+            country name, restricts to answers with companies located in the specified country
 
-             value_from
-                restricts to answers with value greater than equal the specified value
+        value
+            answer value to match
 
-             value_to
-                restricts to answers with value less than equal the specified value
+        value_from
+            restricts to answers with value greater than equal the specified value
 
-             updated
-                `today`, `week` (this week), `month` (this month)
+        value_to
+            restricts to answers with value less than equal the specified value
 
-             updater
-                - `wikirate_team`, restricts to answers updated by the WikiRate team
-                - `current_user`, restricts to answers updated by you
+        updated
+            `today`, `week` (this week), `month` (this month)
 
-             outliers
-                get either `only` answers considered as outliers or get answers after `exclude` the outliers
+        updater
+            - `wikirate_team`, restricts to answers updated by the WikiRate team
+            - `current_user`, restricts to answers updated by you
 
-             source
-                source name, restricts to answers citing the specified source
+        outliers
+            get either `only` answers considered as outliers or get answers after `exclude` the outliers
 
-             verification
-                restricts to answers mapped to the defined verification level:
-                    - `steward_added`: answers added by account with "steward" status
-                    - `flagged`: answers which have been flagged by the Researcher adding the answer to request verification
-                    - `community_added`: answers added by community members (e.g. students / volunteers)
-                    - `community_verified`: answers verified by community members (e.g. students / volunteers)
-                    - `steward_verified`: answers verified by account with "steward" status
-                    - `current_user`: answers verified by you
-                    - `wikirate_team`: answers verified by WikiRate team
+        source
+            source name, restricts to answers citing the specified source
 
-             project
-                project name, restrict to answers connected to the specified WikiRate project
+        verification
+            restricts to answers mapped to the defined verification level:
+                - `steward_added`: answers added by account with "steward" status
+                - `flagged`: answers which have been flagged by the Researcher adding the answer to request verification
+                - `community_added`: answers added by community members (e.g. students / volunteers)
+                - `community_verified`: answers verified by community members (e.g. students / volunteers)
+                - `steward_verified`: answers verified by account with "steward" status
+                - `current_user`: answers verified by you
+                - `wikirate_team`: answers verified by WikiRate team
 
-             bookmark
-                - `bookmark`, restrict to answers you have bookmarked
-                - `nobookmark`, restrict to answers you have not bookmarked
+        project
+            project name, restrict to answers connected to the specified WikiRate project
 
-             Returns
-             -------
-                :py:class:`List`\[:class:`~wikirate4py.models.AnswerItem`]
+        bookmark
+            - `bookmark`, restrict to answers you have bookmarked
+            - `nobookmark`, restrict to answers you have not bookmarked
 
-              """
+        Returns
+        -------
+            :py:class:`List`\[:class:`~wikirate4py.models.AnswerItem`]
+
+        """
         return self.get(
             "/~{0}+{1}+Answer.json".format(metric_designer.replace(" ", "_"), metric_name.replace(" ", "_")),
             endpoint_params=('limit', 'offset'),
@@ -540,16 +552,17 @@ class API(object):
     @objectify(RelationshipAnswer)
     def get_relationship_answer(self, id):
         """get_relationship_answer(id)
-            Returns a relationship metric answer given its numeric identifier.
 
-            Parameters
-            ----------
-            id
-               numeric identifier of the relationship metric answer
+        Returns a relationship metric answer given its numeric identifier.
 
-            Returns
-            -------
-               :py:class:`~wikirate4py.models.RelationshipAnswer`
+        Parameters
+        ----------
+        id
+            numeric identifier of the relationship metric answer
+
+        Returns
+        -------
+            :py:class:`~wikirate4py.models.RelationshipAnswer`
         """
         return self.get("/~{0}.json".format(id))
 
@@ -558,74 +571,75 @@ class API(object):
         """get_relationship_answers(id, *, offset, limit, year, status, company_group, country, value, value_from, value_to, \
                        updated, updater, outliers, source, verification, project, bookmark)
 
-                    Returns a list of WikiRate Relationship Answers
+        Returns a list of WikiRate Relationship Answers
 
-                    Parameters
-                    ----------
-                      id
-                        numeric identifier of the relationship metric
+        Parameters
+        ----------
+        id
+            numeric identifier of the relationship metric
 
-                      offset
-                        default value 0, the (zero-based) offset of the first item in the collection to return
-                      limit
-                        default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
+        offset
+            default value 0, the (zero-based) offset of the first item in the collection to return
+        limit
+            default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
 
-                      year
-                        answer year
+        year
+            answer year
 
-                      status
-                        `all`, `exists` (researched), `known`, `unknown`, or `none` (not researched)
+        status
+            `all`, `exists` (researched), `known`, `unknown`, or `none` (not researched)
 
-                      company_group
-                        company group name, restricts to relationship answers with subject companies belonging in the specified company group
+        company_group
+            company group name, restricts to relationship answers with subject companies belonging in the specified company group
 
-                      country
-                        country name, restricts to relationship answers with subject companies located in the specified country
+        country
+            country name, restricts to relationship answers with subject companies located in the specified country
 
-                      value
-                        answer value to match
+        value
+            answer value to match
 
-                      value_from
-                        restricts to relationship answers with value greater than equal the specified value
+        value_from
+            restricts to relationship answers with value greater than equal the specified value
 
-                      value_to
-                        restricts to relationship answers with value less than equal the specified value
+        value_to
+            restricts to relationship answers with value less than equal the specified value
 
-                      updated
-                        `today`, `week` (this week), `month` (this month)
+        updated
+            `today`, `week` (this week), `month` (this month)
 
-                      updater
-                        - `wikirate_team`, restricts to relationship answers updated by the WikiRate team
-                        - `current_user`, restricts to relationship answers updated by you
+        updater
+            - `wikirate_team`, restricts to relationship answers updated by the WikiRate team
+            - `current_user`, restricts to relationship answers updated by you
 
-                      outliers
-                        get either `only` relationship answers considered as outliers or get answers after `exclude` the outliers
+        outliers
+            get either `only` relationship answers considered as outliers or get answers after `exclude` the outliers
 
-                      source
-                        source name, restricts to answers citing the specified source
+        source
+            source name, restricts to answers citing the specified source
 
-                      verification
-                        restricts to relationship answers mapped to the defined verification level:
-                            - `steward_added`: relationship answers added by account with "steward" status
-                            - `flagged`: relationship answers which have been flagged by the Researcher adding the answer to request verification
-                            - `community_added`: relationship answers added by community members (e.g. students / volunteers)
-                            - `community_verified`: relationship answers verified by community members (e.g. students / volunteers)
-                            - `steward_verified`: relationship answers verified by account with "steward" status
-                            - `current_user`: relationship answers verified by you
-                            - `wikirate_team`: relationship answers verified by WikiRate team
+        verification
+            restricts to relationship answers mapped to the defined verification level:
 
-                      project
-                        project name, restrict to relationship answers connected to the specified WikiRate project
+                - `steward_added`: relationship answers added by account with "steward" status
+                - `flagged`: relationship answers which have been flagged by the Researcher adding the answer to request verification
+                - `community_added`: relationship answers added by community members (e.g. students / volunteers)
+                - `community_verified`: relationship answers verified by community members (e.g. students / volunteers)
+                - `steward_verified`: relationship answers verified by account with "steward" status
+                - `current_user`: relationship answers verified by you
+                - `wikirate_team`: relationship answers verified by WikiRate team
 
-                      bookmark
-                        - `bookmark`, restrict to relationship answers you have bookmarked
-                        - `nobookmark`, restrict to relationship answers you have not bookmarked
+            project
+                project name, restrict to relationship answers connected to the specified WikiRate project
 
-                      Returns
-                      -------
-                        :py:class:`List`\[:class:`~wikirate4py.models.RelationshipAnswerItem`]
+            bookmark
+                - `bookmark`, restrict to relationship answers you have bookmarked
+                - `nobookmark`, restrict to relationship answers you have not bookmarked
 
-                      """
+            Returns
+            -------
+                :py:class:`List`\[:class:`~wikirate4py.models.RelationshipAnswerItem`]
+
+            """
         return self.get("/~{0}+Relationship_Answer.json".format(id),
                         endpoint_params=('limit', 'offset'), filters=(
                 'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
@@ -635,75 +649,75 @@ class API(object):
     def get_relationship_answers(self, metric_name, metric_designer, **kwargs):
         """get_relationship_answers(metric_name, metric_designer, *, offset, limit, year, status, company_group, country, value, value_from, value_to, \
                        updated, updater, outliers, source, verification, project, bookmark)
-                     Returns a list of WikiRate Relationship Answers
+        Returns a list of WikiRate Relationship Answers
 
-                      Parameters
-                      ----------
-                      metric_name
-                            name of relationship metric
-                      metric_designer
-                            name of relationship metric designer
+        Parameters
+        ----------
+        metric_name
+            name of relationship metric
+        metric_designer
+            name of relationship metric designer
 
-                      offset
-                            default value 0, the (zero-based) offset of the first item in the collection to return
-                      limit
-                            default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
-                      year
-                        answer year
+        offset
+            default value 0, the (zero-based) offset of the first item in the collection to return
+        limit
+            default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
+        year
+            answer year
 
-                      status
-                        `all`, `exists` (researched), `known`, `unknown`, or `none` (not researched)
+        status
+            `all`, `exists` (researched), `known`, `unknown`, or `none` (not researched)
 
-                      company_group
-                        company group name, restricts to relationship answers with subject companies belonging in the specified company group
+        company_group
+            company group name, restricts to relationship answers with subject companies belonging in the specified company group
 
-                      country
-                        country name, restricts to relationship answers with subject companies located in the specified country
+        country
+            country name, restricts to relationship answers with subject companies located in the specified country
 
-                      value
-                        answer value to match
+        value
+            answer value to match
 
-                      value_from
-                        restricts to relationship answers with value greater than equal the specified value
+        value_from
+            restricts to relationship answers with value greater than equal the specified value
 
-                      value_to
-                        restricts to relationship answers with value less than equal the specified value
+        value_to
+            restricts to relationship answers with value less than equal the specified value
 
-                      updated
-                        `today`, `week` (this week), `month` (this month)
+        updated
+            `today`, `week` (this week), `month` (this month)
 
-                      updater
-                        - `wikirate_team`, restricts to relationship answers updated by the WikiRate team
-                        - `current_user`, restricts to relationship answers updated by you
+        updater
+            - `wikirate_team`, restricts to relationship answers updated by the WikiRate team
+            - `current_user`, restricts to relationship answers updated by you
 
-                      outliers
-                        get either `only` relationship answers considered as outliers or get answers after `exclude` the outliers
+        outliers
+            get either `only` relationship answers considered as outliers or get answers after `exclude` the outliers
 
-                      source
-                        source name, restricts to answers citing the specified source
+        source
+            source name, restricts to answers citing the specified source
 
-                      verification
-                        restricts to relationship answers mapped to the defined verification level:
-                            - `steward_added`: relationship answers added by account with "steward" status
-                            - `flagged`: relationship answers which have been flagged by the Researcher adding the answer to request verification
-                            - `community_added`: relationship answers added by community members (e.g. students / volunteers)
-                            - `community_verified`: relationship answers verified by community members (e.g. students / volunteers)
-                            - `steward_verified`: relationship answers verified by account with "steward" status
-                            - `current_user`: relationship answers verified by you
-                            - `wikirate_team`: relationship answers verified by WikiRate team
+        verification
+            restricts to relationship answers mapped to the defined verification level:
+                - `steward_added`: relationship answers added by account with "steward" status
+                - `flagged`: relationship answers which have been flagged by the Researcher adding the answer to request verification
+                - `community_added`: relationship answers added by community members (e.g. students / volunteers)
+                - `community_verified`: relationship answers verified by community members (e.g. students / volunteers)
+                - `steward_verified`: relationship answers verified by account with "steward" status
+                - `current_user`: relationship answers verified by you
+                - `wikirate_team`: relationship answers verified by WikiRate team
 
-                      project
-                        project name, restrict to relationship answers connected to the specified WikiRate project
+            project
+                project name, restrict to relationship answers connected to the specified WikiRate project
 
-                      bookmark
-                        - `bookmark`, restrict to relationship answers you have bookmarked
-                        - `nobookmark`, restrict to relationship answers you have not bookmarked
+            bookmark
+                - `bookmark`, restrict to relationship answers you have bookmarked
+                - `nobookmark`, restrict to relationship answers you have not bookmarked
 
-                      Returns
-                      -------
-                        :py:class:`List`\[:class:`~wikirate4py.models.RelationshipAnswerItem`]
+            Returns
+            -------
+                :py:class:`List`\[:class:`~wikirate4py.models.RelationshipAnswerItem`]
 
-                      """
+            """
 
         return self.get("/~{0}+{1}+Relationship_Answer.json".format(metric_designer.replace(" ", "_"),
                                                                     metric_name.replace(" ", "_")),
@@ -714,18 +728,18 @@ class API(object):
     @objectify(Project)
     def get_project(self, identifier):
         """get_project(identifier)
-                        Returns a WikiRate Project based on the given identifier (name or number)
+        Returns a WikiRate Project based on the given identifier (name or number)
 
-                        Parameters
-                        ----------
-                        identifier
-                            two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+        Parameters
+        ----------
+        identifier
+            two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
 
-                        Returns
-                        -------
-                            :py:class:`~wikirate4py.models.Project`
+        Returns
+        -------
+            :py:class:`~wikirate4py.models.Project`
 
-                        """
+        """
         if isinstance(identifier, int):
             return self.get("/~{0}.json".format(identifier))
         else:
@@ -734,76 +748,79 @@ class API(object):
     @objectify(ProjectItem, True)
     def get_projects(self, **kwargs):
         """get_projects(*, offset, limit)
-             Returns a list of WikiRate Projects
 
-              Optional Parameters
-              -------------------
-                offset
-                    default value 0, the (zero-based) offset of the first item in the collection to return
-                limit
-                    default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
+        Returns a list of WikiRate Projects
 
-              Returns
-              -------
-                :py:class:`List`\[:class:`~wikirate4py.models.ProjectItem`]
+        Parameters
+        -------------------
+        offset
+            default value 0, the (zero-based) offset of the first item in the collection to return
+        limit
+            default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
 
-              """
+        Returns
+        -------
+            :py:class:`List`\[:class:`~wikirate4py.models.ProjectItem`]
+
+        """
         return self.get("/Projects.json", endpoint_params=('limit', 'offset'), filters=('name',), **kwargs)
 
     @objectify(Region, True)
     def get_regions(self, **kwargs):
         """get_regions(*, offset, limit)
-                        Returns the list of all geographic regions we use in WikiRate platform
 
-                        Parameters
-                        ----------
-                        offset
-                            default value 0, the (zero-based) offset of the first item in the collection to return
-                        limit
-                            default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
+        Returns the list of all geographic regions we use in WikiRate platform
 
-                        Returns
-                        -------
-                            :py:class:`List`\[:class:`~wikirate4py.models.Region`]
+        Parameters
+        ----------
+        offset
+            default value 0, the (zero-based) offset of the first item in the collection to return
+        limit
+            default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
 
-                        """
+        Returns
+        -------
+            :py:class:`List`\[:class:`~wikirate4py.models.Region`]
+
+        """
         return self.get("/Region.json", endpoint_params=('limit', 'offset'), **kwargs)
 
     def search_by_name(self, entity, name, **kwargs):
         """search_by_name(entity, name, *, offset, limit)
-                Searches for a Company or Metric or Topic or Company Group or Research Group or Project by a given name.
-                If offset and limit are not defined it returns the first 20 search results.
 
-                Parameters
-                -------------------
-                entity
-                    allowed entities:
-                        - :py:class:`~wikirate4py.models.Company`,
-                        - :py:class:`~wikirate4py.models.Metric`,
-                        - :py:class:`~wikirate4py.models.Topic`,
-                        - :py:class:`~wikirate4py.models.CompanyGroup`,
-                        - :py:class:`~wikirate4py.models.ResearchGroup`,
-                        - :py:class:`~wikirate4py.models.Project`
-                name
-                    search term
+        Searches for a Company or Metric or Topic or Company Group or Research Group or Project by a given name.
+        If offset and limit are not defined it returns the first 20 search results.
 
-                offset
-                    default value 0, the (zero-based) offset of the first item in the collection to return
+        Parameters
+        -------------------
+        entity
+            allowed entities:
+                - :py:class:`~wikirate4py.models.Company`,
+                - :py:class:`~wikirate4py.models.Metric`,
+                - :py:class:`~wikirate4py.models.Topic`,
+                - :py:class:`~wikirate4py.models.CompanyGroup`,
+                - :py:class:`~wikirate4py.models.ResearchGroup`,
+                - :py:class:`~wikirate4py.models.Project`
+        name
+            search term
 
-                limit
-                    default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
+        offset
+            default value 0, the (zero-based) offset of the first item in the collection to return
 
-                Returns
-                -------
+        limit
+            default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
 
-                    - A :py:class:`List` of :py:class:`~wikirate4py.models.CompanyItem`, or
-                    - A :py:class:`List` of :py:class:`~wikirate4py.models.MetricItem`, or
-                    - A :py:class:`List` of :py:class:`~wikirate4py.models.TopicItem`, or
-                    - A :py:class:`List` of :py:class:`~wikirate4py.models.CompanyGroupItem`, or
-                    - A :py:class:`List` of :py:class:`~wikirate4py.models.ResearchGroupItem`, or
-                    - A :py:class:`List` of :py:class:`~wikirate4py.models.ProjectItem`
+        Returns
+        -------
 
-                """
+            - A :py:class:`List` of :py:class:`~wikirate4py.models.CompanyItem`, or
+            - A :py:class:`List` of :py:class:`~wikirate4py.models.MetricItem`, or
+            - A :py:class:`List` of :py:class:`~wikirate4py.models.TopicItem`, or
+            - A :py:class:`List` of :py:class:`~wikirate4py.models.CompanyGroupItem`, or
+            - A :py:class:`List` of :py:class:`~wikirate4py.models.ResearchGroupItem`, or
+            - A :py:class:`List` of :py:class:`~wikirate4py.models.ProjectItem`
+
+        """
         if entity is Company:
             return self.get_companies(name=name, **kwargs)
         elif entity is Metric:
@@ -820,22 +837,23 @@ class API(object):
     @objectify(SourceItem, True)
     def search_source_by_url(self, url, **kwargs):
         """search_source_by_url(url, *, offset, limit)
-                Searches for a WikiRare Source based on a given url.
-                If offset and limit are not defined it returns the first 20 search results.
 
-                Parameters
-                -------------------
-                url
-                    as a search term
+        Searches for a WikiRare Source based on a given url.
+        If offset and limit are not defined it returns the first 20 search results.
 
-                offset
-                    default value 0, the (zero-based) offset of the first item in the collection to return
-                limit
-                    default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
+        Parameters
+        -------------------
+        url
+            as a search term
 
-                Returns
-                -------
-                    :py:class:`List`\[:class:`~wikirate4py.models.Source`]
+        offset
+            default value 0, the (zero-based) offset of the first item in the collection to return
+        limit
+            default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
+
+        Returns
+        -------
+            :py:class:`List`\[:class:`~wikirate4py.models.Source`]
 
                 """
         kwargs = {
@@ -848,27 +866,28 @@ class API(object):
 
     @objectify(Company)
     def add_company(self, name, headquarters, **kwargs):
-        """add_company(name, headquarters, *,  oar_id, oar_id, open_corporates)
-             Creates and Returns a company given the company name and headquarters
+        """add_company(name, headquarters, *, oar_id, open_corporates)
 
-              Parameters
-              ----------
-                name
-                    company name
-                headquarters
-                    name of the region the headquarters of the company is located
-                wikipedia
-                    company's wikipedia page url
-                oar_id
-                    company's identifier on https://openapparel.org
-                open_corporates
-                    company's identifier on https://opencorporates.com/
+        Creates and Returns a company given the company name and headquarters
 
-              Returns
-              -------
-                :py:class:`~wikirate4py.models.Company`
+        Parameters
+        ----------
+        name
+            company name
+        headquarters
+            name of the region the headquarters of the company is located
+        wikipedia
+            company's wikipedia page url
+        oar_id
+            company's identifier on https://openapparel.org
+        open_corporates
+            company's identifier on https://opencorporates.com/
 
-              """
+        Returns
+        -------
+            :py:class:`~wikirate4py.models.Company`
+
+        """
 
         if name is None or headquarters is None:
             raise WikiRate4PyException(
@@ -899,36 +918,37 @@ class API(object):
     @objectify(Answer)
     def add_research_metric_answer(self, **kwargs):
         """add_research_metric_answer(metric_designer, metric_name, company, year, value, source, *, comment)
-             Creates and Returns a company given the company name and headquarters
 
-              Parameters
-              ----------
-                metric_name
-                    name of metric
+        Creates and Returns a company given the company name and headquarters
 
-                metric_designer
-                    name of metric designer
+        Parameters
+        ----------
+        metric_name
+            name of metric
 
-                company
-                    company the answer is assigned to
+        metric_designer
+            name of metric designer
 
-                year
-                    reporting year
+        company
+            company the answer is assigned to
 
-                value
-                    value of the answer
+        year
+            reporting year
 
-                source
-                    source name
+        value
+            value of the answer
 
-                comment
-                    comment on the imported metric answer
+        source
+            source name
 
-              Returns
-              -------
-                :py:class:`~wikirate4py.models.Answer`
+        comment
+            comment on the imported metric answer
 
-              """
+        Returns
+        -------
+            :py:class:`~wikirate4py.models.Answer`
+
+        """
         required_params = ('metric_designer', 'metric_name', 'company', 'year', 'value', 'source')
 
         for k in required_params:
@@ -956,36 +976,37 @@ class API(object):
     @objectify(Answer)
     def update_research_metric_answer(self, **kwargs):
         """update_research_metric_answer(metric_designer, metric_name, company, year, *, value, source, comment)
-             Updates and Returns an existing metric answer
 
-              Parameters
-              ----------
-                metric_name
-                    name of metric
+        Updates and Returns an existing metric answer
 
-                metric_designer
-                    name of metric designer
+        Parameters
+        ----------
+        metric_name
+            name of metric
 
-                company
-                    company the answer is assigned to
+        metric_designer
+            name of metric designer
 
-                year
-                    reporting year
+        company
+            company the answer is assigned to
 
-                value
-                    new value
+        year
+            reporting year
 
-                source
-                    new source name
+        value
+            new value
 
-                comment
-                    new comment on the metric answer
+        source
+            new source name
 
-              Returns
-              -------
-                :py:class:`~wikirate4py.models.Answer`
+        comment
+            new comment on the metric answer
 
-              """
+        Returns
+        -------
+            :py:class:`~wikirate4py.models.Answer`
+
+        """
         required_params = ('metric_designer', 'metric_name', 'company', 'year')
         optional_params = ('value', 'source', 'comment')
 
@@ -1016,39 +1037,40 @@ class API(object):
     @objectify(RelationshipAnswer)
     def add_relationship_metric_answer(self, **kwargs):
         """add_relationship_metric_answer(metric_designer, metric_name, company, year, value, source, *, comment)
-             Updates and Returns an existing relationship metric answer
 
-              Parameters
-              ----------
-                metric_name
-                    name of metric
+        Updates and Returns an existing relationship metric answer
 
-                metric_designer
-                    name of metric designer
+        Parameters
+        ----------
+        metric_name
+            name of metric
 
-                subject_company
-                    subject company name of the updated answer
+        metric_designer
+            name of metric designer
 
-                object_company
-                    object company name of the updated answer
+        subject_company
+            subject company name of the updated answer
 
-                year
-                    reporting year
+        object_company
+            object company name of the updated answer
 
-                value
-                    value of the relationship metric answer
+        year
+            reporting year
 
-                source
-                    source name
+        value
+            value of the relationship metric answer
 
-                comment
-                    comment on the imported metric answer
+        source
+            source name
 
-              Returns
-              -------
-                :py:class:`~wikirate4py.models.RelationshipAnswer`
+        comment
+            comment on the imported metric answer
 
-              """
+        Returns
+        -------
+            :py:class:`~wikirate4py.models.RelationshipAnswer`
+
+        """
         required_params = (
             'metric_designer', 'metric_name', 'subject_company', 'object_company', 'year', 'value', 'source')
 
@@ -1080,40 +1102,41 @@ class API(object):
     @objectify(RelationshipAnswer)
     def update_relationship_metric_answer(self, **kwargs):
         """update_relationship_metric_answer(metric_designer, metric_name, company, year, value, source)
-             Updates and Returns an existing relationship metric answer
 
-              Parameters
-              ----------
+        Updates and Returns an existing relationship metric answer
 
-                metric_name
-                    name of metric
+        Parameters
+        ----------
 
-                metric_designer
-                    name of metric designer
+        metric_name
+            name of metric
 
-                subject_company
-                    subject company name of the updated answer
+        metric_designer
+            name of metric designer
 
-                object_company
-                    object company name of the updated answer
+        subject_company
+            subject company name of the updated answer
 
-                year
-                    reporting year
+        object_company
+            object company name of the updated answer
 
-                value
-                    new value
+        year
+            reporting year
 
-                source
-                    new source name
+        value
+            new value
 
-                comment
-                    new comment on the metric answer
+        source
+            new source name
 
-              Returns
-              -------
-                :py:class:`~wikirate4py.models.RelationshipAnswer`
+        comment
+            new comment on the metric answer
 
-              """
+        Returns
+        -------
+            :py:class:`~wikirate4py.models.RelationshipAnswer`
+
+        """
         required_params = ('metric_designer', 'metric_name', 'subject_company', 'year', 'object_company')
         optional_params = ('value', 'source', 'comment')
 
@@ -1148,30 +1171,31 @@ class API(object):
     @objectify(Source)
     def add_source(self, **kwargs):
         """add_source(url, title, company, report_type, year)
-             Updates and Returns an existing relationship metric answer
 
-              Parameters
-              -------------------
-                url
-                    url of the original source
+        Updates and Returns an existing relationship metric answer
 
-                title
-                    give a title on the source
+        Parameters
+        -------------------
+        url
+            url of the original source
 
-                company
-                    comment on the imported metric answer
+        title
+            give a title on the source
 
-                report_type
-                    source name
+        company
+            comment on the imported metric answer
 
-                year
-                    reporting year
+        report_type
+            source name
 
-              Returns
-              -------
-                :py:class:`~wikirate4py.models.Source`
+        year
+            reporting year
 
-              """
+        Returns
+        -------
+            :py:class:`~wikirate4py.models.Source`
+
+        """
         required_params = ('url', 'title')
         optional_params = ('company', 'report_type', 'year')
 
@@ -1198,28 +1222,29 @@ class API(object):
     @objectify(Source)
     def update_source(self, **kwargs):
         """update_source(name, title, company, report_type, year)
-             Updates and Returns an existing relationship metric answer
 
-              Parameters
-              ----------
-                name
-                    source name
+        Updates and Returns an existing relationship metric answer
 
-                title
-                    updated source title
+        Parameters
+        ----------
+        name
+            source name
 
-                company
-                    updated reporting company
+        title
+            updated source title
 
-                report_type
-                    updated report type
+        company
+            updated reporting company
 
-                year
-                    updated reporting year
+        report_type
+            updated report type
 
-              Returns
-              -------
-                :py:class:`~wikirate4py.models.Source`
+        year
+            updated reporting year
+
+        Returns
+        -------
+            :py:class:`~wikirate4py.models.Source`
 
               """
         required_params = ('name',)
@@ -1246,6 +1271,7 @@ class API(object):
 
     def delete_company(self, id):
         """delete_company(id)
-            Deletes a company based on the given numeric identifier
+
+        Deletes a company based on the given numeric identifier
         """
         return self.delete("/~{0}".format(id))

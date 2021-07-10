@@ -1,4 +1,12 @@
+.. _api_reference:
+
 .. currentmodule:: wikirate4py
+
+****************************************************
+:class:`wikirate4py.API` --- WikiRate API Reference
+****************************************************
+
+.. autoclass:: API
 
 *************
 API Reference
