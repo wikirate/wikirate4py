@@ -112,7 +112,6 @@ class API(object):
 
         # Get the function path
         path = self.format_path(path, self.wikirate_api_url)
-        print(path)
         return self.request('get', path, headers=headers, params=params or {})
 
     def post(self, path, params={}):
