@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>API Reference &#8212; wikirate4py 1.0.0 documentation</title>
+    <title>wikirate4py.API — WikiRate API Reference &#8212; wikirate4py 1.0.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/classic.css" />
     
@@ -29,7 +29,7 @@
           <a href="installation.html" title="Installation"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">wikirate4py 1.0.0 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">API Reference</a></li> 
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">wikirate4py.API</span></code> — WikiRate API Reference</a></li> 
       </ul>
     </div>  
 
@@ -38,8 +38,16 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="api-reference">
-<h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
+  <section id="wikirate4py-api-wikirate-api-reference">
+<span id="api-reference"></span><h1><a class="reference internal" href="#wikirate4py.API" title="wikirate4py.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">wikirate4py.API</span></code></a> — WikiRate API Reference<a class="headerlink" href="#wikirate4py-api-wikirate-api-reference" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="wikirate4py.API">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">wikirate4py.</span></span><span class="sig-name descname"><span class="pre">API</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">oauth_token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wikirate_api_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'https://wikirate.org/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="id1">
+<h1>API Reference<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <section id="company-methods">
 <h2>Company Methods<a class="headerlink" href="#company-methods" title="Permalink to this headline">¶</a></h2>
 <dl class="py method">
@@ -80,8 +88,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">API.add_company(name,</span> <span class="pre">headquarters,</span> <span class="pre">*,</span>&#160; <span class="pre">oar_id,</span> <span class="pre">oar_id,</span> <span class="pre">open_corporates)</span></span></dt>
+<dt class="sig sig-object py" id="wikirate4py.API.add_company">
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">add_company</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headquarters</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oar_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_corporates</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.add_company" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates and Returns a company given the company name and headquarters</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -331,21 +339,23 @@
 <li><p><cite>wikirate_team</cite>: relationship answers verified by WikiRate team</p></li>
 </ul>
 </dd>
-</dl>
-</p></li>
-<li><p><strong>project</strong> – project name, restrict to relationship answers connected to the specified WikiRate project</p></li>
-<li><p><strong>bookmark</strong> – <ul>
+<dt>project</dt><dd><p>project name, restrict to relationship answers connected to the specified WikiRate project</p>
+</dd>
+<dt>bookmark</dt><dd><ul>
 <li><p><cite>bookmark</cite>, restrict to relationship answers you have bookmarked</p></li>
 <li><p><cite>nobookmark</cite>, restrict to relationship answers you have not bookmarked</p></li>
 </ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">returns</dt>
+<dd class="field-odd"><p></p></dd>
+<dt class="field-even">rtype</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">RelationshipAnswerItem</span></code>]</p>
+</dd>
+</dl>
 </p></li>
 </ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">RelationshipAnswerItem</span></code>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -424,22 +434,22 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="wikirate4py.API.get_sources">
-<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_sources</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.get_sources" title="Permalink to this definition">¶</a></dt>
-<dd><p>get_company_groups(<a href="#id1"><span class="problematic" id="id2">*</span></a>, offset, limit)
-Returns a list of WikiRate Sources</p>
-<blockquote>
-<div><blockquote>
-<div><dl class="simple">
-<dt>offset</dt><dd><p>default value 0, the (zero-based) offset of the first item in the collection to return</p>
+<span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_sources</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.get_sources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of WikiRate Sources</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>offset</strong> – default value 0, the (zero-based) offset of the first item in the collection to return</p></li>
+<li><p><strong>limit</strong> – default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.</p></li>
+</ul>
 </dd>
-<dt>limit</dt><dd><p>default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Source</span></code>]</p>
 </dd>
 </dl>
-</div></blockquote>
-<blockquote>
-<div><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Source</span></code>]</p>
-</div></blockquote>
-</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
@@ -714,20 +724,18 @@ If offset and limit are not defined it returns the first 20 search results.</p>
 <dt class="sig sig-object py" id="wikirate4py.API.get_projects">
 <span class="sig-prename descclassname"><span class="pre">API.</span></span><span class="sig-name descname"><span class="pre">get_projects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wikirate4py.API.get_projects" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of WikiRate Projects</p>
-<blockquote>
-<div><dl class="simple">
-<dt>offset</dt><dd><p>default value 0, the (zero-based) offset of the first item in the collection to return</p>
-</dd>
-<dt>limit</dt><dd><p>default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.</p>
-</dd>
-</dl>
-</div></blockquote>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p></p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>offset</strong> – default value 0, the (zero-based) offset of the first item in the collection to return</p></li>
+<li><p><strong>limit</strong> – default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ProjectItem</span></code>]</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ProjectItem</span></code>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -767,7 +775,8 @@ If offset and limit are not defined it returns the first 20 search results.</p>
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">API Reference</a><ul>
+<li><a class="reference internal" href="#"><code class="xref py py-class docutils literal notranslate"><span class="pre">wikirate4py.API</span></code> — WikiRate API Reference</a></li>
+<li><a class="reference internal" href="#id1">API Reference</a><ul>
 <li><a class="reference internal" href="#company-methods">Company Methods</a></li>
 <li><a class="reference internal" href="#metric-methods">Metric Methods</a></li>
 <li><a class="reference internal" href="#answer-methods">Answer Methods</a></li>
@@ -817,7 +826,7 @@ If offset and limit are not defined it returns the first 20 search results.</p>
           <a href="installation.html" title="Installation"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">wikirate4py 1.0.0 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">API Reference</a></li> 
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">wikirate4py.API</span></code> — WikiRate API Reference</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
