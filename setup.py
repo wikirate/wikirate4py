@@ -12,21 +12,23 @@ else:
     raise RuntimeError(f"Unable to find version string in {VERSION_FILE}.")
 
 tests_require = [
-    "mock>=1.0.1",
-    "nose>=1.3.3",
-    "vcrpy>=1.10.3",
+    "mock",
+    "nose",
+    "vcrpy",
+    "html2text",
+    "python-dotenv"
 ]
 setup(name='wikirate4py',
       version=version,
       description='WikiRate for Python!',
       url='github.com/wikirate/wikirate4py',
       author='Vasiliki Gkatziaki',
-      author_email='',
+      author_email='vasso@wikirate.org',
       license='GPL-3.0',
       packages=find_packages(exclude=["tests", "examples"]),
       install_requires=[
-          "requests>=2.11.1,<3",
-          "html2text>=2019.8.11"
+          "requests",
+          "html2text"
       ],
       project_urls={
           "Documentation": "https://wikirate4py.readthedocs.io",
@@ -34,7 +36,6 @@ setup(name='wikirate4py',
           "Source Code": "https://github.com/wikirate4py/wikirate4py",
       },
       extras_require={
-          "socks": ["requests[socks]>=2.11.1,<3"],
           "test": tests_require,
       },
       test_suite="nose.collector",
