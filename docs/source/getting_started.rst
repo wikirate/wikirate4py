@@ -47,14 +47,14 @@ When you invoke an API method most of the times, it returns back a wikirate4py m
 data from WikiRate which we then use inside the application. wikirate4py simplifies WikiRate's response but you can
 access the raw json by calling the raw_json method. For example the following code returns to us a Metric model:
 
-.. code-block::python
+.. code-block:: python
 
     # Get the Metric object for Address metric with metric designer Clean Clothes Campaign
     metric = api.get_metric(metric_name='Address', metric_designer='Clean Clothes Campaign')
 
 Models contain the data simplified and some helper methods which we can then use:
 
-.. code-block::python
+.. code-block:: python
 
     print(metric.id)
     print(metric.name)
