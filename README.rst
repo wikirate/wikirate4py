@@ -10,7 +10,7 @@ wikirate4py: WikiRate for Python!
 
 * Official `WikiRate <https://www.gnu.org/licenses/gpl-3.0.txt>`_ 's wrapper for Python
 * Full Documentation: https://wikirate4py.readthedocs.io/
-* Official Slack Channel: https://wikirate.slack.com/archives/C021YJBQT8E
+* `Official Slack Channel <https://wikirate.slack.com/archives/C021YJBQT8E>`_
 
 Installation
 ------------
