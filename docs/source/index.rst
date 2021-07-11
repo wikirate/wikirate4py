@@ -11,12 +11,14 @@ Welcome to wikirate4py's documentation!
    :caption: Contents:
 
    installation
+   getting_started
+   cursor
    api
+   code_snippets
 
 
 Indices and tables
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`

@@ -2,15 +2,11 @@
 
 .. currentmodule:: wikirate4py
 
-****************************************************
-:class:`wikirate4py.API` --- WikiRate API Reference
-****************************************************
+*************************************************
+:class:`wikirate4py.API` --- WikiRate API wrapper
+*************************************************
 
 .. autoclass:: API
-
-*************
-API Reference
-*************
 
 Company Methods
 ---------------
