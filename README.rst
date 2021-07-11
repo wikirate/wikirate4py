@@ -1,12 +1,12 @@
 wikirate4py: WikiRate for Python!
 =================================
 
-.. image:: https://readthedocs.org/projects/wikirate4py/badge/?version=latest
-    :target: https://wikirate4py.readthedocs.io/en/latest/
-.. image:: https://img.shields.io/pypi/v/wikirate4py?label=PyPI)
+.. image:: https://img.shields.io/pypi/v/wikirate4py?label=PyPI
     :target: https://pypi.org/project/wikirate4py/
 .. image:: https://img.shields.io/pypi/pyversions/wikirate4py?label=Python
     :target: https://pypi.org/project/wikirate4py/
+.. image:: https://readthedocs.org/projects/wikirate4py/badge/?version=latest
+    :target: https://wikirate4py.readthedocs.io/en/latest/
 
 * Official `WikiRate <https://www.gnu.org/licenses/gpl-3.0.txt>`_ 's wrapper for Python
 * Full Documentation: https://wikirate4py.readthedocs.io/
