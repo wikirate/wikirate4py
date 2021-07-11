@@ -15,5 +15,8 @@ class WikiRateEntity(object):
     def raw_json(self):
         return self.raw
 
+    def get_parameters(self):
+        return self.__slots__
+
     def __repr__(self):
         return str(self.json())
