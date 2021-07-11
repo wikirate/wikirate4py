@@ -5,6 +5,8 @@ VERSION_FILE = "wikirate4py/__init__.py"
 with open(VERSION_FILE) as version_file:
     match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]",
                       version_file.read(), re.MULTILINE)
+with open('README.rst') as readme_file:
+    readme = readme_file.read()
 
 if match:
     version = match.group(1)
@@ -21,11 +23,12 @@ tests_require = [
 setup(name='wikirate4py',
       version=version,
       description='WikiRate for Python!',
+      long_description=readme,
       url='https://github.com/wikirate/wikirate4py',
       author='Vasiliki Gkatziaki',
       author_email='vasso@wikirate.org',
       license='GPL-3.0',
-      download_url='https://github.com/wikirate/wikirate4py/archive/refs/tags/v1.0.0-alpha.tar.gz',
+      download_url='https://github.com/wikirate/wikirate4py/archive/refs/tags/v1.0.1.tar.gz',
       packages=find_packages(exclude=["tests", "examples"]),
       install_requires=[
           "requests",
