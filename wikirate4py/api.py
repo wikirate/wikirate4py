@@ -233,6 +233,27 @@ class API(object):
         else:
             return self.get("/{0}.json".format(identifier.replace(" ", "_")))
 
+    @objectify(Metric)
+    def get_metric(self, metric_name, metric_designer):
+        """get_metric(metric_name, metric_designer)
+
+        Returns a WikiRate Metric based on the given metric name and metric designer.
+
+        Parameters
+        ----------
+        metric_name
+            name of metric
+
+        metric_designer
+            name of metric designer
+
+
+        Returns
+        -------
+            :py:class:`~wikirate4py.models.Metric`
+        """
+        return self.get("/{0}+{1}.json".format(metric_designer.replace(" ", "_"), metric_name.replace(" ", "_")))
+
     @objectify(MetricItem, list=True)
     def get_metrics(self, **kwargs):
         """get_metrics(*, offset, limit)
