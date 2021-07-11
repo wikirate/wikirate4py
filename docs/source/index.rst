@@ -15,6 +15,7 @@ Welcome to wikirate4py's documentation!
    cursor
    api
    code_snippets
+   contributing
 
 
 Indices and tables

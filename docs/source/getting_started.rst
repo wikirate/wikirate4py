@@ -12,7 +12,7 @@ with wikirate4py. We will not go into too much detail here but we will present s
 Hello wikirate4py
 -----------------
 
-.. code-block::python
+.. code-block:: python
 
     api = wikirate4py.API('you_api_token')
 
