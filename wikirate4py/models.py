@@ -371,7 +371,7 @@ class RelationshipAnswer(WikiRateEntity):
 class RelationshipAnswerItem(WikiRateEntity):
     __slots__ = (
         "id", "metric", "metric_id", "value", "year", "comments", "sources",
-        "subject_company_name", "object_company_name", "subject_company_id", "object_company_id"
+        "subject_company_name", "object_company_name", "subject_company_id", "object_company_id",
                                                                              "url", "raw")
 
     def __init__(self, data):
