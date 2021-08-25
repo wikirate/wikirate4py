@@ -310,7 +310,7 @@ class Answer(WikiRateEntity):
         self.comments = data.get("comments")
         self.sources = []
         for s in data.get("sources", []):
-            self.sources.append(s.get("name"))
+            self.sources.append(SourceItem(s))
         self.checked_by = data.get("checked_by").get("content")
         self.check_requested = data.get("checked_by").get("check_requested")
         self.url = data.get("html_url")
@@ -326,7 +326,10 @@ class AnswerItem(WikiRateEntity):
         if data["type"] != 'Answer':
             raise WikiRate4PyException('Invalid type of entity')
 
-        self.id = int(data["id"])
+        if data.get("id") is None:
+            self.id = None
+        else:
+            self.id = int(data["id"])
         self.metric = data["metric"]
         self.company = data["company"]
         self.value = data.get("value")
@@ -372,7 +375,7 @@ class RelationshipAnswerItem(WikiRateEntity):
     __slots__ = (
         "id", "metric", "metric_id", "value", "year", "comments", "sources",
         "subject_company_name", "object_company_name", "subject_company_id", "object_company_id",
-                                                                             "url", "raw")
+        "url", "raw")
 
     def __init__(self, data):
         self.raw = data
@@ -396,7 +399,7 @@ class RelationshipAnswerItem(WikiRateEntity):
         self.url = data.get("url").replace(".json", "")
 
 
-class Region(WikiRateEntity):
+class RegionItem(WikiRateEntity):
     __slots__ = (
         "id", "name", "url", "raw")
 
@@ -408,3 +411,20 @@ class Region(WikiRateEntity):
         self.id = int(data["id"])
         self.name = data.get("name")
         self.url = data.get("url").replace(".json", "")
+
+
+class Region(WikiRateEntity):
+    __slots__ = (
+        "id", "name", "url", "oc_jurisdiction_key", "region", "country", "raw")
+
+    def __init__(self, data):
+        self.raw = data
+        if data["type"]["id"] != 7044738:
+            raise WikiRate4PyException('Invalid type of entity')
+
+        self.id = int(data["id"])
+        self.name = data.get("name")
+        self.url = data.get("url").replace(".json", "")
+        self.oc_jurisdiction_key = data.get("items", [])[1].get("content")
+        self.country = data.get("items", [])[3].get("content")
+        self.region = data.get("items", [])[2].get("content")
