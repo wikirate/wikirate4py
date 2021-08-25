@@ -15,7 +15,7 @@ from wikirate4py.exceptions import IllegalHttpMethod, BadRequestException, Unaut
 from wikirate4py.models import (Company, Topic, Metric, ResearchGroup, CompanyGroup, Source, CompanyItem, MetricItem,
                                 Answer,
                                 ResearchGroupItem, RelationshipAnswer, SourceItem, TopicItem, AnswerItem,
-                                CompanyGroupItem, RelationshipAnswerItem, Region, Project, ProjectItem)
+                                CompanyGroupItem, RelationshipAnswerItem, Region, Project, ProjectItem, RegionItem)
 
 log = logging.getLogger(__name__)
 
@@ -214,33 +214,16 @@ class API(object):
         return self.get("/Topics.json", endpoint_params=('limit', 'offset'), filters=('name',), **kwargs)
 
     @objectify(Metric)
-    def get_metric(self, identifier):
-        """get_metric(identifier)
-
-        Returns a WikiRate Metric based on the given identifier (name or number)
-
-        Parameters
-        ----------
-        identifier
-            two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
-
-        Returns
-        -------
-            :py:class:`~wikirate4py.models.Metric`
-        """
-        if isinstance(identifier, int):
-            return self.get("/~{0}.json".format(identifier))
-        else:
-            return self.get("/{0}.json".format(identifier.replace(" ", "_")))
-
-    @objectify(Metric)
-    def get_metric(self, metric_name, metric_designer):
+    def get_metric(self, identifier=None, metric_name=None, metric_designer=None):
         """get_metric(metric_name, metric_designer)
 
         Returns a WikiRate Metric based on the given metric name and metric designer.
 
         Parameters
         ----------
+        identifier
+            two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+
         metric_name
             name of metric
 
@@ -252,7 +235,12 @@ class API(object):
         -------
             :py:class:`~wikirate4py.models.Metric`
         """
-        return self.get("/{0}+{1}.json".format(metric_designer.replace(" ", "_"), metric_name.replace(" ", "_")))
+        if isinstance(identifier, int):
+            return self.get("/~{0}.json".format(identifier))
+        elif isinstance(identifier, str):
+            return self.get("/{0}.json".format(identifier.replace(" ", "_")))
+        else:
+            return self.get("/{0}+{1}.json".format(metric_designer.replace(" ", "_"), metric_name.replace(" ", "_")))
 
     @objectify(MetricItem, list=True)
     def get_metrics(self, **kwargs):
@@ -410,7 +398,7 @@ class API(object):
         return self.get("/~{0}.json".format(id))
 
     @objectify(AnswerItem, True)
-    def get_answers(self, id, **kwargs):
+    def get_answers_by_metric_id(self, metric_id, **kwargs):
         """get_answers(id, *, offset, limit, year, status, company_group, country, value, value_from, value_to, \
                        updated, updater, outliers, source, verification, project, bookmark)
 
@@ -418,7 +406,7 @@ class API(object):
 
         Parameters
         ----------
-        id
+        metric_id
             numeric metric identifier
 
         offset
@@ -482,7 +470,7 @@ class API(object):
         -------
         :py:class:`List`\[:class:`~wikirate4py.models.AnswerItem`]
         """
-        return self.get("/~{0}+Answer.json".format(id), endpoint_params=('limit', 'offset'),
+        return self.get("/~{0}+Answer.json".format(metric_id), endpoint_params=('limit', 'offset'),
                         filters=(
                             'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
                             'updater', 'outliers', 'source', 'verification', 'project', 'bookmark'), **kwargs)
@@ -588,7 +576,7 @@ class API(object):
         return self.get("/~{0}.json".format(id))
 
     @objectify(RelationshipAnswerItem, True)
-    def get_relationship_answers(self, id, **kwargs):
+    def get_relationship_answers_by_metric_id(self, metric_id, **kwargs):
         """get_relationship_answers(id, *, offset, limit, year, status, company_group, country, value, value_from, value_to, \
                        updated, updater, outliers, source, verification, project, bookmark)
 
@@ -661,7 +649,7 @@ class API(object):
                 :py:class:`List`\[:class:`~wikirate4py.models.RelationshipAnswerItem`]
 
             """
-        return self.get("/~{0}+Relationship_Answer.json".format(id),
+        return self.get("/~{0}+Relationship_Answer.json".format(metric_id),
                         endpoint_params=('limit', 'offset'), filters=(
                 'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
                 'updater', 'outliers', 'source', 'verification', 'project', 'bookmark'), **kwargs)
@@ -786,7 +774,7 @@ class API(object):
         """
         return self.get("/Projects.json", endpoint_params=('limit', 'offset'), filters=('name',), **kwargs)
 
-    @objectify(Region, True)
+    @objectify(RegionItem, True)
     def get_regions(self, **kwargs):
         """get_regions(*, offset, limit)
 
@@ -805,6 +793,26 @@ class API(object):
 
         """
         return self.get("/Region.json", endpoint_params=('limit', 'offset'), **kwargs)
+
+    @objectify(Region)
+    def get_region(self, identifier):
+        """get_project(identifier)
+        Returns a WikiRate Region based on the given identifier (name or number)
+
+        Parameters
+        ----------
+        identifier
+            two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+
+        Returns
+        -------
+            :py:class:`~wikirate4py.models.Project`
+
+        """
+        if isinstance(identifier, int):
+            return self.get("/~{0}.json".format(identifier))
+        else:
+            return self.get("/{0}.json".format(identifier.replace(" ", "_")))
 
     def search_by_name(self, entity, name, **kwargs):
         """search_by_name(entity, name, *, offset, limit)
