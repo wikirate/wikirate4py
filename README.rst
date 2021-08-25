@@ -8,7 +8,7 @@ wikirate4py: WikiRate for Python!
 .. image:: https://readthedocs.org/projects/wikirate4py/badge/?version=latest
     :target: https://wikirate4py.readthedocs.io/en/latest/
 
-* Official `WikiRate <https://www.gnu.org/licenses/gpl-3.0.txt>`_ 's wrapper for Python
+* Official `WikiRate <https://wikirate.org>`_ 's wrapper for Python
 * Full Documentation: https://wikirate4py.readthedocs.io/
 * `Official Slack Channel <https://wikirate.slack.com/archives/C021YJBQT8E>`_
 
