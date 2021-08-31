@@ -1,3 +1,5 @@
+from pandas import DataFrame
+
 from wikirate4py.exceptions import WikiRate4PyException
 from wikirate4py.mixins import WikiRateEntity
 import html2text
@@ -75,6 +77,12 @@ class Project(WikiRateEntity):
         self.created_at = data.get("created_at")
         self.updated_at = data.get("updated_at")
         self.url = data.get("html_url")
+
+    def to_dataframe(self):
+        answers = []
+        for answer in self.answers:
+            answers.append(answer.json())
+        return DataFrame.from_dict(answers)
 
 
 class ProjectItem(WikiRateEntity):
