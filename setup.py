@@ -32,7 +32,8 @@ setup(name='wikirate4py',
       packages=find_packages(exclude=["tests", "examples"]),
       install_requires=[
           "requests",
-          "html2text"
+          "html2text",
+          "pandas"
       ],
       project_urls={
           "Documentation": "https://wikirate4py.readthedocs.io",
