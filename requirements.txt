@@ -35,4 +35,4 @@ vcrpy==4.1.1
 -e git+https://github.com/wikirate/wikirate4py.git@02de347d5ec0b02b88b912958fc2c7cf17af5efb#egg=wikirate4py
 wrapt==1.12.1
 yarl==1.6.3
-pandas=1.3.3
+pandas==1.3.3
