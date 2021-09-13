@@ -13,7 +13,7 @@ class Company(WikiRateEntity):
         self.raw = data
         if data["type"]["id"] != 651:
             raise WikiRate4PyException('Invalid type of entity')
-        self.id = int(data["id"])
+        self.id = data.get("id")
         self.name = data["name"]
         self.headquarters = None
         if data.get("headquarters").get("content") is not None:
@@ -34,7 +34,7 @@ class CompanyItem(WikiRateEntity):
         self.raw = data
         if data["type"] != "Company":
             raise WikiRate4PyException('Invalid type of entity')
-        self.id = int(data["id"])
+        self.id = data.get("id")
         self.name = data["name"]
         self.headquarters = data.get("headquarters")
         self.aliases = data.get("alias")
@@ -53,7 +53,7 @@ class Topic(WikiRateEntity):
         if data["type"]["id"] != 1010:
             raise WikiRate4PyException('Invalid type of entity')
 
-        self.id = int(data["id"])
+        self.id = data.get("id")
         self.name = data["name"]
         self.metrics = data.get("metrics", 0)
         self.projects = data.get("projects", 0)
@@ -69,7 +69,7 @@ class Project(WikiRateEntity):
         if data["type"]["id"] != 39830:
             raise WikiRate4PyException('Invalid type of entity')
 
-        self.id = int(data["id"])
+        self.id = data.get("id")
         self.name = data["name"]
         self.metrics = data.get("metrics", {}).get("content", [])
         self.companies = data.get("companies", {}).get("content", [])
@@ -93,7 +93,7 @@ class ProjectItem(WikiRateEntity):
         if data["type"] != 'Project':
             raise WikiRate4PyException('Invalid type of entity')
 
-        self.id = int(data["id"])
+        self.id = data.get("id")
         self.name = data["name"]
         self.url = data.get("url").replace(".json", "")
 
@@ -106,7 +106,7 @@ class TopicItem(WikiRateEntity):
         if data["type"] != 'Topic':
             raise WikiRate4PyException('Invalid type of entity')
 
-        self.id = int(data["id"])
+        self.id = data.get("id")
         self.name = data["name"]
         self.metrics = data.get("metrics", 0)
         self.projects = data.get("projects", 0)
@@ -126,7 +126,7 @@ class Metric(WikiRateEntity):
             raise WikiRate4PyException('Invalid type of entity')
         h = html2text.HTML2Text()
 
-        self.id = int(data["id"])
+        self.id = data.get("id")
         self.designer = data["designer"]
         self.name = data["title"]
         self.question = data.get("question", {}).get("content")
@@ -166,7 +166,7 @@ class MetricItem(WikiRateEntity):
             raise WikiRate4PyException('Invalid type of entity')
         h = html2text.HTML2Text()
 
-        self.id = int(data["id"])
+        self.id = data.get("id")
         self.designer = data["designer"]
         self.name = data["title"]
         self.question = data.get("question")
@@ -205,7 +205,7 @@ class ResearchGroup(WikiRateEntity):
         if data["type"]["id"] != 2301582:
             raise WikiRate4PyException('Invalid type of entity')
 
-        self.id = int(data["id"])
+        self.id = data.get("id")
         self.name = data["name"]
         self.url = data.get("html_url")
 
@@ -219,7 +219,7 @@ class ResearchGroupItem(WikiRateEntity):
         if data["type"] != 'Research Group':
             raise WikiRate4PyException('Invalid type of entity')
 
-        self.id = int(data["id"])
+        self.id = data.get("id")
         self.name = data["name"]
         self.url = data.get("url").replace(".json", "")
 
@@ -233,7 +233,7 @@ class CompanyGroup(WikiRateEntity):
         if data["type"]["id"] != 5458825:
             raise WikiRate4PyException('Invalid type of entity')
 
-        self.id = int(data["id"])
+        self.id = data.get("id")
         self.name = data["name"]
         self.members = data.get("companies", {}).get("content", [])
         self.members_links = data["links"]
@@ -249,7 +249,7 @@ class CompanyGroupItem(WikiRateEntity):
         if data["type"] != 'Company Group':
             raise WikiRate4PyException('Invalid type of entity')
 
-        self.id = int(data["id"])
+        self.id = data.get("id")
         self.name = data["name"]
         self.members = data.get("companies", [])
         self.url = data.get("url").replace('.json', '')
@@ -265,7 +265,7 @@ class Source(WikiRateEntity):
         if data.get("type").get("id") != 629:
             raise WikiRate4PyException('Invalid type of entity')
 
-        self.id = int(data["id"])
+        self.id = data.get("id")
         self.name = data.get("name")
         self.title = data.get("title", {}).get("content")
         self.description = data.get("description", {}).get("content")
@@ -290,7 +290,7 @@ class SourceItem(WikiRateEntity):
         if data.get("type") != 'Source':
             raise WikiRate4PyException('Invalid type of entity')
 
-        self.id = int(data["id"])
+        self.id = data.get("id")
         self.name = data.get("name")
         self.title = data.get("title")
         self.file_url = data.get("file")
@@ -310,7 +310,7 @@ class Answer(WikiRateEntity):
         if data["type"]["id"] != 43678:
             raise WikiRate4PyException('Invalid type of entity')
 
-        self.id = int(data["id"])
+        self.id = data.get("id")
         self.metric = data["metric"]
         self.company = data["company"]
         self.value = data.get("value")
@@ -334,10 +334,7 @@ class AnswerItem(WikiRateEntity):
         if data["type"] != 'Answer':
             raise WikiRate4PyException('Invalid type of entity')
 
-        if data.get("id") is None:
-            self.id = None
-        else:
-            self.id = int(data["id"])
+        self.id = data.get("id")
         self.metric = data["metric"]
         self.company = data["company"]
         self.value = data.get("value")
@@ -360,7 +357,7 @@ class RelationshipAnswer(WikiRateEntity):
         if data["type"]["id"] != 2534606:
             raise WikiRate4PyException('Invalid type of entity')
 
-        self.id = int(data["id"])
+        self.id = data.get("id")
         fields = data.get("name").split("+")
         self.metric = fields[0] + "+" + fields[1]
         self.value = data.get("value")
@@ -390,7 +387,7 @@ class RelationshipAnswerItem(WikiRateEntity):
         if data["type"] != 'Relationship Answer':
             raise WikiRate4PyException('Invalid type of entity')
 
-        self.id = int(data["id"])
+        self.id = data.get("id")
         fields = data.get("name").split("+")
         self.metric = fields[0] + "+" + fields[1]
         self.metric_id = data.get("metric_id")
@@ -416,7 +413,7 @@ class RegionItem(WikiRateEntity):
         if data["type"] != 'Region':
             raise WikiRate4PyException('Invalid type of entity')
 
-        self.id = int(data["id"])
+        self.id = data.get("id")
         self.name = data.get("name")
         self.url = data.get("url").replace(".json", "")
 
@@ -430,7 +427,7 @@ class Region(WikiRateEntity):
         if data["type"]["id"] != 7044738:
             raise WikiRate4PyException('Invalid type of entity')
 
-        self.id = int(data["id"])
+        self.id = data.get("id")
         self.name = data.get("name")
         self.url = data.get("url").replace(".json", "")
         self.oc_jurisdiction_key = data.get("items", [])[1].get("content")
