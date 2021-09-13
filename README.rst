@@ -45,6 +45,26 @@ wikirate4py makes it trivial to interact with WikiRate's API:
     'Germany'
 
 
+DataFrames
+----------
+
+The 1.0.5 version of wikirate4py library allows users to transform WikiRateEntity objects to DataFrames.
+A usage example can be found below:
+
+.. code-block:: python
+
+    from wikirate4py import API
+    api = API('your_api_token')
+    cursor = wikirate4py.Cursor(api.get_answers,
+                                metric_name="Revenue EUR",
+                                metric_designer="Clean Clothes Campaign",
+                                year=2020)
+    answers = []
+    while cursor.has_next():
+        answers += cursor.next()
+
+    print(to_dataframe(answers).to_string())
+
 Contributing
 ------------
 

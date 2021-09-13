@@ -5,7 +5,7 @@
 """
 wikirate4py WikiRate API library
 """
-__version__ = '1.0.4'
+__version__ = '1.0.5'
 __author__ = 'Vasiliki Gkatziaki'
 __license__ = 'GPL-3.0'
 
@@ -19,3 +19,4 @@ from wikirate4py.mixins import WikiRateEntity
 from wikirate4py.models import (Company, CompanyItem, Topic, TopicItem, Metric, MetricItem, ResearchGroup,
                                 ResearchGroupItem, Project, ProjectItem, CompanyGroup, CompanyGroupItem, Source,
                                 SourceItem, Answer, AnswerItem, RelationshipAnswer, RelationshipAnswerItem, Region)
+from wikirate4py.utils import to_dataframe
