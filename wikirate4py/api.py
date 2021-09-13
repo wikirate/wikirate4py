@@ -399,7 +399,7 @@ class API(object):
 
     @objectify(AnswerItem, True)
     def get_answers_by_metric_id(self, metric_id, **kwargs):
-        """get_answers(id, *, offset, limit, year, status, company_group, country, value, value_from, value_to, \
+        """get_answers_by_metric_id(metric_id, *, offset, limit, year, status, company_group, country, value, value_from, value_to, \
                        updated, updater, outliers, source, verification, project, bookmark)
 
         Returns a list of WikiRate Answers
@@ -577,7 +577,7 @@ class API(object):
 
     @objectify(RelationshipAnswerItem, True)
     def get_relationship_answers_by_metric_id(self, metric_id, **kwargs):
-        """get_relationship_answers(id, *, offset, limit, year, status, company_group, country, value, value_from, value_to, \
+        """get_relationship_answers_by_metric_id(metric_id, *, offset, limit, year, status, company_group, country, value, value_from, value_to, \
                        updated, updater, outliers, source, verification, project, bookmark)
 
         Returns a list of WikiRate Relationship Answers
@@ -1298,9 +1298,9 @@ class API(object):
 
         return self.post("/card/update", params)
 
-    def delete_company(self, id):
-        """delete_company(id)
+    def delete_wikirate_entity(self, id):
+        """delete_wikirate_entity(id)
 
-        Deletes a company based on the given numeric identifier
+        Deletes a WikiRate entity based on the given numeric identifier
         """
         return self.delete("/~{0}".format(id))
