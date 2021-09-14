@@ -14,7 +14,6 @@ Company Methods
 .. automethod:: API.get_company
 .. automethod:: API.get_companies
 .. automethod:: API.add_company
-.. automethod:: API.delete_company
 
 Metric Methods
 ---------------
@@ -25,6 +24,7 @@ Answer Methods
 ---------------
 .. automethod:: API.get_answer
 .. automethod:: API.get_answers
+.. automethod:: API.get_answers_by_metric_id
 .. automethod:: API.add_research_metric_answer
 .. automethod:: API.update_research_metric_answer
 
@@ -33,6 +33,7 @@ Relationship Answer Methods
 ---------------------------
 .. automethod:: API.get_relationship_answer
 .. automethod:: API.get_relationship_answers
+.. automethod:: API.get_relationship_answers_by_metric_id
 .. automethod:: API.add_relationship_metric_answer
 .. automethod:: API.update_relationship_metric_answer
 
@@ -75,6 +76,12 @@ Project Methods
 Region Methods
 --------------
 
+.. automethod:: API.get_region
 .. automethod:: API.get_regions
+
+
+Delete Methods
+--------------
+.. automethod:: API.delete_wikirate_entity
 
 
