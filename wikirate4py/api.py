@@ -149,7 +149,9 @@ class API(object):
         if isinstance(identifier, int):
             return self.get("/~{0}.json".format(identifier))
         else:
-            return self.get("/{0}.json".format(identifier.replace(" ", "_")))
+            return self.get("/{0}.json".format(
+                identifier.replace(',', ' ').replace('.', ' ').replace('/', ' ').replace('-', ' ').strip().replace(" ",
+                                                                                                                   "_")))
 
     @objectify(CompanyItem, list=True)
     def get_companies(self, **kwargs):
@@ -191,7 +193,9 @@ class API(object):
         if isinstance(identifier, int):
             return self.get("/~{0}.json".format(identifier))
         else:
-            return self.get("/{0}.json".format(identifier.replace(" ", "_")))
+            return self.get("/{0}.json".format(
+                identifier.replace(',', ' ').replace('.', ' ').replace('/', ' ').replace('-', ' ').strip().replace(" ",
+                                                                                                                   "_")))
 
     @objectify(TopicItem, True)
     def get_topics(self, **kwargs):
@@ -280,7 +284,9 @@ class API(object):
         if isinstance(identifier, int):
             return self.get("/~{0}.json".format(identifier))
         else:
-            return self.get("/{0}.json".format(identifier.replace(" ", "_")))
+            return self.get("/{0}.json".format(
+                identifier.replace(',', ' ').replace('.', ' ').replace('/', ' ').replace('-', ' ').strip().replace(" ",
+                                                                                                                   "_")))
 
     @objectify(ResearchGroupItem, list=True)
     def get_research_groups(self, **kwargs):
@@ -319,7 +325,9 @@ class API(object):
         if isinstance(identifier, int):
             return self.get("/~{0}.json".format(identifier))
         else:
-            return self.get("/{0}.json".format(identifier.replace(" ", "_")))
+            return self.get("/{0}.json".format(
+                identifier.replace(',', ' ').replace('.', ' ').replace('/', ' ').replace('-', ' ').strip().replace(" ",
+                                                                                                                   "_")))
 
     @objectify(CompanyGroupItem, True)
     def get_company_groups(self, **kwargs):
@@ -359,7 +367,9 @@ class API(object):
         if isinstance(identifier, int):
             return self.get("/~{0}.json".format(identifier))
         else:
-            return self.get("/{0}.json".format(identifier.replace(" ", "_")))
+            return self.get("/{0}.json".format(
+                identifier.replace(',', ' ').replace('.', ' ').replace('/', ' ').replace('-', ' ').strip().replace(" ",
+                                                                                                                   "_")))
 
     @objectify(SourceItem, True)
     def get_sources(self, **kwargs):
@@ -473,7 +483,8 @@ class API(object):
         return self.get("/~{0}+Answer.json".format(metric_id), endpoint_params=('limit', 'offset'),
                         filters=(
                             'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
-                            'updater', 'outliers', 'source', 'verification', 'project', 'bookmark'), **kwargs)
+                            'updater', 'outliers', 'source', 'verification', 'project', 'bookmark', 'published'),
+                        **kwargs)
 
     @objectify(AnswerItem, True)
     def get_answers(self, metric_name, metric_designer, **kwargs):
@@ -545,6 +556,11 @@ class API(object):
         bookmark
             - `bookmark`, restrict to answers you have bookmarked
             - `nobookmark`, restrict to answers you have not bookmarked
+        published
+            - `true`, returns only published answers (default mode)
+            - `false`, returns only unpublished answers
+            - `all`, returns all published and unpublished answers
+
 
         Returns
         -------
@@ -552,11 +568,11 @@ class API(object):
 
         """
         return self.get(
-            "/~{0}+{1}+Answer.json".format(metric_designer.replace(" ", "_"), metric_name.replace(" ", "_")),
+            "/{0}+{1}+Answer.json".format(metric_designer.replace(" ", "_"), metric_name.replace(" ", "_")),
             endpoint_params=('limit', 'offset'),
             filters=(
                 'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
-                'updater', 'outliers', 'source', 'verification', 'project', 'bookmark'), **kwargs)
+                'updater', 'outliers', 'source', 'verification', 'project', 'bookmark', 'published'), **kwargs)
 
     @objectify(RelationshipAnswer)
     def get_relationship_answer(self, id):
@@ -644,6 +660,11 @@ class API(object):
                 - `bookmark`, restrict to relationship answers you have bookmarked
                 - `nobookmark`, restrict to relationship answers you have not bookmarked
 
+            published
+            - `true`, returns only published answers (default mode)
+            - `false`, returns only unpublished answers
+            - `all`, returns all published and unpublished answers
+
             Returns
             -------
                 :py:class:`List`\[:class:`~wikirate4py.models.RelationshipAnswerItem`]
@@ -652,7 +673,7 @@ class API(object):
         return self.get("/~{0}+Relationship_Answer.json".format(metric_id),
                         endpoint_params=('limit', 'offset'), filters=(
                 'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
-                'updater', 'outliers', 'source', 'verification', 'project', 'bookmark'), **kwargs)
+                'updater', 'outliers', 'source', 'verification', 'project', 'bookmark', 'published'), **kwargs)
 
     @objectify(RelationshipAnswerItem, True)
     def get_relationship_answers(self, metric_name, metric_designer, **kwargs):
@@ -722,6 +743,11 @@ class API(object):
                 - `bookmark`, restrict to relationship answers you have bookmarked
                 - `nobookmark`, restrict to relationship answers you have not bookmarked
 
+            published
+            - `true`, returns only published answers (default mode)
+            - `false`, returns only unpublished answers
+            - `all`, returns all published and unpublished answers
+
             Returns
             -------
                 :py:class:`List`\[:class:`~wikirate4py.models.RelationshipAnswerItem`]
@@ -732,7 +758,7 @@ class API(object):
                                                                     metric_name.replace(" ", "_")),
                         endpoint_params=('limit', 'offset'), filters=(
                 'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
-                'updater', 'outliers', 'source', 'verification', 'project', 'bookmark'), **kwargs)
+                'updater', 'outliers', 'source', 'verification', 'project', 'bookmark', 'published'), **kwargs)
 
     @objectify(Project)
     def get_project(self, identifier):
@@ -752,7 +778,9 @@ class API(object):
         if isinstance(identifier, int):
             return self.get("/~{0}.json".format(identifier))
         else:
-            return self.get("/{0}.json".format(identifier.replace(" ", "_")))
+            return self.get("/{0}.json".format(
+                identifier.replace(',', ' ').replace('.', ' ').replace('/', ' ').replace('-', ' ').strip().replace(" ",
+                                                                                                                   "_")))
 
     @objectify(ProjectItem, True)
     def get_projects(self, **kwargs):
@@ -943,6 +971,86 @@ class API(object):
             params['card[skip]'] = "update_oc_mapping_due_to_headquarters_entry"
 
         return self.post("/card/create", params)
+
+    @objectify(Company)
+    def add_company(self, name, headquarters, **kwargs):
+        """add_company(name, headquarters, *, oar_id, open_corporates)
+
+        Creates and Returns a company given the company name and headquarters
+
+        Parameters
+        ----------
+        name
+            company name
+        headquarters
+            name of the region the headquarters of the company is located
+        wikipedia
+            company's wikipedia page url
+        oar_id
+            company's identifier on https://openapparel.org
+        open_corporates
+            company's identifier on https://opencorporates.com/
+
+        Returns
+        -------
+            :py:class:`~wikirate4py.models.Company`
+
+        """
+
+        if name is None or headquarters is None:
+            raise WikiRate4PyException(
+                'A WikiRate company is defined by a name and headquarters, please be sure you '
+                'have defined both while trying to create a new company')
+        optional_params = ('oar_id', 'wikipedia', 'open_corporates')
+        params = {
+            "card[type]": "Company",
+            "card[name]": name,
+            "card[subcards][+headquarters]": headquarters,
+            "format": "json",
+            "success[format]": "json"
+        }
+
+        for k, arg in kwargs.items():
+            if arg is None:
+                continue
+            if k not in optional_params:
+                log.warning(f'Unexpected parameter: {k}')
+            else:
+                params['card[subcards][+' + k + ']'] = str(arg)
+        log.debug("PARAMS: %r", params)
+        if 'open_corporates' not in kwargs:
+            params['card[skip]'] = "update_oc_mapping_due_to_headquarters_entry"
+
+        return self.post("/card/create", params)
+
+    @objectify(RegionItem, True)
+    def update_headquarters(self, identifier, headquarters):
+        params = {
+            "card[content]": headquarters,
+            "format": "json",
+            "success[format]": "json"
+        }
+        if isinstance(identifier, int):
+            return self.post("/update/~{0}".format(identifier) + '+:headquarters', params)
+        else:
+            return self.post("/update/{0}".format(
+                identifier.replace(',', ' ').replace('.', ' ').replace('/', ' ').replace('-', ' ').strip().replace(" ",
+                                                                                                                   "_")) + '+:headquarters',
+                             params)
+
+    def update_oc_company_number(self, identifier, company_number):
+        params = {
+            "card[content]": company_number,
+            "format": "json",
+            "success[format]": "json"
+        }
+        if isinstance(identifier, int):
+            return self.post("/update/~{0}".format(identifier) + '+OpenCorporates', params)
+        else:
+            return self.post("/update/{0}".format(
+                identifier.replace(',', ' ').replace('.', ' ').replace('/', ' ').replace('-', ' ').strip().replace(" ",
+                                                                                                                   "_")) + '+OpenCorporates',
+                             params)
 
     @objectify(Answer)
     def add_research_metric_answer(self, **kwargs):
@@ -1304,3 +1412,18 @@ class API(object):
         Deletes a WikiRate entity based on the given numeric identifier
         """
         return self.delete("/~{0}".format(id))
+
+    def add_companies_to_group(self, group_id, list=[]):
+        ids = ""
+        for item in list:
+            ids += '~[[' + item + ']]\n'
+        print(ids)
+        params = {
+            "card[type]": "List",
+            "card[name]": '~' + group_id + '+' + 'Company',
+            "card[content]": ids,
+            "format": "json",
+            "success[format]": "json"
+        }
+
+        return self.post("/card/update", params)
