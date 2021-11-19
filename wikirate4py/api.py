@@ -409,7 +409,7 @@ class API(object):
 
     @objectify(AnswerItem, True)
     def get_answers_by_metric_id(self, metric_id, **kwargs):
-        """get_answers_by_metric_id(metric_id, *, offset, limit, year, status, company_group, country, value, value_from, value_to, \
+        """get_answers_by_metric_id(metric_id, *, offset, limit, year, status, company_group, country, company_id, value, value_from, value_to, \
                        updated, updater, outliers, source, verification, project, bookmark)
 
         Returns a list of WikiRate Answers
@@ -436,6 +436,12 @@ class API(object):
 
         country
             country name, restricts to answers with companies located in the specified country
+
+        company_id
+            company identifier, restricts to answers of the defined company
+
+        company_name
+            restricts to answers of the defined company name
 
         value
             answer value to match
@@ -482,13 +488,13 @@ class API(object):
         """
         return self.get("/~{0}+Answer.json".format(metric_id), endpoint_params=('limit', 'offset'),
                         filters=(
-                            'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
+                            'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated', 'company_id', 'company_name'
                             'updater', 'outliers', 'source', 'verification', 'project', 'bookmark', 'published'),
                         **kwargs)
 
     @objectify(AnswerItem, True)
     def get_answers(self, metric_name, metric_designer, **kwargs):
-        """get_answers(metric_name, metric_designer, *, offset, limit, year, status, company_group, country, value, value_from, value_to, \
+        """get_answers(metric_name, metric_designer, *, company_name, company_id, offset, limit, year, status, company_group, country, value, value_from, value_to,
                        updated, updater, outliers, source, verification, project, bookmark)
 
         Returns a list of WikiRate Answers
@@ -499,6 +505,12 @@ class API(object):
             name of relationship metric
         metric_designer
             name of relationship metric designer
+
+        company_name
+            restrict the answers based on the given company
+
+        company_id
+            restrict the answers based on the given company
 
         offset
             default value 0, the (zero-based) offset of the first item in the collection to return
@@ -572,7 +584,7 @@ class API(object):
             endpoint_params=('limit', 'offset'),
             filters=(
                 'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
-                'updater', 'outliers', 'source', 'verification', 'project', 'bookmark', 'published'), **kwargs)
+                'updater', 'outliers', 'source', 'verification', 'project', 'bookmark', 'published', 'company_name', 'company_id'), **kwargs)
 
     @objectify(RelationshipAnswer)
     def get_relationship_answer(self, id):
@@ -1165,6 +1177,69 @@ class API(object):
             if k == 'comment':
                 params['card[subcards][+:discussion]'] = str(kwargs[k])
             elif k not in required_params and k in optional_params:
+                params['card[subcards][+:' + k + ']'] = str(kwargs[k])
+
+        log.debug("PARAMS: %r", params)
+
+        return self.post("/card/update", params)
+
+    @objectify(Answer)
+    def update_research_metric_answer_by_id(self, **kwargs):
+        """update_research_metric_answer(id, *, company, year, value, source, comment)
+
+        Updates and Returns an existing metric answer
+
+        Parameters
+        ----------
+        id
+            answer's id
+
+        metric_name
+            name of metric
+
+        metric_designer
+            name of metric designer
+
+        company
+            company the answer is assigned to
+
+        year
+            reporting year
+
+        value
+            new value
+
+        source
+            new source name
+
+        comment
+            new comment on the metric answer
+
+        Returns
+        -------
+            :py:class:`~wikirate4py.models.Answer`
+
+        """
+        required_param = 'id'
+        optional_params = ('company', 'year', 'value', 'source', 'comment')
+
+        if required_param not in kwargs:
+            print(kwargs)
+            raise WikiRate4PyException("""Invalid set of params! You need to define all the following params to update the research answer: """ + required_param.__str__())
+
+        if kwargs.get('company') is not None:
+            company_identifier = '~' + str(kwargs['company']) if isinstance(kwargs['company'], int) else kwargs[
+                'company'].replace(' ', '_')
+        params = {
+            "card[type]": "Answer",
+            "card[name]": '~' + kwargs['id'].__str__(),
+            "format": "json",
+            "success[format]": "json"
+        }
+        for k in kwargs.keys():
+            if k == 'comment':
+                params['card[subcards][+:discussion]'] = str(kwargs[k])
+            elif k != required_param and k in optional_params:
                 params['card[subcards][+:' + k + ']'] = str(kwargs[k])
 
         log.debug("PARAMS: %r", params)
