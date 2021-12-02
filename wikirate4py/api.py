@@ -66,7 +66,7 @@ class API(object):
 
         # if an error was returned throw an exception
         try:
-            response = self.session.request(method, path, auth=self.auth, params=params, headers=headers)
+            response = self.session.request(method, path, auth=self.auth, params=params, headers=headers, timeout=120)
         except Exception as e:
             raise WikiRate4PyException(f'Failed to send request: {e}').with_traceback(sys.exc_info()[2])
         finally:
