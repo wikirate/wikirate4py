@@ -1252,7 +1252,7 @@ class API(object):
     def add_relationship_metric_answer(self, **kwargs):
         """add_relationship_metric_answer(metric_designer, metric_name, company, year, value, source, *, comment)
 
-        Updates and Returns an existing relationship metric answer
+        Adds and Returns a relationship metric answer
 
         Parameters
         ----------
@@ -1386,7 +1386,7 @@ class API(object):
     def add_source(self, **kwargs):
         """add_source(url, title, company, report_type, year)
 
-        Updates and Returns an existing relationship metric answer
+        Adds and Returns a source
 
         Parameters
         -------------------
@@ -1437,7 +1437,7 @@ class API(object):
     def update_source(self, **kwargs):
         """update_source(name, title, company, report_type, year)
 
-        Updates and Returns an existing relationship metric answer
+        Updates and Returns an existing source
 
         Parameters
         ----------
