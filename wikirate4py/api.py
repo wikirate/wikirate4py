@@ -902,6 +902,8 @@ class API(object):
             return self.get_research_groups(name=name, **kwargs)
         elif entity is Project:
             return self.get_projects(name=name, **kwargs)
+        else :
+            raise WikiRate4PyException(f"Type of parameter 'entity' ({type(entity)}) is not allowed")
 
     @objectify(SourceItem, True)
     def search_source_by_url(self, url, **kwargs):
