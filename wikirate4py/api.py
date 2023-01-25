@@ -388,7 +388,7 @@ class API(object):
         -------
             :py:class:`List`\[:class:`~wikirate4py.models.Source`]
         """
-        return self.get("/Sources.json", endpoint_params=('limit', 'offset'), **kwargs)
+        return self.get("/Sources.json", endpoint_params=('limit', 'offset'), filters=('company_name', 'year'), **kwargs)
 
     @objectify(Answer)
     def get_answer(self, id):

@@ -282,8 +282,7 @@ class Source(WikiRateEntity):
 
 class SourceItem(WikiRateEntity):
     __slots__ = (
-        "id", "name", "title", "description", "url", "original_source", "file_url", "year", "metrics", "companies",
-        "report_type", "created_at", "updated_at", "raw")
+        "id", "name", "title", "url", "original_source", "file_url", "year", "report_type", "raw")
 
     def __init__(self, data):
         self.raw = data
