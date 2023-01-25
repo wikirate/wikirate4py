@@ -383,12 +383,24 @@ class API(object):
             default value 0, the (zero-based) offset of the first item in the collection to return
         limit
             default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
+        company_name
+            filter sources where the company name matches fully or partially the given string
+        year
+            filter sources based on given year
+        wikirate_title
+            filter sources where their title match fully or partially the given string
+        report_type
+            filter sources based on the report type
+        wikirate_topic
+            filter sources based on given topic
+        wikirate_link
+            filter sources where their url matches fully or partially the given string
 
         Returns
         -------
             :py:class:`List`\[:class:`~wikirate4py.models.Source`]
         """
-        return self.get("/Sources.json", endpoint_params=('limit', 'offset'), filters=('company_name', 'year'), **kwargs)
+        return self.get("/Sources.json", endpoint_params=('limit', 'offset'), filters=('company_name', 'year', 'wikirate_link', 'report_type', 'wikirate_topic', 'wikirate_title'), **kwargs)
 
     @objectify(Answer)
     def get_answer(self, id):
@@ -488,8 +500,10 @@ class API(object):
         """
         return self.get("/~{0}+Answer.json".format(metric_id), endpoint_params=('limit', 'offset'),
                         filters=(
-                            'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated', 'company_id', 'company_name'
-                            'updater', 'outliers', 'source', 'verification', 'project', 'bookmark', 'published'),
+                            'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
+                            'company_id', 'company_name'
+                                          'updater', 'outliers', 'source', 'verification', 'project', 'bookmark',
+                            'published'),
                         **kwargs)
 
     @objectify(AnswerItem, True)
@@ -584,7 +598,8 @@ class API(object):
             endpoint_params=('limit', 'offset'),
             filters=(
                 'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
-                'updater', 'outliers', 'source', 'verification', 'project', 'bookmark', 'published', 'company_name', 'company_id'), **kwargs)
+                'updater', 'outliers', 'source', 'verification', 'project', 'bookmark', 'published', 'company_name',
+                'company_id'), **kwargs)
 
     @objectify(RelationshipAnswer)
     def get_relationship_answer(self, id):
@@ -902,7 +917,7 @@ class API(object):
             return self.get_research_groups(name=name, **kwargs)
         elif entity is Project:
             return self.get_projects(name=name, **kwargs)
-        else :
+        else:
             raise WikiRate4PyException(f"Type of parameter 'entity' ({type(entity)}) is not allowed")
 
     @objectify(SourceItem, True)
@@ -1227,7 +1242,8 @@ class API(object):
 
         if required_param not in kwargs:
             print(kwargs)
-            raise WikiRate4PyException("""Invalid set of params! You need to define all the following params to update the research answer: """ + required_param.__str__())
+            raise WikiRate4PyException(
+                """Invalid set of params! You need to define all the following params to update the research answer: """ + required_param.__str__())
 
         if kwargs.get('company') is not None:
             company_identifier = '~' + str(kwargs['company']) if isinstance(kwargs['company'], int) else kwargs[
