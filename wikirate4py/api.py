@@ -1,5 +1,6 @@
 import functools
 import logging
+import os
 import sys
 import re
 
@@ -57,7 +58,7 @@ class API(object):
         }
         return headers
 
-    def request(self, method, path, headers, params):
+    def request(self, method, path, headers, params, files):
         method = method.strip().lower()
         if method not in self.allowed_methods:
             msg = "The '{0}' method is not accepted by the WikiRate " \
@@ -66,7 +67,8 @@ class API(object):
 
         # if an error was returned throw an exception
         try:
-            response = self.session.request(method, path, auth=self.auth, params=params, headers=headers, timeout=120)
+            response = self.session.request(method, path, auth=self.auth, params=params, headers=headers, timeout=120,
+                                            files=files)
         except Exception as e:
             raise WikiRate4PyException(f'Failed to send request: {e}').with_traceback(sys.exc_info()[2])
         finally:
@@ -114,9 +116,9 @@ class API(object):
         path = self.format_path(path, self.wikirate_api_url)
         return self.request('get', path, headers=headers, params=params or {})
 
-    def post(self, path, params={}):
+    def post(self, path, params={}, files=None):
         path = self.format_path(path, self.wikirate_api_url)
-        return self.request('post', path, headers=self.headers, params=params or {})
+        return self.request('post', path, headers=self.headers, params=params or {}, files=files)
 
     def delete(self, path, params={}):
         path = self.format_path(path, self.wikirate_api_url)
@@ -400,7 +402,8 @@ class API(object):
         -------
             :py:class:`List`\[:class:`~wikirate4py.models.Source`]
         """
-        return self.get("/Sources.json", endpoint_params=('limit', 'offset'), filters=('company_name', 'year', 'wikirate_link', 'report_type', 'wikirate_topic', 'wikirate_title'), **kwargs)
+        return self.get("/Sources.json", endpoint_params=('limit', 'offset'), filters=(
+        'company_name', 'year', 'wikirate_link', 'report_type', 'wikirate_topic', 'wikirate_title'), **kwargs)
 
     @objectify(Answer)
     def get_answer(self, id):
@@ -1400,14 +1403,17 @@ class API(object):
 
     @objectify(Source)
     def add_source(self, **kwargs):
-        """add_source(url, title, company, report_type, year)
+        """add_source(link, title, company, report_type, year)
 
-        Adds and Returns a source
+        Updates and Returns an existing relationship metric answer
 
         Parameters
         -------------------
-        url
+        link
             url of the original source
+
+        file
+           file path to the file you want to upload as a source
 
         title
             give a title on the source
@@ -1420,34 +1426,51 @@ class API(object):
 
         year
             reporting year
+        file
+            filepath on the file you want to upload
 
         Returns
         -------
             :py:class:`~wikirate4py.models.Source`
 
         """
-        required_params = ('url', 'title')
-        optional_params = ('company', 'report_type', 'year')
+        required_params = ['title']
+        optional_params = ('link', 'company', 'report_type', 'year', 'file')
 
         for k in required_params:
             if k not in kwargs:
                 raise WikiRate4PyException("""Invalid set of params! You need to define all the following params to import 
-                        a new source in WikiRate platform: """ + required_params.__str__())
+                            a new source in WikiRate platform: """ + required_params.__str__())
 
         params = {
             "card[type]": "Source",
             "card[subcards][+title]": kwargs['title'],
-            "card[subcards][+link]": kwargs['url'],
             "card[skip]": "requirements",
             "format": "json",
             "success[format]": "json"
         }
+        files = {}
         for k in kwargs.keys():
-            if k in optional_params:
+            if k in optional_params and k == "file":
+                data_file = open(os.path.realpath(kwargs[k]), 'rb')
+                files["card[file]"] = data_file
+            else:
                 params['card[subcards][+' + k + ']'] = str(kwargs[k])
         log.debug("PARAMS: %r", params)
 
-        return self.post("/card/create", params)
+        return self.post("/card/create", params=params, files=files)
+
+    @objectify(Source)
+    def upload_file(self, source, file):
+        data_file = open(os.path.realpath(file), 'rb')
+        params = {
+            "format": "json",
+            "success[format]": "json"
+        }
+
+        file = {"card[file]": data_file}
+
+        return self.post("/update/{0}+File".format(source), params=params, file=file)
 
     @objectify(Source)
     def update_source(self, **kwargs):
