@@ -14,9 +14,9 @@ from wikirate4py.exceptions import IllegalHttpMethod, BadRequestException, Unaut
     ForbiddenException, NotFoundException, TooManyRequestsException, WikiRateServerErrorException, HTTPException, \
     WikiRate4PyException
 from wikirate4py.models import (Company, Topic, Metric, ResearchGroup, CompanyGroup, Source, CompanyItem, MetricItem,
-                                Answer,
-                                ResearchGroupItem, RelationshipAnswer, SourceItem, TopicItem, AnswerItem,
-                                CompanyGroupItem, RelationshipAnswerItem, Region, Project, ProjectItem, RegionItem)
+                                Answer, ResearchGroupItem, RelationshipAnswer, SourceItem, TopicItem, AnswerItem,
+                                CompanyGroupItem, RelationshipAnswerItem, Region, Project, ProjectItem, RegionItem,
+                                Dataset, DatasetItem)
 
 log = logging.getLogger(__name__)
 
@@ -58,7 +58,7 @@ class API(object):
         }
         return headers
 
-    def request(self, method, path, headers, params, files):
+    def request(self, method, path, headers, params, files={}):
         method = method.strip().lower()
         if method not in self.allowed_methods:
             msg = "The '{0}' method is not accepted by the WikiRate " \
@@ -67,7 +67,11 @@ class API(object):
 
         # if an error was returned throw an exception
         try:
-            response = self.session.request(method, path, auth=self.auth, params=params, headers=headers, timeout=120,
+            response = self.session.request(method, path,
+                                            auth=self.auth,
+                                            params=params,
+                                            headers=headers,
+                                            timeout=120,
                                             files=files)
         except Exception as e:
             raise WikiRate4PyException(f'Failed to send request: {e}').with_traceback(sys.exc_info()[2])
@@ -174,7 +178,7 @@ class API(object):
 
         """
         return self.get("/Company.json", endpoint_params=('limit', 'offset'),
-                        filters=('project', 'name', 'company_group', 'country', 'bookmark'),
+                        filters=('name', 'company_category', 'company_group', 'country'),
                         **kwargs)
 
     @objectify(Topic)
@@ -217,7 +221,7 @@ class API(object):
         :py:class:`List`\[:class:`~wikirate4py.models.TopicItem`]
 
         """
-        return self.get("/Topics.json", endpoint_params=('limit', 'offset'), filters=('name',), **kwargs)
+        return self.get("/Topics.json", endpoint_params=('limit', 'offset'), filters=('name', 'bookmark'), **kwargs)
 
     @objectify(Metric)
     def get_metric(self, identifier=None, metric_name=None, metric_designer=None):
@@ -266,7 +270,10 @@ class API(object):
             :py:class:`List`\[:class:`~wikirate4py.models.MetricItem`]
 
         """
-        return self.get("/Metrics.json", endpoint_params=('limit', 'offset'), filters=('name',), **kwargs)
+        return self.get("/Metrics.json", endpoint_params=('limit', 'offset'), filters=(
+            'name', 'bookmark', 'wikirate_topic', 'designer', 'published', 'metric_type', 'value_type',
+            'research_policy',
+            'dataset'), **kwargs)
 
     @objectify(ResearchGroup)
     def get_research_group(self, identifier):
@@ -403,7 +410,8 @@ class API(object):
             :py:class:`List`\[:class:`~wikirate4py.models.Source`]
         """
         return self.get("/Sources.json", endpoint_params=('limit', 'offset'), filters=(
-        'company_name', 'year', 'wikirate_link', 'report_type', 'wikirate_topic', 'wikirate_title'), **kwargs)
+            'name', 'wikirate_title', 'wikirate_topic', 'report_type', 'year', 'wikirate_link', 'company_name'),
+                        **kwargs)
 
     @objectify(Answer)
     def get_answer(self, id):
@@ -502,11 +510,9 @@ class API(object):
         :py:class:`List`\[:class:`~wikirate4py.models.AnswerItem`]
         """
         return self.get("/~{0}+Answer.json".format(metric_id), endpoint_params=('limit', 'offset'),
-                        filters=(
-                            'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
-                            'company_id', 'company_name'
-                                          'updater', 'outliers', 'source', 'verification', 'project', 'bookmark',
-                            'published'),
+                        filters=('year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to',
+                                 'updated', 'company_id', 'company_name', 'dataset', 'updater', 'outliers', 'source',
+                                 'verification', 'bookmark', 'published'),
                         **kwargs)
 
     @objectify(AnswerItem, True)
@@ -599,10 +605,9 @@ class API(object):
         return self.get(
             "/{0}+{1}+Answer.json".format(metric_designer.replace(" ", "_"), metric_name.replace(" ", "_")),
             endpoint_params=('limit', 'offset'),
-            filters=(
-                'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
-                'updater', 'outliers', 'source', 'verification', 'project', 'bookmark', 'published', 'company_name',
-                'company_id'), **kwargs)
+            filters=('year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
+                     'company_id', 'company_name', 'dataset', 'updater', 'outliers', 'source', 'verification',
+                     'bookmark', 'published'), **kwargs)
 
     @objectify(RelationshipAnswer)
     def get_relationship_answer(self, id):
@@ -830,7 +835,51 @@ class API(object):
             :py:class:`List`\[:class:`~wikirate4py.models.ProjectItem`]
 
         """
-        return self.get("/Projects.json", endpoint_params=('limit', 'offset'), filters=('name',), **kwargs)
+        return self.get("/Projects.json", endpoint_params=('limit', 'offset'), filters=('name', 'wikirate_status'),
+                        **kwargs)
+
+    @objectify(Dataset)
+    def get_dataset(self, identifier):
+        """get_dataset(identifier)
+        Returns a WikiRate Dataset based on the given identifier (name or number)
+
+        Parameters
+        ----------
+        identifier
+            two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+
+        Returns
+        -------
+            :py:class:`~wikirate4py.models.Dataset`
+
+        """
+        if isinstance(identifier, int):
+            return self.get("/~{0}.json".format(identifier))
+        else:
+            return self.get("/{0}.json".format(
+                identifier.replace(',', ' ').replace('.', ' ').replace('/', ' ').replace('-', ' ').strip().replace(" ",
+                                                                                                                   "_")))
+
+    @objectify(DatasetItem, True)
+    def get_datasets(self, **kwargs):
+        """get_datasets(*, offset, limit)
+
+        Returns a list of WikiRate Datasets
+
+        Parameters
+        -------------------
+        offset
+            default value 0, the (zero-based) offset of the first item in the collection to return
+        limit
+            default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
+
+        Returns
+        -------
+            :py:class:`List`\[:class:`~wikirate4py.models.DatasetItem`]
+
+        """
+        return self.get("/Data_sets.json", endpoint_params=('limit', 'offset'), filters=('name', 'wikirate_topic'),
+                        **kwargs)
 
     @objectify(RegionItem, True)
     def get_regions(self, **kwargs):
@@ -1453,7 +1502,7 @@ class API(object):
         for k in kwargs.keys():
             if k in optional_params and k == "file":
                 data_file = open(os.path.realpath(kwargs[k]), 'rb')
-                files["card[file]"] = data_file
+                files["card[subcards][+file]"] = data_file
             else:
                 params['card[subcards][+' + k + ']'] = str(kwargs[k])
         log.debug("PARAMS: %r", params)
