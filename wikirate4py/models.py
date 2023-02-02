@@ -98,6 +98,44 @@ class ProjectItem(WikiRateEntity):
         self.url = data.get("url").replace(".json", "")
 
 
+class Dataset(WikiRateEntity):
+    __slots__ = ("id", "name", "metrics", "companies", "answers", "license", "created_at", "updated_at", "url", "raw")
+
+    def __init__(self, data):
+        self.raw = data
+        if data["type"]["id"] != 7926098:
+            raise WikiRate4PyException('Invalid type of entity')
+
+        self.id = data.get("id")
+        self.name = data["name"]
+        self.metrics = data.get("metrics", {}).get("content", [])
+        self.companies = data.get("companies", {}).get("content", [])
+        self.answers = [AnswerItem(item) for item in data.get("items", {})]
+        self.license = data.get("license")
+        self.created_at = data.get("created_at")
+        self.updated_at = data.get("updated_at")
+        self.url = data.get("html_url")
+
+    def to_dataframe(self):
+        answers = []
+        for answer in self.answers:
+            answers.append(answer.json())
+        return DataFrame.from_dict(answers)
+
+
+class DatasetItem(WikiRateEntity):
+    __slots__ = ("id", "name", "url", "raw")
+
+    def __init__(self, data):
+        self.raw = data
+        if data["type"] != 'Data Set':
+            raise WikiRate4PyException('Invalid type of entity')
+
+        self.id = data.get("id")
+        self.name = data["name"]
+        self.url = data.get("url").replace(".json", "")
+
+
 class TopicItem(WikiRateEntity):
     __slots__ = ("id", "name", "metrics", "projects", "bookmarkers", "url", "raw")
 
