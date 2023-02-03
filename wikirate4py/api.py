@@ -53,7 +53,6 @@ class API(object):
     @property
     def headers(self):
         headers = {
-            "content-type": "application/json",
             'X-API-Key': self.oauth_token
         }
         return headers
@@ -67,12 +66,11 @@ class API(object):
 
         # if an error was returned throw an exception
         try:
-            response = self.session.request(method, path,
-                                            auth=self.auth,
-                                            params=params,
-                                            headers=headers,
-                                            timeout=120,
+            response = self.session.request(method, path, auth=self.auth, data=params, headers=headers, timeout=120,
                                             files=files)
+
+            if files.get("card[subcards][+file][file]") is not None:
+                files.get("card[subcards][+file][file]").close()
         except Exception as e:
             raise WikiRate4PyException(f'Failed to send request: {e}').with_traceback(sys.exc_info()[2])
         finally:
@@ -120,7 +118,7 @@ class API(object):
         path = self.format_path(path, self.wikirate_api_url)
         return self.request('get', path, headers=headers, params=params or {})
 
-    def post(self, path, params={}, files=None):
+    def post(self, path, params={}, files={}):
         path = self.format_path(path, self.wikirate_api_url)
         return self.request('post', path, headers=self.headers, params=params or {}, files=files)
 
@@ -1036,57 +1034,7 @@ class API(object):
             "card[type]": "Company",
             "card[name]": name,
             "card[subcards][+headquarters]": headquarters,
-            "format": "json",
-            "success[format]": "json"
-        }
-
-        for k, arg in kwargs.items():
-            if arg is None:
-                continue
-            if k not in optional_params:
-                log.warning(f'Unexpected parameter: {k}')
-            else:
-                params['card[subcards][+' + k + ']'] = str(arg)
-        log.debug("PARAMS: %r", params)
-        if 'open_corporates' not in kwargs:
-            params['card[skip]'] = "update_oc_mapping_due_to_headquarters_entry"
-
-        return self.post("/card/create", params)
-
-    @objectify(Company)
-    def add_company(self, name, headquarters, **kwargs):
-        """add_company(name, headquarters, *, oar_id, open_corporates)
-
-        Creates and Returns a company given the company name and headquarters
-
-        Parameters
-        ----------
-        name
-            company name
-        headquarters
-            name of the region the headquarters of the company is located
-        wikipedia
-            company's wikipedia page url
-        oar_id
-            company's identifier on https://openapparel.org
-        open_corporates
-            company's identifier on https://opencorporates.com/
-
-        Returns
-        -------
-            :py:class:`~wikirate4py.models.Company`
-
-        """
-
-        if name is None or headquarters is None:
-            raise WikiRate4PyException(
-                'A WikiRate company is defined by a name and headquarters, please be sure you '
-                'have defined both while trying to create a new company')
-        optional_params = ('oar_id', 'wikipedia', 'open_corporates')
-        params = {
-            "card[type]": "Company",
-            "card[name]": name,
-            "card[subcards][+headquarters]": headquarters,
+            "confirmed": "true",
             "format": "json",
             "success[format]": "json"
         }
@@ -1293,7 +1241,6 @@ class API(object):
         optional_params = ('company', 'year', 'value', 'source', 'comment')
 
         if required_param not in kwargs:
-            print(kwargs)
             raise WikiRate4PyException(
                 """Invalid set of params! You need to define all the following params to update the research answer: """ + required_param.__str__())
 
@@ -1502,11 +1449,10 @@ class API(object):
         for k in kwargs.keys():
             if k in optional_params and k == "file":
                 data_file = open(os.path.realpath(kwargs[k]), 'rb')
-                files["card[subcards][+file]"] = data_file
+                files["card[subcards][+file][file]"] = data_file
             else:
                 params['card[subcards][+' + k + ']'] = str(kwargs[k])
         log.debug("PARAMS: %r", params)
-
         return self.post("/card/create", params=params, files=files)
 
     @objectify(Source)
@@ -1516,10 +1462,9 @@ class API(object):
             "format": "json",
             "success[format]": "json"
         }
+        files = {"card[subcards][+file][file]": data_file}
 
-        file = {"card[file]": data_file}
-
-        return self.post("/update/{0}+File".format(source), params=params, file=file)
+        return self.post("/update/{0}".format(source), params=params, files=files)
 
     @objectify(Source)
     def update_source(self, **kwargs):
@@ -1582,7 +1527,6 @@ class API(object):
         ids = ""
         for item in list:
             ids += '~[[' + item + ']]\n'
-        print(ids)
         params = {
             "card[type]": "List",
             "card[name]": '~' + group_id + '+' + 'Company',
