@@ -1,7 +1,7 @@
 from tests.config import WikiRate4PyTestCase, tape
 from wikirate4py import Company, Metric, Topic, ResearchGroup, CompanyGroup, Source, Answer, RelationshipAnswer, \
     Project, SourceItem, AnswerItem, CompanyGroupItem, ResearchGroupItem, MetricItem, TopicItem, CompanyItem, \
-    ProjectItem, RelationshipAnswerItem
+    ProjectItem, RelationshipAnswerItem, Dataset, DatasetItem
 
 
 class WikiRate4PyTests(WikiRate4PyTestCase):
@@ -106,9 +106,9 @@ class WikiRate4PyTests(WikiRate4PyTestCase):
 
     @tape.use_cassette('test_get_project.json')
     def test_get_project(self):
-        project = self.api.get_project('ANU MSA Research 2021')
+        project = self.api.get_project('Scope 1 Greenhouse gas GHG Emission')
         self.assertTrue(isinstance(project, Project))
-        self.assertEqual(project.id, 7446944)
+        self.assertEqual(project.id, 13655794)
 
     @tape.use_cassette('test_get_projects.json')
     def test_get_projects(self):
@@ -116,10 +116,27 @@ class WikiRate4PyTests(WikiRate4PyTestCase):
         self.assertTrue(isinstance(projects[0], ProjectItem))
         self.assertEqual(len(projects), 10)
 
+    @tape.use_cassette('test_get_dataset.json')
+    def test_get_dataset(self):
+        dataset = self.api.get_dataset('Tea Transparency Tracker')
+        self.assertTrue(isinstance(dataset, Dataset))
+        self.assertEqual(dataset.id, 8543400)
+
+    @tape.use_cassette('test_get_datasets.json')
+    def test_get_datasets(self):
+        datasets = self.api.get_datasets(limit=10)
+        self.assertTrue(isinstance(datasets[0], DatasetItem))
+        self.assertEqual(len(datasets), 10)
+
     @tape.use_cassette('test_get_regions.json')
     def test_get_regions(self):
         regions = self.api.get_regions()
         self.assertTrue(isinstance(regions, list))
+
+    @tape.use_cassette('test_add_source_with_file.yaml', serializer='yaml')
+    def test_add_source_with_file(self):
+        source = self.api.add_source(title='Testing file upload', file='files/TestSource.pdf')
+        self.assertTrue(source.file_url is not None, True)
 
     @tape.use_cassette('test_search_source_by_url.json')
     def test_search_source_by_url(self):
@@ -129,20 +146,19 @@ class WikiRate4PyTests(WikiRate4PyTestCase):
 
     @tape.use_cassette('test_add_and_remove_company.yaml', serializer='yaml')
     def test_add_and_remove_company(self):
-        company = self.api.add_company(name='A Company',
-                                       headquarters='United Kingdom',
-                                       oar_id='FAKE_ID_123',
+        company = self.api.add_company(name='My Test Company Inc.',
+                                       headquarters='United Kingdom'
                                        )
         self.assertTrue(isinstance(company, Company))
-        self.assertEqual(company.name, 'A Company')
-        self.api.delete_company(company.id)
+        self.assertEqual(company.name, 'My Test Company Inc.')
+        self.api.delete_wikirate_entity(company.id)
 
     @tape.use_cassette('test_search_by_name.json')
     def test_search_by_name(self):
         self.api.search_by_name(Company, 'adidas')
         self.api.search_by_name(Metric, 'emissions')
         self.api.search_by_name(Topic, 'environment')
-        self.api.search_by_name(CompanyGroup, 'apparel')
+        self.api.search_by_name(CompanyGroup, 'aus')
         self.api.search_by_name(ResearchGroup, 'university')
         self.api.search_by_name(Project, 'apparel')
 
@@ -167,9 +183,9 @@ class WikiRate4PyTests(WikiRate4PyTestCase):
         answer = self.api.add_research_metric_answer(metric_name='Company Report Available',
                                                      metric_designer='Core',
                                                      value='No',
-                                                     year=2021,
-                                                     source='Source_000104408s',
-                                                     company='BORA 2 LTD',
+                                                     year=2022,
+                                                     source='Source_000104408',
+                                                     company='Adidas AG',
                                                      comment='This is a test import of a metric answer')
         self.assertTrue(isinstance(answer, Answer))
 
@@ -177,10 +193,11 @@ class WikiRate4PyTests(WikiRate4PyTestCase):
     def test_update_research_metric_answer(self):
         answer = self.api.update_research_metric_answer(metric_name='Company Report Available',
                                                         metric_designer='Core',
-                                                        year=2021,
-                                                        company='BORA 2 LTD',
+                                                        year=2022,
+                                                        value='Yes',
+                                                        company='Adidas AG',
                                                         source='Source_000104408')
-        self.assertEqual(answer.sources[0], 'Source-000104408')
+        self.assertEqual(answer.value, 'Yes')
 
     @tape.use_cassette('test_add_relationship_metric_answer.json')
     def test_add_relationship_metric_answer(self):
@@ -190,7 +207,7 @@ class WikiRate4PyTests(WikiRate4PyTestCase):
                                                                value='Tier 1 Supplier',
                                                                source='Source-000106091',
                                                                subject_company=7217,
-                                                               object_company=7457810)
+                                                               object_company=5505)
         self.assertTrue(isinstance(relationship, RelationshipAnswer))
 
     @tape.use_cassette('test_update_relationship_metric_answer.json')
@@ -200,6 +217,6 @@ class WikiRate4PyTests(WikiRate4PyTestCase):
                                                                   year=2021,
                                                                   value='Tier 2 Supplier',
                                                                   subject_company=7217,
-                                                                  object_company=7457810,
+                                                                  object_company=5505,
                                                                   comment='This answer is for testing')
-        self.assertTrue(isinstance(relationship, RelationshipAnswer))
+        self.assertTrue(relationship.value, 'Tier 2 Supplier')
