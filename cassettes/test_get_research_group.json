@@ -27,54 +27,58 @@
                     "message": "OK"
                 },
                 "headers": {
-                    "X-Runtime": [
-                        "0.046509"
-                    ],
-                    "Server": [
-                        "Apache/2.4.29 (Ubuntu) Phusion_Passenger/6.0.4 OpenSSL/1.1.1"
-                    ],
-                    "X-Frame-Options": [
-                        "ALLOWALL"
-                    ],
-                    "Access-Control-Allow-Origin": [
-                        "*"
-                    ],
-                    "Connection": [
-                        "Keep-Alive"
-                    ],
-                    "ETag": [
-                        "W/\"b41555804e3fcba7f383ec84953b51f7\""
-                    ],
-                    "Transfer-Encoding": [
-                        "chunked"
-                    ],
-                    "Set-Cookie": [
-                        "_wikirate_session=TStXaFh4ZE5la2lYM0EyZWtXcTVZOWZpUkpkYkd3Wkk0R05vc1RXWFVpbzhRRXNQTWpVNXBEZ2UyYkZNcUlPRHFzZllxUm5qVUQ3aGJrRzVra0p2cUJKYTJaaUJRRGhJWEpmOTJFWlc0UDl3TDMrMk4rTVRoMEpjTjh3cElqWjQtLXQ4RlRiRmdDTkorT0Z5OWxQZEZUcFE9PQ%3D%3D--c9714b5363c29cc8a0fab46081fab28e0ed0967d; path=/; HttpOnly"
-                    ],
-                    "Content-Type": [
-                        "text/json; charset=utf-8"
-                    ],
-                    "Date": [
-                        "Wed, 07 Jul 2021 22:32:22 GMT"
-                    ],
-                    "X-Powered-By": [
-                        "Phusion Passenger 6.0.4"
-                    ],
                     "Status": [
                         "200 OK"
+                    ],
+                    "Date": [
+                        "Fri, 03 Feb 2023 18:20:55 GMT"
                     ],
                     "Cache-Control": [
                         "max-age=0, private, must-revalidate"
                     ],
+                    "Access-Control-Allow-Origin": [
+                        "*",
+                        "*"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=SUFSUURtMldHMkRJNDFpWWhaNVFIVG5kS2Z6bEJ4My9aTnFqYlVoL3JaMDhQaFFPMEYwU09wa2ZtYnJFOGYvNVR2NDB0YWQrb1J0TTMxOGxCQWpNcWNFU3pvUTFQVGhrSGR5QktERWY0Tk42R1QzYWJ0YzRkTnRGOCt6dXJiQW8tLVVyYmVwNTlENUJXdmx0U29ScmZRZHc9PQ%3D%3D--85418ba8d29fae62c0bdac9abec34c53edf6a72b; path=/; HttpOnly"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.12"
+                    ],
+                    "Server": [
+                        "Apache/2.4.41 (Ubuntu) Phusion_Passenger/6.0.12 OpenSSL/1.1.1f"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
                     "X-Request-Id": [
-                        "e383b02e-acca-4b16-b19f-e06a6eb5dd96"
+                        "68a31119-64b2-4c95-9f8d-87dc92cc326c"
+                    ],
+                    "ETag": [
+                        "W/\"cb12448add3faf4417ea5cb22e7bea0c\""
+                    ],
+                    "X-Runtime": [
+                        "0.064029"
                     ],
                     "Keep-Alive": [
                         "timeout=5, max=100"
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "Connection": [
+                        "Keep-Alive"
+                    ],
+                    "Vary": [
+                        "Origin"
                     ]
                 },
                 "body": {
-                    "string": "{\n  \"id\": 3478301,\n  \"name\": \"University of Wollongong ACCY111 Research Group 2018\",\n  \"type\": {\n    \"id\": 2301582,\n    \"name\": \"Research Group\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Research_Group.json\",\n    \"codename\": \"research_group\"\n  },\n  \"url\": \"https://staging.wikirate.org/~3478301.json\",\n  \"content\": \"\",\n  \"items\": [\n\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/University_of_Wollongong_ACCY111_Research_Group_2018\",\n  \"created_at\": \"2018-04-13 11:34:01 UTC\",\n  \"updated_at\": \"2020-08-08 12:42:08 UTC\",\n  \"requested_at\": \"2021-07-08 00:32:22 +0200\"\n}"
+                    "string": "{\n  \"id\": 3478301,\n  \"name\": \"University of Wollongong ACCY111 Research Group 2018\",\n  \"type\": {\n    \"id\": 2301582,\n    \"name\": \"Research Group\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Research_Group.json\",\n    \"codename\": \"research_group\"\n  },\n  \"url\": \"https://staging.wikirate.org/~3478301.json\",\n  \"content\": \"\",\n  \"items\": [\n\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/University_of_Wollongong_ACCY111_Research_Group_2018\",\n  \"created_at\": \"2018-04-13 11:34:01 UTC\",\n  \"updated_at\": \"2022-03-22 12:57:37 UTC\",\n  \"requested_at\": \"2023-02-03 18:20:55 UTC\"\n}"
                 }
             }
         }

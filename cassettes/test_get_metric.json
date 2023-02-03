@@ -27,54 +27,58 @@
                     "message": "OK"
                 },
                 "headers": {
-                    "Connection": [
-                        "Keep-Alive"
-                    ],
-                    "Transfer-Encoding": [
-                        "chunked"
-                    ],
-                    "Keep-Alive": [
-                        "timeout=5, max=100"
-                    ],
                     "Status": [
                         "200 OK"
                     ],
-                    "Content-Type": [
-                        "text/json; charset=utf-8"
-                    ],
-                    "ETag": [
-                        "W/\"a766b496312112f2da8ebedabe969a77\""
-                    ],
-                    "X-Frame-Options": [
-                        "ALLOWALL"
-                    ],
                     "Date": [
-                        "Wed, 07 Jul 2021 22:42:11 GMT"
-                    ],
-                    "X-Runtime": [
-                        "0.078982"
-                    ],
-                    "X-Powered-By": [
-                        "Phusion Passenger 6.0.4"
-                    ],
-                    "Access-Control-Allow-Origin": [
-                        "*"
-                    ],
-                    "Server": [
-                        "Apache/2.4.29 (Ubuntu) Phusion_Passenger/6.0.4 OpenSSL/1.1.1"
-                    ],
-                    "Set-Cookie": [
-                        "_wikirate_session=Tmk4aWJqNW1UdjBUaWgrcGxTTTNmSHdKS2orZ2VqWFI5WTBVb0pxM2trRktSSFVlMTY0d25xZXlDL0NFVlBxKzlQemZzQmQvbmxocG02S0tVM3FCNjMxaUpESjE4OXIva1BUT29ubDFCWFdWaTU4RUtmdmVQbTlheUpranVWenYtLTNCMkd0TW5BR1VDQWsvelBWWEhPNHc9PQ%3D%3D--783de45fa940e9f2c42ada8ba73b4bf7f125d682; path=/; HttpOnly"
+                        "Fri, 03 Feb 2023 18:20:52 GMT"
                     ],
                     "Cache-Control": [
                         "max-age=0, private, must-revalidate"
                     ],
+                    "Access-Control-Allow-Origin": [
+                        "*",
+                        "*"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=Qm9WZmprODhGRE1wQVk3RWtRS0IwbHhiQzVISzhhTEFGTmVRc1hkajBIeFJGSDBwS0lPdDBoWFVrcnZNRnBxTU1leG9Dak96amd6RXNUZ2VRMDVNN0Rnbm1kbStabDcxZm1wUUZEZWRHYVlGVkVaUnFZbTRlYXZRZW5Kcjl6bVQtLVl5RWxVdGNmaDBoTW9mKy9Wb3VoSEE9PQ%3D%3D--094057889c63bc1d66b3eb9e7b5dd127867e9bbf; path=/; HttpOnly"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.12"
+                    ],
+                    "Server": [
+                        "Apache/2.4.41 (Ubuntu) Phusion_Passenger/6.0.12 OpenSSL/1.1.1f"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
                     "X-Request-Id": [
-                        "94797509-b13e-4869-8e77-fe6b59112842"
+                        "f06f9159-a15f-4ba7-b4d0-b2be9ae5af35"
+                    ],
+                    "ETag": [
+                        "W/\"f177fe51c3de6b4d66093e74539fdaad\""
+                    ],
+                    "X-Runtime": [
+                        "0.097664"
+                    ],
+                    "Keep-Alive": [
+                        "timeout=5, max=100"
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "Connection": [
+                        "Keep-Alive"
+                    ],
+                    "Vary": [
+                        "Origin"
                     ]
                 },
                 "body": {
-                    "string": "{\n  \"id\": 2929015,\n  \"name\": \"Commons+Supplier of\",\n  \"type\": {\n    \"id\": 43576,\n    \"name\": \"Metric\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Metric.json\",\n    \"codename\": \"metric\"\n  },\n  \"url\": \"https://staging.wikirate.org/Commons+Supplier_of.json\",\n  \"codename\": \"commons_supplier_of\",\n  \"designer\": \"Commons\",\n  \"title\": \"Supplier of\",\n  \"question\": {\n    \"id\": 3430734,\n    \"name\": \"Commons+Supplier of+Questions\",\n    \"type\": \"PlainText\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+Questions.json\",\n    \"content\": \"Which companies does this\u00a0supplier supply to?\"\n  },\n  \"metric_type\": {\n    \"id\": 2929016,\n    \"name\": \"Commons+Supplier of+*metric type\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+*metric_type.json\",\n    \"content\": \"Inverse Relationship\"\n  },\n  \"about\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+About\",\n    \"type\": \"RichText\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+About.json\"\n  },\n  \"methodology\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+methodology\",\n    \"type\": \"RichText\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+methodology.json\"\n  },\n  \"value_type\": {\n    \"id\": 3430735,\n    \"name\": \"Commons+Supplier of+value type\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+value_type.json\",\n    \"content\": null\n  },\n  \"value_options\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+value options\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+value_options.json\"\n  },\n  \"report_type\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+Report Type\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+Report_Type.json\"\n  },\n  \"research_policy\": {\n    \"id\": 3430733,\n    \"name\": \"Commons+Supplier of+Research Policy\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+Research_Policy.json\",\n    \"content\": \"Community Assessed\"\n  },\n  \"unit\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+unit\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+unit.json\"\n  },\n  \"range\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+Range\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+Range.json\"\n  },\n  \"hybrid\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+hybrid\",\n    \"type\": \"Toggle\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+hybrid.json\"\n  },\n  \"topics\": {\n    \"id\": 3430732,\n    \"name\": \"Commons+Supplier of+Topic\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+Topic.json\",\n    \"content\": [\n      \"Suppliers\",\n      \"Supply Chain\"\n    ]\n  },\n  \"scores\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+Score\",\n    \"type\": \"Search\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+Score.json\"\n  },\n  \"formula\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+Formula\",\n    \"type\": \"PlainText\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+Formula.json\"\n  },\n  \"answers\": 63325,\n  \"bookmarkers\": 1,\n  \"projects\": 3,\n  \"companies\": 42242,\n  \"calculations\": [\n\n  ],\n  \"answers_url\": \"https://staging.wikirate.org/Commons+Supplier_of+Answer.json\",\n  \"items\": [\n\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n    {\n      \"id\": 3411173,\n      \"name\": \"Commons\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/Commons.json\"\n    },\n    {\n      \"id\": 2929014,\n      \"name\": \"Supplier of\",\n      \"type\": \"Metric Title\",\n      \"url\": \"https://staging.wikirate.org/Supplier_of.json\"\n    }\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Commons+Supplier_of\",\n  \"created_at\": \"2017-07-09 22:47:20 UTC\",\n  \"updated_at\": \"2019-02-15 08:26:28 UTC\",\n  \"requested_at\": \"2021-07-08 00:42:11 +0200\"\n}"
+                    "string": "{\n  \"id\": 2929015,\n  \"name\": \"Commons+Supplier of\",\n  \"type\": {\n    \"id\": 43576,\n    \"name\": \"Metric\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Metric.json\",\n    \"codename\": \"metric\"\n  },\n  \"url\": \"https://staging.wikirate.org/Commons+Supplier_of.json\",\n  \"codename\": \"commons_supplier_of\",\n  \"designer\": \"Commons\",\n  \"title\": \"Supplier of\",\n  \"question\": {\n    \"id\": 3430734,\n    \"name\": \"Commons+Supplier of+Questions\",\n    \"type\": \"PlainText\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+Questions.json\",\n    \"content\": \"Which companies does this\u00a0supplier supply to?\"\n  },\n  \"metric_type\": {\n    \"id\": 2929016,\n    \"name\": \"Commons+Supplier of+*metric type\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+*metric_type.json\",\n    \"content\": \"Inverse Relationship\"\n  },\n  \"about\": {\n    \"id\": 7886350,\n    \"name\": \"Commons+Supplier of+About\",\n    \"type\": \"RichText\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+About.json\",\n    \"content\": \"<p style=\\\"font-size: 15.2px;\\\">When global supply chains are opaque, consumers lack meaningful information about where their products were made and under what conditions. Do they enable socially or environmentally irresponsible practices? Without supply chain transparency, there is just no way of knowing.</p>\\r\\n<p style=\\\"font-size: 15.2px;\\\">The first step in making supply chains more transparent is mapping the supplier relationships between companies.\u00a0</p>\"\n  },\n  \"methodology\": {\n    \"id\": 7886351,\n    \"name\": \"Commons+Supplier of+methodology\",\n    \"type\": \"RichText\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+methodology.json\",\n    \"content\": \"<p><span style=\\\"font-size: 15.2px;\\\">This data has been collected through semi-automated techniques. Where possible it has been scraped from supplier lists that were published by the companies.</span></p>\"\n  },\n  \"value_type\": {\n    \"id\": 3430735,\n    \"name\": \"Commons+Supplier of+value type\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+value_type.json\",\n    \"content\": null\n  },\n  \"value_options\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+value options\",\n    \"type\": \"List\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+value_options.json\"\n  },\n  \"report_type\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+Report Type\",\n    \"type\": \"List\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+Report_Type.json\"\n  },\n  \"research_policy\": {\n    \"id\": 3430733,\n    \"name\": \"Commons+Supplier of+Research Policy\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+Research_Policy.json\",\n    \"content\": \"Community Assessed\"\n  },\n  \"unit\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+unit\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+unit.json\"\n  },\n  \"range\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+Range\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+Range.json\"\n  },\n  \"hybrid\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+hybrid\",\n    \"type\": \"Toggle\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+hybrid.json\"\n  },\n  \"topics\": {\n    \"id\": 3430732,\n    \"name\": \"Commons+Supplier of+Topic\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+Topic.json\",\n    \"content\": [\n      \"Suppliers\",\n      \"Supply Chain\"\n    ]\n  },\n  \"scores\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+Score\",\n    \"type\": \"Search\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+Score.json\"\n  },\n  \"formula\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+Formula\",\n    \"type\": \"CoffeeScript\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+Formula.json\"\n  },\n  \"rubric\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+Rubric\",\n    \"type\": \"JSON\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+Rubric.json\"\n  },\n  \"variables\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplier of+*variables\",\n    \"type\": \"JSON\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+*variables.json\"\n  },\n  \"answers\": 86183,\n  \"bookmarkers\": 3,\n  \"datasets\": 4,\n  \"companies\": 50295,\n  \"calculations\": [\n    \"https://staging.wikirate.org/Commons+Industry.json\"\n  ],\n  \"answers_url\": \"https://staging.wikirate.org/Commons+Supplier_of+Answer.json\",\n  \"items\": [\n\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n    {\n      \"id\": 3411173,\n      \"name\": \"Commons\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/Commons.json\"\n    },\n    {\n      \"id\": 2929014,\n      \"name\": \"Supplier of\",\n      \"type\": \"Metric Title\",\n      \"url\": \"https://staging.wikirate.org/Supplier_of.json\"\n    }\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Commons+Supplier_of\",\n  \"created_at\": \"2017-07-09 22:47:20 UTC\",\n  \"updated_at\": \"2022-03-02 18:14:40 UTC\",\n  \"requested_at\": \"2023-02-03 18:20:52 UTC\"\n}"
                 }
             }
         }

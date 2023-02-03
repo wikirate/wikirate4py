@@ -4,8 +4,8 @@
         {
             "request": {
                 "method": "GET",
-                "uri": "https://staging.wikirate.org/~Core+Company_Report_Available+Answer.json?filter%5Bcountry%5D=United+Kingdom&limit=10",
-                "body": null,
+                "uri": "https://staging.wikirate.org/Core+Company_Report_Available+Answer.json",
+                "body": "filter%5Bcountry%5D=United+Kingdom&limit=10",
                 "headers": {
                     "User-Agent": [
                         "python-requests/2.25.1"
@@ -18,6 +18,12 @@
                     ],
                     "Connection": [
                         "keep-alive"
+                    ],
+                    "Content-Length": [
+                        "43"
+                    ],
+                    "Content-Type": [
+                        "application/x-www-form-urlencoded"
                     ]
                 }
             },
@@ -27,54 +33,61 @@
                     "message": "OK"
                 },
                 "headers": {
-                    "X-Runtime": [
-                        "0.223667"
-                    ],
-                    "Server": [
-                        "Apache/2.4.29 (Ubuntu) Phusion_Passenger/6.0.4 OpenSSL/1.1.1"
-                    ],
-                    "X-Frame-Options": [
-                        "ALLOWALL"
-                    ],
-                    "Access-Control-Allow-Origin": [
-                        "*"
-                    ],
-                    "Connection": [
-                        "Keep-Alive"
-                    ],
-                    "ETag": [
-                        "W/\"f1d5a528cb779b5e629d09bfc4fe1f41\""
-                    ],
-                    "Transfer-Encoding": [
-                        "chunked"
-                    ],
-                    "Set-Cookie": [
-                        "_wikirate_session=NGtJelpRSVl5UUZlaXovWVQrTXNneE1pRUZXbWYxWG8zNVN6Z08vejlWakl3ZGFPYzVJZTZxZ3VUMzZTdm95RkJ6OVZWSnNRZTZkYXg3eTg3L0ZMQys0WWRJNWFpc1M0MTFwZDdRakNOaUc5eTluSWIrTFF4eXZTYnRBbEtNYkYtLUM0dWJzZ2RsRWY5bDlnelpyREpLZkE9PQ%3D%3D--7eb3d0825ba393ba196dc378a1a5aa878d332d03; path=/; HttpOnly"
-                    ],
-                    "Content-Type": [
-                        "text/json; charset=utf-8"
-                    ],
-                    "Date": [
-                        "Wed, 07 Jul 2021 22:32:00 GMT"
-                    ],
-                    "X-Powered-By": [
-                        "Phusion Passenger 6.0.4"
-                    ],
                     "Status": [
                         "200 OK"
+                    ],
+                    "Date": [
+                        "Fri, 03 Feb 2023 18:20:50 GMT"
                     ],
                     "Cache-Control": [
                         "max-age=0, private, must-revalidate"
                     ],
+                    "Access-Control-Allow-Origin": [
+                        "*",
+                        "*"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=RHNsMmwvbHdJKy9RcW44M0xWdWtUVjJZTm4xVlEvN3RlYWVwb3FCamo1bXhpcTdiNzlaVVVSbTl1RCtMNzFra3JQWlFkRmE3ajJCQTNKR3plTUw1c2VUMHJCdkpxY0JuR3F5TGUyakV0V1pTQ1pqR21OTkpDeGEwSkdDNm03OWktLWNFdjFhVDZIVVQ2WlF3UVZwUi9iM0E9PQ%3D%3D--8c1f0ed534b865c2b4fed2382e6e76d815da53d2; path=/; HttpOnly"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.12"
+                    ],
+                    "Content-Disposition": [
+                        "attachment; filename=\"WikiRate-2023_02_03_182050-Company_Report_Available+Answer.json\""
+                    ],
+                    "Server": [
+                        "Apache/2.4.41 (Ubuntu) Phusion_Passenger/6.0.12 OpenSSL/1.1.1f"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
                     "X-Request-Id": [
-                        "34004ae6-a8d4-49fc-9344-b7e96703fff2"
+                        "e5f97e15-39f8-41db-bfce-5da20c6d76b4"
+                    ],
+                    "ETag": [
+                        "W/\"291223441fd817881bad5d109aaea323\""
+                    ],
+                    "X-Runtime": [
+                        "0.130577"
                     ],
                     "Keep-Alive": [
                         "timeout=5, max=100"
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "Connection": [
+                        "Keep-Alive"
+                    ],
+                    "Vary": [
+                        "Origin"
                     ]
                 },
                 "body": {
-                    "string": "{\n  \"id\": null,\n  \"name\": \"~Core+Company Report Available+Answer\",\n  \"type\": {\n    \"id\": 30,\n    \"name\": \"Search\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Search.json\",\n    \"codename\": \"search_type\"\n  },\n  \"url\": \"https://staging.wikirate.org/~Core+Company_Report_Available+Answer.json?filter%5Bcountry%5D=United+Kingdom&limit=10\",\n  \"items\": [\n    {\n      \"id\": 6359557,\n      \"name\": \"Core+Company Report Available+Boohoo.com+2020\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Boohoo_com+2020.json\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Boohoo.com\",\n      \"year\": 2020,\n      \"value\": \"Yes\",\n      \"comments\": \"The company does publish annual reports that contains environmental, social and governance data. However, the data available is only regarding the operations held within UK. Lais Doria[https://wikirate.org/Lais_Doria].....2020-10-12 15:10:26 UTC\",\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Boohoo_com.json\"\n    },\n    {\n      \"id\": 7335181,\n      \"name\": \"Core+Company Report Available+Mulberry Group Plc+2020\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Mulberry_Group_Plc+2020.json\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Mulberry Group Plc\",\n      \"year\": 2020,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Mulberry_Group_Plc.json\"\n    },\n    {\n      \"id\": 6803036,\n      \"name\": \"Core+Company Report Available+BT Group+2020\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+BT_Group+2020.json\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"BT Group\",\n      \"year\": 2020,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+BT_Group.json\"\n    },\n    {\n      \"id\": 5749819,\n      \"name\": \"Core+Company Report Available+BT Group+2019\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+BT_Group+2019.json\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"BT Group\",\n      \"year\": 2019,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+BT_Group.json\"\n    },\n    {\n      \"id\": 6507832,\n      \"name\": \"Core+Company Report Available+Sports Direct+2019\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Sports_Direct+2019.json\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Sports Direct\",\n      \"year\": 2019,\n      \"value\": \"Yes\",\n      \"comments\": \"Annual report contains some sustainability data theresah[https://wikirate.org/theresah].....2020-12-07 13:58:07 UTC\",\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Sports_Direct.json\"\n    },\n    {\n      \"id\": 7275609,\n      \"name\": \"Core+Company Report Available+JD Sports Fashion plc+2019\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+JD_Sports_Fashion_plc+2019.json\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"JD Sports Fashion plc\",\n      \"year\": 2019,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+JD_Sports_Fashion_plc.json\"\n    },\n    {\n      \"id\": 7446876,\n      \"name\": \"Core+Company Report Available+Marks and Spencer Group plc+2019\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Marks_and_Spencer_Group_plc+2019.json\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Marks and Spencer Group plc\",\n      \"year\": 2019,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Marks_and_Spencer_Group_plc.json\"\n    },\n    {\n      \"id\": 5740338,\n      \"name\": \"Core+Company Report Available+Burberry Group plc+2019\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Burberry_Group_plc+2019.json\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Burberry Group plc\",\n      \"year\": 2019,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Burberry_Group_plc.json\"\n    },\n    {\n      \"id\": 7448369,\n      \"name\": \"Core+Company Report Available+Next+2019\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Next+2019.json\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Next\",\n      \"year\": 2019,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Next.json\"\n    },\n    {\n      \"id\": 6833902,\n      \"name\": \"Core+Company Report Available+John Wood Group PLC+2019\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+John_Wood_Group_PLC+2019.json\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"John Wood Group PLC\",\n      \"year\": 2019,\n      \"value\": \"Yes\",\n      \"comments\": \"Sustainable report p.26 Zayd Mahmood[https://wikirate.org/Zayd_Mahmood].....2021-02-15 11:13:05 UTC\",\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+John_Wood_Group_PLC.json\"\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n    {\n      \"id\": 3341237,\n      \"name\": \"Core\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/Core.json\"\n    },\n    {\n      \"id\": 3094885,\n      \"name\": \"Company Report Available\",\n      \"type\": \"Metric Title\",\n      \"url\": \"https://staging.wikirate.org/Company_Report_Available.json\"\n    },\n    {\n      \"id\": 43678,\n      \"name\": \"Answer\",\n      \"type\": \"Cardtype\",\n      \"url\": \"https://staging.wikirate.org/Answer.json\",\n      \"codename\": \"metric_answer\"\n    },\n    {\n      \"id\": 3094828,\n      \"name\": \"Core+Company Report Available\",\n      \"type\": \"Metric\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available.json\"\n    }\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Answer\",\n  \"created_at\": null,\n  \"updated_at\": null,\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Core+Company_Report_Available+Answer.json?filter%5Bcountry%5D=United+Kingdom&item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2021-07-08 00:32:00 +0200\"\n}"
+                    "string": "{\n  \"id\": null,\n  \"name\": \"Core+Company Report Available+Answer\",\n  \"type\": {\n    \"id\": 30,\n    \"name\": \"Search\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Search.json\",\n    \"codename\": \"search_type\"\n  },\n  \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Answer.json\",\n  \"items\": [\n    {\n      \"id\": 13177680,\n      \"name\": \"Core+Company Report Available+Missguided Limited+2022\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Missguided_Limited+2022.json\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Missguided Limited\",\n      \"year\": 2022,\n      \"value\": \"No\",\n      \"comments\": \"The company has not published any reports. Manali Rana[https://wikirate.org/Manali_Rana].....2022-08-01 12:48:18 UTC\",\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Missguided_Limited.json\"\n    },\n    {\n      \"id\": 12651360,\n      \"name\": \"Core+Company Report Available+Elwood Technologies+2022\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Elwood_Technologies+2022.json\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Elwood Technologies\",\n      \"year\": 2022,\n      \"value\": \"No\",\n      \"comments\": \"It reports about its diversity policy on its website and nothing else. https://elwood.io/diversity/ Manali Rana[https://wikirate.org/Manali_Rana].....2022-06-04 22:13:45 UTC\",\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Elwood_Technologies.json\"\n    },\n    {\n      \"id\": 13055344,\n      \"name\": \"Core+Company Report Available+New Look Retail Group+2021\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+New_Look_Retail_Group+2021.json\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"New Look Retail Group\",\n      \"year\": 2021,\n      \"value\": \"Yes\",\n      \"comments\": \"Yes, Company releases report containing ESG Data. Manali Rana[https://wikirate.org/Manali_Rana].....2022-07-21 06:29:14 UTC\",\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+New_Look_Retail_Group.json\"\n    },\n    {\n      \"id\": 12552981,\n      \"name\": \"Core+Company Report Available+Unilever+2021\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Unilever+2021.json\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Unilever\",\n      \"year\": 2021,\n      \"value\": \"Yes\",\n      \"comments\": \"p67-p104 Jiayun Yuan[https://wikirate.org/Jiayun_Yuan].....2022-03-27 19:03:36 UTC\",\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Unilever.json\"\n    },\n    {\n      \"id\": 11104910,\n      \"name\": \"Core+Company Report Available+Danish Crown UK Ltd+2021\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Danish_Crown_UK_Ltd+2021.json\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Danish Crown UK Ltd\",\n      \"year\": 2021,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Danish_Crown_UK_Ltd.json\"\n    },\n    {\n      \"id\": 13175551,\n      \"name\": \"Core+Company Report Available+PrettyLittleThing+2021\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+PrettyLittleThing+2021.json\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"PrettyLittleThing\",\n      \"year\": 2021,\n      \"value\": \"Yes\",\n      \"comments\": \"The company is a subsidiary of Boohooplc. It does not publish a separate report, although the Boohooplc sustainability report does cover it. Manali Rana[https://wikirate.org/Manali_Rana].....2022-07-27 07:32:29 UTC\",\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+PrettyLittleThing.json\"\n    },\n    {\n      \"id\": 12552862,\n      \"name\": \"Core+Company Report Available+AB InBev UK Limited+2021\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+AB_InBev_UK_Limited+2021.json\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"AB InBev UK Limited\",\n      \"year\": 2021,\n      \"value\": \"Yes\",\n      \"comments\": \"2021 Environmental, Social & Governance Report Yi Cao[https://wikirate.org/Yi_Cao].....2022-03-27 16:18:28 UTC\",\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+AB_InBev_UK_Limited.json\"\n    },\n    {\n      \"id\": 12535254,\n      \"name\": \"Core+Company Report Available+Jaguar Land Rover+2021\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Jaguar_Land_Rover+2021.json\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Jaguar Land Rover\",\n      \"year\": 2021,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Jaguar_Land_Rover.json\"\n    },\n    {\n      \"id\": 13176068,\n      \"name\": \"Core+Company Report Available+Topshop+2021\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Topshop+2021.json\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Topshop\",\n      \"year\": 2021,\n      \"value\": \"No\",\n      \"comments\": \"The report covers the period September 2020-August 2021 and it states of covering Topshop by the end of 2021. Therefore, the cited document does not include Topshop information and no other reporting has been found for the company. pg. 6 \u201cMarch 2021 We announced our commitment to publishing the supply chains of our newly-acquired brands \u2013 Topshop, Topman, Miss Selfridge and HIIT \u2013 for the first time by the end of 2021.\u201d Manali Rana[https://wikirate.org/Manali_Rana].....2022-07-28 06:57:44 UTC\",\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Topshop.json\"\n    },\n    {\n      \"id\": 11711687,\n      \"name\": \"Core+Company Report Available+SAVILLS PLC+2021\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+SAVILLS_PLC+2021.json\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"SAVILLS PLC\",\n      \"year\": 2021,\n      \"value\": \"No\",\n      \"comments\": \"The annual report for this years is still missing, according to their website. Andrea Valeria Nieto[https://wikirate.org/Andrea_Valeria_Nieto].....2022-02-11 12:12:22 UTC The annual report for this year is still missing, according to their website. Andrea Valeria Nieto[https://wikirate.org/Andrea_Valeria_Nieto].....2022-02-11 12:13:09 UTC\",\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+SAVILLS_PLC.json\"\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n    {\n      \"id\": 3341237,\n      \"name\": \"Core\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/Core.json\"\n    },\n    {\n      \"id\": 3094885,\n      \"name\": \"Company Report Available\",\n      \"type\": \"Metric Title\",\n      \"url\": \"https://staging.wikirate.org/Company_Report_Available.json\"\n    },\n    {\n      \"id\": 43678,\n      \"name\": \"Answer\",\n      \"type\": \"Cardtype\",\n      \"url\": \"https://staging.wikirate.org/Answer.json\",\n      \"codename\": \"metric_answer\"\n    },\n    {\n      \"id\": 3094828,\n      \"name\": \"Core+Company Report Available\",\n      \"type\": \"Metric\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available.json\"\n    }\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Answer\",\n  \"created_at\": null,\n  \"updated_at\": null,\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Core+Company_Report_Available+Answer.json?filter%5Bcountry%5D=United+Kingdom&item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2023-02-03 18:20:51 UTC\",\n  \"license\": \"Creative Commons Attribution-ShareAlike 4.0 International License\"\n}"
                 }
             }
         }

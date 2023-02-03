@@ -4,8 +4,8 @@
         {
             "request": {
                 "method": "POST",
-                "uri": "https://staging.wikirate.org/card/create?card%5Btype%5D=Answer&card%5Bname%5D=Core%2BCompany+Report+Available%2BBORA_2_LTD%2B2021&card%5Bsubcards%5D%5B%2B%3Avalue%5D=No&card%5Bsubcards%5D%5B%2B%3Asource%5D=Source_000104408s&format=json&success%5Bformat%5D=json&card%5Bsubcards%5D%5B%2B%3Adiscussion%5D=This+is+a+test+import+of+a+metric+answer",
-                "body": null,
+                "uri": "https://staging.wikirate.org/card/create",
+                "body": "card%5Btype%5D=Answer&card%5Bname%5D=Core%2BCompany+Report+Available%2BAdidas_AG%2B2022&card%5Bsubcards%5D%5B%2B%3Avalue%5D=No&card%5Bsubcards%5D%5B%2B%3Asource%5D=Source_000104408&format=json&success%5Bformat%5D=json&card%5Bsubcards%5D%5B%2B%3Adiscussion%5D=This+is+a+test+import+of+a+metric+answer",
                 "headers": {
                     "User-Agent": [
                         "python-requests/2.25.1"
@@ -19,11 +19,11 @@
                     "Connection": [
                         "keep-alive"
                     ],
-                    "content-type": [
-                        "application/json"
-                    ],
                     "Content-Length": [
-                        "0"
+                        "299"
+                    ],
+                    "Content-Type": [
+                        "application/x-www-form-urlencoded"
                     ]
                 }
             },
@@ -33,61 +33,65 @@
                     "message": "See Other"
                 },
                 "headers": {
+                    "Location": [
+                        "https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG+2022.json?flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-bs-dismiss%3D%22alert%22+class%3D%22btn-close%22+aria-label%3D%22Close%22%3E%3C%2Fbutton%3E%0A%3Ch4+class%3D%27mt-0%27%3ESuccess%21%3C%2Fh4%3E%0A%3Cp%3E%0AThank+you%21+Your+research+efforts+are+helping+make+information+about+companies%0Aaccessible%2C+comparable%2C+and+free+for+all.%0A%3C%2Fp%3E%0A%3Cp+class%3D%27answer-success-in-project%27%3E%0ATo+keep+researching%2C+go+back+to+the%0A%3Ca+class%3D%27_to_question_phase%27+href%3D%27%23%27%3E%0Aquestion+section%0A%3C%2Fa%3E%0Aand+select+a+different+year%2C+metric%2C+or+company.%0A%3C%2Fp%3E%0A%3C%2Fdiv%3E"
+                    ],
                     "Keep-Alive": [
                         "timeout=5, max=100"
                     ],
-                    "Content-Type": [
-                        "text/html; charset=utf-8"
+                    "X-Request-Id": [
+                        "527ac706-9eaa-4a9f-9672-82a0781f4bc8"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.12"
                     ],
                     "Transfer-Encoding": [
                         "chunked"
                     ],
-                    "Set-Cookie": [
-                        "_wikirate_session=eml0TG0wZDQ2eXVIb0syU0thdUpRMUlKQTREVnJPZkxKeWlIYW83SEVHRHB6WkhqanFvY0FIc0dMemxYdDBudW5JRGhkZHlIaEtTSEl5bmF5OHJBazVZa0hnUzRWTVd4ekNqbUxtelllUFhPelJ6ZkVsK2lWM3hJMzdRdnZqMG4tLWNrclhPeklETkw1OEFyNzJJZ3RiVUE9PQ%3D%3D--abafb77cbd0319507c814e889fecbfd8b6f80393; path=/; HttpOnly"
-                    ],
-                    "Status": [
-                        "303 See Other"
-                    ],
-                    "X-Frame-Options": [
-                        "ALLOWALL"
-                    ],
-                    "X-Request-Id": [
-                        "6c340bf9-9834-48f4-803c-6cd59cc561b3"
-                    ],
-                    "X-Runtime": [
-                        "22.215734"
-                    ],
                     "Access-Control-Allow-Origin": [
+                        "*",
                         "*"
-                    ],
-                    "Server": [
-                        "Apache/2.4.29 (Ubuntu) Phusion_Passenger/6.0.4 OpenSSL/1.1.1"
-                    ],
-                    "X-Powered-By": [
-                        "Phusion Passenger 6.0.4"
-                    ],
-                    "Date": [
-                        "Wed, 07 Jul 2021 22:38:18 GMT"
-                    ],
-                    "Location": [
-                        "https://staging.wikirate.org/Core+Company_Report_Available+BORA_2_LTD+2021.json?flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-dismiss%3D%22alert%22+class%3D%22close%22+aria-label%3D%22Close%22%3E%3Cspan+aria-hidden%3D%22true%22%3E%26times%3B%3C%2Fspan%3E%3C%2Fbutton%3E%0A%3Cp%3ESuccess%21+To+research+another+answer+select+a+different+metric+or+year.%3C%2Fp%3E%3C%2Fdiv%3E"
                     ],
                     "Cache-Control": [
                         "no-cache"
                     ],
+                    "X-Runtime": [
+                        "4.277732"
+                    ],
+                    "Date": [
+                        "Fri, 03 Feb 2023 18:45:45 GMT"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Server": [
+                        "Apache/2.4.41 (Ubuntu) Phusion_Passenger/6.0.12 OpenSSL/1.1.1f"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=ckFoSmkrc1lJQjhPNFlTYmt2cVdSNUN5cUt3dEhhdUg0MGt5SSt4Y0w2MUFDSG4yR0RScTVsSXBLdUNrV1NkTGRVS0JZZ1Q4RlFVc29laU50Sng1RHNuZG9GS2tBV2pVa3lxT0ZJelRPTWFzdDNOdDBaaEtxYkE2eXVISWs3R0EtLWdqZ0ozcVhVMGFhazE4N2svR09jN1E9PQ%3D%3D--7f997b059e4cfe42f8209fbf41ef5b7a032c352c; path=/; HttpOnly"
+                    ],
+                    "Status": [
+                        "303 See Other"
+                    ],
+                    "Content-Type": [
+                        "text/html; charset=utf-8"
+                    ],
                     "Connection": [
                         "Keep-Alive"
+                    ],
+                    "Vary": [
+                        "Origin"
                     ]
                 },
                 "body": {
-                    "string": "<html><body>You are being <a href=\"https://staging.wikirate.org/Core+Company_Report_Available+BORA_2_LTD+2021.json?flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-dismiss%3D%22alert%22+class%3D%22close%22+aria-label%3D%22Close%22%3E%3Cspan+aria-hidden%3D%22true%22%3E%26times%3B%3C%2Fspan%3E%3C%2Fbutton%3E%0A%3Cp%3ESuccess%21+To+research+another+answer+select+a+different+metric+or+year.%3C%2Fp%3E%3C%2Fdiv%3E\">redirected</a>.</body></html>"
+                    "string": "<html><body>You are being <a href=\"https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG+2022.json?flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-bs-dismiss%3D%22alert%22+class%3D%22btn-close%22+aria-label%3D%22Close%22%3E%3C%2Fbutton%3E%0A%3Ch4+class%3D%27mt-0%27%3ESuccess%21%3C%2Fh4%3E%0A%3Cp%3E%0AThank+you%21+Your+research+efforts+are+helping+make+information+about+companies%0Aaccessible%2C+comparable%2C+and+free+for+all.%0A%3C%2Fp%3E%0A%3Cp+class%3D%27answer-success-in-project%27%3E%0ATo+keep+researching%2C+go+back+to+the%0A%3Ca+class%3D%27_to_question_phase%27+href%3D%27%23%27%3E%0Aquestion+section%0A%3C%2Fa%3E%0Aand+select+a+different+year%2C+metric%2C+or+company.%0A%3C%2Fp%3E%0A%3C%2Fdiv%3E\">redirected</a>.</body></html>"
                 }
             }
         },
         {
             "request": {
                 "method": "GET",
-                "uri": "https://staging.wikirate.org/Core+Company_Report_Available+BORA_2_LTD+2021.json?flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-dismiss%3D%22alert%22+class%3D%22close%22+aria-label%3D%22Close%22%3E%3Cspan+aria-hidden%3D%22true%22%3E%26times%3B%3C%2Fspan%3E%3C%2Fbutton%3E%0A%3Cp%3ESuccess%21+To+research+another+answer+select+a+different+metric+or+year.%3C%2Fp%3E%3C%2Fdiv%3E",
+                "uri": "https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG+2022.json?flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-bs-dismiss%3D%22alert%22+class%3D%22btn-close%22+aria-label%3D%22Close%22%3E%3C%2Fbutton%3E%0A%3Ch4+class%3D%27mt-0%27%3ESuccess%21%3C%2Fh4%3E%0A%3Cp%3E%0AThank+you%21+Your+research+efforts+are+helping+make+information+about+companies%0Aaccessible%2C+comparable%2C+and+free+for+all.%0A%3C%2Fp%3E%0A%3Cp+class%3D%27answer-success-in-project%27%3E%0ATo+keep+researching%2C+go+back+to+the%0A%3Ca+class%3D%27_to_question_phase%27+href%3D%27%23%27%3E%0Aquestion+section%0A%3C%2Fa%3E%0Aand+select+a+different+year%2C+metric%2C+or+company.%0A%3C%2Fp%3E%0A%3C%2Fdiv%3E",
                 "body": null,
                 "headers": {
                     "User-Agent": [
@@ -103,7 +107,7 @@
                         "keep-alive"
                     ],
                     "Cookie": [
-                        "_wikirate_session=eml0TG0wZDQ2eXVIb0syU0thdUpRMUlKQTREVnJPZkxKeWlIYW83SEVHRHB6WkhqanFvY0FIc0dMemxYdDBudW5JRGhkZHlIaEtTSEl5bmF5OHJBazVZa0hnUzRWTVd4ekNqbUxtelllUFhPelJ6ZkVsK2lWM3hJMzdRdnZqMG4tLWNrclhPeklETkw1OEFyNzJJZ3RiVUE9PQ%3D%3D--abafb77cbd0319507c814e889fecbfd8b6f80393"
+                        "_wikirate_session=ckFoSmkrc1lJQjhPNFlTYmt2cVdSNUN5cUt3dEhhdUg0MGt5SSt4Y0w2MUFDSG4yR0RScTVsSXBLdUNrV1NkTGRVS0JZZ1Q4RlFVc29laU50Sng1RHNuZG9GS2tBV2pVa3lxT0ZJelRPTWFzdDNOdDBaaEtxYkE2eXVISWs3R0EtLWdqZ0ozcVhVMGFhazE4N2svR09jN1E9PQ%3D%3D--7f997b059e4cfe42f8209fbf41ef5b7a032c352c"
                     ]
                 }
             },
@@ -116,51 +120,55 @@
                     "Keep-Alive": [
                         "timeout=5, max=99"
                     ],
-                    "Content-Type": [
-                        "text/json; charset=utf-8"
+                    "X-Request-Id": [
+                        "dd2c0a3b-1e57-4215-ae91-df7c1b2afe71"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.12"
                     ],
                     "Transfer-Encoding": [
                         "chunked"
                     ],
-                    "Set-Cookie": [
-                        "_wikirate_session=b0xPUW5WYTIzMHFsSk1BL0x0dm83OXBXVW1ENjc5VGV5WW13MlNKaXJsc09zbVltRG9kZVVqYzl1TUpaVVVYV2ZwUUp2aXFkQ05NOWZrYXRxdVVnTXJxYnlCbGZhYVBoMlI1YTFmVWdyVGIvR2d0aXZsT2pjU3I1SzZOelI5ODAtLU1qUVczV05oYUdwKyt2WWhqcHlNb2c9PQ%3D%3D--841348c4cd879ca1dabffeefd5e1e3472067c72f; path=/; HttpOnly"
+                    "Access-Control-Allow-Origin": [
+                        "*",
+                        "*"
                     ],
-                    "Status": [
-                        "200 OK"
+                    "Cache-Control": [
+                        "max-age=0, private, must-revalidate"
+                    ],
+                    "X-Runtime": [
+                        "0.106546"
+                    ],
+                    "Date": [
+                        "Fri, 03 Feb 2023 18:45:49 GMT"
                     ],
                     "X-Frame-Options": [
                         "ALLOWALL"
                     ],
-                    "X-Request-Id": [
-                        "04fd9492-aab0-49d6-a3f0-5cdf78e28c19"
-                    ],
-                    "X-Runtime": [
-                        "0.110784"
-                    ],
-                    "ETag": [
-                        "W/\"149e2c81f54ada4710440aad000d541a\""
-                    ],
-                    "Access-Control-Allow-Origin": [
-                        "*"
-                    ],
                     "Server": [
-                        "Apache/2.4.29 (Ubuntu) Phusion_Passenger/6.0.4 OpenSSL/1.1.1"
+                        "Apache/2.4.41 (Ubuntu) Phusion_Passenger/6.0.12 OpenSSL/1.1.1f"
                     ],
-                    "X-Powered-By": [
-                        "Phusion Passenger 6.0.4"
+                    "Set-Cookie": [
+                        "_wikirate_session=aFdoMHlHQjJMWnlYbUVsREcraGJ1blI2aWVGdlZIRnh0dVZlSVV5TnBBbXVubXFNVlhubERPOXhpUWJOdVlGTWlqcmxRNDFoQUk0RE5DejZmNnJ5c3U4VnltTVlvUDhjanozNlhXZTJiUjdJcVE0czRlaGNnWFJNTjhUaFpqeGQtLUQyVXpDT1phVzRKQko2Nit2eVd3QWc9PQ%3D%3D--55e3a620731ac51a9206d33028aebaa59309a2ed; path=/; HttpOnly"
                     ],
-                    "Date": [
-                        "Wed, 07 Jul 2021 22:38:40 GMT"
+                    "Status": [
+                        "200 OK"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
                     ],
                     "Connection": [
                         "Keep-Alive"
                     ],
-                    "Cache-Control": [
-                        "max-age=0, private, must-revalidate"
+                    "ETag": [
+                        "W/\"69166455fd0159b4cd4f6ac856029631\""
+                    ],
+                    "Vary": [
+                        "Origin"
                     ]
                 },
                 "body": {
-                    "string": "{\n  \"id\": 7457822,\n  \"name\": \"Core+Company Report Available+BORA 2 LTD+2021\",\n  \"type\": {\n    \"id\": 43678,\n    \"name\": \"Answer\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Answer.json\",\n    \"codename\": \"metric_answer\"\n  },\n  \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+BORA_2_LTD+2021.json?flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-dismiss%3D%22alert%22+class%3D%22close%22+aria-label%3D%22Close%22%3E%3Cspan+aria-hidden%3D%22true%22%3E%26times%3B%3C%2Fspan%3E%3C%2Fbutton%3E%0A%3Cp%3ESuccess%21+To+research+another+answer+select+a+different+metric+or+year.%3C%2Fp%3E%3C%2Fdiv%3E\",\n  \"metric\": \"Core+Company Report Available\",\n  \"company\": \"BORA 2 LTD\",\n  \"year\": 2021,\n  \"value\": \"No\",\n  \"comments\": \"This is a test import of a metric answer\",\n  \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+BORA_2_LTD.json\",\n  \"items\": [\n\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n    {\n      \"id\": 3341237,\n      \"name\": \"Core\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/Core.json\"\n    },\n    {\n      \"id\": 3094885,\n      \"name\": \"Company Report Available\",\n      \"type\": \"Metric Title\",\n      \"url\": \"https://staging.wikirate.org/Company_Report_Available.json\"\n    },\n    {\n      \"id\": 7457810,\n      \"name\": \"BORA 2 LTD\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/BORA_2_LTD.json\"\n    },\n    {\n      \"id\": 6532613,\n      \"name\": \"2021\",\n      \"type\": \"Year\",\n      \"url\": \"https://staging.wikirate.org/2021.json\"\n    },\n    {\n      \"id\": 3094828,\n      \"name\": \"Core+Company Report Available\",\n      \"type\": \"Metric\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available.json\"\n    },\n    {\n      \"id\": 7457821,\n      \"name\": \"Core+Company Report Available+BORA 2 LTD\",\n      \"type\": \"Record\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+BORA_2_LTD.json\"\n    }\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+BORA_2_LTD+2021\",\n  \"created_at\": \"2021-07-07 22:38:18 UTC\",\n  \"updated_at\": \"2021-07-07 22:38:18 UTC\",\n  \"sources\": [\n    {\n      \"id\": 7269817,\n      \"name\": \"Source-000104408\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000104408.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/7269818/24831535.pdf\",\n      \"link\": \"https://www.meiji.com/global/sustainability/report_downloads/\",\n      \"report_type\": [\n        \"Sustainability Report\",\n        \"Company Website\",\n        \"Communication on Progress\",\n        \"Corporate Social Responsibility Report\"\n      ],\n      \"title\": \"Download Sustainability Reports\",\n      \"year\": [\n        \"2020\",\n        \"2021\"\n      ]\n    }\n  ],\n  \"checked_by\": {\n    \"id\": null,\n    \"name\": \"Core+Company Report Available+BORA 2 LTD+2021+checked by\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+BORA_2_LTD+2021+checked_by.json\",\n    \"content\": [\n\n    ],\n    \"checks\": 0,\n    \"check_requested\": false\n  },\n  \"requested_at\": \"2021-07-08 00:38:40 +0200\"\n}"
+                    "string": "{\n  \"id\": 13994236,\n  \"name\": \"Core+Company Report Available+Adidas AG+2022\",\n  \"type\": {\n    \"id\": 43678,\n    \"name\": \"Answer\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Answer.json\",\n    \"codename\": \"metric_answer\"\n  },\n  \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG+2022.json?flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-bs-dismiss%3D%22alert%22+class%3D%22btn-close%22+aria-label%3D%22Close%22%3E%3C%2Fbutton%3E%0A%3Ch4+class%3D%27mt-0%27%3ESuccess%21%3C%2Fh4%3E%0A%3Cp%3E%0AThank+you%21+Your+research+efforts+are+helping+make+information+about+companies%0Aaccessible%2C+comparable%2C+and+free+for+all.%0A%3C%2Fp%3E%0A%3Cp+class%3D%27answer-success-in-project%27%3E%0ATo+keep+researching%2C+go+back+to+the%0A%3Ca+class%3D%27_to_question_phase%27+href%3D%27%23%27%3E%0Aquestion+section%0A%3C%2Fa%3E%0Aand+select+a+different+year%2C+metric%2C+or+company.%0A%3C%2Fp%3E%0A%3C%2Fdiv%3E\",\n  \"metric\": \"Core+Company Report Available\",\n  \"company\": \"Adidas AG\",\n  \"year\": 2022,\n  \"value\": \"No\",\n  \"comments\": \"This is a test import of a metric answer\",\n  \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG.json\",\n  \"items\": [\n\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n    {\n      \"id\": 3341237,\n      \"name\": \"Core\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/Core.json\"\n    },\n    {\n      \"id\": 3094885,\n      \"name\": \"Company Report Available\",\n      \"type\": \"Metric Title\",\n      \"url\": \"https://staging.wikirate.org/Company_Report_Available.json\"\n    },\n    {\n      \"id\": 7217,\n      \"name\": \"Adidas AG\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/Adidas_AG.json\"\n    },\n    {\n      \"id\": 8200409,\n      \"name\": \"2022\",\n      \"type\": \"Year\",\n      \"url\": \"https://staging.wikirate.org/2022.json\"\n    },\n    {\n      \"id\": 3094828,\n      \"name\": \"Core+Company Report Available\",\n      \"type\": \"Metric\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available.json\"\n    },\n    {\n      \"id\": 5621383,\n      \"name\": \"Core+Company Report Available+Adidas AG\",\n      \"type\": \"Record\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG.json\"\n    }\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG+2022\",\n  \"created_at\": \"2023-02-03 18:45:45 UTC\",\n  \"updated_at\": \"2023-02-03 18:45:45 UTC\",\n  \"sources\": [\n    {\n      \"id\": 7269817,\n      \"name\": \"Source-000104408\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000104408.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/7269818/24831535.pdf\",\n      \"link\": \"https://www.meiji.com/global/sustainability/report_downloads/\",\n      \"report_type\": [\n        \"Sustainability Report\",\n        \"Company Website\",\n        \"Communication on Progress\",\n        \"Corporate Social Responsibility Report\"\n      ],\n      \"title\": \"Download Sustainability Reports\",\n      \"year\": [\n        \"2020\",\n        \"2021\",\n        \"2022\"\n      ]\n    }\n  ],\n  \"checked_by\": {\n    \"id\": null,\n    \"name\": \"Core+Company Report Available+Adidas AG+2022+checked by\",\n    \"type\": \"List\",\n    \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG+2022+checked_by.json\",\n    \"content\": [\n\n    ],\n    \"checks\": 0\n  },\n  \"requested_at\": \"2023-02-03 18:45:49 UTC\"\n}"
                 }
             }
         }

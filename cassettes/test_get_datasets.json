@@ -1,0 +1,95 @@
+{
+    "version": 1,
+    "interactions": [
+        {
+            "request": {
+                "method": "GET",
+                "uri": "https://staging.wikirate.org/Data_sets.json",
+                "body": "limit=10",
+                "headers": {
+                    "User-Agent": [
+                        "python-requests/2.25.1"
+                    ],
+                    "Accept-Encoding": [
+                        "gzip, deflate"
+                    ],
+                    "Accept": [
+                        "*/*"
+                    ],
+                    "Connection": [
+                        "keep-alive"
+                    ],
+                    "Content-Length": [
+                        "8"
+                    ],
+                    "Content-Type": [
+                        "application/x-www-form-urlencoded"
+                    ]
+                }
+            },
+            "response": {
+                "status": {
+                    "code": 200,
+                    "message": "OK"
+                },
+                "headers": {
+                    "Status": [
+                        "200 OK"
+                    ],
+                    "Date": [
+                        "Fri, 03 Feb 2023 18:20:52 GMT"
+                    ],
+                    "Cache-Control": [
+                        "max-age=0, private, must-revalidate"
+                    ],
+                    "Access-Control-Allow-Origin": [
+                        "*",
+                        "*"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=bDk0WTkvL1dFM2liYjFzd1VyZzBuRFREaHNyTnM1c1lLQXB3VWwxMkhLK0dsbXgwVHY0RnJMTkRZQTluaHpQR1ZtSDJyZXE0anRyMHNIK1lMcmRKVGVoY3gzM1ZGQTdHMmNUV01XaXZzZW1rdnc1elNrbFBKVkRha1d5em9hd2EtLXN3V08veFhsNTJYaG84dnJtblJOcnc9PQ%3D%3D--02d78724e34b814ceb1066e748e6f312d5933e8e; path=/; HttpOnly"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.12"
+                    ],
+                    "Content-Disposition": [
+                        "attachment; filename=\"WikiRate-2023_02_03_182052-Data_Set.json\""
+                    ],
+                    "Server": [
+                        "Apache/2.4.41 (Ubuntu) Phusion_Passenger/6.0.12 OpenSSL/1.1.1f"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
+                    "X-Request-Id": [
+                        "a7fd8bae-5a2a-4cf3-8e2f-ee87dc86cf80"
+                    ],
+                    "ETag": [
+                        "W/\"f6938f6fa1b093013bdce3cc128a7a3b\""
+                    ],
+                    "X-Runtime": [
+                        "0.086384"
+                    ],
+                    "Keep-Alive": [
+                        "timeout=5, max=100"
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "Connection": [
+                        "Keep-Alive"
+                    ],
+                    "Vary": [
+                        "Origin"
+                    ]
+                },
+                "body": {
+                    "string": "{\n  \"id\": 7926098,\n  \"name\": \"Data Set\",\n  \"type\": {\n    \"id\": 5,\n    \"name\": \"Cardtype\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Cardtype.json\",\n    \"codename\": \"cardtype\"\n  },\n  \"url\": \"https://staging.wikirate.org/Data_sets.json\",\n  \"codename\": \"dataset\",\n  \"items\": [\n    {\n      \"id\": 13984221,\n      \"name\": \"Net Zero Tracker\",\n      \"type\": \"Data Set\",\n      \"url\": \"https://staging.wikirate.org/Net_Zero_Tracker.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 13984166,\n      \"name\": \"Modern Slavery Reseach Project-Renewable Energy Sector\",\n      \"type\": \"Data Set\",\n      \"url\": \"https://staging.wikirate.org/Modern_Slavery_Reseach_Project_Renewable_Energy_Sector.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 13924310,\n      \"name\": \"SIPA-Modern Slavery Reseach Project-2022\",\n      \"type\": \"Data Set\",\n      \"url\": \"https://staging.wikirate.org/SIPA_Modern_Slavery_Reseach_Project_2022.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 13923922,\n      \"name\": \"Modern Slavery Research Project-Energy Sector\",\n      \"type\": \"Data Set\",\n      \"url\": \"https://staging.wikirate.org/Modern_Slavery_Research_Project_Energy_Sector.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 13861985,\n      \"name\": \"FTI Subset: 5.3, 5.4\",\n      \"type\": \"Data Set\",\n      \"url\": \"https://staging.wikirate.org/FTI_Subset_5_3_5_4.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 13746522,\n      \"name\": \"AMD 2022 - Sustainability Challenges for the Fashion Industry\",\n      \"type\": \"Data Set\",\n      \"url\": \"https://staging.wikirate.org/AMD_2022_Sustainability_Challenges_for_the_Fashion_Industry.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 13741247,\n      \"name\": \"SDG 5 Gender Equality-Student Assessment\",\n      \"type\": \"Data Set\",\n      \"url\": \"https://staging.wikirate.org/SDG_5_Gender_Equality_Student_Assessment.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 13667824,\n      \"name\": \"UWLAX-La Crosse SDGs Student Assessment\",\n      \"type\": \"Data Set\",\n      \"url\": \"https://staging.wikirate.org/UWLAX_La_Crosse_SDGs_Student_Assessment.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 13660385,\n      \"name\": \"B Corp Impact Data\",\n      \"type\": \"Data Set\",\n      \"url\": \"https://staging.wikirate.org/B_Corp_Impact_Data.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 13652971,\n      \"name\": \"Indian companies SDG progress (WBA SDG2000)\",\n      \"type\": \"Data Set\",\n      \"url\": \"https://staging.wikirate.org/Indian_companies_SDG_progress_WBA_SDG2000.json\",\n      \"content\": \"\"\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Data_Set\",\n  \"created_at\": \"2021-09-17 20:25:37 UTC\",\n  \"updated_at\": \"2022-10-07 21:30:34 UTC\",\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Data_Set.json?filter%5Bname%5D=&item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2023-02-03 18:20:52 UTC\",\n  \"license\": \"Creative Commons Attribution-ShareAlike 4.0 International License\"\n}"
+                }
+            }
+        }
+    ]
+}

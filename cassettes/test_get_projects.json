@@ -4,8 +4,8 @@
         {
             "request": {
                 "method": "GET",
-                "uri": "https://staging.wikirate.org/Projects.json?limit=10",
-                "body": null,
+                "uri": "https://staging.wikirate.org/Projects.json",
+                "body": "limit=10",
                 "headers": {
                     "User-Agent": [
                         "python-requests/2.25.1"
@@ -18,6 +18,12 @@
                     ],
                     "Connection": [
                         "keep-alive"
+                    ],
+                    "Content-Length": [
+                        "8"
+                    ],
+                    "Content-Type": [
+                        "application/x-www-form-urlencoded"
                     ]
                 }
             },
@@ -27,54 +33,61 @@
                     "message": "OK"
                 },
                 "headers": {
-                    "X-Runtime": [
-                        "0.087715"
-                    ],
-                    "Server": [
-                        "Apache/2.4.29 (Ubuntu) Phusion_Passenger/6.0.4 OpenSSL/1.1.1"
-                    ],
-                    "X-Frame-Options": [
-                        "ALLOWALL"
-                    ],
-                    "Access-Control-Allow-Origin": [
-                        "*"
-                    ],
-                    "Connection": [
-                        "Keep-Alive"
-                    ],
-                    "ETag": [
-                        "W/\"403299e5ceceb980588871d752537e99\""
-                    ],
-                    "Transfer-Encoding": [
-                        "chunked"
-                    ],
-                    "Set-Cookie": [
-                        "_wikirate_session=bk00WFJRaElIdzI3VDA1RGZLYTRIMUVRRGp4ZVVocy9NVTZVUzdjS2ViVnFCc0RwK2xEQmFDN09yRXByN2xONHR1R2s0NWxrVURncVY4bDZmUERJcmFIQWI3b2hGYzJtSGs5NXVGc1V3dVVIWXpHVUtkc3hOQ0E2eEJ4WE9sczUtLUpMZ1pkTTVoNWgrejlCK1VNa081cGc9PQ%3D%3D--934d7dd0b375cd783f8bf4a66abf1c422d803cff; path=/; HttpOnly"
-                    ],
-                    "Content-Type": [
-                        "text/json; charset=utf-8"
-                    ],
-                    "Date": [
-                        "Wed, 07 Jul 2021 22:32:21 GMT"
-                    ],
-                    "X-Powered-By": [
-                        "Phusion Passenger 6.0.4"
-                    ],
                     "Status": [
                         "200 OK"
+                    ],
+                    "Date": [
+                        "Fri, 03 Feb 2023 18:20:53 GMT"
                     ],
                     "Cache-Control": [
                         "max-age=0, private, must-revalidate"
                     ],
+                    "Access-Control-Allow-Origin": [
+                        "*",
+                        "*"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=RlY4NDZYTEtiU2tsaFlRTXdvZFZGeG0wa3VlYURNeTdXUE5STE9TRTdYSEJScVRiRHNkMTIzMGk0M1lVVHpQeVhkai9weTJBNXhYVVpFSzlXYkN2ck1raWI4UlJObmJleTZDZDBBVEdxNUQwdTF6MXU4WlZaWVpSd0FoR3B4TGctLXIralRZSTZzamhoc2JmOU85SjVpTnc9PQ%3D%3D--70ed9ed80449131e0a4ff46d1b5245e18551ec11; path=/; HttpOnly"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.12"
+                    ],
+                    "Content-Disposition": [
+                        "attachment; filename=\"WikiRate-2023_02_03_182053-Project.json\""
+                    ],
+                    "Server": [
+                        "Apache/2.4.41 (Ubuntu) Phusion_Passenger/6.0.12 OpenSSL/1.1.1f"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
                     "X-Request-Id": [
-                        "5043ed5a-3b89-4a32-b717-951ee3943f87"
+                        "1dd38515-3eae-41af-ac0d-01464ea88b6b"
+                    ],
+                    "ETag": [
+                        "W/\"4d4a927e71da9ae9924596caa304a17b\""
+                    ],
+                    "X-Runtime": [
+                        "0.088801"
                     ],
                     "Keep-Alive": [
                         "timeout=5, max=100"
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "Connection": [
+                        "Keep-Alive"
+                    ],
+                    "Vary": [
+                        "Origin"
                     ]
                 },
                 "body": {
-                    "string": "{\n  \"id\": 39830,\n  \"name\": \"Project\",\n  \"type\": {\n    \"id\": 5,\n    \"name\": \"Cardtype\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Cardtype.json\",\n    \"codename\": \"cardtype\"\n  },\n  \"url\": \"https://staging.wikirate.org/Projects.json?limit=10\",\n  \"codename\": \"project\",\n  \"items\": [\n    {\n      \"id\": 1474911,\n      \"name\": \"2016 Olympic Partners, Sponsors, and Suppliers\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/2016_Olympic_Partners_Sponsors_and_Suppliers.json\"\n    },\n    {\n      \"id\": 6909972,\n      \"name\": \"AIMS Ground Truth\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/AIMS_Ground_Truth.json\"\n    },\n    {\n      \"id\": 2704140,\n      \"name\": \"Alpina\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/Alpina.json\"\n    },\n    {\n      \"id\": 5470078,\n      \"name\": \"AMD Demo Project\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/AMD_Demo_Project.json\"\n    },\n    {\n      \"id\": 5746817,\n      \"name\": \"AMD Research 2019 - All Projects\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/AMD_Research_2019_All_Projects.json\"\n    },\n    {\n      \"id\": 6337724,\n      \"name\": \"AMD Research 2020: Climate Action in the Fashion and Creative Industries\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/AMD_Research_2020_Climate_Action_in_the_Fashion_and_Creative_Industries.json\"\n    },\n    {\n      \"id\": 5506693,\n      \"name\": \"AMD SDG Research Project 2019 - Group 1\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/AMD_SDG_Research_Project_2019_Group_1.json\"\n    },\n    {\n      \"id\": 5506773,\n      \"name\": \"AMD SDG Research Project 2019 - Group 10\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/AMD_SDG_Research_Project_2019_Group_10.json\"\n    },\n    {\n      \"id\": 5506702,\n      \"name\": \"AMD SDG Research Project 2019 - Group 2\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/AMD_SDG_Research_Project_2019_Group_2.json\"\n    },\n    {\n      \"id\": 5506711,\n      \"name\": \"AMD SDG Research Project 2019 - Group 3\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/AMD_SDG_Research_Project_2019_Group_3.json\"\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Project\",\n  \"created_at\": \"2015-02-17 16:50:43 UTC\",\n  \"updated_at\": \"2018-03-04 16:41:58 UTC\",\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Project.json?item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2021-07-08 00:32:21 +0200\"\n}"
+                    "string": "{\n  \"id\": 39830,\n  \"name\": \"Project\",\n  \"type\": {\n    \"id\": 5,\n    \"name\": \"Cardtype\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Cardtype.json\",\n    \"codename\": \"cardtype\"\n  },\n  \"url\": \"https://staging.wikirate.org/Projects.json\",\n  \"codename\": \"project\",\n  \"items\": [\n    {\n      \"id\": 13993772,\n      \"name\": \"badge test project\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/badge_test_project.json\"\n    },\n    {\n      \"id\": 13984225,\n      \"name\": \"Research: MSA Renewable Energy Sector\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/Research_MSA_Renewable_Energy_Sector.json\"\n    },\n    {\n      \"id\": 13924205,\n      \"name\": \"Columbia University SIPA Modern Slavery Research 2022\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/Columbia_University_SIPA_Modern_Slavery_Research_2022.json\"\n    },\n    {\n      \"id\": 13923962,\n      \"name\": \"UCONN 2022- Modern Slavery Reseach Project-Energy Sector\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/UCONN_2022_Modern_Slavery_Reseach_Project_Energy_Sector.json\"\n    },\n    {\n      \"id\": 13746784,\n      \"name\": \"Reserach: AMD 2022 - Sustainability Challenges for the Fashion Industry\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/Reserach_AMD_2022_Sustainability_Challenges_for_the_Fashion_Industry.json\"\n    },\n    {\n      \"id\": 13741254,\n      \"name\": \"Mary Baldwin University- SDG 5 Gender Equality\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/Mary_Baldwin_University_SDG_5_Gender_Equality.json\"\n    },\n    {\n      \"id\": 13667836,\n      \"name\": \"UW-La Crosse SDGs Student Assessment\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/UW_La_Crosse_SDGs_Student_Assessment.json\"\n    },\n    {\n      \"id\": 13655799,\n      \"name\": \"Greenhouse gas GHG Emission Scope 1\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/Greenhouse_gas_GHG_Emission_Scope_1.json\"\n    },\n    {\n      \"id\": 13655794,\n      \"name\": \"Scope 1 Greenhouse gas GHG Emission\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/Scope_1_Greenhouse_gas_GHG_Emission.json\"\n    },\n    {\n      \"id\": 13655767,\n      \"name\": \"Greenhouse Gas Emission Scope 1 FY2022\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/Greenhouse_Gas_Emission_Scope_1_FY2022.json\"\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Project\",\n  \"created_at\": \"2015-02-17 16:50:43 UTC\",\n  \"updated_at\": \"2018-03-04 16:41:58 UTC\",\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Project.json?filter%5Bname%5D=&filter%5Bwikirate_status%5D=Active&item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2023-02-03 18:20:53 UTC\",\n  \"license\": \"Creative Commons Attribution-ShareAlike 4.0 International License\"\n}"
                 }
             }
         }

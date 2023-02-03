@@ -4,8 +4,8 @@
         {
             "request": {
                 "method": "POST",
-                "uri": "https://staging.wikirate.org/card/create?card%5Btype%5D=Source&card%5Bsubcards%5D%5B%2Btitle%5D=wikipedia+page+of+Target+Corporation+2021&card%5Bsubcards%5D%5B%2Blink%5D=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FTarget_Corporation&card%5Bskip%5D=requirements&format=json&success%5Bformat%5D=json&card%5Bsubcards%5D%5B%2Bcompany%5D=Target&card%5Bsubcards%5D%5B%2Byear%5D=2020",
-                "body": null,
+                "uri": "https://staging.wikirate.org/card/create",
+                "body": "card%5Btype%5D=Source&card%5Bsubcards%5D%5B%2Btitle%5D=wikipedia+page+of+Target+Corporation+2021&card%5Bskip%5D=requirements&format=json&success%5Bformat%5D=json&card%5Bsubcards%5D%5B%2Burl%5D=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FTarget_Corporation&card%5Bsubcards%5D%5B%2Bcompany%5D=Target&card%5Bsubcards%5D%5B%2Bcomment%5D=07%2F07%2F2021+This+is+a+comment&card%5Bsubcards%5D%5B%2Byear%5D=2020",
                 "headers": {
                     "User-Agent": [
                         "python-requests/2.25.1"
@@ -19,11 +19,11 @@
                     "Connection": [
                         "keep-alive"
                     ],
-                    "content-type": [
-                        "application/json"
-                    ],
                     "Content-Length": [
-                        "0"
+                        "398"
+                    ],
+                    "Content-Type": [
+                        "application/x-www-form-urlencoded"
                     ]
                 }
             },
@@ -33,61 +33,65 @@
                     "message": "See Other"
                 },
                 "headers": {
-                    "X-Runtime": [
-                        "4.299935"
-                    ],
-                    "Server": [
-                        "Apache/2.4.29 (Ubuntu) Phusion_Passenger/6.0.4 OpenSSL/1.1.1"
-                    ],
-                    "X-Frame-Options": [
-                        "ALLOWALL"
-                    ],
-                    "Access-Control-Allow-Origin": [
-                        "*"
-                    ],
-                    "Connection": [
-                        "Keep-Alive"
-                    ],
-                    "Transfer-Encoding": [
-                        "chunked"
-                    ],
-                    "Set-Cookie": [
-                        "_wikirate_session=WmtIUEMxSjQzU0EyY2RlNnhRSFhTTkY5dG8wa09lWmY2RnFIZ1F0bys0NDFCajJReXI2cFFmWHRGYkRsYXZucjRBdlZld1hYU052TWJJVnJ0VzFoUmFhdmRIeHhyM0ttenQvVHJZUW9kWWlmZ2wwNXEyejdMdS9nRDhxaTNNMmwtLVhvc3N6aEJqcVdoTWVnZm85VnkwRHc9PQ%3D%3D--62d84359dc2038535118d192a2b7bf21b8917f72; path=/; HttpOnly"
-                    ],
-                    "Content-Type": [
-                        "text/html; charset=utf-8"
-                    ],
-                    "Date": [
-                        "Wed, 07 Jul 2021 22:31:54 GMT"
-                    ],
-                    "X-Powered-By": [
-                        "Phusion Passenger 6.0.4"
-                    ],
                     "Status": [
                         "303 See Other"
+                    ],
+                    "Date": [
+                        "Fri, 03 Feb 2023 18:20:49 GMT"
                     ],
                     "Cache-Control": [
                         "no-cache"
                     ],
+                    "Access-Control-Allow-Origin": [
+                        "*",
+                        "*"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=cTB2TzE5VHJCaDRhS2RWQWVaUzFUd3VVSDRlYjk4NHJlZ1pJZFVmNTJ4ZWs2VytaOUJQQUFVbTJ5MWFLaXRNaE40c29pSlppTG9NcTJIbVpZM0VEZlIzQlVSR0d4L1BPNUpoSGpyUitjV0Zic0lXcHk1SGplNlRyMHNUbmM3LzctLUQ0MUVVSktPV21RNnJBWHdXMkl3bFE9PQ%3D%3D--9f6286975c41ec730225c83afe2888f2602a23de; path=/; HttpOnly"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.12"
+                    ],
+                    "Server": [
+                        "Apache/2.4.41 (Ubuntu) Phusion_Passenger/6.0.12 OpenSSL/1.1.1f"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Content-Type": [
+                        "text/html; charset=utf-8"
+                    ],
                     "X-Request-Id": [
-                        "0ab50472-0d54-4643-aecf-bbb0342847fa"
+                        "62770006-015f-43e4-ba1f-170d86797fa0"
                     ],
                     "Location": [
-                        "https://staging.wikirate.org/Source_000106620.json"
+                        "https://staging.wikirate.org/Source_000172263.json"
+                    ],
+                    "X-Runtime": [
+                        "0.380918"
                     ],
                     "Keep-Alive": [
                         "timeout=5, max=100"
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "Connection": [
+                        "Keep-Alive"
+                    ],
+                    "Vary": [
+                        "Origin"
                     ]
                 },
                 "body": {
-                    "string": "<html><body>You are being <a href=\"https://staging.wikirate.org/Source_000106620.json\">redirected</a>.</body></html>"
+                    "string": "<html><body>You are being <a href=\"https://staging.wikirate.org/Source_000172263.json\">redirected</a>.</body></html>"
                 }
             }
         },
         {
             "request": {
                 "method": "GET",
-                "uri": "https://staging.wikirate.org/Source_000106620.json",
+                "uri": "https://staging.wikirate.org/Source_000172263.json",
                 "body": null,
                 "headers": {
                     "User-Agent": [
@@ -103,7 +107,7 @@
                         "keep-alive"
                     ],
                     "Cookie": [
-                        "_wikirate_session=WmtIUEMxSjQzU0EyY2RlNnhRSFhTTkY5dG8wa09lWmY2RnFIZ1F0bys0NDFCajJReXI2cFFmWHRGYkRsYXZucjRBdlZld1hYU052TWJJVnJ0VzFoUmFhdmRIeHhyM0ttenQvVHJZUW9kWWlmZ2wwNXEyejdMdS9nRDhxaTNNMmwtLVhvc3N6aEJqcVdoTWVnZm85VnkwRHc9PQ%3D%3D--62d84359dc2038535118d192a2b7bf21b8917f72"
+                        "_wikirate_session=cTB2TzE5VHJCaDRhS2RWQWVaUzFUd3VVSDRlYjk4NHJlZ1pJZFVmNTJ4ZWs2VytaOUJQQUFVbTJ5MWFLaXRNaE40c29pSlppTG9NcTJIbVpZM0VEZlIzQlVSR0d4L1BPNUpoSGpyUitjV0Zic0lXcHk1SGplNlRyMHNUbmM3LzctLUQ0MUVVSktPV21RNnJBWHdXMkl3bFE9PQ%3D%3D--9f6286975c41ec730225c83afe2888f2602a23de"
                     ]
                 }
             },
@@ -113,54 +117,58 @@
                     "message": "OK"
                 },
                 "headers": {
-                    "X-Runtime": [
-                        "0.384651"
-                    ],
-                    "Server": [
-                        "Apache/2.4.29 (Ubuntu) Phusion_Passenger/6.0.4 OpenSSL/1.1.1"
-                    ],
-                    "X-Frame-Options": [
-                        "ALLOWALL"
-                    ],
-                    "Access-Control-Allow-Origin": [
-                        "*"
-                    ],
-                    "Connection": [
-                        "Keep-Alive"
-                    ],
-                    "ETag": [
-                        "W/\"cf438f76b0601c9475b2890a3f333c1d\""
-                    ],
-                    "Transfer-Encoding": [
-                        "chunked"
-                    ],
-                    "Set-Cookie": [
-                        "_wikirate_session=b0p4QlBWbXEyOUtiYURkNW1UczQxOC8vN3VjT1lrd0w4eldkWkpjcW1sZlZUYzN1NE03eHd0THBmVDNGckdwZW9aV3RKL0lOZ1dyNHBDblk3am5BS1dnK0VEZlVrRlZyUTNPYTV6Y3g1R2xsYllzY1FZL1JnTXpmSUNnQXJ5SWwtLUx5VklYaWM3cGpXL3MxK24rOGpkMFE9PQ%3D%3D--9127a98220f83b59a817e58a0512c728ee44d117; path=/; HttpOnly"
-                    ],
-                    "Content-Type": [
-                        "text/json; charset=utf-8"
-                    ],
-                    "Date": [
-                        "Wed, 07 Jul 2021 22:31:59 GMT"
-                    ],
-                    "X-Powered-By": [
-                        "Phusion Passenger 6.0.4"
-                    ],
                     "Status": [
                         "200 OK"
+                    ],
+                    "Date": [
+                        "Fri, 03 Feb 2023 18:20:49 GMT"
                     ],
                     "Cache-Control": [
                         "max-age=0, private, must-revalidate"
                     ],
+                    "Access-Control-Allow-Origin": [
+                        "*",
+                        "*"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=RGcrQlE0R0JTY2hBb0hZMTRuenlrcHRhbFNFL0NOWWxJTkYwS3QzN1BnVDdPaUcyZVBBWFZ2aTMraHpFMG94NThqLzk2YytaTG01R3BYRjh1dVYvTnFOK1ZOWXNpQ3oybVJXU3gxZlBJZWFvaXN2eDVRSU8vSU8zeExtN0Vkb2stLSt4SnNraWN6T3RpRGNGS1o2ODhiMUE9PQ%3D%3D--19c91fc46640cab25846460e0dd819448ccc5e7e; path=/; HttpOnly"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.12"
+                    ],
+                    "Server": [
+                        "Apache/2.4.41 (Ubuntu) Phusion_Passenger/6.0.12 OpenSSL/1.1.1f"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
                     "X-Request-Id": [
-                        "82c2f94a-585d-4427-ae9d-42ddf49c7b01"
+                        "e9e1f8df-4942-416c-bbed-9af395869f0f"
+                    ],
+                    "ETag": [
+                        "W/\"45f56bd96412cc9ce696add523c663d3\""
+                    ],
+                    "X-Runtime": [
+                        "0.132069"
                     ],
                     "Keep-Alive": [
                         "timeout=5, max=99"
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "Connection": [
+                        "Keep-Alive"
+                    ],
+                    "Vary": [
+                        "Origin"
                     ]
                 },
                 "body": {
-                    "string": "{\n  \"id\": 7457804,\n  \"name\": \"Source-000106620\",\n  \"type\": {\n    \"id\": 629,\n    \"name\": \"Source\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Source.json\",\n    \"codename\": \"source\"\n  },\n  \"url\": \"https://staging.wikirate.org/Source_000106620.json\",\n  \"file\": {\n    \"id\": null,\n    \"name\": \"Source-000106620+File\",\n    \"type\": \"File\",\n    \"url\": \"https://staging.wikirate.org/Source_000106620+File.json?card%5Bname%5D=Source-000106620%2BFile\"\n  },\n  \"link\": {\n    \"id\": 7457806,\n    \"name\": \"Source-000106620+Link\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Source_000106620+Link.json\",\n    \"content\": \"https://en.wikipedia.org/wiki/Target_Corporation\"\n  },\n  \"report_type\": {\n    \"id\": null,\n    \"name\": \"Source-000106620+Report Type\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://staging.wikirate.org/Source_000106620+Report_Type.json?card%5Bname%5D=Source-000106620%2BReport+Type\"\n  },\n  \"title\": {\n    \"id\": 7457805,\n    \"name\": \"Source-000106620+Title\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Source_000106620+Title.json\",\n    \"content\": \"wikipedia page of Target Corporation 2021\"\n  },\n  \"year\": {\n    \"id\": 7457808,\n    \"name\": \"Source-000106620+Year\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://staging.wikirate.org/Source_000106620+Year.json\",\n    \"content\": [\n      \"2020\"\n    ]\n  },\n  \"items\": [\n\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Source_000106620\",\n  \"created_at\": \"2021-07-07 22:31:54 UTC\",\n  \"updated_at\": \"2021-07-07 22:31:54 UTC\",\n  \"description\": {\n    \"id\": null,\n    \"name\": \"Source-000106620+description\",\n    \"type\": \"RichText\",\n    \"url\": \"https://staging.wikirate.org/Source_000106620+description.json?card%5Bname%5D=Source-000106620%2Bdescription\"\n  },\n  \"discussion\": {\n    \"id\": null,\n    \"name\": \"Source-000106620+Discussion\",\n    \"type\": \"RichText\",\n    \"url\": \"https://staging.wikirate.org/Source_000106620+Discussion.json?card%5Bname%5D=Source-000106620%2BDiscussion\"\n  },\n  \"company\": {\n    \"id\": 7457807,\n    \"name\": \"Source-000106620+Company\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://staging.wikirate.org/Source_000106620+Company.json\",\n    \"content\": [\n      \"Target\"\n    ]\n  },\n  \"metric\": {\n    \"id\": null,\n    \"name\": \"Source-000106620+Metric\",\n    \"type\": \"Search\",\n    \"url\": \"https://staging.wikirate.org/Source_000106620+Metric.json\",\n    \"content\": [\n\n    ]\n  },\n  \"answer\": {\n    \"id\": null,\n    \"name\": \"Source-000106620+Answer\",\n    \"type\": \"Search\",\n    \"url\": \"https://staging.wikirate.org/Source_000106620+Answer.json\"\n  },\n  \"requested_at\": \"2021-07-08 00:31:59 +0200\"\n}"
+                    "string": "{\n  \"id\": 13994212,\n  \"name\": \"Source-000172263\",\n  \"type\": {\n    \"id\": 629,\n    \"name\": \"Source\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Source.json\",\n    \"codename\": \"source\"\n  },\n  \"url\": \"https://staging.wikirate.org/Source_000172263.json\",\n  \"file\": {\n    \"id\": null,\n    \"name\": \"Source-000172263+File\",\n    \"type\": \"File\",\n    \"url\": \"https://staging.wikirate.org/Source_000172263+File.json?card%5Bname%5D=Source-000172263%2BFile\"\n  },\n  \"link\": {\n    \"id\": null,\n    \"name\": \"Source-000172263+Link\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Source_000172263+Link.json?card%5Bname%5D=Source-000172263%2BLink\"\n  },\n  \"report_type\": {\n    \"id\": null,\n    \"name\": \"Source-000172263+Report Type\",\n    \"type\": \"List\",\n    \"url\": \"https://staging.wikirate.org/Source_000172263+Report_Type.json?card%5Bname%5D=Source-000172263%2BReport+Type\"\n  },\n  \"title\": {\n    \"id\": 13994213,\n    \"name\": \"Source-000172263+Title\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Source_000172263+Title.json\",\n    \"content\": \"wikipedia page of Target Corporation 2021\"\n  },\n  \"year\": {\n    \"id\": 13994217,\n    \"name\": \"Source-000172263+Year\",\n    \"type\": \"List\",\n    \"url\": \"https://staging.wikirate.org/Source_000172263+Year.json\",\n    \"content\": [\n      \"2020\"\n    ]\n  },\n  \"items\": [\n\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Source_000172263\",\n  \"created_at\": \"2023-02-03 18:20:49 UTC\",\n  \"updated_at\": \"2023-02-03 18:20:49 UTC\",\n  \"description\": {\n    \"id\": null,\n    \"name\": \"Source-000172263+description\",\n    \"type\": \"RichText\",\n    \"url\": \"https://staging.wikirate.org/Source_000172263+description.json?card%5Bname%5D=Source-000172263%2Bdescription\"\n  },\n  \"discussion\": {\n    \"id\": null,\n    \"name\": \"Source-000172263+Discussion\",\n    \"type\": \"RichText\",\n    \"url\": \"https://staging.wikirate.org/Source_000172263+Discussion.json?card%5Bname%5D=Source-000172263%2BDiscussion\"\n  },\n  \"company\": {\n    \"id\": 13994215,\n    \"name\": \"Source-000172263+Company\",\n    \"type\": \"List\",\n    \"url\": \"https://staging.wikirate.org/Source_000172263+Company.json\",\n    \"content\": [\n      \"Target\"\n    ]\n  },\n  \"metric\": {\n    \"id\": null,\n    \"name\": \"Source-000172263+Metric\",\n    \"type\": \"List\",\n    \"url\": \"https://staging.wikirate.org/Source_000172263+Metric.json\",\n    \"content\": [\n\n    ]\n  },\n  \"answer\": {\n    \"id\": null,\n    \"name\": \"Source-000172263+Answer\",\n    \"type\": \"Search\",\n    \"url\": \"https://staging.wikirate.org/Source_000172263+Answer.json\"\n  },\n  \"requested_at\": \"2023-02-03 18:20:49 UTC\"\n}"
                 }
             }
         }

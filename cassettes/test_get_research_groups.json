@@ -4,8 +4,8 @@
         {
             "request": {
                 "method": "GET",
-                "uri": "https://staging.wikirate.org/Research_Groups.json?limit=10",
-                "body": null,
+                "uri": "https://staging.wikirate.org/Research_Groups.json",
+                "body": "limit=10",
                 "headers": {
                     "User-Agent": [
                         "python-requests/2.25.1"
@@ -18,6 +18,12 @@
                     ],
                     "Connection": [
                         "keep-alive"
+                    ],
+                    "Content-Length": [
+                        "8"
+                    ],
+                    "Content-Type": [
+                        "application/x-www-form-urlencoded"
                     ]
                 }
             },
@@ -27,54 +33,61 @@
                     "message": "OK"
                 },
                 "headers": {
-                    "X-Runtime": [
-                        "0.070562"
-                    ],
-                    "Server": [
-                        "Apache/2.4.29 (Ubuntu) Phusion_Passenger/6.0.4 OpenSSL/1.1.1"
-                    ],
-                    "X-Frame-Options": [
-                        "ALLOWALL"
-                    ],
-                    "Access-Control-Allow-Origin": [
-                        "*"
-                    ],
-                    "Connection": [
-                        "Keep-Alive"
-                    ],
-                    "ETag": [
-                        "W/\"534cb34c95a72716bed88069819ad0c7\""
-                    ],
-                    "Transfer-Encoding": [
-                        "chunked"
-                    ],
-                    "Set-Cookie": [
-                        "_wikirate_session=em1xY2s5VDQ4M3EyT3JINjk4Ukc0VFN4Vi9GSVBhbjVMeUM1MVNwZVJHVVMxM0U0Z2JKdWs2c3Z5NXc2bm1GNTRQUTNwM0xsN0l1UW9QVVhLQ2VDMUIrb1ZydzZ2UWVSRjdsVS8xMUZLUllYcWg2R1czN0R6Z2lSMlNnazZpMGMtLXZRLzd5R29MUldsMkJWcTh4NHpyblE9PQ%3D%3D--10bf0a48790161a41d7678e206af26b779b83a73; path=/; HttpOnly"
-                    ],
-                    "Content-Type": [
-                        "text/json; charset=utf-8"
-                    ],
-                    "Date": [
-                        "Wed, 07 Jul 2021 22:32:22 GMT"
-                    ],
-                    "X-Powered-By": [
-                        "Phusion Passenger 6.0.4"
-                    ],
                     "Status": [
                         "200 OK"
+                    ],
+                    "Date": [
+                        "Fri, 03 Feb 2023 18:20:56 GMT"
                     ],
                     "Cache-Control": [
                         "max-age=0, private, must-revalidate"
                     ],
+                    "Access-Control-Allow-Origin": [
+                        "*",
+                        "*"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=L20raUZ2WnNWcTkwVW1Ldm9lWGtWL2FyWDFuV09veHVXMHQ4WXh0YWdoZElCVGVTNkZKSjFUOWVQSW5ROXV3SlhyNE9FZTdGQTB5aFpQS2hwcUp1YUJjNTh3ditxQi9pYVQ5TlQ5ajlYUmo1aktCQm4yUUZQSW43WGsrdm41Y2wtLXVKcVFpczZ3L29jbGo2TjVsVEtuWFE9PQ%3D%3D--d5258e5a7e475cdc5a8661dbdd1f3fc7a72b2674; path=/; HttpOnly"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.12"
+                    ],
+                    "Content-Disposition": [
+                        "attachment; filename=\"WikiRate-2023_02_03_182056-Research_Group.json\""
+                    ],
+                    "Server": [
+                        "Apache/2.4.41 (Ubuntu) Phusion_Passenger/6.0.12 OpenSSL/1.1.1f"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
                     "X-Request-Id": [
-                        "330a3c0e-eeee-41c9-ab75-2cf5e6a7d5a7"
+                        "4ece5f9d-1132-4e8a-a151-b9d595e4193d"
+                    ],
+                    "ETag": [
+                        "W/\"9a15deda65d52e3c6b3c14af1e606cfc\""
+                    ],
+                    "X-Runtime": [
+                        "0.078964"
                     ],
                     "Keep-Alive": [
                         "timeout=5, max=100"
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "Connection": [
+                        "Keep-Alive"
+                    ],
+                    "Vary": [
+                        "Origin"
                     ]
                 },
                 "body": {
-                    "string": "{\n  \"id\": 2301582,\n  \"name\": \"Research Group\",\n  \"type\": {\n    \"id\": 5,\n    \"name\": \"Cardtype\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Cardtype.json\",\n    \"codename\": \"cardtype\"\n  },\n  \"url\": \"https://staging.wikirate.org/Research_Groups.json?limit=10\",\n  \"codename\": \"research_group\",\n  \"items\": [\n    {\n      \"id\": 3401110,\n      \"name\": \"Alejandro Parra\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/Alejandro_Parra.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 3214397,\n      \"name\": \"ali asadi , demilade olowosuko\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/ali_asadi_demilade_olowosuko.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 3193614,\n      \"name\": \"Alice NEOMA\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/Alice_NEOMA.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 5506782,\n      \"name\": \"AMD Research 2019 - Group 1\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/AMD_Research_2019_Group_1.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 5506822,\n      \"name\": \"AMD Research 2019 - Group 10\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/AMD_Research_2019_Group_10.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 5506787,\n      \"name\": \"AMD Research 2019 - Group 2\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/AMD_Research_2019_Group_2.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 5506792,\n      \"name\": \"AMD Research 2019 - Group 3\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/AMD_Research_2019_Group_3.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 5506797,\n      \"name\": \"AMD Research 2019 - Group 4\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/AMD_Research_2019_Group_4.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 5506802,\n      \"name\": \"AMD Research 2019 - Group 5\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/AMD_Research_2019_Group_5.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 5506807,\n      \"name\": \"AMD Research 2019 - Group 6\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/AMD_Research_2019_Group_6.json\",\n      \"content\": \"\"\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Research_Group\",\n  \"created_at\": \"2016-12-26 20:22:31 UTC\",\n  \"updated_at\": \"2020-03-31 12:16:30 UTC\",\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Research_Group.json?item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2021-07-08 00:32:22 +0200\"\n}"
+                    "string": "{\n  \"id\": 2301582,\n  \"name\": \"Research Group\",\n  \"type\": {\n    \"id\": 5,\n    \"name\": \"Cardtype\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Cardtype.json\",\n    \"codename\": \"cardtype\"\n  },\n  \"url\": \"https://staging.wikirate.org/Research_Groups.json\",\n  \"codename\": \"research_group\",\n  \"items\": [\n    {\n      \"id\": 3478301,\n      \"name\": \"University of Wollongong ACCY111 Research Group 2018\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/University_of_Wollongong_ACCY111_Research_Group_2018.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 6355055,\n      \"name\": \"University of Nottingham - Modern Slavery Research Group 2020\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/University_of_Nottingham_Modern_Slavery_Research_Group_2020.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 5460411,\n      \"name\": \"University of Nottingham - Modern Slavery Research Group 2019\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/University_of_Nottingham_Modern_Slavery_Research_Group_2019.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 2310609,\n      \"name\": \"GIBS 2017 - Demonstrating Leadership through Reporting\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/GIBS_2017_Demonstrating_Leadership_through_Reporting.json\",\n      \"content\": \"<p>Fez Dzanibe</p>\"\n    },\n    {\n      \"id\": 3149949,\n      \"name\": \"University of Nottingham - Modern Slavery Research Group 2017\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/University_of_Nottingham_Modern_Slavery_Research_Group_2017.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 8040298,\n      \"name\": \"University of Navarra Research Group 2021\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/University_of_Navarra_Research_Group_2021.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 3989695,\n      \"name\": \"Class 1 - University of Nottingham - Modern Slavery Act Research Group 2018\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/Class_1_University_of_Nottingham_Modern_Slavery_Act_Research_Group_2018.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 3989699,\n      \"name\": \"Class 2 - University of Nottingham - Modern Slavery Act Research Group 2018\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/Class_2_University_of_Nottingham_Modern_Slavery_Act_Research_Group_2018.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 13669097,\n      \"name\": \"UW-La Crosse 2022 Research Group\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/UW_La_Crosse_2022_Research_Group.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 3444388,\n      \"name\": \"IMC UF SS18 Research group\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/IMC_UF_SS18_Research_group.json\",\n      \"content\": \"\"\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Research_Group\",\n  \"created_at\": \"2016-12-26 20:22:31 UTC\",\n  \"updated_at\": \"2022-02-16 18:43:06 UTC\",\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Research_Group.json?filter%5Bname%5D=&item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2023-02-03 18:20:56 UTC\",\n  \"license\": \"Creative Commons Attribution-ShareAlike 4.0 International License\"\n}"
                 }
             }
         }

@@ -4,8 +4,8 @@
         {
             "request": {
                 "method": "GET",
-                "uri": "https://staging.wikirate.org/Company.json?limit=10",
-                "body": null,
+                "uri": "https://staging.wikirate.org/Company.json",
+                "body": "limit=10",
                 "headers": {
                     "User-Agent": [
                         "python-requests/2.25.1"
@@ -18,6 +18,12 @@
                     ],
                     "Connection": [
                         "keep-alive"
+                    ],
+                    "Content-Length": [
+                        "8"
+                    ],
+                    "Content-Type": [
+                        "application/x-www-form-urlencoded"
                     ]
                 }
             },
@@ -27,54 +33,61 @@
                     "message": "OK"
                 },
                 "headers": {
-                    "X-Runtime": [
-                        "12.771629"
-                    ],
-                    "Server": [
-                        "Apache/2.4.29 (Ubuntu) Phusion_Passenger/6.0.4 OpenSSL/1.1.1"
-                    ],
-                    "X-Frame-Options": [
-                        "ALLOWALL"
-                    ],
-                    "Access-Control-Allow-Origin": [
-                        "*"
-                    ],
-                    "Connection": [
-                        "Keep-Alive"
-                    ],
-                    "ETag": [
-                        "W/\"bea34acf0db0c846de76bdfab70e0bda\""
-                    ],
-                    "Transfer-Encoding": [
-                        "chunked"
-                    ],
-                    "Set-Cookie": [
-                        "_wikirate_session=NzR4SkhZd1BJSGNkYUVaM1BKak5vUnF3bC9vRllOMzg5U0tsSmZKRmxhamtWczd3L2FTWEo0MERjRG5oM2hUVEVsMEVLQTFnaWsxVGdHR1BiZE91WkZ6c2drQ0d6UDZaV3I3Nnp5eTJtOCttd2ZFNHBkb3NJOXE4ZkxhTDhxU00tLWFDVURycDF4NFhYM3BEQ0Vjdk92N3c9PQ%3D%3D--2872a3f3289ca4e6aefedf0782884759278a7af2; path=/; HttpOnly"
-                    ],
-                    "Content-Type": [
-                        "text/json; charset=utf-8"
-                    ],
-                    "Date": [
-                        "Wed, 07 Jul 2021 22:32:00 GMT"
-                    ],
-                    "X-Powered-By": [
-                        "Phusion Passenger 6.0.4"
-                    ],
                     "Status": [
                         "200 OK"
+                    ],
+                    "Date": [
+                        "Fri, 03 Feb 2023 18:20:51 GMT"
                     ],
                     "Cache-Control": [
                         "max-age=0, private, must-revalidate"
                     ],
+                    "Access-Control-Allow-Origin": [
+                        "*",
+                        "*"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=WHRZVmRoUHE5ZEd6QTNMSXNIdEJkaUJvalhtUW5VMWNsNU04bWpVSU5wUnlWOXFJS01WWnFWQ0xqUXp2TXpDODllVlh1WlBYY1o2aldqeHRJYlo5akJHODNnNjlPZ2dJTjRrUkxmL1R5V3JwZFJmWk5SQ1JwSm9zdEE1dnk2S0gtLXVRQ1lZb0dxVFR0UExlcnR4dVV4eGc9PQ%3D%3D--fe896ee5dc14de32b3e802ec1162c68e44f005ad; path=/; HttpOnly"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.12"
+                    ],
+                    "Content-Disposition": [
+                        "attachment; filename=\"WikiRate-2023_02_03_182051-Company.json\""
+                    ],
+                    "Server": [
+                        "Apache/2.4.41 (Ubuntu) Phusion_Passenger/6.0.12 OpenSSL/1.1.1f"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
                     "X-Request-Id": [
-                        "dd437b2d-b14f-4b59-93aa-d0e37b93eb6e"
+                        "86a38099-441e-4d6e-9677-01c450be630d"
+                    ],
+                    "ETag": [
+                        "W/\"d45d4d1e5c44ddf1c78d758098f7d38a\""
+                    ],
+                    "X-Runtime": [
+                        "0.442623"
                     ],
                     "Keep-Alive": [
                         "timeout=5, max=100"
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "Connection": [
+                        "Keep-Alive"
+                    ],
+                    "Vary": [
+                        "Origin"
                     ]
                 },
                 "body": {
-                    "string": "{\n  \"id\": 651,\n  \"name\": \"Company\",\n  \"type\": {\n    \"id\": 5,\n    \"name\": \"Cardtype\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Cardtype.json\",\n    \"codename\": \"cardtype\"\n  },\n  \"url\": \"https://staging.wikirate.org/Company.json?limit=10\",\n  \"codename\": \"wikirate_company\",\n  \"items\": [\n    {\n      \"id\": 5155544,\n      \"name\": \"Landis+Gyr AG\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/Landis+Gyr_AG.json\",\n      \"wikipedia\": null,\n      \"open_corporates\": \"425292\",\n      \"alias\": [\n\n      ],\n      \"headquarters\": \"Switzerland\",\n      \"oar_id\": null,\n      \"sec_cik\": null\n    },\n    {\n      \"id\": 5404639,\n      \"name\": \"ME+EM\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/ME+EM.json\",\n      \"wikipedia\": null,\n      \"open_corporates\": null,\n      \"alias\": [\n        \"ME+EM\"\n      ],\n      \"headquarters\": null,\n      \"oar_id\": null,\n      \"sec_cik\": null\n    },\n    {\n      \"id\": 6206304,\n      \"name\": \"*Bacgiang Bgg Garment Corporation closed\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/*Bacgiang_Bgg_Garment_Corporation_closed.json\",\n      \"wikipedia\": null,\n      \"open_corporates\": null,\n      \"alias\": [\n\n      ],\n      \"headquarters\": \"Vietnam\",\n      \"oar_id\": \"VN20200292ECB60\",\n      \"sec_cik\": null\n    },\n    {\n      \"id\": 6291667,\n      \"name\": \"1&1 DRILLISCH AG\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/1_1_DRILLISCH_AG.json\",\n      \"wikipedia\": \"1&1 Drillisch\",\n      \"open_corporates\": null,\n      \"alias\": [\n\n      ],\n      \"headquarters\": \"Germany\",\n      \"oar_id\": null,\n      \"sec_cik\": null\n    },\n    {\n      \"id\": 3075179,\n      \"name\": \"1-800-Flowers\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/1_800_Flowers.json\",\n      \"wikipedia\": \"1-800-Flowers\",\n      \"open_corporates\": \"2239934\",\n      \"alias\": [\n        \"1-800-Flowers\"\n      ],\n      \"headquarters\": \"New York (United States)\",\n      \"oar_id\": null,\n      \"sec_cik\": null\n    },\n    {\n      \"id\": 6236468,\n      \"name\": \"1Bite\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/1Bite.json\",\n      \"wikipedia\": null,\n      \"open_corporates\": null,\n      \"alias\": [\n\n      ],\n      \"headquarters\": null,\n      \"oar_id\": null,\n      \"sec_cik\": null\n    },\n    {\n      \"id\": 3297616,\n      \"name\": \"1NE Project Solution Ltd\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/1NE_Project_Solution_Ltd.json\",\n      \"wikipedia\": null,\n      \"open_corporates\": \"05841983\",\n      \"alias\": [\n\n      ],\n      \"headquarters\": \"United Kingdom\",\n      \"oar_id\": null,\n      \"sec_cik\": null\n    },\n    {\n      \"id\": 6236458,\n      \"name\": \"1 plus-Produkte Handelsgesellschaft mbH\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/1_plus_Produkte_Handelsgesellschaft_mbH.json\",\n      \"wikipedia\": null,\n      \"open_corporates\": null,\n      \"alias\": [\n\n      ],\n      \"headquarters\": null,\n      \"oar_id\": null,\n      \"sec_cik\": null\n    },\n    {\n      \"id\": 3051363,\n      \"name\": \"1PM Industries Inc\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/1PM_Industries_Inc.json\",\n      \"wikipedia\": null,\n      \"open_corporates\": null,\n      \"alias\": [\n        \"1pm Industries\"\n      ],\n      \"headquarters\": null,\n      \"oar_id\": null,\n      \"sec_cik\": null\n    },\n    {\n      \"id\": 6834502,\n      \"name\": \"1Sharpe Capital LLC\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/1Sharpe_Capital_LLC.json\",\n      \"wikipedia\": null,\n      \"open_corporates\": null,\n      \"alias\": [\n\n      ],\n      \"headquarters\": null,\n      \"oar_id\": null,\n      \"sec_cik\": null\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Company\",\n  \"created_at\": \"2012-03-14 21:04:07 UTC\",\n  \"updated_at\": \"2020-12-02 14:59:08 UTC\",\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Company.json?item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2021-07-08 00:32:13 +0200\"\n}"
+                    "string": "{\n  \"id\": 651,\n  \"name\": \"Company\",\n  \"type\": {\n    \"id\": 5,\n    \"name\": \"Cardtype\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Cardtype.json\",\n    \"codename\": \"cardtype\"\n  },\n  \"url\": \"https://staging.wikirate.org/Company.json\",\n  \"codename\": \"wikirate_company\",\n  \"items\": [\n    {\n      \"id\": 637,\n      \"name\": \"BP plc.\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/BP_plc.json\",\n      \"wikipedia\": \"BP\",\n      \"open_corporates\": \"00102498\",\n      \"alias\": [\n        \"BP\",\n        \"Bpost SA\",\n        \"BP INTERNATIONAL LIMITED\"\n      ],\n      \"headquarters\": \"United Kingdom\",\n      \"oar_id\": null,\n      \"sec_cik\": \"313807\"\n    },\n    {\n      \"id\": 932,\n      \"name\": \"Chevron Corporation\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/Chevron_Corporation.json\",\n      \"wikipedia\": \"Chevron Corporation\",\n      \"open_corporates\": \"0117531\",\n      \"alias\": [\n        \"Chevron\",\n        \"Chevron Corporation\",\n        \"Chevron Corp.\"\n      ],\n      \"headquarters\": \"California (United States)\",\n      \"oar_id\": null,\n      \"sec_cik\": \"0000093410\"\n    },\n    {\n      \"id\": 993,\n      \"name\": \"Shell plc\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/Shell_plc.json\",\n      \"wikipedia\": \"Royal Dutch Shell\",\n      \"open_corporates\": \"04366849\",\n      \"alias\": [\n        \"Shell\",\n        \"Royal Dutch Shell plc. plc\",\n        \"royal dutch / shell\",\n        \"royal dutch / shell\",\n        \"Royal Dutch Shell plc\",\n        \"Royal Dutch / Shell (see Shell)\"\n      ],\n      \"headquarters\": \"United Kingdom\",\n      \"oar_id\": null,\n      \"sec_cik\": null\n    },\n    {\n      \"id\": 1578,\n      \"name\": \"Apple Inc.\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/Apple_Inc.json\",\n      \"wikipedia\": \"Apple Inc.\",\n      \"open_corporates\": \"0806592\",\n      \"alias\": [\n        \"Apple Inc.\",\n        \"Apple\"\n      ],\n      \"headquarters\": \"California (United States)\",\n      \"oar_id\": null,\n      \"sec_cik\": \"0000320193\"\n    },\n    {\n      \"id\": 1797,\n      \"name\": \"Samsung\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/Samsung.json\",\n      \"wikipedia\": \"Samsung Electronics\",\n      \"open_corporates\": null,\n      \"alias\": [\n        \"samsung electronics\",\n        \"Samsung\"\n      ],\n      \"headquarters\": \"Korea, Republic of\",\n      \"oar_id\": null,\n      \"sec_cik\": null\n    },\n    {\n      \"id\": 2214,\n      \"name\": \"PETA\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/PETA.json\",\n      \"wikipedia\": \"People for the Ethical Treatment of Animals\",\n      \"open_corporates\": null,\n      \"alias\": [\n\n      ],\n      \"headquarters\": null,\n      \"oar_id\": null,\n      \"sec_cik\": null\n    },\n    {\n      \"id\": 2996,\n      \"name\": \"New York Times Company\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/New_York_Times_Company.json\",\n      \"wikipedia\": \"The New York Times Company\",\n      \"open_corporates\": \"15772\",\n      \"alias\": [\n\n      ],\n      \"headquarters\": \"New York (United States)\",\n      \"oar_id\": null,\n      \"sec_cik\": \"0000071691\"\n    },\n    {\n      \"id\": 3245,\n      \"name\": \"Rank a brand\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/Rank_a_brand.json\",\n      \"wikipedia\": null,\n      \"open_corporates\": null,\n      \"alias\": [\n\n      ],\n      \"headquarters\": null,\n      \"oar_id\": null,\n      \"sec_cik\": null\n    },\n    {\n      \"id\": 3524,\n      \"name\": \"Businessweek\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/Businessweek.json\",\n      \"wikipedia\": \"Bloomberg Businessweek\",\n      \"open_corporates\": null,\n      \"alias\": [\n\n      ],\n      \"headquarters\": null,\n      \"oar_id\": null,\n      \"sec_cik\": null\n    },\n    {\n      \"id\": 3528,\n      \"name\": \"Sourcewatch\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/Sourcewatch.json\",\n      \"wikipedia\": \"Center for Media and Democracy\",\n      \"open_corporates\": null,\n      \"alias\": [\n\n      ],\n      \"headquarters\": null,\n      \"oar_id\": null,\n      \"sec_cik\": null\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Company\",\n  \"created_at\": \"2012-03-14 21:04:07 UTC\",\n  \"updated_at\": \"2022-06-29 20:18:39 UTC\",\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Company.json?filter%5Bname%5D=&item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2023-02-03 18:20:51 UTC\",\n  \"license\": \"Creative Commons Attribution-ShareAlike 4.0 International License\"\n}"
                 }
             }
         }

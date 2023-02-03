@@ -27,54 +27,58 @@
                     "message": "OK"
                 },
                 "headers": {
-                    "X-Runtime": [
-                        "0.163622"
-                    ],
-                    "Server": [
-                        "Apache/2.4.29 (Ubuntu) Phusion_Passenger/6.0.4 OpenSSL/1.1.1"
-                    ],
-                    "X-Frame-Options": [
-                        "ALLOWALL"
-                    ],
-                    "Access-Control-Allow-Origin": [
-                        "*"
-                    ],
-                    "Connection": [
-                        "Keep-Alive"
-                    ],
-                    "ETag": [
-                        "W/\"97d52699e79c2544023f185fc1907967\""
-                    ],
-                    "Transfer-Encoding": [
-                        "chunked"
-                    ],
-                    "Set-Cookie": [
-                        "_wikirate_session=UUtpMmNIYXVLTEdrWllEcGJxWmJiZytFRm9ZYjJ1SzFvK3dpL3RVN09qSEw1RkFLRFduVDBkdFJVUzNxM3BBT1ZJSGg4VGMzRVI3alFWUU1UY1RUaTU4NXI2RHJXQ0dwankwSTJaTVF3d0NsOUI2cFJvK1RPb1I0MWd3V083aGstLW1uTGNKcnRCaUFwZTVHU0Izd3BxZWc9PQ%3D%3D--a2b4474a688ba8dd52ff4613fae12eaccdca3899; path=/; HttpOnly"
-                    ],
-                    "Content-Type": [
-                        "text/json; charset=utf-8"
-                    ],
-                    "Date": [
-                        "Wed, 07 Jul 2021 22:32:00 GMT"
-                    ],
-                    "X-Powered-By": [
-                        "Phusion Passenger 6.0.4"
-                    ],
                     "Status": [
                         "200 OK"
+                    ],
+                    "Date": [
+                        "Fri, 03 Feb 2023 18:20:50 GMT"
                     ],
                     "Cache-Control": [
                         "max-age=0, private, must-revalidate"
                     ],
+                    "Access-Control-Allow-Origin": [
+                        "*",
+                        "*"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=N09idk13WkdZeWsremdzSXZHbkdSRjIxZVNNc25EajlHOGJBZ3kyUlUwcHVueStwdllyQW8wYVFBeFNZWGd4U0plUGF5MFdWZEtlY2U0L2YvM3MwdXJJTHV0STRKRTZWZ2VuVXErWXlha3U5L2ZIVWZ3c0VKN3lQeWxqOUlvS2UtLUJ6YnIxcXN4QW00MlV0Uk9maGRpVXc9PQ%3D%3D--3e66c50d4ae65a19b1404f32ddf2e1ecb350213b; path=/; HttpOnly"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.12"
+                    ],
+                    "Server": [
+                        "Apache/2.4.41 (Ubuntu) Phusion_Passenger/6.0.12 OpenSSL/1.1.1f"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
                     "X-Request-Id": [
-                        "ad3d1ffc-a99e-4480-8ae4-27f3c8da7f83"
+                        "fcb78594-d5eb-482c-8daa-8e0d588eb162"
+                    ],
+                    "ETag": [
+                        "W/\"9eb11970bc617c6044d60e80e5308f97\""
+                    ],
+                    "X-Runtime": [
+                        "0.097560"
                     ],
                     "Keep-Alive": [
                         "timeout=5, max=100"
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "Connection": [
+                        "Keep-Alive"
+                    ],
+                    "Vary": [
+                        "Origin"
                     ]
                 },
                 "body": {
-                    "string": "{\n  \"id\": 7324421,\n  \"name\": \"Responsible Sourcing Network+Signatory Turkmen Cotton Pledge+Adidas AG+2021\",\n  \"type\": {\n    \"id\": 43678,\n    \"name\": \"Answer\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Answer.json\",\n    \"codename\": \"metric_answer\"\n  },\n  \"url\": \"https://staging.wikirate.org/~7324421.json\",\n  \"metric\": \"Responsible Sourcing Network+Signatory Turkmen Cotton Pledge\",\n  \"company\": \"Adidas AG\",\n  \"year\": 2021,\n  \"value\": \"Yes\",\n  \"comments\": \"Signed: 07/13/18 Laureen van Breen[https://wikirate.org/Laureen_van_Breen].....2021-05-06 17:43:29 UTC\",\n  \"record_url\": \"https://staging.wikirate.org/Responsible_Sourcing_Network+Signatory_Turkmen_Cotton_Pledge+Adidas_AG.json\",\n  \"items\": [\n\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n    {\n      \"id\": 5340653,\n      \"name\": \"Responsible Sourcing Network\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/Responsible_Sourcing_Network.json\"\n    },\n    {\n      \"id\": 5340896,\n      \"name\": \"Signatory Turkmen Cotton Pledge\",\n      \"type\": \"Metric Title\",\n      \"url\": \"https://staging.wikirate.org/Signatory_Turkmen_Cotton_Pledge.json\"\n    },\n    {\n      \"id\": 7217,\n      \"name\": \"Adidas AG\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/Adidas_AG.json\"\n    },\n    {\n      \"id\": 6532613,\n      \"name\": \"2021\",\n      \"type\": \"Year\",\n      \"url\": \"https://staging.wikirate.org/2021.json\"\n    },\n    {\n      \"id\": 5340897,\n      \"name\": \"Responsible Sourcing Network+Signatory Turkmen Cotton Pledge\",\n      \"type\": \"Metric\",\n      \"url\": \"https://staging.wikirate.org/Responsible_Sourcing_Network+Signatory_Turkmen_Cotton_Pledge.json\"\n    },\n    {\n      \"id\": 5343389,\n      \"name\": \"Responsible Sourcing Network+Signatory Turkmen Cotton Pledge+Adidas AG\",\n      \"type\": \"Record\",\n      \"url\": \"https://staging.wikirate.org/Responsible_Sourcing_Network+Signatory_Turkmen_Cotton_Pledge+Adidas_AG.json\"\n    }\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Responsible_Sourcing_Network+Signatory_Turkmen_Cotton_Pledge+Adidas_AG+2021\",\n  \"created_at\": \"2021-05-06 17:43:29 UTC\",\n  \"updated_at\": \"2021-05-06 17:43:29 UTC\",\n  \"sources\": [\n    {\n      \"id\": 5343255,\n      \"name\": \"Source-000086994\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000086994.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/5343256/20558613.pdf\",\n      \"link\": \"https://www.sourcingnetwork.org/turkmensignatories\",\n      \"report_type\": [\n        \"Aggregate Data Report\"\n      ],\n      \"title\": \"\",\n      \"year\": [\n        \"2020\"\n      ]\n    }\n  ],\n  \"checked_by\": {\n    \"id\": null,\n    \"name\": \"Responsible Sourcing Network+Signatory Turkmen Cotton Pledge+Adidas AG+2021+checked by\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://staging.wikirate.org/Responsible_Sourcing_Network+Signatory_Turkmen_Cotton_Pledge+Adidas_AG+2021+checked_by.json\",\n    \"content\": [\n\n    ],\n    \"checks\": 0,\n    \"check_requested\": false\n  },\n  \"requested_at\": \"2021-07-08 00:32:00 +0200\"\n}"
+                    "string": "{\n  \"id\": 7324421,\n  \"name\": \"Responsible Sourcing Network+Signatory Turkmen Cotton Pledge+Adidas AG+2021\",\n  \"type\": {\n    \"id\": 43678,\n    \"name\": \"Answer\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Answer.json\",\n    \"codename\": \"metric_answer\"\n  },\n  \"url\": \"https://staging.wikirate.org/~7324421.json\",\n  \"metric\": \"Responsible Sourcing Network+Signatory Turkmen Cotton Pledge\",\n  \"company\": \"Adidas AG\",\n  \"year\": 2021,\n  \"value\": \"Yes\",\n  \"comments\": \"Signed: 07/13/18 Laureen van Breen[https://wikirate.org/Laureen_van_Breen].....2021-05-06 17:43:29 UTC\",\n  \"record_url\": \"https://staging.wikirate.org/Responsible_Sourcing_Network+Signatory_Turkmen_Cotton_Pledge+Adidas_AG.json\",\n  \"items\": [\n\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n    {\n      \"id\": 5340653,\n      \"name\": \"Responsible Sourcing Network\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/Responsible_Sourcing_Network.json\"\n    },\n    {\n      \"id\": 5340896,\n      \"name\": \"Signatory Turkmen Cotton Pledge\",\n      \"type\": \"Metric Title\",\n      \"url\": \"https://staging.wikirate.org/Signatory_Turkmen_Cotton_Pledge.json\"\n    },\n    {\n      \"id\": 7217,\n      \"name\": \"Adidas AG\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/Adidas_AG.json\"\n    },\n    {\n      \"id\": 6532613,\n      \"name\": \"2021\",\n      \"type\": \"Year\",\n      \"url\": \"https://staging.wikirate.org/2021.json\"\n    },\n    {\n      \"id\": 5340897,\n      \"name\": \"Responsible Sourcing Network+Signatory Turkmen Cotton Pledge\",\n      \"type\": \"Metric\",\n      \"url\": \"https://staging.wikirate.org/Responsible_Sourcing_Network+Signatory_Turkmen_Cotton_Pledge.json\"\n    },\n    {\n      \"id\": 5343389,\n      \"name\": \"Responsible Sourcing Network+Signatory Turkmen Cotton Pledge+Adidas AG\",\n      \"type\": \"Record\",\n      \"url\": \"https://staging.wikirate.org/Responsible_Sourcing_Network+Signatory_Turkmen_Cotton_Pledge+Adidas_AG.json\"\n    }\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Responsible_Sourcing_Network+Signatory_Turkmen_Cotton_Pledge+Adidas_AG+2021\",\n  \"created_at\": \"2021-05-06 17:43:29 UTC\",\n  \"updated_at\": \"2021-05-06 17:43:29 UTC\",\n  \"sources\": [\n    {\n      \"id\": 5343255,\n      \"name\": \"Source-000086994\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000086994.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/5343256/20558613.pdf\",\n      \"link\": \"https://www.sourcingnetwork.org/turkmensignatories\",\n      \"report_type\": [\n        \"Aggregate Data Report\"\n      ],\n      \"title\": \"\",\n      \"year\": [\n        \"2020\",\n        \"2021\"\n      ]\n    }\n  ],\n  \"checked_by\": {\n    \"id\": null,\n    \"name\": \"Responsible Sourcing Network+Signatory Turkmen Cotton Pledge+Adidas AG+2021+checked by\",\n    \"type\": \"List\",\n    \"url\": \"https://staging.wikirate.org/Responsible_Sourcing_Network+Signatory_Turkmen_Cotton_Pledge+Adidas_AG+2021+checked_by.json\",\n    \"content\": [\n\n    ],\n    \"checks\": 0\n  },\n  \"requested_at\": \"2023-02-03 18:20:50 UTC\"\n}"
                 }
             }
         }

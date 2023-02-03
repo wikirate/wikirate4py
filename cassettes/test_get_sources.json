@@ -4,8 +4,8 @@
         {
             "request": {
                 "method": "GET",
-                "uri": "https://staging.wikirate.org/Sources.json?limit=10",
-                "body": null,
+                "uri": "https://staging.wikirate.org/Sources.json",
+                "body": "limit=10",
                 "headers": {
                     "User-Agent": [
                         "python-requests/2.25.1"
@@ -18,6 +18,12 @@
                     ],
                     "Connection": [
                         "keep-alive"
+                    ],
+                    "Content-Length": [
+                        "8"
+                    ],
+                    "Content-Type": [
+                        "application/x-www-form-urlencoded"
                     ]
                 }
             },
@@ -27,54 +33,61 @@
                     "message": "OK"
                 },
                 "headers": {
-                    "X-Runtime": [
-                        "8.224340"
-                    ],
-                    "Server": [
-                        "Apache/2.4.29 (Ubuntu) Phusion_Passenger/6.0.4 OpenSSL/1.1.1"
-                    ],
-                    "X-Frame-Options": [
-                        "ALLOWALL"
-                    ],
-                    "Access-Control-Allow-Origin": [
-                        "*"
-                    ],
-                    "Connection": [
-                        "Keep-Alive"
-                    ],
-                    "ETag": [
-                        "W/\"bf50d86117587f3155dafa9d94edf6fd\""
-                    ],
-                    "Transfer-Encoding": [
-                        "chunked"
-                    ],
-                    "Set-Cookie": [
-                        "_wikirate_session=bnIvUDlaMUR3eXdmTXFQbnNYWWRzLytvbkNINDdKeHQ2WS9LYnUxamVxdjNiekErN2NyS1hkV2w2NXBUcFBveVBRUUVNSVY2eGVJazVQcDg4U1NpOVZ6eVpwYnVaVXYxVWlGSmhqc1FpcFF3RkJxcGFPWmIrZVlPQ2tmVDVNMlgtLWNSMzByOTJrdko2VzlDbWMzdUdxSWc9PQ%3D%3D--9bc86b2ca83b2cee6fd525e2f10ab957627fff1b; path=/; HttpOnly"
-                    ],
-                    "Content-Type": [
-                        "text/json; charset=utf-8"
-                    ],
-                    "Date": [
-                        "Wed, 07 Jul 2021 22:32:23 GMT"
-                    ],
-                    "X-Powered-By": [
-                        "Phusion Passenger 6.0.4"
-                    ],
                     "Status": [
                         "200 OK"
+                    ],
+                    "Date": [
+                        "Fri, 03 Feb 2023 18:20:56 GMT"
                     ],
                     "Cache-Control": [
                         "max-age=0, private, must-revalidate"
                     ],
+                    "Access-Control-Allow-Origin": [
+                        "*",
+                        "*"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=eFhDVThsWGUzL1liTUlPZXJpT25Md1ZmQXFMWVlaNUVPOUVSNmt2am93Zk56bEk1NTFpbVVRaDFvY0pXbUJpVlVRQW92bEg4aFRSSS9DdnhhRVdxQzN1TUJYSjNra21OTkhMNW9DekZWZVptWjAyQmNHRWtwOElsUS9DR2NvSEotLU1OeGR1Rk85Sk1YWjdvK2h1Q0x2anc9PQ%3D%3D--d3a2018163541d04c2ffd9e3eff86b7c97d2cc49; path=/; HttpOnly"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.12"
+                    ],
+                    "Content-Disposition": [
+                        "attachment; filename=\"WikiRate-2023_02_03_182056-Source.json\""
+                    ],
+                    "Server": [
+                        "Apache/2.4.41 (Ubuntu) Phusion_Passenger/6.0.12 OpenSSL/1.1.1f"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
                     "X-Request-Id": [
-                        "f3476171-2df5-4a98-a40c-52504c4d2ef5"
+                        "fbefa11d-5ae0-496e-ac65-e5f0ea13f671"
+                    ],
+                    "ETag": [
+                        "W/\"c5899352175c0fdf32d446d2357ac1fa\""
+                    ],
+                    "X-Runtime": [
+                        "0.438733"
                     ],
                     "Keep-Alive": [
                         "timeout=5, max=100"
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "Connection": [
+                        "Keep-Alive"
+                    ],
+                    "Vary": [
+                        "Origin"
                     ]
                 },
                 "body": {
-                    "string": "{\n  \"id\": 629,\n  \"name\": \"Source\",\n  \"type\": {\n    \"id\": 5,\n    \"name\": \"Cardtype\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Cardtype.json\",\n    \"codename\": \"cardtype\"\n  },\n  \"url\": \"https://staging.wikirate.org/Sources.json?limit=10\",\n  \"codename\": \"source\",\n  \"items\": [\n    {\n      \"id\": 786512,\n      \"name\": \"ArcelorMittal+Pollution & Toxics\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/ArcelorMittal+Pollution_Toxics.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/786515/12677377.pdf\",\n      \"link\": \"\",\n      \"report_type\": \"\",\n      \"title\": \"EXTERNAL AUDIT REPORT IN FULFILMENT OF THE WASTE MANAGEMENT LICENSE FOR THE DECOMISSIONING AND REMEDIATION OF THE KLIP WASTE SITE AT ARCELORMITTAL VEREENIGING WORKS\",\n      \"year\": \"\"\n    },\n    {\n      \"id\": 3480460,\n      \"name\": \"10-k 2013\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/10_k_2013.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/3480463/14341091.pdf\",\n      \"link\": \"http://www.pginvestor.com/Cache/18823762.pdf\",\n      \"report_type\": \"\",\n      \"title\": \"PG 10-k Report 2013\",\n      \"year\": \"\"\n    },\n    {\n      \"id\": 3480434,\n      \"name\": \"10-k 2015\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/10_k_2015.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/3480437/14341050.pdf\",\n      \"link\": \"http://www.pginvestor.com/Cache/30866951.PDF?O=PDF&T=&Y=&D=&FID=30866951&iid=4004124\",\n      \"report_type\": \"\",\n      \"title\": \"\",\n      \"year\": \"\"\n    },\n    {\n      \"id\": 3463195,\n      \"name\": \"2006 Annual Report\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/2006_Annual_Report.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/3463196/14315890.pdf\",\n      \"link\": \"\",\n      \"report_type\": \"\",\n      \"title\": \"\",\n      \"year\": \"\"\n    },\n    {\n      \"id\": 2890442,\n      \"name\": \"2008 Sustainability Report\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/2008_Sustainability_Report.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/2890444/13126528.pdf\",\n      \"link\": \"\",\n      \"report_type\": [\n        \"Corporate Social Responsibility Report\"\n      ],\n      \"title\": \"\",\n      \"year\": [\n        \"2008\"\n      ]\n    },\n    {\n      \"id\": 2900562,\n      \"name\": \"2012-2013 LG Electronics Sustainability Report\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/2012_2013_LG_Electronics_Sustainability_Report.json\",\n      \"file\": \"\",\n      \"link\": \"http://www.lge.co.kr/common/download.jsp?path=/cokr/asset/data/sustainability/&fileName=2012-2013LGSREngfull.pdf&originFileName=2012-2013LGSREngfull.pdf\",\n      \"report_type\": [\n        \"Corporate Social Responsibility Report\"\n      ],\n      \"title\": \"\",\n      \"year\": [\n        \"2012\"\n      ]\n    },\n    {\n      \"id\": 2899145,\n      \"name\": \"2013-2014 LG Electronics Sustainability Report\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/2013_2014_LG_Electronics_Sustainability_Report.json\",\n      \"file\": \"\",\n      \"link\": \"http://www.lge.co.kr/common/download.jsp?path=/cokr/asset/data/sustainability/&fileName=2013-2014_LGE-SR-E-Fullpages.pdf&originFileName=2013-2014_LGE-SR-E-Fullpages.pdf\",\n      \"report_type\": [\n        \"Corporate Social Responsibility Report\"\n      ],\n      \"title\": \"\",\n      \"year\": [\n        \"2013\"\n      ]\n    },\n    {\n      \"id\": 3595442,\n      \"name\": \"2015 report\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/2015_report.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/3595443/14678217.pdf\",\n      \"link\": \"\",\n      \"report_type\": \"\",\n      \"title\": \"\",\n      \"year\": \"\"\n    },\n    {\n      \"id\": 2906958,\n      \"name\": \"2016 Air France CSR Report\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/2016_Air_France_CSR_Report.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/2907149/13172338.pdf\",\n      \"link\": \"http://csrreport2016.airfranceklm.com/wp-content/uploads/pdfs/en/CSR-Report-Air-France-KLM-2016.pdf\",\n      \"report_type\": [\n        \"Corporate Social Responsibility Report\",\n        \"Communication on Progress\"\n      ],\n      \"title\": \"2016 Air France CSR Report\",\n      \"year\": \"\"\n    },\n    {\n      \"id\": 2906916,\n      \"name\": \"2016 Air France Environmental Indicators\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/2016_Air_France_Environmental_Indicators.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/2906918/13171700.pdf\",\n      \"link\": \"\",\n      \"report_type\": [\n        \"Communication on Progress\",\n        \"Corporate Social Responsibility Report\",\n        \"Sustainability Report\"\n      ],\n      \"title\": \"Air France Environmental Indicators 2016\",\n      \"year\": [\n        \"2016\"\n      ]\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Source\",\n  \"created_at\": \"2012-03-13 19:59:55 UTC\",\n  \"updated_at\": \"2020-03-31 12:16:30 UTC\",\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Source.json?item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2021-07-08 00:32:31 +0200\"\n}"
+                    "string": "{\n  \"id\": 629,\n  \"name\": \"Source\",\n  \"type\": {\n    \"id\": 5,\n    \"name\": \"Cardtype\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Cardtype.json\",\n    \"codename\": \"cardtype\"\n  },\n  \"url\": \"https://staging.wikirate.org/Sources.json\",\n  \"codename\": \"source\",\n  \"items\": [\n    {\n      \"id\": 13994218,\n      \"name\": \"Source-000172264\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000172264.json\",\n      \"file\": \"https://d1leew03y1rvlv.cloudfront.net/files/13994220/36435310.pdf\",\n      \"link\": \"\",\n      \"report_type\": \"\",\n      \"title\": \"Testing file upload\",\n      \"year\": \"\"\n    },\n    {\n      \"id\": 13994212,\n      \"name\": \"Source-000172263\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000172263.json\",\n      \"file\": \"\",\n      \"link\": \"\",\n      \"report_type\": \"\",\n      \"title\": \"wikipedia page of Target Corporation 2021\",\n      \"year\": [\n        \"2020\"\n      ]\n    },\n    {\n      \"id\": 13994209,\n      \"name\": \"Source-000172262\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000172262.json\",\n      \"file\": \"https://d1leew03y1rvlv.cloudfront.net/files/13994211/36435291.pdf\",\n      \"link\": \"\",\n      \"report_type\": \"\",\n      \"title\": \"Testing file upload\",\n      \"year\": \"\"\n    },\n    {\n      \"id\": 13994206,\n      \"name\": \"Source-000172261\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000172261.json\",\n      \"file\": \"https://d1leew03y1rvlv.cloudfront.net/files/13994208/36435278.pdf\",\n      \"link\": \"\",\n      \"report_type\": \"\",\n      \"title\": \"Testing file upload\",\n      \"year\": \"\"\n    },\n    {\n      \"id\": 13994200,\n      \"name\": \"Source-000172260\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000172260.json\",\n      \"file\": \"\",\n      \"link\": \"\",\n      \"report_type\": \"\",\n      \"title\": \"wikipedia page of Target Corporation 2021\",\n      \"year\": [\n        \"2020\"\n      ]\n    },\n    {\n      \"id\": 13994197,\n      \"name\": \"Source-000172259\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000172259.json\",\n      \"file\": \"https://d1leew03y1rvlv.cloudfront.net/files/13994199/36435259.pdf\",\n      \"link\": \"\",\n      \"report_type\": \"\",\n      \"title\": \"Testing file upload\",\n      \"year\": \"\"\n    },\n    {\n      \"id\": 13994194,\n      \"name\": \"Source-000172258\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000172258.json\",\n      \"file\": \"https://d1leew03y1rvlv.cloudfront.net/files/13994196/36435256.pdf\",\n      \"link\": \"\",\n      \"report_type\": \"\",\n      \"title\": \"Testing file upload\",\n      \"year\": \"\"\n    },\n    {\n      \"id\": 13994191,\n      \"name\": \"Source-000172257\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000172257.json\",\n      \"file\": \"https://d1leew03y1rvlv.cloudfront.net/files/13994193/36435253.pdf\",\n      \"link\": \"\",\n      \"report_type\": \"\",\n      \"title\": \"Testing file upload\",\n      \"year\": \"\"\n    },\n    {\n      \"id\": 13994188,\n      \"name\": \"Source-000172256\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000172256.json\",\n      \"file\": \"https://d1leew03y1rvlv.cloudfront.net/files/13994190/36435250.pdf\",\n      \"link\": \"\",\n      \"report_type\": \"\",\n      \"title\": \"Testing file upload\",\n      \"year\": \"\"\n    },\n    {\n      \"id\": 13994185,\n      \"name\": \"Source-000172255\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000172255.json\",\n      \"file\": \"https://d1leew03y1rvlv.cloudfront.net/files/13994187/36435247.pdf\",\n      \"link\": \"\",\n      \"report_type\": \"\",\n      \"title\": \"Hello World\",\n      \"year\": \"\"\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Source\",\n  \"created_at\": \"2012-03-13 19:59:55 UTC\",\n  \"updated_at\": \"2022-06-29 20:19:33 UTC\",\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Source.json?item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2023-02-03 18:20:56 UTC\",\n  \"license\": \"Creative Commons Attribution-ShareAlike 4.0 International License\"\n}"
                 }
             }
         }

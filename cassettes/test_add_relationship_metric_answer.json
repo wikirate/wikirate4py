@@ -4,8 +4,8 @@
         {
             "request": {
                 "method": "POST",
-                "uri": "https://staging.wikirate.org/card/create?card%5Btype%5D=Relationship_Answer&card%5Bname%5D=Commons%2BSupplied_by%2B~7217%2B2021%2B~7457810&card%5Bsubcards%5D%5B%2B%3Avalue%5D=Tier+1+Supplier&card%5Bsubcards%5D%5B%2B%3Asource%5D=Source-000106091&format=json&success%5Bformat%5D=json",
-                "body": null,
+                "uri": "https://staging.wikirate.org/card/create",
+                "body": "card%5Btype%5D=Relationship_Answer&card%5Bname%5D=Commons%2BSupplied_by%2B~7217%2B2021%2B~5505&card%5Bsubcards%5D%5B%2B%3Avalue%5D=Tier+1+Supplier&card%5Bsubcards%5D%5B%2B%3Asource%5D=Source-000106091&format=json&success%5Bformat%5D=json",
                 "headers": {
                     "User-Agent": [
                         "python-requests/2.25.1"
@@ -19,11 +19,11 @@
                     "Connection": [
                         "keep-alive"
                     ],
-                    "content-type": [
-                        "application/json"
-                    ],
                     "Content-Length": [
-                        "0"
+                        "237"
+                    ],
+                    "Content-Type": [
+                        "application/x-www-form-urlencoded"
                     ]
                 }
             },
@@ -33,61 +33,65 @@
                     "message": "See Other"
                 },
                 "headers": {
-                    "Keep-Alive": [
-                        "timeout=5, max=100"
-                    ],
                     "Content-Type": [
                         "text/html; charset=utf-8"
                     ],
-                    "Transfer-Encoding": [
-                        "chunked"
+                    "X-Request-Id": [
+                        "24ec32fa-dfd5-43a1-8757-80e5381d3d30"
                     ],
                     "Set-Cookie": [
-                        "_wikirate_session=b04vOTlFTklZVERDbmpWY2dsL21QSTVQYmxMUHZ3Zy9iRmtLaVY0Y2hMbnpWOVdwZkcxT1pWdmRVN1dsS0UveEhLYnYvYlI5c01WT0VvREZBZ3dCRmxORXQvZmFQdXZENGRVTXNNdk8rdks3OEh3V1RwV1M3R005eXBoSDAvVVUtLXRzem1FVzAwOU9rc1FGaEx1T3Y0R3c9PQ%3D%3D--6301dbca15f8b84cfc9d322173a3b425dea7a512; path=/; HttpOnly"
+                        "_wikirate_session=M1JVNnF1ejJ4TkVBaDh2OS9RVStKWldVS2dwWGZiQkJ1TzBORGgzdkd4L205bFlDcHNkUHBPWllUOThlTFd5VkZhcjFKdGgrWlpVVUtPYTdjY2tVQXllbmZzQVI2U05sb2s4L1lObE1LSjVzSHFiRUkwbEswRzZXVXpyV2R4TXUtLWRCYzczTFlvb05rRDkwWVlWQXJON3c9PQ%3D%3D--f18eb996f2a6ea115f48c7465ae36cecb6129c67; path=/; HttpOnly"
                     ],
-                    "Status": [
-                        "303 See Other"
+                    "Vary": [
+                        "Origin"
+                    ],
+                    "Server": [
+                        "Apache/2.4.41 (Ubuntu) Phusion_Passenger/6.0.12 OpenSSL/1.1.1f"
+                    ],
+                    "Date": [
+                        "Fri, 03 Feb 2023 18:43:10 GMT"
                     ],
                     "X-Frame-Options": [
                         "ALLOWALL"
                     ],
-                    "X-Request-Id": [
-                        "ee4acad2-61c7-4706-8d02-e44e567f230a"
+                    "Status": [
+                        "303 See Other"
                     ],
-                    "X-Runtime": [
-                        "14.054986"
+                    "Keep-Alive": [
+                        "timeout=5, max=100"
                     ],
-                    "Access-Control-Allow-Origin": [
-                        "*"
+                    "Connection": [
+                        "Keep-Alive"
                     ],
-                    "Server": [
-                        "Apache/2.4.29 (Ubuntu) Phusion_Passenger/6.0.4 OpenSSL/1.1.1"
-                    ],
-                    "X-Powered-By": [
-                        "Phusion Passenger 6.0.4"
-                    ],
-                    "Date": [
-                        "Wed, 07 Jul 2021 22:38:03 GMT"
-                    ],
-                    "Location": [
-                        "https://staging.wikirate.org/Commons+Supplied_By+Adidas_AG+2021+BORA_2_LTD.json?flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-dismiss%3D%22alert%22+class%3D%22close%22+aria-label%3D%22Close%22%3E%3Cspan+aria-hidden%3D%22true%22%3E%26times%3B%3C%2Fspan%3E%3C%2Fbutton%3E%0A%3Cp%3ESuccess%21+To+research+another+answer+select+a+different+metric+or+year.%3C%2Fp%3E%3C%2Fdiv%3E&flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-dismiss%3D%22alert%22+class%3D%22close%22+aria-label%3D%22Close%22%3E%3Cspan+aria-hidden%3D%22true%22%3E%26times%3B%3C%2Fspan%3E%3C%2Fbutton%3E%0A%3Cp%3ESuccess%21+To+research+another+answer+select+a+different+metric+or+year.%3C%2Fp%3E%3C%2Fdiv%3E"
+                    "Transfer-Encoding": [
+                        "chunked"
                     ],
                     "Cache-Control": [
                         "no-cache"
                     ],
-                    "Connection": [
-                        "Keep-Alive"
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.12"
+                    ],
+                    "Location": [
+                        "https://staging.wikirate.org/Commons+Supplied_By+Adidas_AG+2021+Gap_inc.json?flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-bs-dismiss%3D%22alert%22+class%3D%22btn-close%22+aria-label%3D%22Close%22%3E%3C%2Fbutton%3E%0A%3Ch4+class%3D%27mt-0%27%3ESuccess%21%3C%2Fh4%3E%0A%3Cp%3E%0AThank+you%21+Your+research+efforts+are+helping+make+information+about+companies%0Aaccessible%2C+comparable%2C+and+free+for+all.%0A%3C%2Fp%3E%0A%3Cp+class%3D%27answer-success-in-project%27%3E%0ATo+keep+researching%2C+go+back+to+the%0A%3Ca+class%3D%27_to_question_phase%27+href%3D%27%23%27%3E%0Aquestion+section%0A%3C%2Fa%3E%0Aand+select+a+different+year%2C+metric%2C+or+company.%0A%3C%2Fp%3E%0A%3C%2Fdiv%3E"
+                    ],
+                    "Access-Control-Allow-Origin": [
+                        "*",
+                        "*"
+                    ],
+                    "X-Runtime": [
+                        "11.619198"
                     ]
                 },
                 "body": {
-                    "string": "<html><body>You are being <a href=\"https://staging.wikirate.org/Commons+Supplied_By+Adidas_AG+2021+BORA_2_LTD.json?flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-dismiss%3D%22alert%22+class%3D%22close%22+aria-label%3D%22Close%22%3E%3Cspan+aria-hidden%3D%22true%22%3E%26times%3B%3C%2Fspan%3E%3C%2Fbutton%3E%0A%3Cp%3ESuccess%21+To+research+another+answer+select+a+different+metric+or+year.%3C%2Fp%3E%3C%2Fdiv%3E&amp;flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-dismiss%3D%22alert%22+class%3D%22close%22+aria-label%3D%22Close%22%3E%3Cspan+aria-hidden%3D%22true%22%3E%26times%3B%3C%2Fspan%3E%3C%2Fbutton%3E%0A%3Cp%3ESuccess%21+To+research+another+answer+select+a+different+metric+or+year.%3C%2Fp%3E%3C%2Fdiv%3E\">redirected</a>.</body></html>"
+                    "string": "<html><body>You are being <a href=\"https://staging.wikirate.org/Commons+Supplied_By+Adidas_AG+2021+Gap_inc.json?flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-bs-dismiss%3D%22alert%22+class%3D%22btn-close%22+aria-label%3D%22Close%22%3E%3C%2Fbutton%3E%0A%3Ch4+class%3D%27mt-0%27%3ESuccess%21%3C%2Fh4%3E%0A%3Cp%3E%0AThank+you%21+Your+research+efforts+are+helping+make+information+about+companies%0Aaccessible%2C+comparable%2C+and+free+for+all.%0A%3C%2Fp%3E%0A%3Cp+class%3D%27answer-success-in-project%27%3E%0ATo+keep+researching%2C+go+back+to+the%0A%3Ca+class%3D%27_to_question_phase%27+href%3D%27%23%27%3E%0Aquestion+section%0A%3C%2Fa%3E%0Aand+select+a+different+year%2C+metric%2C+or+company.%0A%3C%2Fp%3E%0A%3C%2Fdiv%3E\">redirected</a>.</body></html>"
                 }
             }
         },
         {
             "request": {
                 "method": "GET",
-                "uri": "https://staging.wikirate.org/Commons+Supplied_By+Adidas_AG+2021+BORA_2_LTD.json?flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-dismiss%3D%22alert%22+class%3D%22close%22+aria-label%3D%22Close%22%3E%3Cspan+aria-hidden%3D%22true%22%3E%26times%3B%3C%2Fspan%3E%3C%2Fbutton%3E%0A%3Cp%3ESuccess%21+To+research+another+answer+select+a+different+metric+or+year.%3C%2Fp%3E%3C%2Fdiv%3E&flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-dismiss%3D%22alert%22+class%3D%22close%22+aria-label%3D%22Close%22%3E%3Cspan+aria-hidden%3D%22true%22%3E%26times%3B%3C%2Fspan%3E%3C%2Fbutton%3E%0A%3Cp%3ESuccess%21+To+research+another+answer+select+a+different+metric+or+year.%3C%2Fp%3E%3C%2Fdiv%3E",
+                "uri": "https://staging.wikirate.org/Commons+Supplied_By+Adidas_AG+2021+Gap_inc.json?flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-bs-dismiss%3D%22alert%22+class%3D%22btn-close%22+aria-label%3D%22Close%22%3E%3C%2Fbutton%3E%0A%3Ch4+class%3D%27mt-0%27%3ESuccess%21%3C%2Fh4%3E%0A%3Cp%3E%0AThank+you%21+Your+research+efforts+are+helping+make+information+about+companies%0Aaccessible%2C+comparable%2C+and+free+for+all.%0A%3C%2Fp%3E%0A%3Cp+class%3D%27answer-success-in-project%27%3E%0ATo+keep+researching%2C+go+back+to+the%0A%3Ca+class%3D%27_to_question_phase%27+href%3D%27%23%27%3E%0Aquestion+section%0A%3C%2Fa%3E%0Aand+select+a+different+year%2C+metric%2C+or+company.%0A%3C%2Fp%3E%0A%3C%2Fdiv%3E",
                 "body": null,
                 "headers": {
                     "User-Agent": [
@@ -103,7 +107,7 @@
                         "keep-alive"
                     ],
                     "Cookie": [
-                        "_wikirate_session=b04vOTlFTklZVERDbmpWY2dsL21QSTVQYmxMUHZ3Zy9iRmtLaVY0Y2hMbnpWOVdwZkcxT1pWdmRVN1dsS0UveEhLYnYvYlI5c01WT0VvREZBZ3dCRmxORXQvZmFQdXZENGRVTXNNdk8rdks3OEh3V1RwV1M3R005eXBoSDAvVVUtLXRzem1FVzAwOU9rc1FGaEx1T3Y0R3c9PQ%3D%3D--6301dbca15f8b84cfc9d322173a3b425dea7a512"
+                        "_wikirate_session=M1JVNnF1ejJ4TkVBaDh2OS9RVStKWldVS2dwWGZiQkJ1TzBORGgzdkd4L205bFlDcHNkUHBPWllUOThlTFd5VkZhcjFKdGgrWlpVVUtPYTdjY2tVQXllbmZzQVI2U05sb2s4L1lObE1LSjVzSHFiRUkwbEswRzZXVXpyV2R4TXUtLWRCYzczTFlvb05rRDkwWVlWQXJON3c9PQ%3D%3D--f18eb996f2a6ea115f48c7465ae36cecb6129c67"
                     ]
                 }
             },
@@ -113,54 +117,58 @@
                     "message": "OK"
                 },
                 "headers": {
-                    "Keep-Alive": [
-                        "timeout=5, max=99"
-                    ],
                     "Content-Type": [
                         "text/json; charset=utf-8"
                     ],
-                    "Transfer-Encoding": [
-                        "chunked"
+                    "X-Request-Id": [
+                        "72898da3-d51c-40b8-9a2a-5ae0aa01fac5"
                     ],
                     "Set-Cookie": [
-                        "_wikirate_session=TE9DU2V1bnhtOUZpY2tYQkpicVRSN3Q1d0JDR0lQbkxybS9DQkFtWlNYMmxUUDdoVi9wNllRaEhxamRMS3ljM3IyYUdHZUdPSXc1K2dJbW5BcVV3Q2Z0bUR0ZjJGZ3VsZlQ2MThLSUFlK3lqU1Naa0pySjltTHRUWml3M2NFTXItLXNZR05kZDNxWkM1blVEcjdWbkNiL2c9PQ%3D%3D--b29ee6d694674ebe165113ba4968b6297e30adfb; path=/; HttpOnly"
+                        "_wikirate_session=a3M0OFJsQzRwTEJheWEvU291YWJKN3d2eVNpbEZxY3Flcm4rdWVkdjRoZnNlaCt1RkU1LytodDFrZEFIaFY5UVRLWGRWMy9IWXZvcGo5dTJVWkYva0xvbDJOVC82aGRCckxSUGlPaWQyNkIzNTYydzNuUEhqYjl0MnRWL1BodmstLUt4VkdvTEp3SGRtUStEWjd3bml6enc9PQ%3D%3D--391add805e140b6a423bca22b9ac7a0754f81f68; path=/; HttpOnly"
                     ],
-                    "Status": [
-                        "200 OK"
+                    "ETag": [
+                        "W/\"0f3bf560a359a32d852b88061c560bd1\""
+                    ],
+                    "Vary": [
+                        "Origin"
+                    ],
+                    "Server": [
+                        "Apache/2.4.41 (Ubuntu) Phusion_Passenger/6.0.12 OpenSSL/1.1.1f"
+                    ],
+                    "Date": [
+                        "Fri, 03 Feb 2023 18:43:22 GMT"
                     ],
                     "X-Frame-Options": [
                         "ALLOWALL"
                     ],
-                    "X-Request-Id": [
-                        "4876dbb8-1a76-4b66-83f6-fd2d1167b2bf"
+                    "Status": [
+                        "200 OK"
                     ],
-                    "X-Runtime": [
-                        "0.175854"
-                    ],
-                    "ETag": [
-                        "W/\"bb343d32fae6debd730bd373f970d40c\""
-                    ],
-                    "Access-Control-Allow-Origin": [
-                        "*"
-                    ],
-                    "Server": [
-                        "Apache/2.4.29 (Ubuntu) Phusion_Passenger/6.0.4 OpenSSL/1.1.1"
-                    ],
-                    "X-Powered-By": [
-                        "Phusion Passenger 6.0.4"
-                    ],
-                    "Date": [
-                        "Wed, 07 Jul 2021 22:38:18 GMT"
+                    "Keep-Alive": [
+                        "timeout=5, max=99"
                     ],
                     "Connection": [
                         "Keep-Alive"
                     ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
                     "Cache-Control": [
                         "max-age=0, private, must-revalidate"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.12"
+                    ],
+                    "Access-Control-Allow-Origin": [
+                        "*",
+                        "*"
+                    ],
+                    "X-Runtime": [
+                        "0.192758"
                     ]
                 },
                 "body": {
-                    "string": "{\n  \"id\": 7457814,\n  \"name\": \"Commons+Supplied By+Adidas AG+2021+BORA 2 LTD\",\n  \"type\": {\n    \"id\": 2534606,\n    \"name\": \"Relationship Answer\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Relationship_Answer.json\",\n    \"codename\": \"relationship_answer\"\n  },\n  \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+Adidas_AG+2021+BORA_2_LTD.json?flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-dismiss%3D%22alert%22+class%3D%22close%22+aria-label%3D%22Close%22%3E%3Cspan+aria-hidden%3D%22true%22%3E%26times%3B%3C%2Fspan%3E%3C%2Fbutton%3E%0A%3Cp%3ESuccess%21+To+research+another+answer+select+a+different+metric+or+year.%3C%2Fp%3E%3C%2Fdiv%3E&flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-dismiss%3D%22alert%22+class%3D%22close%22+aria-label%3D%22Close%22%3E%3Cspan+aria-hidden%3D%22true%22%3E%26times%3B%3C%2Fspan%3E%3C%2Fbutton%3E%0A%3Cp%3ESuccess%21+To+research+another+answer+select+a+different+metric+or+year.%3C%2Fp%3E%3C%2Fdiv%3E\",\n  \"content\": \"\",\n  \"year\": \"2021\",\n  \"value\": \"Tier 1 Supplier\",\n  \"import\": false,\n  \"comments\": null,\n  \"subject_company\": {\n    \"id\": 7217,\n    \"name\": \"Adidas AG\",\n    \"type\": \"Company\",\n    \"url\": \"https://staging.wikirate.org/Adidas_AG.json\",\n    \"wikipedia\": \"Adidas\",\n    \"open_corporates\": \"D3304V_HRB3868\",\n    \"alias\": [\n      \"Adidas\",\n      \"Adidas AG\",\n      \"adidas-group\",\n      \"Adidas Sourcing Ltd.\"\n    ],\n    \"headquarters\": \"Germany\",\n    \"oar_id\": null,\n    \"sec_cik\": null\n  },\n  \"object_company\": {\n    \"id\": 7457810,\n    \"name\": \"BORA 2 LTD\",\n    \"type\": \"Company\",\n    \"url\": \"https://staging.wikirate.org/BORA_2_LTD.json\",\n    \"wikipedia\": null,\n    \"open_corporates\": null,\n    \"alias\": [\n\n    ],\n    \"headquarters\": \"United Kingdom\",\n    \"oar_id\": null,\n    \"sec_cik\": null\n  },\n  \"items\": [\n\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n    {\n      \"id\": 3411173,\n      \"name\": \"Commons\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/Commons.json\"\n    },\n    {\n      \"id\": 2929008,\n      \"name\": \"Supplied By\",\n      \"type\": \"Metric Title\",\n      \"url\": \"https://staging.wikirate.org/Supplied_By.json\"\n    },\n    {\n      \"id\": 7217,\n      \"name\": \"Adidas AG\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/Adidas_AG.json\"\n    },\n    {\n      \"id\": 6532613,\n      \"name\": \"2021\",\n      \"type\": \"Year\",\n      \"url\": \"https://staging.wikirate.org/2021.json\"\n    },\n    {\n      \"id\": 7457810,\n      \"name\": \"BORA 2 LTD\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/BORA_2_LTD.json\"\n    },\n    {\n      \"id\": 2929009,\n      \"name\": \"Commons+Supplied By\",\n      \"type\": \"Metric\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By.json\",\n      \"codename\": \"commons_supplied_by\"\n    },\n    {\n      \"id\": 4805219,\n      \"name\": \"Commons+Supplied By+Adidas AG\",\n      \"type\": \"Record\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+Adidas_AG.json\"\n    },\n    {\n      \"id\": 7457812,\n      \"name\": \"Commons+Supplied By+Adidas AG+2021\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+Adidas_AG+2021.json\"\n    }\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Commons+Supplied_By+Adidas_AG+2021+BORA_2_LTD\",\n  \"created_at\": \"2021-07-07 22:38:04 UTC\",\n  \"updated_at\": \"2021-07-07 22:38:04 UTC\",\n  \"sources\": [\n    {\n      \"id\": 7446994,\n      \"name\": \"Source-000106091\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000106091.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/7446995/25128008.pdf\",\n      \"link\": \"https://www.monclergroup.com/wp-content/uploads/2020/06/Moncler-Annual-Report-2019-2.pdf\",\n      \"report_type\": [\n        \"Communication on Progress\",\n        \"Corporate Social Responsibility Report\",\n        \"Sustainability Report\",\n        \"Integrated Report\",\n        \"Annual Report\",\n        \"Company Website\",\n        \"Research Document\",\n        \"Code of Conduct\",\n        \"Supplier List\"\n      ],\n      \"title\": \"Annual Report 2019\",\n      \"year\": [\n        \"2019\",\n        \"2021\"\n      ]\n    }\n  ],\n  \"checked_by\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplied By+Adidas AG+2021+BORA 2 LTD+checked by\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+Adidas_AG+2021+BORA_2_LTD+checked_by.json\",\n    \"content\": [\n\n    ],\n    \"checks\": 0,\n    \"check_requested\": false\n  },\n  \"requested_at\": \"2021-07-08 00:38:18 +0200\"\n}"
+                    "string": "{\n  \"id\": 13994228,\n  \"name\": \"Commons+Supplied By+Adidas AG+2021+Gap inc.\",\n  \"type\": {\n    \"id\": 2534606,\n    \"name\": \"Relationship Answer\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Relationship_Answer.json\",\n    \"codename\": \"relationship_answer\"\n  },\n  \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+Adidas_AG+2021+Gap_inc.json?flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-bs-dismiss%3D%22alert%22+class%3D%22btn-close%22+aria-label%3D%22Close%22%3E%3C%2Fbutton%3E%0A%3Ch4+class%3D%27mt-0%27%3ESuccess%21%3C%2Fh4%3E%0A%3Cp%3E%0AThank+you%21+Your+research+efforts+are+helping+make+information+about+companies%0Aaccessible%2C+comparable%2C+and+free+for+all.%0A%3C%2Fp%3E%0A%3Cp+class%3D%27answer-success-in-project%27%3E%0ATo+keep+researching%2C+go+back+to+the%0A%3Ca+class%3D%27_to_question_phase%27+href%3D%27%23%27%3E%0Aquestion+section%0A%3C%2Fa%3E%0Aand+select+a+different+year%2C+metric%2C+or+company.%0A%3C%2Fp%3E%0A%3C%2Fdiv%3E\",\n  \"content\": \"\",\n  \"year\": 2021,\n  \"value\": \"Tier 1 Supplier\",\n  \"metric_id\": 2929009,\n  \"inverse_metric_id\": 2929015,\n  \"subject_company_id\": 7217,\n  \"object_company_id\": 5505,\n  \"import\": false,\n  \"comments\": \"\",\n  \"subject_company\": {\n    \"id\": 7217,\n    \"name\": \"Adidas AG\",\n    \"type\": \"Company\",\n    \"url\": \"https://staging.wikirate.org/Adidas_AG.json\",\n    \"wikipedia\": \"Adidas\",\n    \"open_corporates\": \"D3304V_HRB3868\",\n    \"alias\": [\n      \"Adidas\",\n      \"Adidas AG\",\n      \"adidas-group\",\n      \"Adidas Sourcing Ltd.\"\n    ],\n    \"headquarters\": \"Germany\",\n    \"oar_id\": null,\n    \"sec_cik\": null\n  },\n  \"object_company\": {\n    \"id\": 5505,\n    \"name\": \"Gap inc.\",\n    \"type\": \"Company\",\n    \"url\": \"https://staging.wikirate.org/Gap_inc.json\",\n    \"wikipedia\": \"Gap Inc.\",\n    \"open_corporates\": \"1502593\",\n    \"alias\": [\n      \"Gap\",\n      \"Gap inc.\",\n      \"Gap inc.\",\n      \"the gap inc.\",\n      \"gapinc\"\n    ],\n    \"headquarters\": \"California (United States)\",\n    \"oar_id\": null,\n    \"sec_cik\": \"0000039911\"\n  },\n  \"items\": [\n\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n    {\n      \"id\": 3411173,\n      \"name\": \"Commons\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/Commons.json\"\n    },\n    {\n      \"id\": 2929008,\n      \"name\": \"Supplied By\",\n      \"type\": \"Metric Title\",\n      \"url\": \"https://staging.wikirate.org/Supplied_By.json\"\n    },\n    {\n      \"id\": 7217,\n      \"name\": \"Adidas AG\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/Adidas_AG.json\"\n    },\n    {\n      \"id\": 6532613,\n      \"name\": \"2021\",\n      \"type\": \"Year\",\n      \"url\": \"https://staging.wikirate.org/2021.json\"\n    },\n    {\n      \"id\": 5505,\n      \"name\": \"Gap inc.\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/Gap_inc.json\"\n    },\n    {\n      \"id\": 2929009,\n      \"name\": \"Commons+Supplied By\",\n      \"type\": \"Metric\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By.json\",\n      \"codename\": \"commons_supplied_by\"\n    },\n    {\n      \"id\": 4805219,\n      \"name\": \"Commons+Supplied By+Adidas AG\",\n      \"type\": \"Record\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+Adidas_AG.json\"\n    },\n    {\n      \"id\": 12326149,\n      \"name\": \"Commons+Supplied By+Adidas AG+2021\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+Adidas_AG+2021.json\"\n    }\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Commons+Supplied_By+Adidas_AG+2021+Gap_inc\",\n  \"created_at\": \"2023-02-03 18:43:10 UTC\",\n  \"updated_at\": \"2023-02-03 18:43:10 UTC\",\n  \"sources\": [\n    {\n      \"id\": 7446994,\n      \"name\": \"Source-000106091\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000106091.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/7446995/25128008.pdf\",\n      \"link\": \"https://www.monclergroup.com/wp-content/uploads/2020/06/Moncler-Annual-Report-2019-2.pdf\",\n      \"report_type\": [\n        \"Communication on Progress\",\n        \"Corporate Social Responsibility Report\",\n        \"Sustainability Report\",\n        \"Integrated Report\",\n        \"Annual Report\",\n        \"Company Website\",\n        \"Research Document\",\n        \"Code of Conduct\",\n        \"Supplier List\"\n      ],\n      \"title\": \"Annual Report 2019\",\n      \"year\": [\n        \"2019\",\n        \"2021\"\n      ]\n    }\n  ],\n  \"checked_by\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplied By+Adidas AG+2021+Gap inc.+checked by\",\n    \"type\": \"List\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+Adidas_AG+2021+Gap_inc+checked_by.json\",\n    \"content\": [\n\n    ],\n    \"checks\": 0\n  },\n  \"requested_at\": \"2023-02-03 18:43:22 UTC\"\n}"
                 }
             }
         }
