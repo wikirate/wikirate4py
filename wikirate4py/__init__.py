@@ -18,5 +18,6 @@ from wikirate4py.exceptions import (IllegalHttpMethod, WikiRate4PyException, HTT
 from wikirate4py.mixins import WikiRateEntity
 from wikirate4py.models import (Company, CompanyItem, Topic, TopicItem, Metric, MetricItem, ResearchGroup,
                                 ResearchGroupItem, Project, ProjectItem, CompanyGroup, CompanyGroupItem, Source,
-                                SourceItem, Answer, AnswerItem, RelationshipAnswer, RelationshipAnswerItem, Region)
+                                SourceItem, Answer, AnswerItem, RelationshipAnswer, RelationshipAnswerItem, Region,
+                                Dataset, DatasetItem)
 from wikirate4py.utils import to_dataframe
