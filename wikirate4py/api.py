@@ -1437,6 +1437,9 @@ class API(object):
             if k not in kwargs:
                 raise WikiRate4PyException("""Invalid set of params! You need to define all the following params to import 
                             a new source in WikiRate platform: """ + required_params.__str__())
+        if 'link' not in kwargs and 'file' not in kwargs:
+            raise WikiRate4PyException("""Invalid set of params! You need to define either a link or give a file path to 
+                                            upload a file while creating a new source: """ + required_params.__str__())
 
         params = {
             "card[type]": "Source",
