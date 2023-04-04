@@ -1336,7 +1336,7 @@ class API(object):
 
     @objectify(Metric)
     def add_metric(self, **kwargs):
-        """add_metric(designer, name, about, methodology, topics, value_type, options, research_policy, report_type)
+        """add_metric(designer, name, question, about, methodology, topics, value_type, options, research_policy, report_type)
 
         Creates and Returns a new Metric
 
@@ -1347,6 +1347,9 @@ class API(object):
 
         name
             name of the metric
+
+        question
+            the question that needs answering
 
         about
             about the metric (plain text/html can be given as input)
@@ -1378,7 +1381,7 @@ class API(object):
 
         """
         required_params = ['designer', 'name', 'value_type']
-        optional_params = ('about', 'methodology', 'unit', 'topics', 'value_options', 'research_policy', 'report_type')
+        optional_params = ('question', 'about', 'methodology', 'unit', 'topics', 'value_options', 'research_policy', 'report_type')
 
         for k in required_params:
             if k not in kwargs:
