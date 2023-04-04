@@ -135,6 +135,12 @@ class API(object):
         if path.startswith("/"):
             return urljoin(wikirate_api_url, path.lstrip('/'))
 
+    def list_to_str(self, list):
+        value_str = ''
+        for t in list:
+            value_str += t + '\n'
+        return value_str
+
     @objectify(Company)
     def get_company(self, identifier) -> Company:
         """get_company(identifier)
@@ -1327,6 +1333,76 @@ class API(object):
         log.debug("PARAMS: %r", params)
 
         return self.post("/card/create", params)
+
+    @objectify(Metric)
+    def add_metric(self, **kwargs):
+        """add_metric(designer, name, about, methodology, topics, value_type, options, research_policy, report_type)
+
+        Creates and Returns a new Metric
+
+        Parameters
+        -------------------
+        designer
+            designer of the metric
+
+        name
+            name of the metric
+
+        about
+            about the metric (plain text/html can be given as input)
+
+        methodology
+            metric's methodology (plain text/html can be given as input)
+
+        topics
+            a list of metrics
+
+        value_type
+            value type
+
+        unit
+            unit can be given (e.g. USD, EURO, Square meters etc)
+
+        value_options
+            a list of value options (if the value type is Multi-Category)
+
+        research_policy
+            research policy's options: Community Assessed, Designer Assessed
+
+        report_type
+            report type
+
+        Returns
+        -------
+            :py:class:`~wikirate4py.models.Metric`
+
+        """
+        required_params = ['designer', 'name', 'value_type']
+        optional_params = ('about', 'methodology', 'unit', 'topics', 'value_options', 'research_policy', 'report_type')
+
+        for k in required_params:
+            if k not in kwargs:
+                raise WikiRate4PyException("""Invalid set of params! You need to define all the following params to create
+                                a new metric in WikiRate platform: """ + required_params.__str__())
+
+        params = {
+            "card[type]": "Metric",
+            "card[name]": kwargs['designer'] + '+' + kwargs['name'],
+            "card[subcards][+value_type]": kwargs['value_type'],
+            "card[skip]": "requirements",
+            "format": "json",
+            "success[format]": "json"
+        }
+
+        for k in optional_params:
+            if k in kwargs.keys():
+                if k in ['topics', 'value_options']:
+                    params['card[subcards][+' + k + ']'] = self.list_to_str(kwargs[k])
+                else:
+                    params['card[subcards][+' + k + ']'] = str(kwargs[k])
+
+        log.debug("PARAMS: %r", params)
+        return self.post("/card/create", params=params)
 
     @objectify(RelationshipAnswer)
     def update_relationship_metric_answer(self, **kwargs):
