@@ -5,7 +5,7 @@
 """
 wikirate4py WikiRate API library
 """
-__version__ = '1.1.0'
+__version__ = '1.1.1'
 __author__ = 'Vasiliki Gkatziaki'
 __license__ = 'GPL-3.0'
 
