@@ -1380,7 +1380,7 @@ class API(object):
             :py:class:`~wikirate4py.models.Metric`
 
         """
-        required_params = ['designer', 'name', 'value_type']
+        required_params = ['designer', 'name', 'metric_type', 'value_type']
         optional_params = ('question', 'about', 'methodology', 'unit', 'topics', 'value_options', 'research_policy', 'report_type')
 
         for k in required_params:
@@ -1392,6 +1392,7 @@ class API(object):
             "card[type]": "Metric",
             "card[name]": kwargs['designer'] + '+' + kwargs['name'],
             "card[subcards][+value_type]": kwargs['value_type'],
+            "card[subcards][+*metric_type]": kwargs['metric_type'],
             "card[skip]": "requirements",
             "format": "json",
             "success[format]": "json"
