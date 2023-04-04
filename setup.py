@@ -28,7 +28,7 @@ setup(name='wikirate4py',
       author='Vasiliki Gkatziaki',
       author_email='vasso@wikirate.org',
       license='GPL-3.0',
-      download_url='https://github.com/wikirate/wikirate4py/archive/refs/tags/v1.1.1.tar.gz',
+      download_url='https://github.com/wikirate/wikirate4py/archive/refs/tags/v1.1.2.tar.gz',
       packages=find_packages(exclude=["tests", "examples"]),
       install_requires=[
           "requests",
