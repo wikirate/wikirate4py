@@ -344,7 +344,7 @@ class Answer(WikiRateEntity):
 
     def __init__(self, data):
         self.raw = data
-        if data["type"]["id"] != 43678:
+        if data.get("type") != "Answer" and data.get("type", {}).get("id") != 43678:
             raise WikiRate4PyException('Invalid type of entity')
 
         self.id = data.get("id")
