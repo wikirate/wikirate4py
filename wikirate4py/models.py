@@ -357,8 +357,8 @@ class Answer(WikiRateEntity):
         if not data.get("sources").__str__().__contains__("Error rendering:"):
             for s in data.get("sources", []):
                 self.sources.append(SourceItem(s))
-        self.checked_by = data.get("checked_by").get("content")
-        self.check_requested = data.get("checked_by").get("check_requested")
+        self.checked_by = data.get("checked_by", [])
+        # self.check_requested = data.get("checked_by", {}).get("check_requested")
         self.url = data.get("html_url")
 
 
