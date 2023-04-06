@@ -1078,7 +1078,6 @@ class API(object):
             else:
                 params['card[subcards][+' + k + ']'] = str(arg)
         log.debug("PARAMS: %r", params)
-        print(params)
 
         if isinstance(identifier, int):
             return self.post("/update/~{0}".format(identifier), params)
