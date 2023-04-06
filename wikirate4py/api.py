@@ -1058,33 +1058,34 @@ class API(object):
 
         return self.post("/card/create", params)
 
-    @objectify(RegionItem, True)
-    def update_headquarters(self, identifier, headquarters):
+    @objectify(Company, False)
+    def update_company(self, identifier, **kwargs):
+        if identifier is None:
+            raise WikiRate4PyException(
+                'A Wikirate company is defined by identifier. Please when you try to update a Wikirate company, provide a valid company identifier or name. ')
+        optional_params = ('headquarters', 'os_id', 'wikipedia', 'open_corporates', 'sec_cik')
         params = {
-            "card[content]": headquarters,
+            "card[type]": "Company",
             "format": "json",
             "success[format]": "json"
         }
-        if isinstance(identifier, int):
-            return self.post("/update/~{0}".format(identifier) + '+:headquarters', params)
-        else:
-            return self.post("/update/{0}".format(
-                identifier.replace(',', ' ').replace('.', ' ').replace('/', ' ').replace('-', ' ').strip().replace(" ",
-                                                                                                                   "_")) + '+:headquarters',
-                             params)
 
-    def update_oc_company_number(self, identifier, company_number):
-        params = {
-            "card[content]": company_number,
-            "format": "json",
-            "success[format]": "json"
-        }
+        for k, arg in kwargs.items():
+            if arg is None:
+                continue
+            if k not in optional_params:
+                log.warning(f'Unexpected parameter: {k}')
+            else:
+                params['card[subcards][+' + k + ']'] = str(arg)
+        log.debug("PARAMS: %r", params)
+        print(params)
+
         if isinstance(identifier, int):
-            return self.post("/update/~{0}".format(identifier) + '+OpenCorporates', params)
+            return self.post("/update/~{0}".format(identifier), params)
         else:
             return self.post("/update/{0}".format(
                 identifier.replace(',', ' ').replace('.', ' ').replace('/', ' ').replace('-', ' ').strip().replace(" ",
-                                                                                                                   "_")) + '+OpenCorporates',
+                                                                                                                   "_")),
                              params)
 
     @objectify(Answer)
@@ -1381,7 +1382,8 @@ class API(object):
 
         """
         required_params = ['designer', 'name', 'metric_type', 'value_type']
-        optional_params = ('question', 'about', 'methodology', 'unit', 'topics', 'value_options', 'research_policy', 'report_type')
+        optional_params = (
+        'question', 'about', 'methodology', 'unit', 'topics', 'value_options', 'research_policy', 'report_type')
 
         for k in required_params:
             if k not in kwargs:
