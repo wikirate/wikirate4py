@@ -418,6 +418,26 @@ class API(object):
                         **kwargs)
 
     @objectify(Answer)
+    def get_answer_by(self, metric_designer, metric_name, company, year):
+        """get_answer(id)
+
+        Returns a metric answer given its numeric identifier.
+
+        Parameters
+        ----------
+        id
+            numeric identifier of the metric answer
+
+        Returns
+        -------
+            :py:class:`~wikirate4py.models.Company`
+        """
+        company = ('~' + company.__str__()) if isinstance(company, int) else company.__str__().replace(',', ' ').replace('.',
+                                                                                                        ' ').replace(
+            '/', ' ').replace('-', ' ').strip().replace(" ", "_")
+        return self.get("/{0}+{1}+{2}+{3}.json".format(metric_designer, metric_name, company, str(year)))
+
+    @objectify(Answer)
     def get_answer(self, id):
         """get_answer(id)
 
@@ -435,16 +455,16 @@ class API(object):
         return self.get("/~{0}.json".format(id))
 
     @objectify(AnswerItem, True)
-    def get_answers_by_metric_id(self, metric_id, **kwargs):
-        """get_answers_by_metric_id(metric_id, *, offset, limit, year, status, company_group, country, company_id, value, value_from, value_to, \
-                       updated, updater, outliers, source, verification, project, bookmark)
+    def get_answers_by_id(self, identifier, **kwargs):
+        """get_answers_by_id(metric_id, *, offset, limit, year, status, company_group, country, company_id, value, value_from, value_to, \
+                       updated, updater, outliers, source, verification, project, bookmark, view)
 
-        Returns a list of WikiRate Answers
+        Returns a list of WikiRate Answers by id (it can be metric id, dataset id, company id or source id)
 
         Parameters
         ----------
-        metric_id
-            numeric metric identifier
+        id
+            numeric wikirate identifier
 
         offset
             default value 0, the (zero-based) offset of the first item in the collection to return
@@ -513,7 +533,7 @@ class API(object):
         -------
         :py:class:`List`\[:class:`~wikirate4py.models.AnswerItem`]
         """
-        return self.get("/~{0}+Answer.json".format(metric_id), endpoint_params=('limit', 'offset'),
+        return self.get("/~{0}+Answer.json".format(identifier), endpoint_params=('limit', 'offset', 'view'),
                         filters=('year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to',
                                  'updated', 'company_id', 'company_name', 'dataset', 'updater', 'outliers', 'source',
                                  'verification', 'bookmark', 'published'),
@@ -1085,7 +1105,7 @@ class API(object):
             return self.post("/update/{0}".format(
                 identifier.replace(',', ' ').replace('.', ' ').replace('/', ' ').replace('-', ' ').strip().replace(" ",
                                                                                                                    "_")),
-                             params)
+                params)
 
     @objectify(Answer)
     def add_research_metric_answer(self, **kwargs):
@@ -1382,7 +1402,7 @@ class API(object):
         """
         required_params = ['designer', 'name', 'metric_type', 'value_type']
         optional_params = (
-        'question', 'about', 'methodology', 'unit', 'topics', 'value_options', 'research_policy', 'report_type')
+            'question', 'about', 'methodology', 'unit', 'topics', 'value_options', 'research_policy', 'report_type')
 
         for k in required_params:
             if k not in kwargs:
