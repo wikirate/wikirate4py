@@ -3,8 +3,8 @@ class Cursor(object):
     def __init__(self, method, per_page=20, **kwargs):
         self.method = method
         self.kwargs = kwargs
-        if per_page > 100:
-            self.per_page = 100
+        if per_page > 200:
+            self.per_page = 200
         else:
             self.per_page = per_page
 
