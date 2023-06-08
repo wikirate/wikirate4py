@@ -422,7 +422,7 @@ class RelationshipAnswerItem(WikiRateEntity):
 
     def __init__(self, data):
         self.raw = data
-        if data["type"] != 'Relationship Answer':
+        if data.get("type", {}).get("name") != 'Relationship Answer' and data["type"] != 'Relationship Answer':
             raise WikiRate4PyException('Invalid type of entity')
 
         self.id = data.get("id")
@@ -437,8 +437,10 @@ class RelationshipAnswerItem(WikiRateEntity):
         self.sources = []
         for s in data.get("sources", []):
             self.sources.append(s.get("name"))
-        self.subject_company_name = data.get("subject_company")
-        self.object_company_name = data.get("object_company")
+        self.subject_company_name = data.get("subject_company") \
+            if isinstance(data.get("subject_company"), str) else data.get("subject_company", {}).get("name")
+        self.object_company_name = data.get("object_company") \
+            if isinstance(data.get("object_company"), str) else data.get("object_company", {}).get("name")
         self.url = data.get("url").replace(".json", "")
 
 
