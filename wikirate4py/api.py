@@ -432,8 +432,9 @@ class API(object):
         -------
             :py:class:`~wikirate4py.models.Company`
         """
-        company = ('~' + company.__str__()) if isinstance(company, int) else company.__str__().replace(',', ' ').replace('.',
-                                                                                                        ' ').replace(
+        company = ('~' + company.__str__()) if isinstance(company, int) else company.__str__().replace(',',
+                                                                                                       ' ').replace('.',
+                                                                                                                    ' ').replace(
             '/', ' ').replace('-', ' ').strip().replace(" ", "_")
         return self.get("/{0}+{1}+{2}+{3}.json".format(metric_designer, metric_name, company, str(year)))
 
@@ -815,7 +816,7 @@ class API(object):
 
         return self.get("/~{0}+{1}+Relationship_Answer.json".format(metric_designer.replace(" ", "_"),
                                                                     metric_name.replace(" ", "_")),
-                        endpoint_params=('limit', 'offset'), filters=(
+                        endpoint_params=('limit', 'offset', 'view'), filters=(
                 'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
                 'updater', 'outliers', 'source', 'verification', 'project', 'bookmark', 'published'), **kwargs)
 
@@ -1142,6 +1143,7 @@ class API(object):
 
         """
         required_params = ('metric_designer', 'metric_name', 'company', 'year', 'value', 'source')
+        optional_params = ('comment', 'unpublished')
 
         for k in required_params:
             if k not in kwargs:
@@ -1159,8 +1161,11 @@ class API(object):
             "format": "json",
             "success[format]": "json"
         }
-        if kwargs.get('comment') is not None:
-            params['card[subcards][+:discussion]'] = str(kwargs['comment'])
+        for k in kwargs.keys():
+            if k == 'comment':
+                params['card[subcards][+:discussion]'] = str(kwargs[k])
+            elif k != required_params and k in optional_params:
+                params['card[subcards][+:' + k + ']'] = kwargs[k]
         log.debug("PARAMS: %r", params)
 
         return self.post("/card/create", params)
@@ -1264,7 +1269,7 @@ class API(object):
 
         """
         required_param = 'id'
-        optional_params = ('company', 'year', 'value', 'source', 'comment')
+        optional_params = ('company', 'year', 'value', 'source', 'comment', 'unpublished')
 
         if required_param not in kwargs:
             raise WikiRate4PyException(
@@ -1640,3 +1645,17 @@ class API(object):
         }
 
         return self.post("/card/update", params)
+
+    def verify_answer(self, identifier):
+        params = {
+            "card[type]": "List",
+            "card[name]": '~{0}+checked_by'.format(identifier),
+            "card[trigger]": 'add_check',
+            "format": "json",
+            "success[format]": "json"
+        }
+
+        return self.post("/card/update", params)
+
+    def get_comments(self, identifier):
+        return self.get("/~{0}+discussion.json".format(identifier)).json().get('content', '')
