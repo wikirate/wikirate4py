@@ -422,7 +422,7 @@ class RelationshipAnswerItem(WikiRateEntity):
 
     def __init__(self, data):
         self.raw = data
-        if data.get("type", {}).get("name") != 'Relationship Answer' and data["type"] != 'Relationship Answer':
+        if data["type"] != 'Relationship Answer' and data.get("type", {}).get("name") != 'Relationship Answer':
             raise WikiRate4PyException('Invalid type of entity')
 
         self.id = data.get("id")

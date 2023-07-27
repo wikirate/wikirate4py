@@ -66,7 +66,7 @@ class API(object):
 
         # if an error was returned throw an exception
         try:
-            response = self.session.request(method, path, auth=self.auth, data=params, headers=headers, timeout=120,
+            response = self.session.request(method, path, auth=self.auth, data=params, headers=headers, timeout=480,
                                             files=files)
 
             if files.get("card[subcards][+file][file]") is not None:
@@ -182,6 +182,28 @@ class API(object):
 
         """
         return self.get("/Company.json", endpoint_params=('limit', 'offset'),
+                        filters=('name', 'company_category', 'company_group', 'country'),
+                        **kwargs)
+
+    @objectify(CompanyItem, list=True)
+    def get_companies_of(self, identifier, **kwargs):
+        """get_companies(*, offset, limit)
+
+        Returns a list of WikiRate Companies
+
+        Parameters
+        ----------
+        offset
+            default value 0, the (zero-based) offset of the first item in the collection to return
+        limit
+            default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
+
+        Returns
+        -------
+            :py:class:`List`\[:class:`~wikirate4py.models.CompanyItem`]
+
+        """
+        return self.get("/~{0}+companies.json".format(identifier), endpoint_params=('limit', 'offset'),
                         filters=('name', 'company_category', 'company_group', 'country'),
                         **kwargs)
 
@@ -537,7 +559,7 @@ class API(object):
         return self.get("/~{0}+Answer.json".format(identifier), endpoint_params=('limit', 'offset', 'view'),
                         filters=('year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to',
                                  'updated', 'company_id', 'company_name', 'dataset', 'updater', 'outliers', 'source',
-                                 'verification', 'bookmark', 'published'),
+                                 'verification', 'bookmark', 'published', 'metric_name'),
                         **kwargs)
 
     @objectify(AnswerItem, True)
@@ -1205,7 +1227,7 @@ class API(object):
 
         """
         required_params = ('metric_designer', 'metric_name', 'company', 'year')
-        optional_params = ('value', 'source', 'comment')
+        optional_params = ('value', 'source', 'comment', 'unpublished')
 
         for k in required_params:
             if k not in kwargs or kwargs.get(k) is None:
@@ -1659,3 +1681,6 @@ class API(object):
 
     def get_comments(self, identifier):
         return self.get("/~{0}+discussion.json".format(identifier)).json().get('content', '')
+
+    def get_content(self, identifier):
+        return self.get("/{0}.json".format(identifier)).json().get('content', '')
