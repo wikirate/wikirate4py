@@ -301,6 +301,30 @@ class API(object):
             'research_policy',
             'dataset'), **kwargs)
 
+    @objectify(MetricItem, list=True)
+    def get_metrics_of(self, identifier, **kwargs):
+        """get_metrics(*, offset, limit)
+
+        Returns a list of WikiRate Metrics
+
+        Parameters
+        ----------
+        offset
+            default value 0, the (zero-based) offset of the first item in the collection to return
+        limit
+            default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
+
+        Returns
+        -------
+            :py:class:`List`\[:class:`~wikirate4py.models.MetricItem`]
+
+        """
+        print("/~{0}+Metrics.json".format(identifier))
+        return self.get("/~{0}+Metrics.json".format(identifier), endpoint_params=('limit', 'offset'), filters=(
+            'name', 'bookmark', 'wikirate_topic', 'designer', 'published', 'metric_type', 'value_type',
+            'research_policy',
+            'dataset'), **kwargs)
+
     @objectify(ResearchGroup)
     def get_research_group(self, identifier):
         """get_research_group(identifier)
@@ -1527,7 +1551,7 @@ class API(object):
 
     @objectify(Source)
     def add_source(self, **kwargs):
-        """add_source(link, title, company, report_type, year)
+        """add_source(link, file, title, company, report_type, year)
 
         Updates and Returns an existing relationship metric answer
 
@@ -1582,7 +1606,10 @@ class API(object):
                 data_file = open(os.path.realpath(kwargs[k]), 'rb')
                 files["card[subcards][+file][file]"] = data_file
             else:
-                params['card[subcards][+' + k + ']'] = str(kwargs[k])
+                if k == 'company' and isinstance(kwargs[k], int):
+                    params['card[subcards][+' + k + ']'] = f"~{kwargs[k]}"
+                else:
+                    params['card[subcards][+' + k + ']'] = str(kwargs[k])
         log.debug("PARAMS: %r", params)
         return self.post("/card/create", params=params, files=files)
 
