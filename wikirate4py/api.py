@@ -678,7 +678,7 @@ class API(object):
             endpoint_params=('limit', 'offset'),
             filters=('year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
                      'company_id', 'company_name', 'dataset', 'updater', 'outliers', 'source', 'verification',
-                     'bookmark', 'published'), **kwargs)
+                     'bookmark', 'published', 'view'), **kwargs)
 
     @objectify(RelationshipAnswer)
     def get_relationship_answer(self, id):
