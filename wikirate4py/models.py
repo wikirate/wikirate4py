@@ -378,9 +378,7 @@ class AnswerItem(WikiRateEntity):
         self.value = data.get("value")
         self.year = data.get("year")
         self.comments = data.get("comments")
-        self.sources = []
-        for s in data.get("sources", []):
-            self.sources.append(s.get("name"))
+        self.sources = [SourceItem(item) for item in data.get("sources", {})]
         self.url = data.get("url").replace(".json", "")
 
 
