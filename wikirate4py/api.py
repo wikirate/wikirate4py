@@ -1130,7 +1130,7 @@ class API(object):
         if identifier is None:
             raise WikiRate4PyException(
                 'A Wikirate company is defined by identifier. Please when you try to update a Wikirate company, provide a valid company identifier or name. ')
-        optional_params = ('headquarters', 'os_id', 'wikipedia', 'open_corporates', 'sec_cik')
+        optional_params = ('headquarters', 'os_id', 'wikipedia', 'open_corporates', 'sec_cik', 'official_company_website')
         params = {
             "card[type]": "Company",
             "format": "json",
