@@ -1075,7 +1075,7 @@ class API(object):
 
     @objectify(Company)
     def add_company(self, name, headquarters, **kwargs):
-        """add_company(name, headquarters, *, oar_id, open_corporates)
+        """add_company(name, headquarters, *, os_id, open_corporates)
 
         Creates and Returns a company given the company name and headquarters
 
@@ -1087,8 +1087,8 @@ class API(object):
             name of the region the headquarters of the company is located
         wikipedia
             company's wikipedia page url
-        oar_id
-            company's identifier on https://openapparel.org
+        os_id
+            company's identifier on https://opensupplyhub.org
         open_corporates
             company's identifier on https://opencorporates.com/
 
@@ -1102,7 +1102,7 @@ class API(object):
             raise WikiRate4PyException(
                 'A WikiRate company is defined by a name and headquarters, please be sure you '
                 'have defined both while trying to create a new company')
-        optional_params = ('oar_id', 'wikipedia', 'open_corporates', 'website')
+        optional_params = ('os_id', 'wikipedia', 'open_corporates', 'website')
         params = {
             "card[type]": "Company",
             "card[name]": name,
