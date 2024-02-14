@@ -25,6 +25,14 @@ WIKIRATE_API_URL = environ.get(
 WIKIRATE_API_PATH = urlparse(WIKIRATE_API_URL).path
 
 
+def generate_url_key(input_string):
+    # Replace spaces, commas, single quotes, dots, and special characters with underscores, and convert to lowercase
+    url_key = re.sub(r'[^a-zA-Z0-9_+]+', lambda x: ' ' if x.group(0) != '+' else '+', input_string)
+    # Check and remove double underscores
+    url_key = re.sub(r"\s+", "_", url_key)
+    return url_key
+
+
 def objectify(wikirate_obj, list=False):
     def decorator(method):
         @functools.wraps(method)
@@ -506,12 +514,12 @@ class API(object):
         """get_answers(identifier, *, offset, limit, year, status, company_group, country, company_id, value, value_from, value_to, \
                        updated, updater, designer, outliers, source, verification, project, bookmark, view)
 
-        Returns a list of WikiRate Answers by id (it can be metric id, dataset id, company id or source id)
+        Returns a list of WikiRate Answers by entity (it can be metric name/id, dataset name/id, company name/id or source name/id)
 
         Parameters
         ----------
-        id
-            numeric wikirate identifier
+        entity
+            numeric wikirate identifier or alphanumeric wikirate entity name for instance: Adidas_AG,
 
         offset
             default value 0, the (zero-based) offset of the first item in the collection to return
@@ -580,10 +588,12 @@ class API(object):
         -------
         :py:class:`List`\[:class:`~wikirate4py.models.AnswerItem`]
         """
-        return self.get("/~{0}+Answer.json".format(identifier), endpoint_params=('limit', 'offset', 'view'),
+        url_key = generate_url_key(entity) if isinstance(entity, str) else f"~{entity}"
+
+        return self.get(f"/{url_key}+Answer.json", endpoint_params=('limit', 'offset', 'view'),
                         filters=('year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to',
                                  'updated', 'company_id', 'company_name', 'dataset', 'updater', 'outliers', 'source',
-                                 'verification', 'bookmark', 'published', 'metric_name'),
+                                 'verification', 'bookmark', 'published', 'metric_name', 'designer'),
                         **kwargs)
 
     @objectify(AnswerItem, True)
