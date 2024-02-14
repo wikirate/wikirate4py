@@ -1,4 +1,5 @@
 env.sh
+.pypirc
 .idea
 .pdbrc
 wikirate4py.egg-info
