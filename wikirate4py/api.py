@@ -472,42 +472,25 @@ class API(object):
                         **kwargs)
 
     @objectify(Answer)
-    def get_answer_by(self, metric_designer, metric_name, company, year):
-        """get_answer(id)
+    def get_answer(self, identifier):
+        """get_answer(identifier)
 
-        Returns a metric answer given its numeric identifier.
-
-        Parameters
-        ----------
-        id
-            numeric identifier of the metric answer
-
-        Returns
-        -------
-            :py:class:`~wikirate4py.models.Company`
-        """
-        company = ('~' + company.__str__()) if isinstance(company, int) else company.__str__().replace(',',
-                                                                                                       ' ').replace('.',
-                                                                                                                    ' ').replace(
-            '/', ' ').replace('-', ' ').strip().replace(" ", "_")
-        return self.get("/{0}+{1}+{2}+{3}.json".format(metric_designer, metric_name, company, str(year)))
-
-    @objectify(Answer)
-    def get_answer(self, id):
-        """get_answer(id)
-
-        Returns a metric answer given its numeric identifier.
+        Returns a relationship metric answer given its identifier the identifier can be numeric or alphanumeric.
 
         Parameters
         ----------
-        id
-            numeric identifier of the metric answer
+        identifier
+            numeric or alphanumeric identifier of the relationship metric answer, example of alphanumeric identifier:
+            Core+Country+Adidas AG+2019
 
         Returns
         -------
-            :py:class:`~wikirate4py.models.Company`
+            :py:class:`~wikirate4py.models.Answer`
         """
-        return self.get("/~{0}.json".format(id))
+
+        url_key = generate_url_key(identifier) if isinstance(identifier, str) else f"~{identifier}"
+
+        return self.get(f"/{url_key}.json")
 
     @objectify(AnswerItem, True)
     def get_answers(self, entity, **kwargs):
