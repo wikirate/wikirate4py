@@ -502,9 +502,9 @@ class API(object):
         return self.get("/~{0}.json".format(id))
 
     @objectify(AnswerItem, True)
-    def get_answers_by_id(self, identifier, **kwargs):
-        """get_answers_by_id(metric_id, *, offset, limit, year, status, company_group, country, company_id, value, value_from, value_to, \
-                       updated, updater, outliers, source, verification, project, bookmark, view)
+    def get_answers(self, entity, **kwargs):
+        """get_answers(identifier, *, offset, limit, year, status, company_group, country, company_id, value, value_from, value_to, \
+                       updated, updater, designer, outliers, source, verification, project, bookmark, view)
 
         Returns a list of WikiRate Answers by id (it can be metric id, dataset id, company id or source id)
 
