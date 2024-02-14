@@ -1147,13 +1147,9 @@ class API(object):
                 params['card[subcards][+' + k + ']'] = str(arg)
         log.debug("PARAMS: %r", params)
 
-        if isinstance(identifier, int):
-            return self.post("/update/~{0}".format(identifier), params)
-        else:
-            return self.post("/update/{0}".format(
-                identifier.replace(',', ' ').replace('.', ' ').replace('/', ' ').replace('-', ' ').strip().replace(" ",
-                                                                                                                   "_")),
-                params)
+        url_key = generate_url_key(identifier) if isinstance(identifier, str) else f"~{identifier}"
+
+        return self.post(f"/update/{url_key}".format(identifier), params)
 
     @objectify(Answer)
     def add_research_metric_answer(self, **kwargs):
