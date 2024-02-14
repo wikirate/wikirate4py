@@ -116,8 +116,8 @@ class API(object):
             if k in filters:
                 if k == 'value_from' or k == 'value_to':
                     params['filter[value]' + '[' + re.sub(r'.*_', '', k) + ']'] = str(arg)
-                elif k == 'subject_company_name' or k == 'object_company_name':
-                    params['filter[' + k + '][]'] = generate_url_key(arg)
+                elif k in ['subject_company_name', 'object_company_name', 'object_company_id', 'subject_company_id']:
+                    params['filter[' + k + '][]'] = arg if isinstance(arg, str) else arg
                 else:
                     params['filter[' + k + ']'] = str(arg)
             else:
@@ -783,7 +783,7 @@ class API(object):
                         endpoint_params=('limit', 'offset'), filters=(
                 'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
                 'updater', 'outliers', 'source', 'verification', 'project', 'bookmark', 'published',
-                'object_company_name', 'subject_company_name'), **kwargs)
+                'object_company_name', 'subject_company_name', 'object_company_id', 'subject_company_id'), **kwargs)
 
     @objectify(RelationshipAnswerItem, True)
     def get_relationship_metric_answers(self, metric_name, metric_designer, **kwargs):
@@ -869,7 +869,7 @@ class API(object):
                         endpoint_params=('limit', 'offset', 'view'), filters=(
                 'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
                 'updater', 'outliers', 'source', 'verification', 'project', 'bookmark', 'published',
-                'object_company_name,', 'subject_company_name'), **kwargs)
+                'object_company_name', 'subject_company_name', 'object_company_id', 'subject_company_id'), **kwargs)
 
     @objectify(Project)
     def get_project(self, identifier):
