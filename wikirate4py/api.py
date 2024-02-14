@@ -587,9 +587,10 @@ class API(object):
                         **kwargs)
 
     @objectify(AnswerItem, True)
-    def get_answers(self, metric_name, metric_designer, **kwargs):
-        """get_answers(metric_name, metric_designer, *, company_name, company_id, offset, limit, year, status, company_group, country, value, value_from, value_to,
-                       updated, updater, outliers, source, verification, project, bookmark)
+    def get_metric_answers(self, metric_name, metric_designer, **kwargs):
+        """get_metric_answers(metric_name, metric_designer, *, company_name, company_id, offset, limit, year, status,
+        company_group, country, value, value_from, value_to, updated, updater, outliers, source, verification, project,
+        bookmark)
 
         Returns a list of WikiRate Answers
 
