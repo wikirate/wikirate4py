@@ -779,8 +779,8 @@ class API(object):
                 'updater', 'outliers', 'source', 'verification', 'project', 'bookmark', 'published'), **kwargs)
 
     @objectify(RelationshipAnswerItem, True)
-    def get_relationship_answers(self, metric_name, metric_designer, **kwargs):
-        """get_relationship_answers(metric_name, metric_designer, *, offset, limit, year, status, company_group, country, value, value_from, value_to, \
+    def get_relationship_metric_answers(self, metric_name, metric_designer, **kwargs):
+        """get_relationship_metric_answers(metric_name, metric_designer, *, offset, limit, year, status, company_group, country, value, value_from, value_to, \
                        updated, updater, outliers, source, verification, project, bookmark)
         Returns a list of WikiRate Relationship Answers
 
