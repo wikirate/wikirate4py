@@ -695,16 +695,17 @@ class API(object):
         return self.get(f"/{url_key}.json")
 
     @objectify(RelationshipAnswerItem, True)
-    def get_relationship_answers_by_metric_id(self, metric_id, **kwargs):
-        """get_relationship_answers_by_metric_id(metric_id, *, offset, limit, year, status, company_group, country, value, value_from, value_to, \
+    def get_relationship_answers(self, entity, **kwargs):
+        """get_relationship_answers(entity, *, offset, limit, year, status, company_group, country, value, value_from, value_to, \
                        updated, updater, outliers, source, verification, project, bookmark)
 
         Returns a list of WikiRate Relationship Answers
 
         Parameters
         ----------
-        id
-            numeric identifier of the relationship metric
+        entity
+            numeric or alphanumeric identifier of and entity that can has relationships eg. relationship metrics,
+            companies, datasets etc.
 
         offset
             default value 0, the (zero-based) offset of the first item in the collection to return
@@ -773,7 +774,10 @@ class API(object):
                 :py:class:`List`\[:class:`~wikirate4py.models.RelationshipAnswerItem`]
 
             """
-        return self.get("/~{0}+Relationship_Answer.json".format(metric_id),
+
+        url_key = generate_url_key(entity) if isinstance(entity, str) else f"~{entity}"
+
+        return self.get(f"/{url_key}+Relationship_Answer.json",
                         endpoint_params=('limit', 'offset'), filters=(
                 'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
                 'updater', 'outliers', 'source', 'verification', 'project', 'bookmark', 'published'), **kwargs)
