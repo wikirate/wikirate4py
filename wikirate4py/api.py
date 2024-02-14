@@ -327,7 +327,7 @@ class API(object):
             :py:class:`List`\[:class:`~wikirate4py.models.MetricItem`]
 
         """
-        print("/~{0}+Metrics.json".format(identifier))
+
         return self.get("/~{0}+Metrics.json".format(identifier), endpoint_params=('limit', 'offset'), filters=(
             'name', 'bookmark', 'wikirate_topic', 'designer', 'published', 'metric_type', 'value_type',
             'research_policy',
