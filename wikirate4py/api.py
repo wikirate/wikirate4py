@@ -675,21 +675,24 @@ class API(object):
                      'bookmark', 'published', 'view'), **kwargs)
 
     @objectify(RelationshipAnswer)
-    def get_relationship_answer(self, id):
-        """get_relationship_answer(id)
+    def get_relationship_answer(self, identifier):
+        """get_relationship_answer(identifier)
 
-        Returns a relationship metric answer given its numeric identifier.
+        Returns a relationship metric answer given its identifier the identifier can be numeric or alphanumeric.
 
         Parameters
         ----------
-        id
-            numeric identifier of the relationship metric answer
+        identifier
+            numeric or alphanumeric identifier of the relationship metric answer
 
         Returns
         -------
             :py:class:`~wikirate4py.models.RelationshipAnswer`
         """
-        return self.get("/~{0}.json".format(id))
+
+        url_key = generate_url_key(identifier) if isinstance(identifier, str) else f"~{identifier}"
+
+        return self.get(f"/{url_key}.json")
 
     @objectify(RelationshipAnswerItem, True)
     def get_relationship_answers_by_metric_id(self, metric_id, **kwargs):
