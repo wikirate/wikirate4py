@@ -1,4 +1,4 @@
-wikirate4py: WikiRate for Python!
+wikirate4py: Wikirate for Python!
 =================================
 
 .. image:: https://img.shields.io/pypi/v/wikirate4py?label=PyPI
@@ -8,7 +8,7 @@ wikirate4py: WikiRate for Python!
 .. image:: https://readthedocs.org/projects/wikirate4py/badge/?version=latest
     :target: https://wikirate4py.readthedocs.io/en/latest/
 
-* Official `WikiRate <https://wikirate.org>`_ 's wrapper for Python
+* Official `Wikirate <https://wikirate.org>`_ 's wrapper for Python
 * Full Documentation: https://wikirate4py.readthedocs.io/
 * `Official Slack Channel <https://wikirate.slack.com/archives/C021YJBQT8E>`_
 
@@ -32,7 +32,7 @@ Python 3.6 - 3.9 are supported.
 
 Usage
 -----
-wikirate4py makes it trivial to interact with WikiRate's API:
+wikirate4py makes it trivial to interact with Wikirate's API:
 
 .. code-block:: python
 
@@ -48,7 +48,7 @@ wikirate4py makes it trivial to interact with WikiRate's API:
 DataFrames
 ----------
 
-From 1.2.0 version of wikirate4py library allows users to transform WikiRateEntity objects to DataFrames.
+From 1.2.0 version of wikirate4py library allows users to transform WikirateEntity objects to DataFrames.
 A usage example can be found below:
 
 .. code-block:: python
@@ -66,6 +66,46 @@ A usage example can be found below:
         answers += cursor.next()
 
     print(to_dataframe(answers).to_string())
+
+
+Company Identifiers
+----------
+
+From 1.2.6 version of wikirate4py library allows users to search companies by identifier. If you want to look for
+companies that you know for instance their Legal Entity Identifier (LEI) or one of their ISINs, you can search on their
+companies endpoint as it is showed below:
+
+.. code-block:: python
+
+    >>> from wikirate4py import API
+    >>> api = API('your_api_token')
+    >>> companies = api.get_companies(company_identifier=["213800EJP14A79ZG1X44", "VGG1890L1076"]) # get companies that much any of the two given company identifiers
+    >>> companies
+    [{
+        'australian_business_number': None,
+         'headquarters': 'United Kingdom',
+         'id': 9269,
+         'isin': ['GB0031274896'],
+         'lei': '213800EJP14A79ZG1X44',
+         'name': 'Marks and Spencer Group plc',
+         'open_corporates': '00214436',
+         'os_id': None,
+         'sec_cik': None,
+         'uk_company_number': None
+    },
+    {
+        'australian_business_number': None,
+         'headquarters': 'United Kingdom',
+         'id': 3152073,
+         'isin': ['VGG1890L1076'],
+         'lei': '549300LPG8W0H1OX3A26',
+         'name': 'Capri Holdings Ltd (formerly Michael Kors)',
+         'open_corporates': '11308598',
+         'os_id': None,
+         'sec_cik': '1530721',
+         'uk_company_number': None
+    }]
+
 
 Contributing
 ------------
