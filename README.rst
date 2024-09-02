@@ -71,7 +71,7 @@ A usage example can be found below:
 Company Identifiers
 ----------
 
-From 1.2.6 version of wikirate4py library allows users to search companies by identifier. If you want to look for
+From 1.2.7 version of wikirate4py library allows users to search companies by identifier. If you want to look for
 companies that you know for instance their Legal Entity Identifier (LEI) or one of their ISINs, you can search on their
 companies endpoint as it is showed below:
 
