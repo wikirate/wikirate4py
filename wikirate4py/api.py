@@ -119,7 +119,7 @@ class API(object):
                 elif k in ['subject_company_name', 'object_company_name', 'object_company_id', 'subject_company_id']:
                     params['filter[' + k + '][]'] = arg if isinstance(arg, str) else arg
                 elif k == 'company_identifier':
-                    params[f"filter[company_identifier[value]]"] = str(arg)
+                    params[f"filter[company_identifier[value]]"] = ', '.join(arg) if isinstance(arg, list) else str(arg)
                 else:
                     params['filter[' + k + ']'] = str(arg)
             else:
