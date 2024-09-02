@@ -79,7 +79,7 @@ companies endpoint as it is showed below:
 
     >>> from wikirate4py import API
     >>> api = API('your_api_token')
-    >>> companies = api.get_companies(company_identifier=["213800EJP14A79ZG1X44", "VGG1890L1076"]) # get companies that much any of the two given company identifiers
+    >>> companies = api.get_companies(company_identifier=["213800EJP14A79ZG1X44", "VGG1890L1076"]) # get companies that match any of the two given company identifiers
     >>> companies
     [{
         'australian_business_number': None,
