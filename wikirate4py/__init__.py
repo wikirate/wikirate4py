@@ -1,11 +1,11 @@
 # wikirate4py
-# Copyright 2021 Vasiliki Gkatziaki for Wikirate
+# Copyright 2024 Vasiliki Gkatziaki for Wikirate
 # See LICENSE for details.
 
 """
 wikirate4py Wikirate API library
 """
-__version__ = '1.2.5'
+__version__ = '1.2.6'
 __author__ = 'Vasiliki Gkatziaki'
 __license__ = 'GPL-3.0'
 
