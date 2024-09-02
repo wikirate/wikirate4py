@@ -22,7 +22,7 @@ tests_require = [
 ]
 setup(name='wikirate4py',
       version=version,
-      description='WikiRate for Python!',
+      description='Wikirate for Python!',
       long_description=readme,
       url='https://github.com/wikirate/wikirate4py',
       author='Vasiliki Gkatziaki',
