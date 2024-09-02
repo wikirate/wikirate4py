@@ -9,8 +9,8 @@ def to_dataframe(data):
             array = [data.json()]
             return DataFrame.from_dict(array)
         else:
-            raise BaseException("""Invalid Input! Provide as input a WikiRateEntity or a list of 
-                                            WikiRateEntity objects!""")
+            raise BaseException("""Invalid Input! Provide as input a WikirateEntity or a list of 
+                                            WikirateEntity objects!""")
     else:
         array = []
         for snippet in data:
@@ -18,5 +18,5 @@ def to_dataframe(data):
                 array.append(snippet.json())
             else:
                 raise BaseException("""Invalid Input! Provide as input a WikiRateEntity or a list of 
-                                                WikiRateEntity objects!""")
+                                                WikirateEntity objects!""")
         return DataFrame.from_dict(array)

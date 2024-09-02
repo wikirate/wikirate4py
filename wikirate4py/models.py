@@ -1,6 +1,5 @@
 from pandas import DataFrame
 
-from wikirate4py.exceptions import WikiRate4PyException
 from wikirate4py.mixins import WikirateEntity
 import html2text
 
@@ -42,9 +41,9 @@ class BaseEntity(WikirateEntity):
     @staticmethod
     def validate_entity(data, expected_type_id=None, expected_type_name=None):
         if expected_type_id and data.get("type", {}).get("id") != expected_type_id:
-            raise WikiRate4PyException('Invalid type of entity')
+            raise Wikirate4PyException('Invalid type of entity')
         if expected_type_name and data.get("type") != expected_type_name:
-            raise WikiRate4PyException('Invalid type of entity')
+            raise Wikirate4PyException('Invalid type of entity')
 
 
 class Company(BaseEntity):
