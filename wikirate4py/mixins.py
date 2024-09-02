@@ -1,4 +1,4 @@
-class WikiRateEntity(object):
+class WikirateEntity(object):
     __slots__ = ()
 
     def __hash__(self):

@@ -1,57 +1,100 @@
 from pandas import DataFrame
 
 from wikirate4py.exceptions import WikiRate4PyException
-from wikirate4py.mixins import WikiRateEntity
+from wikirate4py.mixins import WikirateEntity
 import html2text
 
 
-class Company(WikiRateEntity):
+class BaseEntity(WikirateEntity):
+    @staticmethod
+    def extract_content(data, field, expected_type=None, default=None):
+        """Extracts the 'content' field from a dictionary, with default handling."""
+        content = data.get(field, {}).get("content", default)
+        if content is None:
+            return default
+        elif expected_type == str:
+            return content[0]
+        else:
+            return content
+
+    @staticmethod
+    def extract_name(data):
+        """Extract card name, whether it's a string or a dictionary."""
+        if isinstance(data, str):
+            return data
+        elif isinstance(data, dict):
+            return data.get("name")
+        return None
+
+    @staticmethod
+    def extract_id(data):
+        """Extract card name, whether it's a string or a dictionary."""
+        if isinstance(data, str):
+            return data
+        elif isinstance(data, dict):
+            return data.get("id")
+        return None
+
+    def __init__(self, data, expected_type_id=None, expected_type_name=None):
+        self.raw = data
+        self.validate_entity(data, expected_type_id, expected_type_name)
+
+    @staticmethod
+    def validate_entity(data, expected_type_id=None, expected_type_name=None):
+        if expected_type_id and data.get("type", {}).get("id") != expected_type_id:
+            raise WikiRate4PyException('Invalid type of entity')
+        if expected_type_name and data.get("type") != expected_type_name:
+            raise WikiRate4PyException('Invalid type of entity')
+
+
+class Company(BaseEntity):
     __slots__ = ("id", "name", "headquarters", "wikipedia_url",
-                 "aliases", "url", "oar_id", "sec_cik", "open_corporates", "raw")
+                 "aliases", "url", "os_id", "sec_cik", "lei", "isin", "open_corporates", "australian_business_number",
+                 "uk_company_number")
 
     def __init__(self, data):
-        self.raw = data
-        if data["type"]["id"] != 651:
-            raise WikiRate4PyException('Invalid type of entity')
+        super().__init__(data, expected_type_id=651)
         self.id = data.get("id")
         self.name = data["name"]
-        self.headquarters = None
-        if data.get("headquarters").get("content") is not None:
-            self.headquarters = data.get("headquarters", None).get("content", None)[0]
-        self.aliases = data.get("alias").get("content")
+        self.headquarters = self.extract_content(data, "headquarters")
+        self.aliases = self.extract_content(data, "alias")
         self.url = data.get("html_url")
-        self.wikipedia_url = data.get("wikipedia").get("content")
-        self.oar_id = data.get("oar_id").get("content")
-        self.sec_cik = data.get("sec_cik").get("content")
-        self.open_corporates = data.get("open_corporates").get("content")
+        self.wikipedia_url = self.extract_content(data, "wikipedia", expected_type=str)
+        self.os_id = self.extract_content(data, "open_supply_id", expected_type=str)
+        self.sec_cik = self.extract_content(data, "sec_central_index_key", expected_type=str)
+        self.lei = self.extract_content(data, "legal_entity_identifier", expected_type=str)
+        self.isin = self.extract_content(data, "international_securities_identification_number")
+        self.open_corporates = self.extract_content(data, "open_corporates_id", expected_type=str)
+        self.australian_business_number = self.extract_content(data, "australian_business_number", expected_type=str)
+        self.uk_company_number = self.extract_content(data, "uk_company_number", expected_type=str)
 
 
-class CompanyItem(WikiRateEntity):
-    __slots__ = ("id", "name", "headquarters", "wikipedia_url",
-                 "aliases", "url", "oar_id", "sec_cik", "open_corporates", "raw")
+class CompanyItem(BaseEntity):
+    __slots__ = (
+        "id", "name", "headquarters", "os_id", "sec_cik", "lei", "isin", "open_corporates",
+        "australian_business_number", "uk_company_number", "raw"
+    )
 
     def __init__(self, data):
-        self.raw = data
-        if data["type"] != "Company":
-            raise WikiRate4PyException('Invalid type of entity')
+        super().__init__(data, expected_type_name="Company")
         self.id = data.get("id")
         self.name = data["name"]
         self.headquarters = data.get("headquarters")
         self.aliases = data.get("alias")
         self.url = data.get("url").replace(".json", "")
         self.wikipedia_url = data.get("wikipedia")
-        self.oar_id = data.get("oar_id")
-        self.sec_cik = data.get("sec_cik")
-        self.open_corporates = data.get("open_corporates")
+        self.os_id = data.get("open_supply_id")
+        self.lei = data.get("legal_entity_identifier")
+        self.isin = data.get("international_securities_identification_number")
+        self.sec_cik = data.get("sec_central_index_key")
+        self.open_corporates = data.get("open_corporates_id")
 
 
-class Topic(WikiRateEntity):
+class Topic(BaseEntity):
     __slots__ = ("id", "name", "metrics", "projects", "bookmarkers", "url", "raw")
 
     def __init__(self, data):
-        self.raw = data
-        if data["type"]["id"] != 1010:
-            raise WikiRate4PyException('Invalid type of entity')
+        super().__init__(data, expected_type_id=1010)
 
         self.id = data.get("id")
         self.name = data["name"]
@@ -61,13 +104,11 @@ class Topic(WikiRateEntity):
         self.url = data.get("html_url")
 
 
-class Project(WikiRateEntity):
+class Project(BaseEntity):
     __slots__ = ("id", "name", "metrics", "companies", "answers", "created_at", "updated_at", "url", "raw")
 
     def __init__(self, data):
-        self.raw = data
-        if data["type"]["id"] != 39830:
-            raise WikiRate4PyException('Invalid type of entity')
+        super().__init__(data, expected_type_id=39830)
 
         self.id = data.get("id")
         self.name = data["name"]
@@ -85,32 +126,25 @@ class Project(WikiRateEntity):
         return DataFrame.from_dict(answers)
 
 
-class ProjectItem(WikiRateEntity):
+class ProjectItem(BaseEntity):
     __slots__ = ("id", "name", "url", "raw")
 
     def __init__(self, data):
-        self.raw = data
-        if data["type"] != 'Project':
-            raise WikiRate4PyException('Invalid type of entity')
+        super().__init__(data, expected_type_name="Project")
 
         self.id = data.get("id")
         self.name = data["name"]
         self.url = data.get("url").replace(".json", "")
 
 
-class Dataset(WikiRateEntity):
-    __slots__ = ("id", "name", "metrics", "companies", "answers", "license", "created_at", "updated_at", "url", "raw")
+class Dataset(BaseEntity):
+    __slots__ = ("id", "name", "license", "created_at", "updated_at", "url", "raw")
 
     def __init__(self, data):
-        self.raw = data
-        if data["type"]["id"] != 7926098:
-            raise WikiRate4PyException('Invalid type of entity')
+        super().__init__(data, expected_type_id=7926098)
 
         self.id = data.get("id")
         self.name = data["name"]
-        self.metrics = data.get("metrics", {}).get("content", [])
-        self.companies = data.get("companies", {}).get("content", [])
-        self.answers = [AnswerItem(item) for item in data.get("items", {})]
         self.license = data.get("license")
         self.created_at = data.get("created_at")
         self.updated_at = data.get("updated_at")
@@ -123,26 +157,22 @@ class Dataset(WikiRateEntity):
         return DataFrame.from_dict(answers)
 
 
-class DatasetItem(WikiRateEntity):
+class DatasetItem(BaseEntity):
     __slots__ = ("id", "name", "url", "raw")
 
     def __init__(self, data):
-        self.raw = data
-        if data["type"] != 'Data Set':
-            raise WikiRate4PyException('Invalid type of entity')
+        super().__init__(data, expected_type_name="Dataset")
 
         self.id = data.get("id")
         self.name = data["name"]
         self.url = data.get("url").replace(".json", "")
 
 
-class TopicItem(WikiRateEntity):
+class TopicItem(BaseEntity):
     __slots__ = ("id", "name", "metrics", "projects", "bookmarkers", "url", "raw")
 
     def __init__(self, data):
-        self.raw = data
-        if data["type"] != 'Topic':
-            raise WikiRate4PyException('Invalid type of entity')
+        super().__init__(data, expected_type_name="Topic")
 
         self.id = data.get("id")
         self.name = data["name"]
@@ -152,37 +182,35 @@ class TopicItem(WikiRateEntity):
         self.url = data.get("url").replace(".json", "")
 
 
-class Metric(WikiRateEntity):
+class Metric(BaseEntity):
     __slots__ = (
         "id", "name", "designer", "question", "metric_type", "about", "methodology", "value_type",
         "value_options", "report_type", "research_policy", "unit", "range", "hybrid", "topics", "scores",
         "formula", "answers", "bookmarkers", "projects", "calculations", "answers_url", "url", "raw")
 
     def __init__(self, data):
-        self.raw = data
-        if data["type"]["id"] != 43576:
-            raise WikiRate4PyException('Invalid type of entity')
+        super().__init__(data, expected_type_id=43576)
         h = html2text.HTML2Text()
 
         self.id = data.get("id")
         self.designer = data["designer"]
         self.name = data["title"]
-        self.question = data.get("question", {}).get("content")
-        self.about = h.handle(data.get("about").get("content", ""))
-        self.methodology = h.handle(data.get("methodology").get("content", ""))
-        self.value_type = data.get("value_type").get("content")
+        self.question = self.extract_content(data, "question")
+        self.about = h.handle(self.extract_content(data, "about", default=""))
+        self.methodology = h.handle(self.extract_content(data, "methodology", default=""))
+        self.value_type = self.extract_content(data, "value_type")
         self.value_options = data.get("value_options", {}).get("content", [])
         if len(self.value_options) == 1 and self.value_options[0] == "Unknown":
             self.value_options = []
-        self.report_type = data.get("report_type").get("content")
-        self.metric_type = data.get("metric_type").get("content")
-        self.research_policy = data.get("research_policy").get("content")
-        self.unit = data.get("unit").get("content")
-        self.range = data.get("range").get("content")
-        self.hybrid = data.get("hybrid").get("content")
-        self.topics = data.get("topics").get("content")
-        self.scores = data.get("scores").get("content")
-        self.formula = data.get("formula").get("formula")
+        self.report_type = self.extract_content(data, "report_type")
+        self.metric_type = self.extract_content(data, "metric_type")
+        self.research_policy = self.extract_content(data, "research_policy")
+        self.unit = self.extract_content(data, "unit")
+        self.range = self.extract_content(data, "reange")
+        self.hybrid = self.extract_content(data, "hybrid")
+        self.topics = self.extract_content(data, "topics")
+        self.scores = self.extract_content(data, "scores")
+        self.formula = self.extract_content(data, "formula")
         self.answers = data.get("answers")
         self.bookmarkers = data.get("bookmarkers")
         self.projects = data.get("projects")
@@ -192,16 +220,14 @@ class Metric(WikiRateEntity):
         self.url = data.get("html_url")
 
 
-class MetricItem(WikiRateEntity):
+class MetricItem(BaseEntity):
     __slots__ = (
         "id", "name", "designer", "question", "metric_type", "about", "methodology", "value_type",
         "value_options", "report_type", "research_policy", "unit", "range", "hybrid", "topics", "scores",
         "formula", "answers", "bookmarkers", "projects", "calculations", "answers_url", "url", "raw")
 
     def __init__(self, data):
-        self.raw = data
-        if data["type"] != 'Metric':
-            raise WikiRate4PyException('Invalid type of entity')
+        super().__init__(data, expected_type_name='Metric')
         h = html2text.HTML2Text()
 
         self.id = data.get("id")
@@ -234,42 +260,39 @@ class MetricItem(WikiRateEntity):
         self.url = data.get("url").replace(".json", "")
 
 
-class ResearchGroup(WikiRateEntity):
+class ResearchGroup(BaseEntity):
     __slots__ = (
-        "id", "name", "url", "raw")
+        "id", "name", "url", "raw"
+    )
 
     def __init__(self, data):
-        self.raw = data
-        if data["type"]["id"] != 2301582:
-            raise WikiRate4PyException('Invalid type of entity')
+        super().__init__(data, expected_type_id=2301582)
 
         self.id = data.get("id")
         self.name = data["name"]
         self.url = data.get("html_url")
 
 
-class ResearchGroupItem(WikiRateEntity):
+class ResearchGroupItem(BaseEntity):
     __slots__ = (
-        "id", "name", "url", "raw")
+        "id", "name", "url", "raw"
+    )
 
     def __init__(self, data):
-        self.raw = data
-        if data["type"] != 'Research Group':
-            raise WikiRate4PyException('Invalid type of entity')
+        super().__init__(data, expected_type_name='Research Group')
 
         self.id = data.get("id")
         self.name = data["name"]
         self.url = data.get("url").replace(".json", "")
 
 
-class CompanyGroup(WikiRateEntity):
+class CompanyGroup(BaseEntity):
     __slots__ = (
-        "id", "name", "url", "members", "members_links", "raw")
+        "id", "name", "url", "members", "members_links", "raw"
+    )
 
     def __init__(self, data):
-        self.raw = data
-        if data["type"]["id"] != 5458825:
-            raise WikiRate4PyException('Invalid type of entity')
+        super().__init__(data, expected_type_id=5458825)
 
         self.id = data.get("id")
         self.name = data["name"]
@@ -278,14 +301,13 @@ class CompanyGroup(WikiRateEntity):
         self.url = data.get("html_url")
 
 
-class CompanyGroupItem(WikiRateEntity):
+class CompanyGroupItem(BaseEntity):
     __slots__ = (
-        "id", "name", "url", "members", "raw")
+        "id", "name", "url", "members", "raw"
+    )
 
     def __init__(self, data):
-        self.raw = data
-        if data["type"] != 'Company Group':
-            raise WikiRate4PyException('Invalid type of entity')
+        super().__init__(data, expected_type_name="Company Group")
 
         self.id = data.get("id")
         self.name = data["name"]
@@ -293,39 +315,37 @@ class CompanyGroupItem(WikiRateEntity):
         self.url = data.get("url").replace('.json', '')
 
 
-class Source(WikiRateEntity):
+class Source(BaseEntity):
     __slots__ = (
         "id", "name", "title", "description", "url", "original_source", "file_url", "year", "metrics", "companies",
-        "report_type", "created_at", "updated_at", "raw")
+        "report_type", "created_at", "updated_at", "raw"
+    )
 
     def __init__(self, data):
-        self.raw = data
-        if data.get("type").get("id") != 629:
-            raise WikiRate4PyException('Invalid type of entity')
+        super().__init__(data, expected_type_id=629)
 
         self.id = data.get("id")
         self.name = data.get("name")
-        self.title = data.get("title", {}).get("content")
-        self.description = data.get("description", {}).get("content")
-        self.file_url = data.get("file", {}).get("content")
-        self.original_source = data.get("link", {}).get("content")
-        self.year = data.get("year", {}).get("content")
-        self.report_type = data.get("report_type", {}).get("content")
-        self.metrics = data.get("metric", {}).get("content")
-        self.companies = data.get("company", {}).get("content")
+        self.title = self.extract_content(data, "title")
+        self.description = self.extract_content(data, "description")
+        self.file_url = self.extract_content(data, "file")
+        self.original_source = self.extract_content(data, "link")
+        self.year = self.extract_content(data, "year")
+        self.report_type = self.extract_content(data, "report_type")
+        self.metrics = self.extract_content(data, "metric")
+        self.companies = self.extract_content(data, "company")
         self.created_at = data.get("created_at")
         self.updated_at = data.get("updated_at")
         self.url = data.get("html_url")
 
 
-class SourceItem(WikiRateEntity):
+class SourceItem(BaseEntity):
     __slots__ = (
-        "id", "name", "title", "url", "original_source", "file_url", "year", "report_type", "raw")
+        "id", "name", "title", "url", "original_source", "file_url", "year", "report_type", "raw"
+    )
 
     def __init__(self, data):
-        self.raw = data
-        if data.get("type") != 'Source':
-            raise WikiRate4PyException('Invalid type of entity')
+        super().__init__(data, expected_type_name='Source')
 
         self.id = data.get("id")
         self.name = data.get("name")
@@ -337,15 +357,14 @@ class SourceItem(WikiRateEntity):
         self.url = data.get("url").replace(".json", "")
 
 
-class Answer(WikiRateEntity):
+class Answer(BaseEntity):
     __slots__ = (
         "id", "metric", "company", "value", "year", "comments", "sources", "checked_by",
-        "check_requested", "url", "raw")
+        "check_requested", "url", "raw"
+    )
 
     def __init__(self, data):
-        self.raw = data
-        if data.get("type") != "Answer" and data.get("type", {}).get("id") != 43678:
-            raise WikiRate4PyException('Invalid type of entity')
+        super().__init__(data, expected_type_name="Answer")
 
         self.id = data.get("id")
         self.metric = data["metric"]
@@ -353,24 +372,20 @@ class Answer(WikiRateEntity):
         self.value = data.get("value")
         self.year = data.get("year")
         self.comments = data.get("comments")
-        self.sources = []
         if not data.get("sources").__str__().__contains__("Error rendering:"):
-            for s in data.get("sources", []):
-                self.sources.append(SourceItem(s))
+            self.sources = [SourceItem(s) for s in data.get("sources", [])]
         self.checked_by = data.get("checked_by", [])
-        # self.check_requested = data.get("checked_by", {}).get("check_requested")
         self.url = data.get("html_url")
 
 
-class AnswerItem(WikiRateEntity):
+class AnswerItem(BaseEntity):
     __slots__ = (
         "id", "metric", "company", "value", "year", "comments", "sources", "checked_by",
-        "check_requested", "url", "raw")
+        "check_requested", "url", "raw"
+    )
 
     def __init__(self, data):
-        self.raw = data
-        if data["type"] != 'Answer':
-            raise WikiRate4PyException('Invalid type of entity')
+        super().__init__(data, expected_type_name="Answer")
 
         self.id = data.get("id")
         self.metric = data["metric"]
@@ -382,92 +397,90 @@ class AnswerItem(WikiRateEntity):
         self.url = data.get("url").replace(".json", "")
 
 
-class RelationshipAnswer(WikiRateEntity):
+class RelationshipAnswer(BaseEntity):
     __slots__ = (
         "id", "metric", "value", "year", "comments", "sources", "checked_by",
         "subject_company_name", "subject_company_id", "object_company_name", "object_company_id", "check_requested",
-        "url", "raw")
+        "url", "raw"
+    )
 
     def __init__(self, data):
-        self.raw = data
-        if data["type"]["id"] != 2534606:
-            raise WikiRate4PyException('Invalid type of entity')
+        super().__init__(data, expected_type_id=2534606)
 
         self.id = data.get("id")
-        fields = data.get("name").split("+")
-        self.metric = fields[0] + "+" + fields[1]
+
+        answer_name = data.get("name").split("+")
+        self.metric = f"{answer_name[0]}+{answer_name[1]}"
+
         self.value = data.get("value")
         self.year = data.get("year")
         self.comments = data.get("comments")
-        self.sources = []
-        for s in data.get("sources", []):
-            self.sources.append(s.get("name"))
-        if data.get("checked_by") is not None:
-            self.checked_by = data.get("checked_by").get("content")
-            self.check_requested = data.get("checked_by").get("check_requested")
-        self.subject_company_name = data.get("subject_company").get("name")
-        self.object_company_name = data.get("object_company").get("name")
-        self.subject_company_id = data.get("subject_company").get("id")
-        self.object_company_id = data.get("object_company").get("id")
+
+        self.sources = [s.get("name") for s in data.get("sources", [])]
+
+        self.checked_by = self.extract_content(data, "checked_by")
+        self.check_requested = self.extract_content(data.get("checked_by"), "check_requested")
+
+        self.subject_company_name = self.extract_name(data.get("subject_company") )
+        self.object_company_name = self.extract_name(data.get("object_company"))
+        self.subject_company_id = self.extract_id(data.get("subject_company"))
+        self.object_company_id = self.extract_id(data.get("object_company"))
         self.url = data.get("html_url")
 
 
-class RelationshipAnswerItem(WikiRateEntity):
+class RelationshipAnswerItem(BaseEntity):
     __slots__ = (
         "id", "metric", "metric_id", "value", "year", "comments", "sources",
         "subject_company_name", "object_company_name", "subject_company_id", "object_company_id",
-        "url", "raw")
+        "url", "raw"
+    )
 
     def __init__(self, data):
-        self.raw = data
-        if data["type"] != 'Relationship Answer' and data.get("type", {}).get("name") != 'Relationship Answer':
-            raise WikiRate4PyException('Invalid type of entity')
+        super().__init__(data, expected_type_name="Relationship Answer")
 
         self.id = data.get("id")
-        fields = data.get("name").split("+")
-        self.metric = fields[0] + "+" + fields[1]
+        answer_name = data.get("name").split("+")
+        self.metric = f"{answer_name[0]}+{answer_name[1]}"
         self.metric_id = data.get("metric_id")
         self.value = data.get("value")
         self.year = data.get("year")
         self.subject_company_id = data.get("subject_company_id")
         self.object_company_id = data.get("object_company_id")
         self.comments = data.get("comments")
-        self.sources = []
-        for s in data.get("sources", []):
-            self.sources.append(s.get("name"))
-        self.subject_company_name = data.get("subject_company") \
-            if isinstance(data.get("subject_company"), str) else data.get("subject_company", {}).get("name")
-        self.object_company_name = data.get("object_company") \
-            if isinstance(data.get("object_company"), str) else data.get("object_company", {}).get("name")
+
+        self.sources = [s.get("name") for s in data.get("sources", [])]
+
+        self.subject_company_name = self.extract_name(data.get("subject_company"))
+        self.object_company_name = self.extract_name(data.get("object_company"))
+
         self.url = data.get("url").replace(".json", "")
 
 
-class RegionItem(WikiRateEntity):
+class RegionItem(BaseEntity):
     __slots__ = (
-        "id", "name", "url", "raw")
+        "id", "name", "url", "raw"
+    )
 
     def __init__(self, data):
-        self.raw = data
-        if data["type"] != 'Region':
-            raise WikiRate4PyException('Invalid type of entity')
+        super().__init__(data, expected_type_name="Region")
 
         self.id = data.get("id")
         self.name = data.get("name")
         self.url = data.get("url").replace(".json", "")
 
 
-class Region(WikiRateEntity):
+class Region(BaseEntity):
     __slots__ = (
-        "id", "name", "url", "oc_jurisdiction_key", "region", "country", "raw")
+        "id", "name", "url", "oc_jurisdiction_key", "region", "country", "raw"
+    )
 
     def __init__(self, data):
-        self.raw = data
-        if data["type"]["id"] != 7044738:
-            raise WikiRate4PyException('Invalid type of entity')
+        super().__init__(data, expected_type_id=7044738)
 
         self.id = data.get("id")
         self.name = data.get("name")
         self.url = data.get("url").replace(".json", "")
-        self.oc_jurisdiction_key = data.get("items", [])[1].get("content")
-        self.country = data.get("items", [])[3].get("content")
-        self.region = data.get("items", [])[2].get("content")
+        attributes = data.get("items", [])
+        self.oc_jurisdiction_key = attributes[1].get("content")
+        self.country = attributes[3].get("content")[0] if attributes[3].get("content") is not None else None
+        self.region = attributes[2].get("content")
