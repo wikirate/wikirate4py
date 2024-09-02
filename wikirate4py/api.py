@@ -11,8 +11,8 @@ from urllib.parse import (
 )
 
 from wikirate4py.exceptions import IllegalHttpMethod, BadRequestException, UnauthorizedException, \
-    ForbiddenException, NotFoundException, TooManyRequestsException, WikiRateServerErrorException, HTTPException, \
-    WikiRate4PyException
+    ForbiddenException, NotFoundException, TooManyRequestsException, WikirateServerErrorException, HTTPException, \
+    Wikirate4PyException
 from wikirate4py.models import (Company, Topic, Metric, ResearchGroup, CompanyGroup, Source, CompanyItem, MetricItem,
                                 Answer, ResearchGroupItem, RelationshipAnswer, SourceItem, TopicItem, AnswerItem,
                                 CompanyGroupItem, RelationshipAnswerItem, Region, Project, ProjectItem, RegionItem,
@@ -68,7 +68,7 @@ class API(object):
     def request(self, method, path, headers, params, files={}):
         method = method.strip().lower()
         if method not in self.allowed_methods:
-            msg = "The '{0}' method is not accepted by the WikiRate " \
+            msg = "The '{0}' method is not accepted by the Wikirate " \
                   "client.".format(method)
             raise IllegalHttpMethod(msg)
 
@@ -80,7 +80,7 @@ class API(object):
             if files.get("card[subcards][+file][file]") is not None:
                 files.get("card[subcards][+file][file]").close()
         except Exception as e:
-            raise WikiRate4PyException(f'Failed to send request: {e}').with_traceback(sys.exc_info()[2])
+            raise Wikirate4PyException(f'Failed to send request: {e}').with_traceback(sys.exc_info()[2])
         finally:
             self.session.close()
 
@@ -95,7 +95,7 @@ class API(object):
         if response.status_code == 429:
             raise TooManyRequestsException(response)
         if response.status_code >= 500:
-            raise WikiRateServerErrorException(response)
+            raise WikirateServerErrorException(response)
         if response.status_code and not 200 <= response.status_code < 300:
             raise HTTPException(response)
 
@@ -118,6 +118,8 @@ class API(object):
                     params['filter[value]' + '[' + re.sub(r'.*_', '', k) + ']'] = str(arg)
                 elif k in ['subject_company_name', 'object_company_name', 'object_company_id', 'subject_company_id']:
                     params['filter[' + k + '][]'] = arg if isinstance(arg, str) else arg
+                elif k == 'company_identifier':
+                    params[f"filter[company_identifier[value]]"] = str(arg)
                 else:
                     params['filter[' + k + ']'] = str(arg)
             else:
@@ -160,7 +162,7 @@ class API(object):
         Parameters
         ----------
         identifier
-            two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+            two different identifiers are allowed for Wikirate entities, numerical identifiers or name identifiers
 
         Returns
         -------
@@ -177,7 +179,7 @@ class API(object):
     def get_companies(self, **kwargs):
         """get_companies(*, offset, limit)
 
-        Returns a list of WikiRate Companies
+        Returns a list of Wikirate Companies
 
         Parameters
         ----------
@@ -192,14 +194,14 @@ class API(object):
 
         """
         return self.get("/Company.json", endpoint_params=('limit', 'offset'),
-                        filters=('name', 'company_category', 'company_group', 'country'),
+                        filters=('name', 'company_category', 'company_group', 'country', 'company_identifier'),
                         **kwargs)
 
     @objectify(CompanyItem, list=True)
     def get_companies_of(self, identifier, **kwargs):
         """get_companies(*, offset, limit)
 
-        Returns a list of WikiRate Companies
+        Returns a list of Wikirate Companies
 
         Parameters
         ----------
@@ -221,12 +223,12 @@ class API(object):
     def get_topic(self, identifier):
         """get_topic(identifier)
 
-        Returns a WikiRate Topic based on the given identifier (name or number)
+        Returns a Wikirate Topic based on the given identifier (name or number)
 
         Parameters
         ----------
         identifier
-            two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+            two different identifiers are allowed for Wikirate entities, numerical identifiers or name identifiers
 
         Returns
         -------
@@ -243,7 +245,7 @@ class API(object):
     def get_topics(self, **kwargs):
         """get_topics(*, offset, limit)
 
-        Returns a list of WikiRate Topics
+        Returns a list of Wikirate Topics
 
         Parameters
         ----------
@@ -263,12 +265,12 @@ class API(object):
     def get_metric(self, identifier=None, metric_name=None, metric_designer=None):
         """get_metric(metric_name, metric_designer)
 
-        Returns a WikiRate Metric based on the given metric name and metric designer.
+        Returns a Wikirate Metric based on the given metric name and metric designer.
 
         Parameters
         ----------
         identifier
-            two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+            two different identifiers are allowed for Wikirate entities, numerical identifiers or name identifiers
 
         metric_name
             name of metric
@@ -292,7 +294,7 @@ class API(object):
     def get_metrics(self, **kwargs):
         """get_metrics(*, offset, limit)
 
-        Returns a list of WikiRate Metrics
+        Returns a list of Wikirate Metrics
 
         Parameters
         ----------
@@ -308,14 +310,15 @@ class API(object):
         """
         return self.get("/Metrics.json", endpoint_params=('limit', 'offset'), filters=(
             'name', 'bookmark', 'wikirate_topic', 'designer', 'published', 'metric_type', 'value_type',
-            'research_policy',
+            'metric_keyword',
+            'research_policy', 'metric_keyword',
             'dataset'), **kwargs)
 
     @objectify(MetricItem, list=True)
     def get_metrics_of(self, identifier, **kwargs):
         """get_metrics(*, offset, limit)
 
-        Returns a list of WikiRate Metrics
+        Returns a list of Wikirate Metrics
 
         Parameters
         ----------
@@ -339,12 +342,12 @@ class API(object):
     def get_research_group(self, identifier):
         """get_research_group(identifier)
 
-        Returns a WikiRate Research Group based on the given identifier (name or number)
+        Returns a Wikirate Research Group based on the given identifier (name or number)
 
         Parameters
         ----------
         identifier
-            two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+            two different identifiers are allowed for Wikirate entities, numerical identifiers or name identifiers
 
         Returns
         -------
@@ -361,7 +364,7 @@ class API(object):
     def get_research_groups(self, **kwargs):
         """get_research_groups(*, offset, limit)
 
-        Returns a list of WikiRate Research Groups
+        Returns a list of Wikirate Research Groups
 
         Parameters
         ----------
@@ -380,12 +383,12 @@ class API(object):
     def get_company_group(self, identifier):
         """get_company_group(identifier)
 
-        Returns a WikiRate Company Group based on the given identifier (name or number)
+        Returns a Wikirate Company Group based on the given identifier (name or number)
 
         Parameters
         ----------
         identifier
-            two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+            two different identifiers are allowed for Wikirate entities, numerical identifiers or name identifiers
 
         Returns
         -------
@@ -402,7 +405,7 @@ class API(object):
     def get_company_groups(self, **kwargs):
         """get_company_groups(*, offset, limit)
 
-        Returns a list of WikiRate Company Groups
+        Returns a list of Wikirate Company Groups
 
         Parameters
         ----------
@@ -422,12 +425,12 @@ class API(object):
     def get_source(self, identifier):
         """get_source(identifier)
 
-        Returns a WikiRate Source based on the given identifier (name or number)
+        Returns a Wikirate Source based on the given identifier (name or number)
 
         Parameters
         ----------
         identifier
-            two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+            two different identifiers are allowed for Wikirate entities, numerical identifiers or name identifiers
 
         Returns
         -------
@@ -444,7 +447,7 @@ class API(object):
     def get_sources(self, **kwargs):
         """get_sources(*, offset, limit)
 
-        Returns a list of WikiRate Sources
+        Returns a list of Wikirate Sources
 
         Parameters
         ----------
@@ -496,10 +499,11 @@ class API(object):
 
     @objectify(AnswerItem, True)
     def get_answers(self, entity, **kwargs):
-        """get_answers(identifier, *, offset, limit, year, status, company_group, country, company_id, value, value_from, value_to, \
-                       updated, updater, designer, outliers, source, verification, project, bookmark, view)
+        """get_answers(entity, *, offset, limit, year, status, company_group, country, company_id, company_identifier,
+            value, value_from, value_to, updated, updater, designer, outliers, source, verification, project,
+            bookmark, view)
 
-        Returns a list of WikiRate Answers by entity (it can be metric name/id, dataset name/id, company name/id or source name/id)
+        Returns a list of Wikirate Answers by entity (it can be metric name/id, dataset name/id, company name/id or source name/id)
 
         Parameters
         ----------
@@ -525,7 +529,11 @@ class API(object):
             country name, restricts to answers with companies located in the specified country
 
         company_id
-            company identifier, restricts to answers of the defined company
+            wikirate company identifier, restricts to answers of the defined company
+
+        company_identifier
+            filter by any other known company identifier such as ISIN, LEI, OpenCorporates ID,
+            restricts to answers of the defined company
 
         company_name
             restricts to answers of the defined company name
@@ -543,7 +551,7 @@ class API(object):
             `today`, `week` (this week), `month` (this month)
 
         updater
-            - `wikirate_team`, restricts to answers updated by the WikiRate team
+            - `wikirate_team`, restricts to answers updated by the Wikirate team
             - `current_user`, restricts to answers updated by you
 
         outliers
@@ -560,10 +568,10 @@ class API(object):
                 - `community_verified`: answers verified by community members (e.g. students / volunteers)
                 - `steward_verified`: answers verified by account with "steward" status
                 - `current_user`: answers verified by you
-                - `wikirate_team`: answers verified by WikiRate team
+                - `wikirate_team`: answers verified by Wikirate team
 
         project
-            project name, restrict to answers connected to the specified WikiRate project
+            project name, restrict to answers connected to the specified Wikirate project
 
         bookmark
             - `bookmark`, restrict to answers you have bookmarked
@@ -578,7 +586,8 @@ class API(object):
         return self.get(f"/{url_key}+Answer.json", endpoint_params=('limit', 'offset', 'view'),
                         filters=('year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to',
                                  'updated', 'company_id', 'company_name', 'dataset', 'updater', 'outliers', 'source',
-                                 'verification', 'bookmark', 'published', 'metric_name', 'designer'),
+                                 'verification', 'bookmark', 'published', 'metric_name', 'designer', 'metric_type',
+                                 'company_identifier', 'sort_by', 'sort_dir'),
                         **kwargs)
 
     @objectify(AnswerItem, True)
@@ -587,7 +596,7 @@ class API(object):
         company_group, country, value, value_from, value_to, updated, updater, outliers, source, verification, project,
         bookmark)
 
-        Returns a list of WikiRate Answers
+        Returns a list of Wikirate Answers
 
         Parameters
         ----------
@@ -633,7 +642,7 @@ class API(object):
             `today`, `week` (this week), `month` (this month)
 
         updater
-            - `wikirate_team`, restricts to answers updated by the WikiRate team
+            - `wikirate_team`, restricts to answers updated by the Wikirate team
             - `current_user`, restricts to answers updated by you
 
         outliers
@@ -650,10 +659,10 @@ class API(object):
                 - `community_verified`: answers verified by community members (e.g. students / volunteers)
                 - `steward_verified`: answers verified by account with "steward" status
                 - `current_user`: answers verified by you
-                - `wikirate_team`: answers verified by WikiRate team
+                - `wikirate_team`: answers verified by Wikirate team
 
         project
-            project name, restrict to answers connected to the specified WikiRate project
+            project name, restrict to answers connected to the specified Wikirate project
 
         bookmark
             - `bookmark`, restrict to answers you have bookmarked
@@ -674,7 +683,7 @@ class API(object):
             endpoint_params=('limit', 'offset'),
             filters=('year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
                      'company_id', 'company_name', 'dataset', 'updater', 'outliers', 'source', 'verification',
-                     'bookmark', 'published', 'view'), **kwargs)
+                     'company_identifier', 'bookmark', 'published', 'view'), **kwargs)
 
     @objectify(RelationshipAnswer)
     def get_relationship_answer(self, identifier):
@@ -701,7 +710,7 @@ class API(object):
         """get_relationship_answers(entity, *, offset, limit, year, status, company_group, country, value, value_from, value_to, \
                        updated, updater, outliers, source, verification, project, bookmark)
 
-        Returns a list of WikiRate Relationship Answers
+        Returns a list of Wikirate Relationship Answers
 
         Parameters
         ----------
@@ -739,7 +748,7 @@ class API(object):
             `today`, `week` (this week), `month` (this month)
 
         updater
-            - `wikirate_team`, restricts to relationship answers updated by the WikiRate team
+            - `wikirate_team`, restricts to relationship answers updated by the Wikirate team
             - `current_user`, restricts to relationship answers updated by you
 
         outliers
@@ -757,10 +766,10 @@ class API(object):
                 - `community_verified`: relationship answers verified by community members (e.g. students / volunteers)
                 - `steward_verified`: relationship answers verified by account with "steward" status
                 - `current_user`: relationship answers verified by you
-                - `wikirate_team`: relationship answers verified by WikiRate team
+                - `wikirate_team`: relationship answers verified by Wikirate team
 
             project
-                project name, restrict to relationship answers connected to the specified WikiRate project
+                project name, restrict to relationship answers connected to the specified Wikirate project
 
             bookmark
                 - `bookmark`, restrict to relationship answers you have bookmarked
@@ -789,7 +798,7 @@ class API(object):
     def get_relationship_metric_answers(self, metric_name, metric_designer, **kwargs):
         """get_relationship_metric_answers(metric_name, metric_designer, *, offset, limit, year, status, company_group, country, value, value_from, value_to, \
                        updated, updater, outliers, source, verification, project, bookmark)
-        Returns a list of WikiRate Relationship Answers
+        Returns a list of Wikirate Relationship Answers
 
         Parameters
         ----------
@@ -827,7 +836,7 @@ class API(object):
             `today`, `week` (this week), `month` (this month)
 
         updater
-            - `wikirate_team`, restricts to relationship answers updated by the WikiRate team
+            - `wikirate_team`, restricts to relationship answers updated by the Wikirate team
             - `current_user`, restricts to relationship answers updated by you
 
         outliers
@@ -844,10 +853,10 @@ class API(object):
                 - `community_verified`: relationship answers verified by community members (e.g. students / volunteers)
                 - `steward_verified`: relationship answers verified by account with "steward" status
                 - `current_user`: relationship answers verified by you
-                - `wikirate_team`: relationship answers verified by WikiRate team
+                - `wikirate_team`: relationship answers verified by Wikirate team
 
             project
-                project name, restrict to relationship answers connected to the specified WikiRate project
+                project name, restrict to relationship answers connected to the specified Wikirate project
 
             bookmark
                 - `bookmark`, restrict to relationship answers you have bookmarked
@@ -874,12 +883,12 @@ class API(object):
     @objectify(Project)
     def get_project(self, identifier):
         """get_project(identifier)
-        Returns a WikiRate Project based on the given identifier (name or number)
+        Returns a Wikirate Project based on the given identifier (name or number)
 
         Parameters
         ----------
         identifier
-            two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+            two different identifiers are allowed for Wikirate entities, numerical identifiers or name identifiers
 
         Returns
         -------
@@ -897,7 +906,7 @@ class API(object):
     def get_projects(self, **kwargs):
         """get_projects(*, offset, limit)
 
-        Returns a list of WikiRate Projects
+        Returns a list of Wikirate Projects
 
         Parameters
         -------------------
@@ -917,12 +926,12 @@ class API(object):
     @objectify(Dataset)
     def get_dataset(self, identifier):
         """get_dataset(identifier)
-        Returns a WikiRate Dataset based on the given identifier (name or number)
+        Returns a Wikirate Dataset based on the given identifier (name or number)
 
         Parameters
         ----------
         identifier
-            two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+            two different identifiers are allowed for Wikirate entities, numerical identifiers or name identifiers
 
         Returns
         -------
@@ -940,7 +949,7 @@ class API(object):
     def get_datasets(self, **kwargs):
         """get_datasets(*, offset, limit)
 
-        Returns a list of WikiRate Datasets
+        Returns a list of Wikirate Datasets
 
         Parameters
         -------------------
@@ -961,7 +970,7 @@ class API(object):
     def get_regions(self, **kwargs):
         """get_regions(*, offset, limit)
 
-        Returns the list of all geographic regions we use in WikiRate platform
+        Returns the list of all geographic regions we use in Wikirate platform
 
         Parameters
         ----------
@@ -980,12 +989,12 @@ class API(object):
     @objectify(Region)
     def get_region(self, identifier):
         """get_project(identifier)
-        Returns a WikiRate Region based on the given identifier (name or number)
+        Returns a Wikirate Region based on the given identifier (name or number)
 
         Parameters
         ----------
         identifier
-            two different identifiers are allowed for WikiRate entities, numerical identifiers or name identifiers
+            two different identifiers are allowed for Wikirate entities, numerical identifiers or name identifiers
 
         Returns
         -------
@@ -1046,7 +1055,7 @@ class API(object):
         elif entity is Project:
             return self.get_projects(name=name, **kwargs)
         else:
-            raise WikiRate4PyException(f"Type of parameter 'entity' ({type(entity)}) is not allowed")
+            raise Wikirate4PyException(f"Type of parameter 'entity' ({type(entity)}) is not allowed")
 
     @objectify(SourceItem, True)
     def search_source_by_url(self, url, **kwargs):
@@ -1104,8 +1113,8 @@ class API(object):
         """
 
         if name is None or headquarters is None:
-            raise WikiRate4PyException(
-                'A WikiRate company is defined by a name and headquarters, please be sure you '
+            raise Wikirate4PyException(
+                'A Wikirate company is defined by a name and headquarters, please be sure you '
                 'have defined both while trying to create a new company')
         optional_params = ('os_id', 'wikipedia', 'open_corporates', 'website')
         params = {
@@ -1133,7 +1142,7 @@ class API(object):
     @objectify(Company, False)
     def update_company(self, identifier, **kwargs):
         if identifier is None:
-            raise WikiRate4PyException(
+            raise Wikirate4PyException(
                 'A Wikirate company is defined by identifier. Please when you try to update a Wikirate company, provide a valid company identifier or name. ')
         optional_params = ('headquarters', 'os_id', 'wikipedia', 'open_corporates', 'sec_cik', 'website')
         params = {
@@ -1194,7 +1203,7 @@ class API(object):
 
         for k in required_params:
             if k not in kwargs:
-                raise WikiRate4PyException("""Invalid set of params! You need to define all the following params to import 
+                raise Wikirate4PyException("""Invalid set of params! You need to define all the following params to import 
                     a new research answer: """ + required_params.__str__())
 
         company_identifier = '~' + str(kwargs['company']) if isinstance(kwargs['company'], int) else kwargs[
@@ -1256,7 +1265,7 @@ class API(object):
 
         for k in required_params:
             if k not in kwargs or kwargs.get(k) is None:
-                raise WikiRate4PyException("""Invalid set of params! You need to define all the following params to import 
+                raise Wikirate4PyException("""Invalid set of params! You need to define all the following params to import 
                         a new research answer: """ + required_params.__str__())
 
         company_identifier = '~' + str(kwargs['company']) if isinstance(kwargs['company'], int) else kwargs[
@@ -1319,7 +1328,7 @@ class API(object):
         optional_params = ('company', 'year', 'value', 'source', 'comment', 'unpublished')
 
         if required_param not in kwargs:
-            raise WikiRate4PyException(
+            raise Wikirate4PyException(
                 """Invalid set of params! You need to define all the following params to update the research answer: """ + required_param.__str__())
 
         if kwargs.get('company') is not None:
@@ -1336,6 +1345,23 @@ class API(object):
                 params['card[subcards][+:discussion]'] = str(kwargs[k])
             elif k != required_param and k in optional_params:
                 params['card[subcards][+:' + k + ']'] = str(kwargs[k])
+
+        log.debug("PARAMS: %r", params)
+
+        return self.post("/card/update", params)
+
+    def update_card(self, identifier, **kwargs):
+        required_param = 'json'
+
+        if required_param not in kwargs:
+            raise Wikirate4PyException(
+                """Invalid set of params! You need to define all the following params to update the research answer: """ + required_param.__str__())
+        params = {
+            "card[name]": f'~{identifier}',
+            "card[content]": kwargs['json'],
+            "format": "json",
+            "success[format]": "json"
+        }
 
         log.debug("PARAMS: %r", params)
 
@@ -1383,7 +1409,7 @@ class API(object):
 
         for k in required_params:
             if k not in kwargs:
-                raise WikiRate4PyException("""Invalid set of params! You need to define all the following params to import 
+                raise Wikirate4PyException("""Invalid set of params! You need to define all the following params to import 
                         a new research answer: """ + required_params.__str__())
 
         subject_company_identifier = '~' + str(kwargs['subject_company']) \
@@ -1458,8 +1484,8 @@ class API(object):
 
         for k in required_params:
             if k not in kwargs:
-                raise WikiRate4PyException("""Invalid set of params! You need to define all the following params to create
-                                a new metric in WikiRate platform: """ + required_params.__str__())
+                raise Wikirate4PyException("""Invalid set of params! You need to define all the following params to create
+                                a new metric in Wikirate platform: """ + required_params.__str__())
 
         params = {
             "card[type]": "Metric",
@@ -1481,6 +1507,74 @@ class API(object):
         log.debug("PARAMS: %r", params)
         return self.post("/card/create", params=params)
 
+    @objectify(Metric)
+    def update_metric(self, identifier, **kwargs):
+        """add_metric(designer, name, question, about, methodology, topics, value_type, options, research_policy, report_type, title)
+
+        Creates and Returns a new Metric
+
+        Parameters
+        -------------------
+        designer
+            designer of the metric
+
+        name
+            name of the metric
+
+        question
+            the question that needs answering
+
+        about
+            about the metric (plain text/html can be given as input)
+
+        methodology
+            metric's methodology (plain text/html can be given as input)
+
+        topics
+            a list of metrics
+
+        value_type
+            value type
+
+        unit
+            unit can be given (e.g. USD, EURO, Square meters etc)
+
+        value_options
+            a list of value options (if the value type is Multi-Category)
+
+        research_policy
+            research policy's options: Community Assessed, Designer Assessed
+
+        report_type
+            report type
+
+        Returns
+        -------
+            :py:class:`~wikirate4py.models.Metric`
+
+        """
+        optional_params = (
+            'metric_type', 'value_type', 'question', 'about', 'methodology', 'unit', 'topics', 'value_options',
+            'research_policy', 'report_type', 'unpublished')
+
+        params = {
+            "card[type]": "Metric",
+            # "card[name]": kwargs['designer'] + '+' + kwargs['name'],
+            "card[skip]": "requirements",
+            "format": "json",
+            "success[format]": "json"
+        }
+
+        for k in optional_params:
+            if k in kwargs.keys():
+                if k in ['topics', 'value_options']:
+                    params['card[subcards][+' + k + ']'] = self.list_to_str(kwargs[k])
+                else:
+                    params['card[subcards][+' + k + ']'] = str(kwargs[k])
+
+        log.debug("PARAMS: %r", params)
+        return self.post(f"/update/~{identifier}", params=params)
+
     @objectify(RelationshipAnswer)
     def update_relationship_metric_answer(self, **kwargs):
         """update_relationship_metric_answer(metric_designer, metric_name, company, year, value, source)
@@ -1491,7 +1585,7 @@ class API(object):
         ----------
 
         metric_name
-            name of metric
+            name of metricf
 
         metric_designer
             name of metric designer
@@ -1524,7 +1618,7 @@ class API(object):
 
         for k in required_params:
             if k not in kwargs or kwargs.get(k) is None:
-                raise WikiRate4PyException("""Invalid set of params! You need to define all the following params to import 
+                raise Wikirate4PyException("""Invalid set of params! You need to define all the following params to import 
                             a new research answer: """ + required_params.__str__())
 
         subject_company_identifier = '~' + str(kwargs['subject_company']) \
@@ -1588,10 +1682,10 @@ class API(object):
 
         for k in required_params:
             if k not in kwargs:
-                raise WikiRate4PyException("""Invalid set of params! You need to define all the following params to import 
-                            a new source in WikiRate platform: """ + required_params.__str__())
+                raise Wikirate4PyException("""Invalid set of params! You need to define all the following params to import 
+                            a new source in Wikirate platform: """ + required_params.__str__())
         if 'link' not in kwargs and 'file' not in kwargs:
-            raise WikiRate4PyException("""Invalid set of params! You need to define either a link or give a file path to 
+            raise Wikirate4PyException("""Invalid set of params! You need to define either a link or give a file path to 
                                             upload a file while creating a new source: """ + required_params.__str__())
 
         params = {
@@ -1658,8 +1752,8 @@ class API(object):
 
         for k in required_params:
             if k not in kwargs:
-                raise WikiRate4PyException("""Invalid set of params! You need to define all the following params to import 
-                            a new source in WikiRate platform: """ + required_params.__str__())
+                raise Wikirate4PyException("""Invalid set of params! You need to define all the following params to import 
+                            a new source in Wikirate platform: """ + required_params.__str__())
 
         params = {
             "card[type]": "Source",
@@ -1678,7 +1772,7 @@ class API(object):
     def delete_wikirate_entity(self, id):
         """delete_wikirate_entity(id)
 
-        Deletes a WikiRate entity based on the given numeric identifier
+        Deletes a Wikirate entity based on the given numeric identifier
         """
         return self.delete("/~{0}".format(id))
 
@@ -1689,6 +1783,34 @@ class API(object):
         params = {
             "card[type]": "List",
             "card[name]": '~' + group_id + '+' + 'Company',
+            "card[content]": ids,
+            "format": "json",
+            "success[format]": "json"
+        }
+
+        return self.post("/card/update", params)
+
+    def add_companies_to_dataset(self, dataset_id, list=[]):
+        ids = ""
+        for item in list:
+            ids += '~[[' + item.__str__() + ']]\n'
+        params = {
+            "card[type]": "List",
+            "card[name]": '~' + dataset_id.__str__() + '+' + 'Company',
+            "card[content]": ids,
+            "format": "json",
+            "success[format]": "json"
+        }
+
+        return self.post("/card/update", params)
+
+    def add_metrics_to_dataset(self, dataset_id, list=[]):
+        ids = ""
+        for item in list:
+            ids += '~[[' + item.__str__() + ']]\n'
+        params = {
+            "card[type]": "List",
+            "card[name]": '~' + dataset_id.__str__() + '+' + 'Metric',
             "card[content]": ids,
             "format": "json",
             "success[format]": "json"
