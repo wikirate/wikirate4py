@@ -1,10 +1,10 @@
-from tests.config import WikiRate4PyTestCase, tape
+from tests.config import Wikirate4PyTestCase, tape
 from wikirate4py import Company, Metric, Topic, ResearchGroup, CompanyGroup, Source, Answer, RelationshipAnswer, \
     Project, SourceItem, AnswerItem, CompanyGroupItem, ResearchGroupItem, MetricItem, TopicItem, CompanyItem, \
     ProjectItem, RelationshipAnswerItem, Dataset, DatasetItem
 
 
-class WikiRate4PyTests(WikiRate4PyTestCase):
+class Wikirate4PyTests(Wikirate4PyTestCase):
 
     @tape.use_cassette('test_get_company.json')
     def test_get_company(self):
@@ -86,8 +86,8 @@ class WikiRate4PyTests(WikiRate4PyTestCase):
 
     @tape.use_cassette('test_get_answers.json')
     def test_get_answers(self):
-        answers = self.api.get_answers(metric_name='Company Report Available', metric_designer='Core',
-                                       country='United Kingdom', limit=10)
+        answers = self.api.get_metric_answers(metric_name='Company Report Available', metric_designer='Core',
+                                              country='United Kingdom', limit=10)
         self.assertTrue(isinstance(answers[0], AnswerItem))
         self.assertEqual(len(answers), 10)
 
@@ -97,10 +97,10 @@ class WikiRate4PyTests(WikiRate4PyTestCase):
         self.assertTrue(isinstance(relationship_answer, RelationshipAnswer))
         self.assertEqual(relationship_answer.metric, 'Commons+Supplied By')
 
-    @tape.use_cassette('test_get_relationship_answers.json')
-    def test_get_relationship_answers(self):
-        answers = self.api.get_relationship_answers(metric_name='Supplier of', metric_designer='Commons',
-                                                    country='United Kingdom', limit=10)
+    @tape.use_cassette('get_relationship_metric_answers.json')
+    def test_get_relationship_metric_answers(self):
+        answers = self.api.get_relationship_metric_answers(metric_name='Supplier of', metric_designer='Commons',
+                                                           limit=10)
         self.assertTrue(isinstance(answers[0], RelationshipAnswerItem))
         self.assertEqual(len(answers), 10)
 
@@ -118,7 +118,7 @@ class WikiRate4PyTests(WikiRate4PyTestCase):
 
     @tape.use_cassette('test_get_dataset.json')
     def test_get_dataset(self):
-        dataset = self.api.get_dataset('Tea Transparency Tracker')
+        dataset = self.api.get_dataset('Tea_Supply_Chain_Tracker_Supply_Chain_Relationships')
         self.assertTrue(isinstance(dataset, Dataset))
         self.assertEqual(dataset.id, 8543400)
 
@@ -164,7 +164,7 @@ class WikiRate4PyTests(WikiRate4PyTestCase):
 
     @tape.use_cassette('test_add_source.json')
     def test_add_source(self):
-        source = self.api.add_source(url='https://en.wikipedia.org/wiki/Target_Corporation',
+        source = self.api.add_source(link='https://en.wikipedia.org/wiki/Target_Corporation',
                                      title='wikipedia page of Target Corporation 2021',
                                      company='Target',
                                      comment='07/07/2021 This is a comment',
