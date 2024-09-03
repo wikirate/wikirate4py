@@ -707,8 +707,9 @@ class API(object):
 
     @objectify(RelationshipAnswerItem, True)
     def get_relationship_answers(self, entity, **kwargs):
-        """get_relationship_answers(entity, *, offset, limit, year, status, company_group, country, value, value_from, value_to, \
-                       updated, updater, outliers, source, verification, project, bookmark)
+        """get_relationship_answers(entity, *, offset, limit, year, status, company_group, value, value_from, value_to,
+                                    updated, updater, verification, project, bookmark, published,
+                                    object_company_name, subject_company_name, object_company_id, subject_company_id)
 
         Returns a list of Wikirate Relationship Answers
 
@@ -731,9 +732,6 @@ class API(object):
 
         company_group
             company group name, restricts to relationship answers with subject companies belonging in the specified company group
-
-        country
-            country name, restricts to relationship answers with subject companies located in the specified country
 
         value
             answer value to match
@@ -791,13 +789,15 @@ class API(object):
         return self.get(f"/{url_key}+Relationship_Answer.json",
                         endpoint_params=('limit', 'offset'), filters=(
                 'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
-                'updater', 'outliers', 'source', 'verification', 'project', 'bookmark', 'published',
+                'updater', 'verification', 'project', 'bookmark', 'published',
                 'object_company_name', 'subject_company_name', 'object_company_id', 'subject_company_id'), **kwargs)
 
     @objectify(RelationshipAnswerItem, True)
     def get_relationship_metric_answers(self, metric_name, metric_designer, **kwargs):
-        """get_relationship_metric_answers(metric_name, metric_designer, *, offset, limit, year, status, company_group, country, value, value_from, value_to, \
-                       updated, updater, outliers, source, verification, project, bookmark)
+        """get_relationship_metric_answers(metric_name, metric_designer, *, offset, limit, year, status,
+                                    company_group, value, value_from, value_to, updated, updater, verification,
+                                    project, bookmark, published, object_company_name, subject_company_name,
+                                    object_company_id, subject_company_id)
         Returns a list of Wikirate Relationship Answers
 
         Parameters
@@ -819,9 +819,6 @@ class API(object):
 
         company_group
             company group name, restricts to relationship answers with subject companies belonging in the specified company group
-
-        country
-            country name, restricts to relationship answers with subject companies located in the specified country
 
         value
             answer value to match
@@ -873,13 +870,14 @@ class API(object):
 
             """
 
-        return self.get(f"/{generate_url_key(metric_designer)}+{generate_url_key(metric_name)}+Relationship_Answer.json",
-                        endpoint_params=('limit', 'offset', 'view'),
-                        filters=(
-                            'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
-                            'updater', 'outliers', 'source', 'verification', 'project', 'bookmark', 'published',
-                            'object_company_name', 'subject_company_name', 'object_company_id', 'subject_company_id'),
-                        **kwargs)
+        return self.get(
+            f"/{generate_url_key(metric_designer)}+{generate_url_key(metric_name)}+Relationship_Answer.json",
+            endpoint_params=('limit', 'offset', 'view'),
+            filters=(
+                'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
+                'updater', 'verification', 'project', 'bookmark', 'published',
+                'object_company_name', 'subject_company_name', 'object_company_id', 'subject_company_id'),
+            **kwargs)
 
     @objectify(Project)
     def get_project(self, identifier):
