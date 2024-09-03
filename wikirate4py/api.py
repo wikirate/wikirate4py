@@ -873,12 +873,13 @@ class API(object):
 
             """
 
-        return self.get("/~{0}+{1}+Relationship_Answer.json".format(metric_designer.replace(" ", "_"),
-                                                                    metric_name.replace(" ", "_")),
-                        endpoint_params=('limit', 'offset', 'view'), filters=(
-                'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
-                'updater', 'outliers', 'source', 'verification', 'project', 'bookmark', 'published',
-                'object_company_name', 'subject_company_name', 'object_company_id', 'subject_company_id'), **kwargs)
+        return self.get(f"/{generate_url_key(metric_designer)}+{generate_url_key(metric_name)}+Relationship_Answer.json",
+                        endpoint_params=('limit', 'offset', 'view'),
+                        filters=(
+                            'year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
+                            'updater', 'outliers', 'source', 'verification', 'project', 'bookmark', 'published',
+                            'object_company_name', 'subject_company_name', 'object_company_id', 'subject_company_id'),
+                        **kwargs)
 
     @objectify(Project)
     def get_project(self, identifier):
