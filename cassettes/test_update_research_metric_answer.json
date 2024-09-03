@@ -8,7 +8,7 @@
                 "body": "card%5Btype%5D=Answer&card%5Bname%5D=Core%2BCompany+Report+Available%2BAdidas_AG%2B2022&format=json&success%5Bformat%5D=json&card%5Bsubcards%5D%5B%2B%3Avalue%5D=Yes&card%5Bsubcards%5D%5B%2B%3Asource%5D=Source_000104408",
                 "headers": {
                     "User-Agent": [
-                        "python-requests/2.25.1"
+                        "python-requests/2.32.3"
                     ],
                     "Accept-Encoding": [
                         "gzip, deflate"
@@ -33,30 +33,45 @@
                     "message": "See Other"
                 },
                 "headers": {
-                    "X-Frame-Options": [
-                        "ALLOWALL"
-                    ],
-                    "Set-Cookie": [
-                        "_wikirate_session=QnJmYmo0bzBJb0xvV2NFckNrcEdRdjlLMmcyS2NLYWZHdytJdSs3NUM5MVZpMGxuYXcrNUNBUFZVMGVyMzdRcXVuWUJkcEkvWWF4d2poZ0x1bDBZNGZQNEcwR2NtVzhaeWtSZWNFL2RDTE8yeHFBMSs4VytDbGlLV09lRk1jVW4tLXA5UUc0U3FTY1dTSU50U0ZCTVhSY2c9PQ%3D%3D--da3a2bac255f3752d08636fba70273dea28366e7; path=/; HttpOnly"
-                    ],
-                    "Date": [
-                        "Fri, 03 Feb 2023 18:46:37 GMT"
-                    ],
                     "Content-Type": [
                         "text/html; charset=utf-8"
-                    ],
-                    "Vary": [
-                        "Origin"
-                    ],
-                    "X-Request-Id": [
-                        "e9870912-d90a-43ad-9d37-9e989f5a0e20"
-                    ],
-                    "Location": [
-                        "https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG+2022.json"
                     ],
                     "Access-Control-Allow-Origin": [
                         "*",
                         "*"
+                    ],
+                    "X-Runtime": [
+                        "3.276627"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=VXNod2QzOWtCSXVJSm1VQUFPSXNNVXEySEpQdjNTbjJPdWgrM1I2QzJMNm11WXpQK0x0dE1QY250dUR6NG13Yi9EUEFkcFNZcGM4RjdEYjhXbHQrR3RuNnlXR3hNWlpmZm9uMjd1QTE4dGNEbkZNZzhRV2NKTEZFd2JiT1BBTjktLUdEK0Nzb3JEUDNjenkrRGtNZXNJRnc9PQ%3D%3D--f1adb0d8c42338e9d5988657afe7b064e092a052; path=/; HttpOnly"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Cache-Control": [
+                        "no-cache"
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "Location": [
+                        "https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG+2022.json"
+                    ],
+                    "X-Request-Id": [
+                        "e145b8f0-4116-4287-b56e-4f9053345054"
+                    ],
+                    "Keep-Alive": [
+                        "timeout=5, max=100"
+                    ],
+                    "vary": [
+                        "Origin"
+                    ],
+                    "Date": [
+                        "Tue, 03 Sep 2024 10:39:35 GMT"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.18"
                     ],
                     "Connection": [
                         "Keep-Alive"
@@ -64,23 +79,8 @@
                     "Status": [
                         "303 See Other"
                     ],
-                    "Transfer-Encoding": [
-                        "chunked"
-                    ],
                     "Server": [
-                        "Apache/2.4.41 (Ubuntu) Phusion_Passenger/6.0.12 OpenSSL/1.1.1f"
-                    ],
-                    "Keep-Alive": [
-                        "timeout=5, max=100"
-                    ],
-                    "X-Powered-By": [
-                        "Phusion Passenger(R) 6.0.12"
-                    ],
-                    "Cache-Control": [
-                        "no-cache"
-                    ],
-                    "X-Runtime": [
-                        "3.157737"
+                        "Apache/2.4.52 (Ubuntu) Phusion_Passenger/6.0.18 OpenSSL/3.0.2"
                     ]
                 },
                 "body": {
@@ -95,7 +95,7 @@
                 "body": null,
                 "headers": {
                     "User-Agent": [
-                        "python-requests/2.25.1"
+                        "python-requests/2.32.3"
                     ],
                     "Accept-Encoding": [
                         "gzip, deflate"
@@ -107,7 +107,7 @@
                         "keep-alive"
                     ],
                     "Cookie": [
-                        "_wikirate_session=QnJmYmo0bzBJb0xvV2NFckNrcEdRdjlLMmcyS2NLYWZHdytJdSs3NUM5MVZpMGxuYXcrNUNBUFZVMGVyMzdRcXVuWUJkcEkvWWF4d2poZ0x1bDBZNGZQNEcwR2NtVzhaeWtSZWNFL2RDTE8yeHFBMSs4VytDbGlLV09lRk1jVW4tLXA5UUc0U3FTY1dTSU50U0ZCTVhSY2c9PQ%3D%3D--da3a2bac255f3752d08636fba70273dea28366e7"
+                        "_wikirate_session=VXNod2QzOWtCSXVJSm1VQUFPSXNNVXEySEpQdjNTbjJPdWgrM1I2QzJMNm11WXpQK0x0dE1QY250dUR6NG13Yi9EUEFkcFNZcGM4RjdEYjhXbHQrR3RuNnlXR3hNWlpmZm9uMjd1QTE4dGNEbkZNZzhRV2NKTEZFd2JiT1BBTjktLUdEK0Nzb3JEUDNjenkrRGtNZXNJRnc9PQ%3D%3D--f1adb0d8c42338e9d5988657afe7b064e092a052"
                     ]
                 }
             },
@@ -117,30 +117,45 @@
                     "message": "OK"
                 },
                 "headers": {
-                    "X-Frame-Options": [
-                        "ALLOWALL"
-                    ],
-                    "Set-Cookie": [
-                        "_wikirate_session=OWlGNDYwcjRJZUdPN3M4a2d4VWpPYkU4RGwzMlkzK203VUFVb3hsRXYrQWRMbnZzcGptQncydVNyYkcwcmRxWnd6dEVJaEJzM2xOR3hLcFBvdGRNUDBJemYyNk1QUTljeUJmQUs3cGVNVmduYVJkeUNHcm1VVmZKSWpCaFJTRFctLTdWYS8wakdWNmY5a0UveElSVVR2T3c9PQ%3D%3D--c48d62a97a876751e3b64d73321461af13acb4fa; path=/; HttpOnly"
-                    ],
-                    "Date": [
-                        "Fri, 03 Feb 2023 18:46:40 GMT"
+                    "ETag": [
+                        "W/\"49d68f2b1aba458ba4ff87a2ef5ad20f\""
                     ],
                     "Content-Type": [
                         "text/json; charset=utf-8"
                     ],
-                    "Vary": [
-                        "Origin"
-                    ],
-                    "ETag": [
-                        "W/\"23402dc2a06d43f028a14b7d517a497d\""
-                    ],
-                    "X-Request-Id": [
-                        "5f3cce69-72b9-4285-bd2b-095a1afa159f"
-                    ],
                     "Access-Control-Allow-Origin": [
                         "*",
                         "*"
+                    ],
+                    "X-Runtime": [
+                        "0.092902"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=R2h6TmVMcmRack9kZU83N3FNTjhtUlUwZzMvMjV6SUlyNml1VHZxbGxOdzVEcE9walNsYWltNnpoS203SWRLYVRVNWhLc2RKNVFiMXp6QWR6b2FFR0JBcTVIYzdCMDVGbmJYdnlEbCtTZnNMbkxyVlFQWXRFdVk4TVYyc2lQejAtLWZZN2dRSFEwVkxQOVM1WXpUSExmL1E9PQ%3D%3D--102dd29522e91cd9b1f5a8c23999a794b87bb631; path=/; HttpOnly"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Cache-Control": [
+                        "max-age=0, private, must-revalidate"
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "X-Request-Id": [
+                        "d961ab4d-3762-416d-a3b2-c0e53b68ce7e"
+                    ],
+                    "Keep-Alive": [
+                        "timeout=5, max=99"
+                    ],
+                    "vary": [
+                        "Origin"
+                    ],
+                    "Date": [
+                        "Tue, 03 Sep 2024 10:39:38 GMT"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.18"
                     ],
                     "Connection": [
                         "Keep-Alive"
@@ -148,27 +163,12 @@
                     "Status": [
                         "200 OK"
                     ],
-                    "Transfer-Encoding": [
-                        "chunked"
-                    ],
                     "Server": [
-                        "Apache/2.4.41 (Ubuntu) Phusion_Passenger/6.0.12 OpenSSL/1.1.1f"
-                    ],
-                    "Keep-Alive": [
-                        "timeout=5, max=99"
-                    ],
-                    "X-Powered-By": [
-                        "Phusion Passenger(R) 6.0.12"
-                    ],
-                    "Cache-Control": [
-                        "max-age=0, private, must-revalidate"
-                    ],
-                    "X-Runtime": [
-                        "0.119306"
+                        "Apache/2.4.52 (Ubuntu) Phusion_Passenger/6.0.18 OpenSSL/3.0.2"
                     ]
                 },
                 "body": {
-                    "string": "{\n  \"id\": 13994236,\n  \"name\": \"Core+Company Report Available+Adidas AG+2022\",\n  \"type\": {\n    \"id\": 43678,\n    \"name\": \"Answer\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Answer.json\",\n    \"codename\": \"metric_answer\"\n  },\n  \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG+2022.json\",\n  \"metric\": \"Core+Company Report Available\",\n  \"company\": \"Adidas AG\",\n  \"year\": 2022,\n  \"value\": \"Yes\",\n  \"comments\": \"This is a test import of a metric answer\",\n  \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG.json\",\n  \"items\": [\n\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n    {\n      \"id\": 3341237,\n      \"name\": \"Core\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/Core.json\"\n    },\n    {\n      \"id\": 3094885,\n      \"name\": \"Company Report Available\",\n      \"type\": \"Metric Title\",\n      \"url\": \"https://staging.wikirate.org/Company_Report_Available.json\"\n    },\n    {\n      \"id\": 7217,\n      \"name\": \"Adidas AG\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/Adidas_AG.json\"\n    },\n    {\n      \"id\": 8200409,\n      \"name\": \"2022\",\n      \"type\": \"Year\",\n      \"url\": \"https://staging.wikirate.org/2022.json\"\n    },\n    {\n      \"id\": 3094828,\n      \"name\": \"Core+Company Report Available\",\n      \"type\": \"Metric\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available.json\"\n    },\n    {\n      \"id\": 5621383,\n      \"name\": \"Core+Company Report Available+Adidas AG\",\n      \"type\": \"Record\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG.json\"\n    }\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG+2022\",\n  \"created_at\": \"2023-02-03 18:45:45 UTC\",\n  \"updated_at\": \"2023-02-03 18:45:45 UTC\",\n  \"sources\": [\n    {\n      \"id\": 7269817,\n      \"name\": \"Source-000104408\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000104408.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/7269818/24831535.pdf\",\n      \"link\": \"https://www.meiji.com/global/sustainability/report_downloads/\",\n      \"report_type\": [\n        \"Sustainability Report\",\n        \"Company Website\",\n        \"Communication on Progress\",\n        \"Corporate Social Responsibility Report\"\n      ],\n      \"title\": \"Download Sustainability Reports\",\n      \"year\": [\n        \"2020\",\n        \"2021\",\n        \"2022\"\n      ]\n    }\n  ],\n  \"checked_by\": {\n    \"id\": null,\n    \"name\": \"Core+Company Report Available+Adidas AG+2022+checked by\",\n    \"type\": \"List\",\n    \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG+2022+checked_by.json\",\n    \"content\": [\n\n    ],\n    \"checks\": 0\n  },\n  \"requested_at\": \"2023-02-03 18:46:40 UTC\"\n}"
+                    "string": "{\n  \"id\": 19615547,\n  \"name\": \"Core+Company Report Available+Adidas AG+2022\",\n  \"type\": \"Answer\",\n  \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG+2022.json\",\n  \"content\": \"\",\n  \"metric\": \"Core+Company Report Available\",\n  \"company\": \"Adidas AG\",\n  \"year\": 2022,\n  \"value\": \"Yes\",\n  \"comments\": \"This is a test import of a metric answer\",\n  \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG.json\",\n  \"sources\": [\n    {\n      \"id\": 7269817,\n      \"name\": \"Source-000104408\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000104408.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/7269818/24831535.pdf\",\n      \"link\": \"https://www.meiji.com/global/sustainability/report_downloads/\",\n      \"report_type\": [\n        \"Sustainability Report\",\n        \"Company Website\",\n        \"Communication on Progress\",\n        \"Corporate Social Responsibility Report\"\n      ],\n      \"title\": \"Download Sustainability Reports\",\n      \"year\": [\n        \"2020\",\n        \"2021\",\n        \"2022\"\n      ]\n    }\n  ],\n  \"checked_by\": [\n\n  ],\n  \"requested_at\": \"2024-09-03 10:39:39 UTC\",\n  \"license\": \"Wikirate.org, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0). See https://staging.wikirate.org/Attribution_Guide.\"\n}"
                 }
             }
         }

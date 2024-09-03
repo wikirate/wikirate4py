@@ -8,7 +8,7 @@
                 "body": "limit=10",
                 "headers": {
                     "User-Agent": [
-                        "python-requests/2.25.1"
+                        "python-requests/2.32.3"
                     ],
                     "Accept-Encoding": [
                         "gzip, deflate"
@@ -33,61 +33,61 @@
                     "message": "OK"
                 },
                 "headers": {
-                    "Status": [
-                        "200 OK"
+                    "ETag": [
+                        "W/\"e963167782c79deedd25c3ebc2e913b9\""
                     ],
-                    "Date": [
-                        "Fri, 03 Feb 2023 18:20:53 GMT"
-                    ],
-                    "Cache-Control": [
-                        "max-age=0, private, must-revalidate"
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
                     ],
                     "Access-Control-Allow-Origin": [
                         "*",
                         "*"
                     ],
-                    "Set-Cookie": [
-                        "_wikirate_session=RlY4NDZYTEtiU2tsaFlRTXdvZFZGeG0wa3VlYURNeTdXUE5STE9TRTdYSEJScVRiRHNkMTIzMGk0M1lVVHpQeVhkai9weTJBNXhYVVpFSzlXYkN2ck1raWI4UlJObmJleTZDZDBBVEdxNUQwdTF6MXU4WlZaWVpSd0FoR3B4TGctLXIralRZSTZzamhoc2JmOU85SjVpTnc9PQ%3D%3D--70ed9ed80449131e0a4ff46d1b5245e18551ec11; path=/; HttpOnly"
-                    ],
-                    "X-Powered-By": [
-                        "Phusion Passenger(R) 6.0.12"
+                    "X-Runtime": [
+                        "4.469261"
                     ],
                     "Content-Disposition": [
-                        "attachment; filename=\"WikiRate-2023_02_03_182053-Project.json\""
-                    ],
-                    "Server": [
-                        "Apache/2.4.41 (Ubuntu) Phusion_Passenger/6.0.12 OpenSSL/1.1.1f"
+                        "attachment; filename=\"WikiRate-2024_09_03_103916-Project.json\""
                     ],
                     "X-Frame-Options": [
                         "ALLOWALL"
                     ],
-                    "Content-Type": [
-                        "text/json; charset=utf-8"
+                    "Set-Cookie": [
+                        "_wikirate_session=VzdiOUFtV2h3NExscUxRVndqRkRheWxaVUpjMVhOR0hsY3hWVU5LZUxrMEE4akpZQ0JJUlo3MUpDcWZaRDM1bUFydFhlMG8rNjMvWGd2TTZVemFEcWhZQ0RBUFVNV3pSYTJMQjUzQ21acVdPNzVWbTBZWDdXT0tNcEJkeFdJZjItLTVJQXBCZW1LNE5hQ1U2NWJFb2ZCWFE9PQ%3D%3D--a5453f84b9bd91458addaaf1e9c4648e82b377bb; path=/; HttpOnly"
                     ],
-                    "X-Request-Id": [
-                        "1dd38515-3eae-41af-ac0d-01464ea88b6b"
-                    ],
-                    "ETag": [
-                        "W/\"4d4a927e71da9ae9924596caa304a17b\""
-                    ],
-                    "X-Runtime": [
-                        "0.088801"
-                    ],
-                    "Keep-Alive": [
-                        "timeout=5, max=100"
+                    "Cache-Control": [
+                        "max-age=0, private, must-revalidate"
                     ],
                     "Transfer-Encoding": [
                         "chunked"
                     ],
+                    "X-Request-Id": [
+                        "9da0c1e5-234f-4427-b7cb-8997c7afeaf6"
+                    ],
+                    "Keep-Alive": [
+                        "timeout=5, max=100"
+                    ],
+                    "vary": [
+                        "Origin"
+                    ],
+                    "Date": [
+                        "Tue, 03 Sep 2024 10:39:16 GMT"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.18"
+                    ],
                     "Connection": [
                         "Keep-Alive"
                     ],
-                    "Vary": [
-                        "Origin"
+                    "Status": [
+                        "200 OK"
+                    ],
+                    "Server": [
+                        "Apache/2.4.52 (Ubuntu) Phusion_Passenger/6.0.18 OpenSSL/3.0.2"
                     ]
                 },
                 "body": {
-                    "string": "{\n  \"id\": 39830,\n  \"name\": \"Project\",\n  \"type\": {\n    \"id\": 5,\n    \"name\": \"Cardtype\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Cardtype.json\",\n    \"codename\": \"cardtype\"\n  },\n  \"url\": \"https://staging.wikirate.org/Projects.json\",\n  \"codename\": \"project\",\n  \"items\": [\n    {\n      \"id\": 13993772,\n      \"name\": \"badge test project\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/badge_test_project.json\"\n    },\n    {\n      \"id\": 13984225,\n      \"name\": \"Research: MSA Renewable Energy Sector\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/Research_MSA_Renewable_Energy_Sector.json\"\n    },\n    {\n      \"id\": 13924205,\n      \"name\": \"Columbia University SIPA Modern Slavery Research 2022\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/Columbia_University_SIPA_Modern_Slavery_Research_2022.json\"\n    },\n    {\n      \"id\": 13923962,\n      \"name\": \"UCONN 2022- Modern Slavery Reseach Project-Energy Sector\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/UCONN_2022_Modern_Slavery_Reseach_Project_Energy_Sector.json\"\n    },\n    {\n      \"id\": 13746784,\n      \"name\": \"Reserach: AMD 2022 - Sustainability Challenges for the Fashion Industry\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/Reserach_AMD_2022_Sustainability_Challenges_for_the_Fashion_Industry.json\"\n    },\n    {\n      \"id\": 13741254,\n      \"name\": \"Mary Baldwin University- SDG 5 Gender Equality\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/Mary_Baldwin_University_SDG_5_Gender_Equality.json\"\n    },\n    {\n      \"id\": 13667836,\n      \"name\": \"UW-La Crosse SDGs Student Assessment\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/UW_La_Crosse_SDGs_Student_Assessment.json\"\n    },\n    {\n      \"id\": 13655799,\n      \"name\": \"Greenhouse gas GHG Emission Scope 1\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/Greenhouse_gas_GHG_Emission_Scope_1.json\"\n    },\n    {\n      \"id\": 13655794,\n      \"name\": \"Scope 1 Greenhouse gas GHG Emission\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/Scope_1_Greenhouse_gas_GHG_Emission.json\"\n    },\n    {\n      \"id\": 13655767,\n      \"name\": \"Greenhouse Gas Emission Scope 1 FY2022\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/Greenhouse_Gas_Emission_Scope_1_FY2022.json\"\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Project\",\n  \"created_at\": \"2015-02-17 16:50:43 UTC\",\n  \"updated_at\": \"2018-03-04 16:41:58 UTC\",\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Project.json?filter%5Bname%5D=&filter%5Bwikirate_status%5D=Active&item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2023-02-03 18:20:53 UTC\",\n  \"license\": \"Creative Commons Attribution-ShareAlike 4.0 International License\"\n}"
+                    "string": "{\n  \"id\": 39830,\n  \"name\": \"Project\",\n  \"type\": {\n    \"id\": 5,\n    \"name\": \"Cardtype\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Cardtype.json\",\n    \"codename\": \"cardtype\"\n  },\n  \"url\": \"https://staging.wikirate.org/Projects.json\",\n  \"codename\": \"project\",\n  \"items\": [\n    {\n      \"id\": 19381823,\n      \"name\": \"Research: University of Sydney 2024-2: ASX 50 Environmental Indicators\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/Research_University_of_Sydney_2024_2_ASX_50_Environmental_Indicators.json\"\n    },\n    {\n      \"id\": 19152026,\n      \"name\": \"Research: Apparel 100 update\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/Research_Apparel_100_update.json\"\n    },\n    {\n      \"id\": 18842596,\n      \"name\": \"Research: Pilot on German Supply Chain Act reports (LksG)\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/Research_Pilot_on_German_Supply_Chain_Act_reports_LksG.json\"\n    },\n    {\n      \"id\": 18820848,\n      \"name\": \"Research: German based companies and human rights\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/Research_German_based_companies_and_human_rights.json\"\n    },\n    {\n      \"id\": 18818772,\n      \"name\": \"Nottingham University 2024 - Modern Slavery Research\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/Nottingham_University_2024_Modern_Slavery_Research.json\"\n    },\n    {\n      \"id\": 18818653,\n      \"name\": \"University of Gloucestershire 2024 - Modern Slavery Research\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/University_of_Gloucestershire_2024_Modern_Slavery_Research.json\"\n    },\n    {\n      \"id\": 18777902,\n      \"name\": \"Research: MSA Investors in Electronics\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/Research_MSA_Investors_in_Electronics.json\"\n    },\n    {\n      \"id\": 18115557,\n      \"name\": \"Research: MSA EV companies\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/Research_MSA_EV_companies.json\"\n    },\n    {\n      \"id\": 18006257,\n      \"name\": \"Research: Germany-based companies SDGs (5,7,8,13)\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/Research_Germany_based_companies_SDGs_5_7_8_13.json\"\n    },\n    {\n      \"id\": 17712692,\n      \"name\": \"Research: Companies in the Food and Beverages 2024\",\n      \"type\": \"Project\",\n      \"url\": \"https://staging.wikirate.org/Research_Companies_in_the_Food_and_Beverages_2024.json\"\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Project\",\n  \"created_at\": \"2015-02-17 16:50:43 UTC\",\n  \"updated_at\": \"2023-06-15 13:33:26 UTC\",\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Project.json?filter%5Bname%5D=&filter%5Bwikirate_status%5D=Active&item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2024-09-03 10:39:20 UTC\",\n  \"license\": \"Wikirate.org, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0). See https://staging.wikirate.org/Attribution_Guide.\"\n}"
                 }
             }
         }

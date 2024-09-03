@@ -1,0 +1,95 @@
+{
+    "version": 1,
+    "interactions": [
+        {
+            "request": {
+                "method": "GET",
+                "uri": "https://staging.wikirate.org/Commons+Supplier_of+Relationship_Answer.json",
+                "body": "limit=10",
+                "headers": {
+                    "User-Agent": [
+                        "python-requests/2.32.3"
+                    ],
+                    "Accept-Encoding": [
+                        "gzip, deflate"
+                    ],
+                    "Accept": [
+                        "*/*"
+                    ],
+                    "Connection": [
+                        "keep-alive"
+                    ],
+                    "Content-Length": [
+                        "8"
+                    ],
+                    "Content-Type": [
+                        "application/x-www-form-urlencoded"
+                    ]
+                }
+            },
+            "response": {
+                "status": {
+                    "code": 200,
+                    "message": "OK"
+                },
+                "headers": {
+                    "Access-Control-Allow-Origin": [
+                        "*",
+                        "*"
+                    ],
+                    "Cache-Control": [
+                        "max-age=0, private, must-revalidate"
+                    ],
+                    "Server": [
+                        "Apache/2.4.52 (Ubuntu) Phusion_Passenger/6.0.18 OpenSSL/3.0.2"
+                    ],
+                    "X-Request-Id": [
+                        "e6ca4fc6-8d82-4163-bce9-de95ba055f12"
+                    ],
+                    "ETag": [
+                        "W/\"8e8f81305b6da40cea7f7f7d0591408b\""
+                    ],
+                    "Status": [
+                        "200 OK"
+                    ],
+                    "Content-Disposition": [
+                        "attachment; filename=\"WikiRate-2024_09_03_111947-Commons+Supplier_of+Relationship_Answer.json\""
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "X-Runtime": [
+                        "0.422067"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
+                    "Connection": [
+                        "Keep-Alive"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Keep-Alive": [
+                        "timeout=5, max=100"
+                    ],
+                    "vary": [
+                        "Origin"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.18"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=azArRG1aNWxVazZ0Zi9zbGh3SEdISUVoTUttWmV0RE91aE1mMlhLakdnUnoyZ2hSamsvOXkzUFNaRGRrWkdoRUYvbmMzSzJiQVhkK2hqd29DZ0UvRUI4Yk5wT1E0dnkwWDdaVjUyTGNQZ1lETktPbzJ5MEV6eTZKZTNHOHhyMG4tLXFXVUNuUXQzNVZnM0ZQUHN4Mnd3RkE9PQ%3D%3D--8b6877eedf6ddacfd85a029ada4ce8271ad90c98; path=/; HttpOnly"
+                    ],
+                    "Date": [
+                        "Tue, 03 Sep 2024 11:19:47 GMT"
+                    ]
+                },
+                "body": {
+                    "string": "{\n  \"id\": null,\n  \"name\": \"Commons+Supplier of+Relationship Answer\",\n  \"type\": {\n    \"id\": 30,\n    \"name\": \"Search\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Search.json\",\n    \"codename\": \"search_type\"\n  },\n  \"url\": \"https://staging.wikirate.org/Commons+Supplier_of+Relationship_Answer.json\",\n  \"content\": \"\",\n  \"items\": [\n    {\n      \"id\": 2929029,\n      \"name\": \"Commons+Supplied By+H&M+2017+ASIAN FABRICX PRIVATE LIMITED; M&#47;S\",\n      \"type\": \"Relationship Answer\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+H_M+2017+ASIAN_FABRICX_PRIVATE_LIMITED_M_S.json\",\n      \"content\": \"\",\n      \"year\": 2017,\n      \"value\": \"Tier 1 Supplier\",\n      \"metric_id\": 2929009,\n      \"inverse_metric_id\": 2929015,\n      \"subject_company_id\": 5590,\n      \"object_company_id\": 2929021,\n      \"import\": false,\n      \"comments\": \"\",\n      \"subject_company\": \"H&M\",\n      \"object_company\": \"ASIAN FABRICX PRIVATE LIMITED; M&#47;S\"\n    },\n    {\n      \"id\": 2929036,\n      \"name\": \"Commons+Supplied By+H&M+2017+DAKOTA IND. CO. LTD.\",\n      \"type\": \"Relationship Answer\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+H_M+2017+DAKOTA_IND_CO_LTD.json\",\n      \"content\": \"\",\n      \"year\": 2017,\n      \"value\": \"Tier 1 Supplier\",\n      \"metric_id\": 2929009,\n      \"inverse_metric_id\": 2929015,\n      \"subject_company_id\": 5590,\n      \"object_company_id\": 2929035,\n      \"import\": false,\n      \"comments\": \"\",\n      \"subject_company\": \"H&M\",\n      \"object_company\": \"DAKOTA IND. CO. LTD.\"\n    },\n    {\n      \"id\": 2929043,\n      \"name\": \"Commons+Supplied By+H&M+2017+ZHEJIANG ZHONGDA NEWTEX CO LTD\",\n      \"type\": \"Relationship Answer\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+H_M+2017+ZHEJIANG_ZHONGDA_NEWTEX_CO_LTD.json\",\n      \"content\": \"\",\n      \"year\": 2017,\n      \"value\": \"Tier 1 Supplier\",\n      \"metric_id\": 2929009,\n      \"inverse_metric_id\": 2929015,\n      \"subject_company_id\": 5590,\n      \"object_company_id\": 2929042,\n      \"import\": false,\n      \"comments\": \"\",\n      \"subject_company\": \"H&M\",\n      \"object_company\": \"ZHEJIANG ZHONGDA NEWTEX CO LTD\"\n    },\n    {\n      \"id\": 2929050,\n      \"name\": \"Commons+Supplied By+H&M+2017+Suzhou Licheng Silk Co.Ltd\",\n      \"type\": \"Relationship Answer\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+H_M+2017+Suzhou_Licheng_Silk_Co_Ltd.json\",\n      \"content\": \"\",\n      \"year\": 2017,\n      \"value\": \"Tier 2 Supplier\",\n      \"metric_id\": 2929009,\n      \"inverse_metric_id\": 2929015,\n      \"subject_company_id\": 5590,\n      \"object_company_id\": 2929049,\n      \"import\": false,\n      \"comments\": \"\",\n      \"subject_company\": \"H&M\",\n      \"object_company\": \"Suzhou Licheng Silk Co.Ltd\"\n    },\n    {\n      \"id\": 2929057,\n      \"name\": \"Commons+Supplied By+H&M+2017+KunShan Newwide\",\n      \"type\": \"Relationship Answer\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+H_M+2017+KunShan_Newwide.json\",\n      \"content\": \"\",\n      \"year\": 2017,\n      \"value\": \"Tier 2 Supplier\",\n      \"metric_id\": 2929009,\n      \"inverse_metric_id\": 2929015,\n      \"subject_company_id\": 5590,\n      \"object_company_id\": 2929056,\n      \"import\": false,\n      \"comments\": \"\",\n      \"subject_company\": \"H&M\",\n      \"object_company\": \"KunShan Newwide\"\n    },\n    {\n      \"id\": 2929064,\n      \"name\": \"Commons+Supplied By+H&M+2017+C SITE TRADING CO . LTD\",\n      \"type\": \"Relationship Answer\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+H_M+2017+C_SITE_TRADING_CO_LTD.json\",\n      \"content\": \"\",\n      \"year\": 2017,\n      \"value\": \"Tier 1 Supplier\",\n      \"metric_id\": 2929009,\n      \"inverse_metric_id\": 2929015,\n      \"subject_company_id\": 5590,\n      \"object_company_id\": 2929063,\n      \"import\": false,\n      \"comments\": \"\",\n      \"subject_company\": \"H&M\",\n      \"object_company\": \"C SITE TRADING CO . LTD\"\n    },\n    {\n      \"id\": 2929071,\n      \"name\": \"Commons+Supplied By+H&M+2017+Siris- Huashen Textile Co. Ltd.\",\n      \"type\": \"Relationship Answer\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+H_M+2017+Siris_Huashen_Textile_Co_Ltd.json\",\n      \"content\": \"\",\n      \"year\": 2017,\n      \"value\": \"Tier 2 Supplier\",\n      \"metric_id\": 2929009,\n      \"inverse_metric_id\": 2929015,\n      \"subject_company_id\": 5590,\n      \"object_company_id\": 2929070,\n      \"import\": false,\n      \"comments\": \"\",\n      \"subject_company\": \"H&M\",\n      \"object_company\": \"Siris- Huashen Textile Co. Ltd.\"\n    },\n    {\n      \"id\": 2929078,\n      \"name\": \"Commons+Supplied By+H&M+2017+Foshan sanshui Takhingshing Textile Co.Ltd\",\n      \"type\": \"Relationship Answer\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+H_M+2017+Foshan_sanshui_Takhingshing_Textile_Co_Ltd.json\",\n      \"content\": \"\",\n      \"year\": 2017,\n      \"value\": \"Tier 2 Supplier\",\n      \"metric_id\": 2929009,\n      \"inverse_metric_id\": 2929015,\n      \"subject_company_id\": 5590,\n      \"object_company_id\": 2929077,\n      \"import\": false,\n      \"comments\": \"\",\n      \"subject_company\": \"H&M\",\n      \"object_company\": \"Foshan sanshui Takhingshing Textile Co.Ltd\"\n    },\n    {\n      \"id\": 2929085,\n      \"name\": \"Commons+Supplied By+H&M+2017+SHANGHAI DONGLONG FEATHER MANUFACTURE CO.LTD.\",\n      \"type\": \"Relationship Answer\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+H_M+2017+SHANGHAI_DONGLONG_FEATHER_MANUFACTURE_CO_LTD.json\",\n      \"content\": \"\",\n      \"year\": 2017,\n      \"value\": \"Tier 1 Supplier\",\n      \"metric_id\": 2929009,\n      \"inverse_metric_id\": 2929015,\n      \"subject_company_id\": 5590,\n      \"object_company_id\": 2929084,\n      \"import\": false,\n      \"comments\": \"\",\n      \"subject_company\": \"H&M\",\n      \"object_company\": \"SHANGHAI DONGLONG FEATHER MANUFACTURE CO.LTD.\"\n    },\n    {\n      \"id\": 2929092,\n      \"name\": \"Commons+Supplied By+H&M+2017+BALMID ASIA LTD\",\n      \"type\": \"Relationship Answer\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+H_M+2017+BALMID_ASIA_LTD.json\",\n      \"content\": \"\",\n      \"year\": 2017,\n      \"value\": \"Tier 1 Supplier\",\n      \"metric_id\": 2929009,\n      \"inverse_metric_id\": 2929015,\n      \"subject_company_id\": 5590,\n      \"object_company_id\": 2929091,\n      \"import\": false,\n      \"comments\": \"\",\n      \"subject_company\": \"H&M\",\n      \"object_company\": \"BALMID ASIA LTD\"\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n    {\n      \"id\": 3411173,\n      \"name\": \"Commons\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/Commons.json\"\n    },\n    {\n      \"id\": 2929014,\n      \"name\": \"Supplier of\",\n      \"type\": \"Metric Title\",\n      \"url\": \"https://staging.wikirate.org/Supplier_of.json\"\n    },\n    {\n      \"id\": 2534606,\n      \"name\": \"Relationship Answer\",\n      \"type\": \"Cardtype\",\n      \"url\": \"https://staging.wikirate.org/Relationship_Answer.json\",\n      \"codename\": \"relationship_answer\"\n    },\n    {\n      \"id\": 2929015,\n      \"name\": \"Commons+Supplier of\",\n      \"type\": \"Metric\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplier_of.json\",\n      \"codename\": \"commons_supplier_of\"\n    }\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Commons+Supplier_of+Relationship_Answer\",\n  \"created_at\": null,\n  \"updated_at\": null,\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Commons+Supplier_of+Relationship_Answer.json?filter%5Bmetric_keyword%5D=&item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2024-09-03 11:19:48 UTC\",\n  \"license\": \"Wikirate.org, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0). See https://staging.wikirate.org/Attribution_Guide.\"\n}"
+                }
+            }
+        }
+    ]
+}
