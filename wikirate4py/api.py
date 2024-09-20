@@ -48,6 +48,14 @@ def objectify(wikirate_obj, list=False):
     return decorator
 
 
+def construct_endpoint(entity_id, entity_type):
+    if entity_id is not None:
+        prefix = f"~{entity_id}" if entity_id.isdigit() else generate_url_key(entity_id)
+        endpoint = f"{prefix}+{entity_type}.json"
+    else:
+        endpoint = f"{entity_type}.json"
+    return endpoint
+
 class API(object):
     allowed_methods = ['post', 'get', 'delete']
     content_type_specified = True
@@ -116,12 +124,18 @@ class API(object):
             if k in filters:
                 if k == 'value_from' or k == 'value_to':
                     params['filter[value]' + '[' + re.sub(r'.*_', '', k) + ']'] = str(arg)
-                elif k in ['subject_company_name', 'object_company_name', 'object_company_id', 'subject_company_id']:
+                elif k in ['subject_company_name', 'object_company_name', 'object_company_id', 'subject_company_id',
+                           'company']:
                     params['filter[' + k + '][]'] = arg if isinstance(arg, str) else arg
                 elif k == 'company_identifier':
                     params[f"filter[company_identifier[value]]"] = ', '.join(arg) if isinstance(arg, list) else str(arg)
                 else:
-                    params['filter[' + k + ']'] = str(arg)
+                    if isinstance(arg, list):
+                        for item in arg:
+                            params.setdefault('filter[' + k + '][]', []).append(
+                                f'~{item}' if isinstance(item, int) and k != 'year' else f'{item}')
+                    else:
+                        params['filter[' + k + ']'] = f'~{arg}' if isinstance(arg, int) and k != 'value' else f'{arg}'
             else:
                 params[k] = str(arg)
         log.debug("PARAMS: %r", params)
@@ -171,12 +185,10 @@ class API(object):
         if isinstance(identifier, int):
             return self.get("/~{0}.json".format(identifier))
         else:
-            return self.get("/{0}.json".format(
-                identifier.replace(',', ' ').replace('.', ' ').replace('/', ' ').replace('-', ' ').strip().replace(" ",
-                                                                                                                   "_")))
+            return self.get(f"/{generate_url_key(identifier)}.json")
 
     @objectify(CompanyItem, list=True)
-    def get_companies(self, **kwargs):
+    def get_companies(self, entity=None, **kwargs):
         """get_companies(*, offset, limit)
 
         Returns a list of Wikirate Companies
@@ -193,30 +205,11 @@ class API(object):
             :py:class:`List`\[:class:`~wikirate4py.models.CompanyItem`]
 
         """
-        return self.get("/Company.json", endpoint_params=('limit', 'offset'),
+        endpoint = construct_endpoint(entity_id=entity, entity_type="Companies")
+        print(endpoint)
+
+        return self.get(f"/{endpoint}", endpoint_params=('limit', 'offset'),
                         filters=('name', 'company_category', 'company_group', 'country', 'company_identifier'),
-                        **kwargs)
-
-    @objectify(CompanyItem, list=True)
-    def get_companies_of(self, identifier, **kwargs):
-        """get_companies(*, offset, limit)
-
-        Returns a list of Wikirate Companies
-
-        Parameters
-        ----------
-        offset
-            default value 0, the (zero-based) offset of the first item in the collection to return
-        limit
-            default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
-
-        Returns
-        -------
-            :py:class:`List`\[:class:`~wikirate4py.models.CompanyItem`]
-
-        """
-        return self.get("/~{0}+companies.json".format(identifier), endpoint_params=('limit', 'offset'),
-                        filters=('name', 'company_category', 'company_group', 'country'),
                         **kwargs)
 
     @objectify(Topic)
@@ -291,7 +284,7 @@ class API(object):
             return self.get("/{0}+{1}.json".format(metric_designer.replace(" ", "_"), metric_name.replace(" ", "_")))
 
     @objectify(MetricItem, list=True)
-    def get_metrics(self, **kwargs):
+    def get_metrics(self, entity=None, **kwargs):
         """get_metrics(*, offset, limit)
 
         Returns a list of Wikirate Metrics
@@ -308,35 +301,10 @@ class API(object):
             :py:class:`List`\[:class:`~wikirate4py.models.MetricItem`]
 
         """
-        return self.get("/Metrics.json", endpoint_params=('limit', 'offset'), filters=(
-            'name', 'bookmark', 'wikirate_topic', 'designer', 'published', 'metric_type', 'value_type',
-            'metric_keyword',
-            'research_policy', 'metric_keyword',
-            'dataset'), **kwargs)
-
-    @objectify(MetricItem, list=True)
-    def get_metrics_of(self, identifier, **kwargs):
-        """get_metrics(*, offset, limit)
-
-        Returns a list of Wikirate Metrics
-
-        Parameters
-        ----------
-        offset
-            default value 0, the (zero-based) offset of the first item in the collection to return
-        limit
-            default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
-
-        Returns
-        -------
-            :py:class:`List`\[:class:`~wikirate4py.models.MetricItem`]
-
-        """
-
-        return self.get("/~{0}+Metrics.json".format(identifier), endpoint_params=('limit', 'offset'), filters=(
-            'name', 'bookmark', 'wikirate_topic', 'designer', 'published', 'metric_type', 'value_type',
-            'research_policy',
-            'dataset'), **kwargs)
+        endpoint = construct_endpoint(entity_id=entity, entity_type="Metrics")
+        return self.get(f"{endpoint}", endpoint_params=('limit', 'offset'), filters=(
+            'bookmark', 'topic', 'designer', 'published', 'metric_type', 'value_type',
+            'metric_keyword', 'research_policy', 'dataset'), **kwargs)
 
     @objectify(ResearchGroup)
     def get_research_group(self, identifier):
@@ -463,7 +431,7 @@ class API(object):
             filter sources where their title match fully or partially the given string
         report_type
             filter sources based on the report type
-        wikirate_topic
+        topic
             filter sources based on given topic
         wikirate_link
             filter sources where their url matches fully or partially the given string
@@ -473,7 +441,7 @@ class API(object):
             :py:class:`List`\[:class:`~wikirate4py.models.Source`]
         """
         return self.get("/Sources.json", endpoint_params=('limit', 'offset'), filters=(
-            'name', 'wikirate_title', 'wikirate_topic', 'report_type', 'year', 'wikirate_link', 'company_name'),
+            'name', 'wikirate_title', 'topic', 'report_type', 'year', 'wikirate_link', 'company_name'),
                         **kwargs)
 
     @objectify(Answer)
@@ -498,16 +466,21 @@ class API(object):
         return self.get(f"/{url_key}.json")
 
     @objectify(AnswerItem, True)
-    def get_answers(self, entity, **kwargs):
-        """get_answers(entity, *, offset, limit, year, status, company_group, country, company_id, company_identifier,
-            value, value_from, value_to, updated, updater, designer, outliers, source, verification, project,
-            bookmark, view)
+    def get_answers(self, metric_name=None, metric_designer=None, identifier=None, **kwargs):
+        """get_answers(metric_name, metric_designer, identifier, *, offset, limit, year, status, company_group, country,
+            company_id, company_identifier, value, value_from, value_to, updated, updater, designer, outliers, source,
+            verification, project, bookmark, view, published, sort_dir, sort_by)
 
         Returns a list of Wikirate Answers by entity (it can be metric name/id, dataset name/id, company name/id or source name/id)
 
         Parameters
         ----------
-        entity
+        metric_name
+            name of relationship metric
+        metric_designer
+            name of relationship metric designer
+
+        identifier
             numeric wikirate identifier or alphanumeric wikirate entity name for instance: Adidas_AG,
 
         offset
@@ -528,11 +501,11 @@ class API(object):
         country
             country name, restricts to answers with companies located in the specified country
 
-        company_id
+        company
             wikirate company identifier, restricts to answers of the defined company
 
         company_identifier
-            filter by any other known company identifier such as ISIN, LEI, OpenCorporates ID,
+            filter by any other known global company identifier such as ISIN, LEI, OpenCorporates ID,
             restricts to answers of the defined company
 
         company_name
@@ -581,109 +554,18 @@ class API(object):
         -------
         :py:class:`List`\[:class:`~wikirate4py.models.AnswerItem`]
         """
-        url_key = generate_url_key(entity) if isinstance(entity, str) else f"~{entity}"
+        if metric_name is not None and metric_designer is not None:
+            endpoint = construct_endpoint(entity_id=f"{metric_designer}+{metric_name}", entity_type="Answers")
+        else:
+            endpoint = construct_endpoint(entity_id=identifier, entity_type="Answers")
 
-        return self.get(f"/{url_key}+Answer.json", endpoint_params=('limit', 'offset', 'view'),
+        return self.get(f"/{endpoint}", endpoint_params=('limit', 'offset', 'view'),
                         filters=('year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to',
-                                 'updated', 'company_id', 'company_name', 'dataset', 'updater', 'outliers', 'source',
-                                 'verification', 'bookmark', 'published', 'metric_name', 'designer', 'metric_type',
-                                 'company_identifier', 'sort_by', 'sort_dir'),
+                                 'updated', 'company', 'company_name', 'dataset', 'updater', 'outliers', 'source',
+                                 'verification', 'bookmark', 'published', 'metric_name', 'metric_keyword', 'designer',
+                                 'metric_type',
+                                 'company_identifier', 'metric', 'sort_by', 'sort_dir'),
                         **kwargs)
-
-    @objectify(AnswerItem, True)
-    def get_metric_answers(self, metric_name, metric_designer, **kwargs):
-        """get_metric_answers(metric_name, metric_designer, *, company_name, company_id, offset, limit, year, status,
-        company_group, country, value, value_from, value_to, updated, updater, outliers, source, verification, project,
-        bookmark)
-
-        Returns a list of Wikirate Answers
-
-        Parameters
-        ----------
-        metric_name
-            name of relationship metric
-        metric_designer
-            name of relationship metric designer
-
-        company_name
-            restrict the answers based on the given company
-
-        company_id
-            restrict the answers based on the given company
-
-        offset
-            default value 0, the (zero-based) offset of the first item in the collection to return
-
-        limit
-            default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
-
-        year
-            answer year
-
-        status
-            `all`, `exists` (researched), `known`, `unknown`, or `none` (not researched)
-
-        company_group
-            company group name, restricts to answers with companies belonging in the specified company group
-
-        country
-            country name, restricts to answers with companies located in the specified country
-
-        value
-            answer value to match
-
-        value_from
-            restricts to answers with value greater than equal the specified value
-
-        value_to
-            restricts to answers with value less than equal the specified value
-
-        updated
-            `today`, `week` (this week), `month` (this month)
-
-        updater
-            - `wikirate_team`, restricts to answers updated by the Wikirate team
-            - `current_user`, restricts to answers updated by you
-
-        outliers
-            get either `only` answers considered as outliers or get answers after `exclude` the outliers
-
-        source
-            source name, restricts to answers citing the specified source
-
-        verification
-            restricts to answers mapped to the defined verification level:
-                - `steward_added`: answers added by account with "steward" status
-                - `flagged`: answers which have been flagged by the Researcher adding the answer to request verification
-                - `community_added`: answers added by community members (e.g. students / volunteers)
-                - `community_verified`: answers verified by community members (e.g. students / volunteers)
-                - `steward_verified`: answers verified by account with "steward" status
-                - `current_user`: answers verified by you
-                - `wikirate_team`: answers verified by Wikirate team
-
-        project
-            project name, restrict to answers connected to the specified Wikirate project
-
-        bookmark
-            - `bookmark`, restrict to answers you have bookmarked
-            - `nobookmark`, restrict to answers you have not bookmarked
-        published
-            - `true`, returns only published answers (default mode)
-            - `false`, returns only unpublished answers
-            - `all`, returns all published and unpublished answers
-
-
-        Returns
-        -------
-            :py:class:`List`\[:class:`~wikirate4py.models.AnswerItem`]
-
-        """
-        return self.get(
-            "/{0}+{1}+Answer.json".format(metric_designer.replace(" ", "_"), metric_name.replace(" ", "_")),
-            endpoint_params=('limit', 'offset'),
-            filters=('year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to', 'updated',
-                     'company_id', 'company_name', 'dataset', 'updater', 'outliers', 'source', 'verification',
-                     'company_identifier', 'bookmark', 'published', 'view'), **kwargs)
 
     @objectify(RelationshipAnswer)
     def get_relationship_answer(self, identifier):
@@ -962,7 +844,7 @@ class API(object):
             :py:class:`List`\[:class:`~wikirate4py.models.DatasetItem`]
 
         """
-        return self.get("/Data_sets.json", endpoint_params=('limit', 'offset'), filters=('name', 'wikirate_topic'),
+        return self.get("/Data_sets.json", endpoint_params=('limit', 'offset'), filters=('name', 'topic'),
                         **kwargs)
 
     @objectify(RegionItem, True)
