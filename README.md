@@ -1,13 +1,8 @@
 # Wikirate4py: Wikirate for Python!
 
-![PyPI](https://img.shields.io/pypi/v/wikirate4py?label=PyPI)
-[PyPI](https://pypi.org/project/wikirate4py/)
-
-![Python](https://img.shields.io/pypi/pyversions/wikirate4py?label=Python)
-[PyPI](https://pypi.org/project/wikirate4py/)
-
-![ReadTheDocs](https://readthedocs.org/projects/wikirate4py/badge/?version=latest)
-[ReadTheDocs](https://wikirate4py.readthedocs.io/en/latest/)
+[![PyPI](https://img.shields.io/pypi/v/wikirate4py?label=PyPI)](https://pypi.org/project/wikirate4py/) 
+[![Python](https://img.shields.io/pypi/pyversions/wikirate4py?label=Python)](https://pypi.org/project/wikirate4py/) 
+[![ReadTheDocs](https://readthedocs.org/projects/wikirate4py/badge/?version=latest)](https://wikirate4py.readthedocs.io/en/latest/)
 
 - Official [Wikirate](https://wikirate.org)'s wrapper for Python
 - Full Documentation: https://wikirate4py.readthedocs.io/
