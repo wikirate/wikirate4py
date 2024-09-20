@@ -5,7 +5,7 @@ VERSION_FILE = "wikirate4py/__init__.py"
 with open(VERSION_FILE) as version_file:
     match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]",
                       version_file.read(), re.MULTILINE)
-with open('README.rst') as readme_file:
+with open('README.md') as readme_file:
     readme = readme_file.read()
 
 if match:
@@ -28,7 +28,7 @@ setup(name='wikirate4py',
       author='Vasiliki Gkatziaki',
       author_email='vasso@wikirate.org',
       license='GPL-3.0',
-      download_url='https://github.com/wikirate/wikirate4py/archive/refs/tags/v1.2.7.tar.gz',
+      download_url='https://github.com/wikirate/wikirate4py/archive/refs/tags/v1.2.8.tar.gz',
       packages=find_packages(exclude=["tests", "examples"]),
       install_requires=[
           "requests",
