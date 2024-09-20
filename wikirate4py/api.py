@@ -56,6 +56,7 @@ def construct_endpoint(entity_id, entity_type):
         endpoint = f"{entity_type}.json"
     return endpoint
 
+
 class API(object):
     allowed_methods = ['post', 'get', 'delete']
     content_type_specified = True
@@ -188,7 +189,7 @@ class API(object):
             return self.get(f"/{generate_url_key(identifier)}.json")
 
     @objectify(CompanyItem, list=True)
-    def get_companies(self, entity=None, **kwargs):
+    def get_companies(self, identifier=None, **kwargs):
         """get_companies(*, offset, limit)
 
         Returns a list of Wikirate Companies
@@ -205,8 +206,7 @@ class API(object):
             :py:class:`List`\[:class:`~wikirate4py.models.CompanyItem`]
 
         """
-        endpoint = construct_endpoint(entity_id=entity, entity_type="Companies")
-        print(endpoint)
+        endpoint = construct_endpoint(entity_id=identifier, entity_type="Companies")
 
         return self.get(f"/{endpoint}", endpoint_params=('limit', 'offset'),
                         filters=('name', 'company_category', 'company_group', 'country', 'company_identifier'),
@@ -284,7 +284,7 @@ class API(object):
             return self.get("/{0}+{1}.json".format(metric_designer.replace(" ", "_"), metric_name.replace(" ", "_")))
 
     @objectify(MetricItem, list=True)
-    def get_metrics(self, entity=None, **kwargs):
+    def get_metrics(self, identifier=None, **kwargs):
         """get_metrics(*, offset, limit)
 
         Returns a list of Wikirate Metrics
@@ -301,8 +301,8 @@ class API(object):
             :py:class:`List`\[:class:`~wikirate4py.models.MetricItem`]
 
         """
-        endpoint = construct_endpoint(entity_id=entity, entity_type="Metrics")
-        return self.get(f"{endpoint}", endpoint_params=('limit', 'offset'), filters=(
+        endpoint = construct_endpoint(entity_id=identifier, entity_type="Metrics")
+        return self.get(f"/{endpoint}", endpoint_params=('limit', 'offset'), filters=(
             'bookmark', 'topic', 'designer', 'published', 'metric_type', 'value_type',
             'metric_keyword', 'research_policy', 'dataset'), **kwargs)
 
@@ -926,7 +926,7 @@ class API(object):
         if entity is Company:
             return self.get_companies(name=name, **kwargs)
         elif entity is Metric:
-            return self.get_metrics(name=name, **kwargs)
+            return self.get_metrics(metric_keyword=name, **kwargs)
         elif entity is Topic:
             return self.get_topics(name=name, **kwargs)
         elif entity is CompanyGroup:
