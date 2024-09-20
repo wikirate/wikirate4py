@@ -1,0 +1,95 @@
+{
+    "version": 1,
+    "interactions": [
+        {
+            "request": {
+                "method": "GET",
+                "uri": "https://staging.wikirate.org/ShareAction_Workforce_Insights_Data+Answers.json",
+                "body": "limit=10",
+                "headers": {
+                    "User-Agent": [
+                        "python-requests/2.32.3"
+                    ],
+                    "Accept-Encoding": [
+                        "gzip, deflate"
+                    ],
+                    "Accept": [
+                        "*/*"
+                    ],
+                    "Connection": [
+                        "keep-alive"
+                    ],
+                    "Content-Length": [
+                        "8"
+                    ],
+                    "Content-Type": [
+                        "application/x-www-form-urlencoded"
+                    ]
+                }
+            },
+            "response": {
+                "status": {
+                    "code": 200,
+                    "message": "OK"
+                },
+                "headers": {
+                    "Connection": [
+                        "Keep-Alive"
+                    ],
+                    "Cache-Control": [
+                        "max-age=0, private, must-revalidate"
+                    ],
+                    "Date": [
+                        "Fri, 20 Sep 2024 15:46:48 GMT"
+                    ],
+                    "Server": [
+                        "Apache/2.4.52 (Ubuntu) Phusion_Passenger/6.0.18 OpenSSL/3.0.2"
+                    ],
+                    "Content-Disposition": [
+                        "attachment; filename=\"Wikirate-2024_09_20_154648-ShareAction_Workforce_Insights_Data+Answers.json\""
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.18"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=OTVsNEZRNlA3dDlEMkJMNDdTT25kT0k1RWh0Q29GaDRrVmEwbWtDRHFiN3l3N29lSDF5TVFqQlI3MWRaNzBEenRZWHlpc1YzUUp3TTFxM2FOQzI2NUJBYWJzQUs1OW55NXRXUHloNmpXRUUyU2VRVTFtS1BXYWw5MDZBSk03dS8tLUQ4dHZhclZKM3crWFpMbWhoSndQeVE9PQ%3D%3D--db9a68660dc7ab147625e1a986a39859cb3f6299; path=/; HttpOnly"
+                    ],
+                    "Status": [
+                        "200 OK"
+                    ],
+                    "vary": [
+                        "Origin"
+                    ],
+                    "ETag": [
+                        "W/\"062aed8cbd078a7339b0050a38d23965\""
+                    ],
+                    "Keep-Alive": [
+                        "timeout=5, max=100"
+                    ],
+                    "Access-Control-Allow-Origin": [
+                        "*",
+                        "*"
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
+                    "X-Runtime": [
+                        "21.963517"
+                    ],
+                    "X-Request-Id": [
+                        "e8e3c593-f3df-4731-b500-ffa6dc32cc63"
+                    ]
+                },
+                "body": {
+                    "string": "{\n  \"id\": null,\n  \"name\": \"ShareAction Workforce Insights Data+Answers\",\n  \"type\": {\n    \"id\": 30,\n    \"name\": \"Search\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Search.json\",\n    \"codename\": \"search_type\"\n  },\n  \"url\": \"https://staging.wikirate.org/ShareAction_Workforce_Insights_Data+Answers.json\",\n  \"items\": [\n    {\n      \"id\": 16172024,\n      \"name\": \"ShareAction+Human Rights Due Diligence+ABN Amro+2022\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/ShareAction+Human_Rights_Due_Diligence+ABN_Amro+2022.json\",\n      \"content\": \"\",\n      \"metric\": \"ShareAction+Human Rights Due Diligence\",\n      \"company\": \"ABN Amro\",\n      \"year\": 2022,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/ShareAction+Human_Rights_Due_Diligence+ABN_Amro.json\"\n    },\n    {\n      \"id\": 16172031,\n      \"name\": \"ShareAction+Human Rights Due Diligence+Abrdn plc+2022\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/ShareAction+Human_Rights_Due_Diligence+Abrdn_plc+2022.json\",\n      \"content\": \"\",\n      \"metric\": \"ShareAction+Human Rights Due Diligence\",\n      \"company\": \"Abrdn plc\",\n      \"year\": 2022,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/ShareAction+Human_Rights_Due_Diligence+Abrdn_plc.json\"\n    },\n    {\n      \"id\": 16186346,\n      \"name\": \"ShareAction+Human Rights Due Diligence+Accor+2022\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/ShareAction+Human_Rights_Due_Diligence+Accor+2022.json\",\n      \"content\": \"\",\n      \"metric\": \"ShareAction+Human Rights Due Diligence\",\n      \"company\": \"Accor\",\n      \"year\": 2022,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/ShareAction+Human_Rights_Due_Diligence+Accor.json\"\n    },\n    {\n      \"id\": 16172042,\n      \"name\": \"ShareAction+Human Rights Due Diligence+Adidas AG+2022\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/ShareAction+Human_Rights_Due_Diligence+Adidas_AG+2022.json\",\n      \"content\": \"\",\n      \"metric\": \"ShareAction+Human Rights Due Diligence\",\n      \"company\": \"Adidas AG\",\n      \"year\": 2022,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/ShareAction+Human_Rights_Due_Diligence+Adidas_AG.json\"\n    },\n    {\n      \"id\": 16172049,\n      \"name\": \"ShareAction+Human Rights Due Diligence+Agnico-Eagle Mines Ltd+2022\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/ShareAction+Human_Rights_Due_Diligence+Agnico_Eagle_Mines_Ltd+2022.json\",\n      \"content\": \"\",\n      \"metric\": \"ShareAction+Human Rights Due Diligence\",\n      \"company\": \"Agnico-Eagle Mines Ltd\",\n      \"year\": 2022,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/ShareAction+Human_Rights_Due_Diligence+Agnico_Eagle_Mines_Ltd.json\"\n    },\n    {\n      \"id\": 16172056,\n      \"name\": \"ShareAction+Human Rights Due Diligence+AIA Group+2022\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/ShareAction+Human_Rights_Due_Diligence+AIA_Group+2022.json\",\n      \"content\": \"\",\n      \"metric\": \"ShareAction+Human Rights Due Diligence\",\n      \"company\": \"AIA Group\",\n      \"year\": 2022,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/ShareAction+Human_Rights_Due_Diligence+AIA_Group.json\"\n    },\n    {\n      \"id\": 16186353,\n      \"name\": \"ShareAction+Human Rights Due Diligence+Air Liquide+2022\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/ShareAction+Human_Rights_Due_Diligence+Air_Liquide+2022.json\",\n      \"content\": \"\",\n      \"metric\": \"ShareAction+Human Rights Due Diligence\",\n      \"company\": \"Air Liquide\",\n      \"year\": 2022,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/ShareAction+Human_Rights_Due_Diligence+Air_Liquide.json\"\n    },\n    {\n      \"id\": 16172067,\n      \"name\": \"ShareAction+Human Rights Due Diligence+Analog Devices+2022\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/ShareAction+Human_Rights_Due_Diligence+Analog_Devices+2022.json\",\n      \"content\": \"\",\n      \"metric\": \"ShareAction+Human Rights Due Diligence\",\n      \"company\": \"Analog Devices\",\n      \"year\": 2022,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/ShareAction+Human_Rights_Due_Diligence+Analog_Devices.json\"\n    },\n    {\n      \"id\": 16172071,\n      \"name\": \"ShareAction+Human Rights Due Diligence+Aristocrat Leisure Limited+2022\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/ShareAction+Human_Rights_Due_Diligence+Aristocrat_Leisure_Limited+2022.json\",\n      \"content\": \"\",\n      \"metric\": \"ShareAction+Human Rights Due Diligence\",\n      \"company\": \"Aristocrat Leisure Limited\",\n      \"year\": 2022,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/ShareAction+Human_Rights_Due_Diligence+Aristocrat_Leisure_Limited.json\"\n    },\n    {\n      \"id\": 16172075,\n      \"name\": \"ShareAction+Human Rights Due Diligence+Aroundtown SA+2022\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/ShareAction+Human_Rights_Due_Diligence+Aroundtown_SA+2022.json\",\n      \"content\": \"\",\n      \"metric\": \"ShareAction+Human Rights Due Diligence\",\n      \"company\": \"Aroundtown SA\",\n      \"year\": 2022,\n      \"value\": \"No\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/ShareAction+Human_Rights_Due_Diligence+Aroundtown_SA.json\"\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n    {\n      \"id\": 17426053,\n      \"name\": \"ShareAction Workforce Insights Data\",\n      \"type\": \"Dataset\",\n      \"url\": \"https://staging.wikirate.org/ShareAction_Workforce_Insights_Data.json\"\n    },\n    {\n      \"id\": 43678,\n      \"name\": \"Answer\",\n      \"type\": \"Cardtype\",\n      \"url\": \"https://staging.wikirate.org/Answer.json\",\n      \"codename\": \"metric_answer\"\n    }\n  ],\n  \"html_url\": \"https://staging.wikirate.org/ShareAction_Workforce_Insights_Data+Answers\",\n  \"created_at\": null,\n  \"updated_at\": null,\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/ShareAction_Workforce_Insights_Data+Answers.json?filter%5Bcompany_name%5D=&item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2024-09-20 15:47:10 UTC\",\n  \"license\": \"Wikirate.org, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0). See https://staging.wikirate.org/Attribution_Guide.\"\n}"
+                }
+            }
+        }
+    ]
+}

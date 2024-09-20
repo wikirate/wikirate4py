@@ -85,9 +85,15 @@ class Wikirate4PyTests(Wikirate4PyTestCase):
         self.assertEqual(answer.metric, 'Responsible Sourcing Network+Signatory Turkmen Cotton Pledge')
 
     @tape.use_cassette('test_get_answers.json')
-    def test_get_answers(self):
-        answers = self.api.get_metric_answers(metric_name='Company Report Available', metric_designer='Core',
-                                              country='United Kingdom', limit=10)
+    def test_get_metric_answers(self):
+        answers = self.api.get_answers(metric_name='Company Report Available', metric_designer='Core',
+                                       country='United Kingdom', limit=10)
+        self.assertTrue(isinstance(answers[0], AnswerItem))
+        self.assertEqual(len(answers), 10)
+
+    @tape.use_cassette('test_get_dataset_answers.json')
+    def test_get_dataset_answers(self):
+        answers = self.api.get_answers(identifier="ShareAction Workforce Insights Data", limit=10)
         self.assertTrue(isinstance(answers[0], AnswerItem))
         self.assertEqual(len(answers), 10)
 
