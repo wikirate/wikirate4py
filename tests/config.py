@@ -21,7 +21,7 @@ tape = vcr.VCR(
 )
 
 
-class WikiRate4PyTestCase(unittest.TestCase):
+class Wikirate4PyTestCase(unittest.TestCase):
 
     def setUp(self):
         self.auth = (username, password)

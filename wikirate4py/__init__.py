@@ -1,22 +1,22 @@
 # wikirate4py
-# Copyright 2021 Vasiliki Gkatziaki for WikiRate
+# Copyright 2024 Vasiliki Gkatziaki for Wikirate
 # See LICENSE for details.
 
 """
-wikirate4py WikiRate API library
+wikirate4py Wikirate API library
 """
-__version__ = '1.0.8'
+__version__ = '1.2.8'
 __author__ = 'Vasiliki Gkatziaki'
 __license__ = 'GPL-3.0'
 
 from wikirate4py.api import API
 from wikirate4py.cursor import Cursor
-from wikirate4py.exceptions import (IllegalHttpMethod, WikiRate4PyException, HTTPException, BadRequestException,
+from wikirate4py.exceptions import (IllegalHttpMethod, Wikirate4PyException, HTTPException, BadRequestException,
                                     UnauthorizedException, ForbiddenException, NotFoundException,
                                     TooManyRequestsException,
-                                    WikiRateServerErrorException)
-from wikirate4py.mixins import WikiRateEntity
-from wikirate4py.models import (Company, CompanyItem, Topic, TopicItem, Metric, MetricItem, ResearchGroup,
+                                    WikirateServerErrorException)
+from wikirate4py.mixins import WikirateEntity
+from wikirate4py.models import (BaseEntity, Company, CompanyItem, Topic, TopicItem, Metric, MetricItem, ResearchGroup,
                                 ResearchGroupItem, Project, ProjectItem, CompanyGroup, CompanyGroupItem, Source,
                                 SourceItem, Answer, AnswerItem, RelationshipAnswer, RelationshipAnswerItem, Region,
                                 Dataset, DatasetItem)

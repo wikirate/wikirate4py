@@ -8,7 +8,7 @@
                 "body": "limit=10",
                 "headers": {
                     "User-Agent": [
-                        "python-requests/2.25.1"
+                        "python-requests/2.32.3"
                     ],
                     "Accept-Encoding": [
                         "gzip, deflate"
@@ -29,65 +29,149 @@
             },
             "response": {
                 "status": {
-                    "code": 200,
-                    "message": "OK"
+                    "code": 302,
+                    "message": "Found"
                 },
                 "headers": {
-                    "Status": [
-                        "200 OK"
-                    ],
-                    "Date": [
-                        "Fri, 03 Feb 2023 18:20:52 GMT"
-                    ],
-                    "Cache-Control": [
-                        "max-age=0, private, must-revalidate"
+                    "Content-Type": [
+                        "text/html; charset=utf-8"
                     ],
                     "Access-Control-Allow-Origin": [
                         "*",
                         "*"
                     ],
+                    "X-Runtime": [
+                        "0.026607"
+                    ],
                     "Set-Cookie": [
-                        "_wikirate_session=bDk0WTkvL1dFM2liYjFzd1VyZzBuRFREaHNyTnM1c1lLQXB3VWwxMkhLK0dsbXgwVHY0RnJMTkRZQTluaHpQR1ZtSDJyZXE0anRyMHNIK1lMcmRKVGVoY3gzM1ZGQTdHMmNUV01XaXZzZW1rdnc1elNrbFBKVkRha1d5em9hd2EtLXN3V08veFhsNTJYaG84dnJtblJOcnc9PQ%3D%3D--02d78724e34b814ceb1066e748e6f312d5933e8e; path=/; HttpOnly"
-                    ],
-                    "X-Powered-By": [
-                        "Phusion Passenger(R) 6.0.12"
-                    ],
-                    "Content-Disposition": [
-                        "attachment; filename=\"WikiRate-2023_02_03_182052-Data_Set.json\""
-                    ],
-                    "Server": [
-                        "Apache/2.4.41 (Ubuntu) Phusion_Passenger/6.0.12 OpenSSL/1.1.1f"
+                        "_wikirate_session=blI5MlNMOXFZK2srR2ZGN296dlhHOVdYZDU3amxmNU04T0NEWHd4QlVXb25GVm5vL014bFBheXZQSFJqeXBJbDF6SGxCeWg4bmZaZFJTWTQ5aDZONVBWSmRFd281bjNHR2VuTjdIUUxxejZsR1JLMTU4TWF5VWU2alk3bUpna1EtLVBtN09uUDVmQ2t5RVh4U1lLWGZXWHc9PQ%3D%3D--43a88aa43baaebcbbbcf5a75c2b5a83e7638e598; path=/; HttpOnly"
                     ],
                     "X-Frame-Options": [
                         "ALLOWALL"
                     ],
-                    "Content-Type": [
-                        "text/json; charset=utf-8"
-                    ],
-                    "X-Request-Id": [
-                        "a7fd8bae-5a2a-4cf3-8e2f-ee87dc86cf80"
-                    ],
-                    "ETag": [
-                        "W/\"f6938f6fa1b093013bdce3cc128a7a3b\""
-                    ],
-                    "X-Runtime": [
-                        "0.086384"
-                    ],
-                    "Keep-Alive": [
-                        "timeout=5, max=100"
+                    "Cache-Control": [
+                        "no-cache"
                     ],
                     "Transfer-Encoding": [
                         "chunked"
                     ],
+                    "Location": [
+                        "https://staging.wikirate.org/Dataset.json?limit=10"
+                    ],
+                    "X-Request-Id": [
+                        "231be72f-ab80-423d-a3ec-a3f95d7fa7f2"
+                    ],
+                    "Keep-Alive": [
+                        "timeout=5, max=100"
+                    ],
+                    "vary": [
+                        "Origin"
+                    ],
+                    "Date": [
+                        "Tue, 03 Sep 2024 10:39:08 GMT"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.18"
+                    ],
                     "Connection": [
                         "Keep-Alive"
                     ],
-                    "Vary": [
-                        "Origin"
+                    "Status": [
+                        "302 Found"
+                    ],
+                    "Server": [
+                        "Apache/2.4.52 (Ubuntu) Phusion_Passenger/6.0.18 OpenSSL/3.0.2"
                     ]
                 },
                 "body": {
-                    "string": "{\n  \"id\": 7926098,\n  \"name\": \"Data Set\",\n  \"type\": {\n    \"id\": 5,\n    \"name\": \"Cardtype\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Cardtype.json\",\n    \"codename\": \"cardtype\"\n  },\n  \"url\": \"https://staging.wikirate.org/Data_sets.json\",\n  \"codename\": \"dataset\",\n  \"items\": [\n    {\n      \"id\": 13984221,\n      \"name\": \"Net Zero Tracker\",\n      \"type\": \"Data Set\",\n      \"url\": \"https://staging.wikirate.org/Net_Zero_Tracker.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 13984166,\n      \"name\": \"Modern Slavery Reseach Project-Renewable Energy Sector\",\n      \"type\": \"Data Set\",\n      \"url\": \"https://staging.wikirate.org/Modern_Slavery_Reseach_Project_Renewable_Energy_Sector.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 13924310,\n      \"name\": \"SIPA-Modern Slavery Reseach Project-2022\",\n      \"type\": \"Data Set\",\n      \"url\": \"https://staging.wikirate.org/SIPA_Modern_Slavery_Reseach_Project_2022.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 13923922,\n      \"name\": \"Modern Slavery Research Project-Energy Sector\",\n      \"type\": \"Data Set\",\n      \"url\": \"https://staging.wikirate.org/Modern_Slavery_Research_Project_Energy_Sector.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 13861985,\n      \"name\": \"FTI Subset: 5.3, 5.4\",\n      \"type\": \"Data Set\",\n      \"url\": \"https://staging.wikirate.org/FTI_Subset_5_3_5_4.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 13746522,\n      \"name\": \"AMD 2022 - Sustainability Challenges for the Fashion Industry\",\n      \"type\": \"Data Set\",\n      \"url\": \"https://staging.wikirate.org/AMD_2022_Sustainability_Challenges_for_the_Fashion_Industry.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 13741247,\n      \"name\": \"SDG 5 Gender Equality-Student Assessment\",\n      \"type\": \"Data Set\",\n      \"url\": \"https://staging.wikirate.org/SDG_5_Gender_Equality_Student_Assessment.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 13667824,\n      \"name\": \"UWLAX-La Crosse SDGs Student Assessment\",\n      \"type\": \"Data Set\",\n      \"url\": \"https://staging.wikirate.org/UWLAX_La_Crosse_SDGs_Student_Assessment.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 13660385,\n      \"name\": \"B Corp Impact Data\",\n      \"type\": \"Data Set\",\n      \"url\": \"https://staging.wikirate.org/B_Corp_Impact_Data.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 13652971,\n      \"name\": \"Indian companies SDG progress (WBA SDG2000)\",\n      \"type\": \"Data Set\",\n      \"url\": \"https://staging.wikirate.org/Indian_companies_SDG_progress_WBA_SDG2000.json\",\n      \"content\": \"\"\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Data_Set\",\n  \"created_at\": \"2021-09-17 20:25:37 UTC\",\n  \"updated_at\": \"2022-10-07 21:30:34 UTC\",\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Data_Set.json?filter%5Bname%5D=&item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2023-02-03 18:20:52 UTC\",\n  \"license\": \"Creative Commons Attribution-ShareAlike 4.0 International License\"\n}"
+                    "string": "<html><body>You are being <a href=\"https://staging.wikirate.org/Dataset.json?limit=10\">redirected</a>.</body></html>"
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "uri": "https://staging.wikirate.org/Dataset.json?limit=10",
+                "body": null,
+                "headers": {
+                    "User-Agent": [
+                        "python-requests/2.32.3"
+                    ],
+                    "Accept-Encoding": [
+                        "gzip, deflate"
+                    ],
+                    "Accept": [
+                        "*/*"
+                    ],
+                    "Connection": [
+                        "keep-alive"
+                    ],
+                    "Cookie": [
+                        "_wikirate_session=blI5MlNMOXFZK2srR2ZGN296dlhHOVdYZDU3amxmNU04T0NEWHd4QlVXb25GVm5vL014bFBheXZQSFJqeXBJbDF6SGxCeWg4bmZaZFJTWTQ5aDZONVBWSmRFd281bjNHR2VuTjdIUUxxejZsR1JLMTU4TWF5VWU2alk3bUpna1EtLVBtN09uUDVmQ2t5RVh4U1lLWGZXWHc9PQ%3D%3D--43a88aa43baaebcbbbcf5a75c2b5a83e7638e598"
+                    ]
+                }
+            },
+            "response": {
+                "status": {
+                    "code": 200,
+                    "message": "OK"
+                },
+                "headers": {
+                    "ETag": [
+                        "W/\"49df90f3a9b2c2f8053436616c884d14\""
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
+                    "Access-Control-Allow-Origin": [
+                        "*",
+                        "*"
+                    ],
+                    "X-Runtime": [
+                        "0.206010"
+                    ],
+                    "Content-Disposition": [
+                        "attachment; filename=\"WikiRate-2024_09_03_103908-Dataset.json\""
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=RVdmZ1B4L1QyL3ZMUDZ0Q1ZmVUQxaHp1U1dkZTdXOVVtZGtTMFdxektlem05S3JXb1M3ZVlrU0F2KzNiWHVBNXBkWlV6M0NLdTkvUUN4V05hcmVzWnNZK1hxRmpIU2JVSHRkb2dMbGcrdVdIb2o0bStrcnFiUi9qdERMbmVQVVctLUFQdHZaQUtoSmc3TGFMYUM0REx2TUE9PQ%3D%3D--ee63f17936a79a04e7182887e648b77fe7cda9d3; path=/; HttpOnly"
+                    ],
+                    "Cache-Control": [
+                        "max-age=0, private, must-revalidate"
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "X-Request-Id": [
+                        "e68b379d-5178-4ec6-9dd7-72c32d19c832"
+                    ],
+                    "Keep-Alive": [
+                        "timeout=5, max=99"
+                    ],
+                    "vary": [
+                        "Origin"
+                    ],
+                    "Date": [
+                        "Tue, 03 Sep 2024 10:39:08 GMT"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.18"
+                    ],
+                    "Connection": [
+                        "Keep-Alive"
+                    ],
+                    "Status": [
+                        "200 OK"
+                    ],
+                    "Server": [
+                        "Apache/2.4.52 (Ubuntu) Phusion_Passenger/6.0.18 OpenSSL/3.0.2"
+                    ]
+                },
+                "body": {
+                    "string": "{\n  \"id\": 7926098,\n  \"name\": \"Dataset\",\n  \"type\": {\n    \"id\": 5,\n    \"name\": \"Cardtype\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Cardtype.json\",\n    \"codename\": \"cardtype\"\n  },\n  \"url\": \"https://staging.wikirate.org/Dataset.json?limit=10\",\n  \"codename\": \"dataset\",\n  \"items\": [\n    {\n      \"id\": 19381134,\n      \"name\": \"Longitudinal Analysis (selected metrics) Modern Slavery Acts\",\n      \"type\": \"Dataset\",\n      \"url\": \"https://staging.wikirate.org/Longitudinal_Analysis_selected_metrics_Modern_Slavery_Acts.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 19247726,\n      \"name\": \"University of Sydney 2024-2: ASX 50 Environmental Indicators\",\n      \"type\": \"Dataset\",\n      \"url\": \"https://staging.wikirate.org/University_of_Sydney_2024_2_ASX_50_Environmental_Indicators.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 19151809,\n      \"name\": \"Apparel 100 Final Scope (Update 2024)\",\n      \"type\": \"Dataset\",\n      \"url\": \"https://staging.wikirate.org/Apparel_100_Final_Scope_Update_2024.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 18832999,\n      \"name\": \"Pilot: German Supply Chain Act reports (LksG)\",\n      \"type\": \"Dataset\",\n      \"url\": \"https://staging.wikirate.org/Pilot_German_Supply_Chain_Act_reports_LksG.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 18820745,\n      \"name\": \"German based companies and human rights\",\n      \"type\": \"Dataset\",\n      \"url\": \"https://staging.wikirate.org/German_based_companies_and_human_rights.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 18818767,\n      \"name\": \"Modern Slavery Research Nottingham University 2024\",\n      \"type\": \"Dataset\",\n      \"url\": \"https://staging.wikirate.org/Modern_Slavery_Research_Nottingham_University_2024.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 18818517,\n      \"name\": \"Modern Slavery Act Research: University of Gloucestershire\",\n      \"type\": \"Dataset\",\n      \"url\": \"https://staging.wikirate.org/Modern_Slavery_Act_Research_University_of_Gloucestershire.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 18779590,\n      \"name\": \"World Benchmarking Alliance: Nature Benchmark Data\",\n      \"type\": \"Dataset\",\n      \"url\": \"https://staging.wikirate.org/World_Benchmarking_Alliance_Nature_Benchmark_Data.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 18115525,\n      \"name\": \"MSA EV Companies Research\",\n      \"type\": \"Dataset\",\n      \"url\": \"https://staging.wikirate.org/MSA_EV_Companies_Research.json\",\n      \"content\": \"\"\n    },\n    {\n      \"id\": 18088185,\n      \"name\": \"Australian corporate greenhouse gas (GHG) emissions and energy data\",\n      \"type\": \"Dataset\",\n      \"url\": \"https://staging.wikirate.org/Australian_corporate_greenhouse_gas_GHG_emissions_and_energy_data.json\",\n      \"content\": \"\"\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Dataset\",\n  \"created_at\": \"2021-09-17 20:25:37 UTC\",\n  \"updated_at\": \"2024-08-22 10:25:35 UTC\",\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Dataset.json?filter%5Bname%5D=&item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2024-09-03 10:39:08 UTC\",\n  \"license\": \"Wikirate.org, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0). See https://staging.wikirate.org/Attribution_Guide.\"\n}"
                 }
             }
         }

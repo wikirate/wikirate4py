@@ -6,12 +6,12 @@ class IllegalHttpMethod(Exception):
     pass
 
 
-class WikiRate4PyException(Exception):
-    """Base exception for wikirate4py"""
+class Wikirate4PyException(Exception):
+    """Base exception for Wikirate4py"""
     pass
 
 
-class HTTPException(WikiRate4PyException):
+class HTTPException(Wikirate4PyException):
     """Exception raised when an HTTP request fails"""
 
     def __init__(self, response):
@@ -61,6 +61,6 @@ class TooManyRequestsException(HTTPException):
     pass
 
 
-class WikiRateServerErrorException(HTTPException):
+class WikirateServerErrorException(HTTPException):
     """Exception raised for a 5xx HTTP status code"""
     pass

@@ -8,7 +8,7 @@
                 "body": null,
                 "headers": {
                     "User-Agent": [
-                        "python-requests/2.25.1"
+                        "python-requests/2.32.3"
                     ],
                     "Accept-Encoding": [
                         "gzip, deflate"
@@ -27,58 +27,58 @@
                     "message": "OK"
                 },
                 "headers": {
-                    "Status": [
-                        "200 OK"
-                    ],
                     "Date": [
-                        "Fri, 03 Feb 2023 18:20:54 GMT"
+                        "Tue, 03 Sep 2024 10:46:52 GMT"
                     ],
-                    "Cache-Control": [
-                        "max-age=0, private, must-revalidate"
+                    "vary": [
+                        "Origin"
+                    ],
+                    "Keep-Alive": [
+                        "timeout=5, max=100"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
+                    "ETag": [
+                        "W/\"2136023c2263b84a35f6ddedc0c1fb5e\""
+                    ],
+                    "Set-Cookie": [
+                        "_wikirate_session=RGhUOGsrdGNqK3RJWDY2K2NSNkRYSmovTUhFdHkvNmdEWFhKblBYZm02QnA3WCt3UGRGV2lLSTIwZW9SM0NmbGZnSDMwa2ZNWG9rTTZ3S1Vhd1dVK0xVU0Uvd1JDeTBLTC9NVnovOVQ5N0ZwU2JIZ2NPeW9MSzA0ZUZ5RkROR0ktLWtJTDE3N2FKNlFBaWl6SGh1dnljSXc9PQ%3D%3D--7f878c068480989d197dbdf9bec6e74dd2648045; path=/; HttpOnly"
+                    ],
+                    "X-Runtime": [
+                        "0.159608"
+                    ],
+                    "Connection": [
+                        "Keep-Alive"
                     ],
                     "Access-Control-Allow-Origin": [
                         "*",
                         "*"
                     ],
-                    "Set-Cookie": [
-                        "_wikirate_session=T1dkMVVaaEFUYURLa0Y2SnNGSGtnMVdHamZqbzZPSGF3SjBTWUZ2WCtLOHV3RmRoTEI3T2VXbzdST0l1Y2FkdTJxTE82MEdNb1hIVC93cXh5aXpqWEdKRW9BeTlOZm9STmRORlNPVUthMFhKb1p2U2pHZW5lSkxkbVZkeWRpVFEtLUthd3hMbFZ2azBqZGhaemZZUmVrUXc9PQ%3D%3D--1dfb465fb06c6b4bd2db0bf7ff2c72d10636d281; path=/; HttpOnly"
-                    ],
-                    "X-Powered-By": [
-                        "Phusion Passenger(R) 6.0.12"
-                    ],
                     "Server": [
-                        "Apache/2.4.41 (Ubuntu) Phusion_Passenger/6.0.12 OpenSSL/1.1.1f"
+                        "Apache/2.4.52 (Ubuntu) Phusion_Passenger/6.0.18 OpenSSL/3.0.2"
                     ],
                     "X-Frame-Options": [
                         "ALLOWALL"
                     ],
-                    "Content-Type": [
-                        "text/json; charset=utf-8"
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.18"
                     ],
-                    "X-Request-Id": [
-                        "a5010c3c-1737-4886-81cb-87f5d468bef9"
+                    "Cache-Control": [
+                        "max-age=0, private, must-revalidate"
                     ],
-                    "ETag": [
-                        "W/\"7ed37d04f89247a058dfb82c55bb1176\""
-                    ],
-                    "X-Runtime": [
-                        "0.110465"
-                    ],
-                    "Keep-Alive": [
-                        "timeout=5, max=100"
+                    "Status": [
+                        "200 OK"
                     ],
                     "Transfer-Encoding": [
                         "chunked"
                     ],
-                    "Connection": [
-                        "Keep-Alive"
-                    ],
-                    "Vary": [
-                        "Origin"
+                    "X-Request-Id": [
+                        "3175df32-5852-47d0-9e17-4d097662e0da"
                     ]
                 },
                 "body": {
-                    "string": "{\n  \"id\": 7261680,\n  \"name\": \"Commons+Supplied By+Target+2021+Liberty Mills Limited\",\n  \"type\": {\n    \"id\": 2534606,\n    \"name\": \"Relationship Answer\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Relationship_Answer.json\",\n    \"codename\": \"relationship_answer\"\n  },\n  \"url\": \"https://staging.wikirate.org/~7261680.json\",\n  \"content\": \"\",\n  \"year\": 2021,\n  \"value\": \"Tier 1 Supplier\",\n  \"metric_id\": 2929009,\n  \"inverse_metric_id\": 2929015,\n  \"subject_company_id\": 42625,\n  \"object_company_id\": 3462751,\n  \"import\": false,\n  \"comments\": \"\",\n  \"subject_company\": {\n    \"id\": 42625,\n    \"name\": \"Target\",\n    \"type\": \"Company\",\n    \"url\": \"https://staging.wikirate.org/Target.json\",\n    \"wikipedia\": \"Target Corporation\",\n    \"open_corporates\": \"897f2a7c-a5d4-e011-a886-001ec94ffe7f\",\n    \"alias\": [\n      \"Target USA\",\n      \"Target Corporation\"\n    ],\n    \"headquarters\": \"Minnesota (United States)\",\n    \"oar_id\": null,\n    \"sec_cik\": \"0000027419\"\n  },\n  \"object_company\": {\n    \"id\": 3462751,\n    \"name\": \"Liberty Mills Limited\",\n    \"type\": \"Company\",\n    \"url\": \"https://staging.wikirate.org/Liberty_Mills_Limited.json\",\n    \"wikipedia\": null,\n    \"open_corporates\": null,\n    \"alias\": [\n\n    ],\n    \"headquarters\": \"Pakistan\",\n    \"oar_id\": \"PK2020218D9Y165\",\n    \"sec_cik\": null\n  },\n  \"items\": [\n\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n    {\n      \"id\": 3411173,\n      \"name\": \"Commons\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/Commons.json\"\n    },\n    {\n      \"id\": 2929008,\n      \"name\": \"Supplied By\",\n      \"type\": \"Metric Title\",\n      \"url\": \"https://staging.wikirate.org/Supplied_By.json\"\n    },\n    {\n      \"id\": 42625,\n      \"name\": \"Target\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/Target.json\"\n    },\n    {\n      \"id\": 6532613,\n      \"name\": \"2021\",\n      \"type\": \"Year\",\n      \"url\": \"https://staging.wikirate.org/2021.json\"\n    },\n    {\n      \"id\": 3462751,\n      \"name\": \"Liberty Mills Limited\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/Liberty_Mills_Limited.json\"\n    },\n    {\n      \"id\": 2929009,\n      \"name\": \"Commons+Supplied By\",\n      \"type\": \"Metric\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By.json\",\n      \"codename\": \"commons_supplied_by\"\n    },\n    {\n      \"id\": 7178878,\n      \"name\": \"Commons+Supplied By+Target\",\n      \"type\": \"Record\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+Target.json\"\n    },\n    {\n      \"id\": 7179236,\n      \"name\": \"Commons+Supplied By+Target+2021\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+Target+2021.json\"\n    }\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Commons+Supplied_By+Target+2021+Liberty_Mills_Limited\",\n  \"created_at\": \"2021-04-02 10:39:43 UTC\",\n  \"updated_at\": \"2021-04-02 10:39:43 UTC\",\n  \"sources\": [\n    {\n      \"id\": 7175279,\n      \"name\": \"Source-000104212\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000104212.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/7175280/24702899.pdf\",\n      \"link\": \"\",\n      \"report_type\": [\n        \"Supplier List\",\n        \"Company Website\"\n      ],\n      \"title\": \"Target Supplier List 2021\",\n      \"year\": [\n        \"2021\",\n        \"2023\"\n      ]\n    }\n  ],\n  \"checked_by\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplied By+Target+2021+Liberty Mills Limited+checked by\",\n    \"type\": \"List\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+Target+2021+Liberty_Mills_Limited+checked_by.json\",\n    \"content\": [\n\n    ],\n    \"checks\": 0\n  },\n  \"requested_at\": \"2023-02-03 18:20:54 UTC\"\n}"
+                    "string": "{\n  \"id\": 7261680,\n  \"name\": \"Commons+Supplied By+Target+2021+Liberty Mills Limited\",\n  \"type\": {\n    \"id\": 2534606,\n    \"name\": \"Relationship Answer\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Relationship_Answer.json\",\n    \"codename\": \"relationship_answer\"\n  },\n  \"url\": \"https://staging.wikirate.org/~7261680.json\",\n  \"content\": \"\",\n  \"year\": 2021,\n  \"value\": \"Tier 1 Supplier\",\n  \"metric_id\": 2929009,\n  \"inverse_metric_id\": 2929015,\n  \"subject_company_id\": 42625,\n  \"object_company_id\": 3462751,\n  \"import\": false,\n  \"comments\": \"\",\n  \"subject_company\": {\n    \"id\": 42625,\n    \"name\": \"Target\",\n    \"type\": \"Company\",\n    \"url\": \"https://staging.wikirate.org/Target.json\",\n    \"image\": \"https://dq06ugkuram52.cloudfront.net/files/782735/12603955-medium.png\",\n    \"headquarters\": \"Minnesota (United States)\",\n    \"website\": \"https://www.target.com/\",\n    \"alias\": [\n      \"Target USA\",\n      \"Target Corporation\"\n    ],\n    \"australian_business_number\": null,\n    \"international_securities_identification_number\": [\n      \"US239753DF03\",\n      \"US239753DK97\",\n      \"US239753DL70\",\n      \"US239753DM53\",\n      \"US23975HAA32\",\n      \"US23975HAB15\",\n      \"US23975HAC97\",\n      \"US23975HAD70\",\n      \"US23975HAE53\",\n      \"US23975HAF29\",\n      \"US23975HAG02\",\n      \"US23975HAH84\",\n      \"US23975HAJ41\",\n      \"US23975HAK14\",\n      \"US23975HAL96\",\n      \"US23975HAM79\",\n      \"US23975HAN52\",\n      \"US23975HAQ83\",\n      \"US23975HAW51\",\n      \"US23975HAX35\",\n      \"US23975HAY18\",\n      \"US23975HAZ82\",\n      \"US87612E1064\",\n      \"US87612EAA47\",\n      \"US87612EAB20\",\n      \"US87612EAC03\",\n      \"US87612EAD85\",\n      \"US87612EAE68\",\n      \"US87612EAF34\",\n      \"US87612EAG17\",\n      \"US87612EAJ55\",\n      \"US87612EAK29\",\n      \"US87612EAL02\",\n      \"US87612EAM84\",\n      \"US87612EAN67\",\n      \"US87612EAP16\",\n      \"US87612EAQ98\",\n      \"US87612EAR71\",\n      \"US87612EAS54\",\n      \"US87612EAT38\",\n      \"US87612EAU01\",\n      \"US87612EAV83\",\n      \"US87612EAW66\",\n      \"US87612EAX40\",\n      \"US87612EAY23\",\n      \"US87612EAZ97\",\n      \"US87612EBA38\",\n      \"US87612EBB11\",\n      \"US87612EBD76\",\n      \"US87612EBE59\",\n      \"US87612EBF25\",\n      \"US87612EBG08\",\n      \"US87612EBH80\",\n      \"US87612EBJ47\",\n      \"US87612EBK10\",\n      \"US87612EBL92\",\n      \"US87612EBM75\",\n      \"US87612EBN58\",\n      \"US87612EBP07\",\n      \"US87612EBQ89\",\n      \"US87612EBR62\",\n      \"US87612FAB94\",\n      \"US87612FAC77\",\n      \"US87612FAD50\",\n      \"US87612FAE34\",\n      \"US87612FAF09\",\n      \"US87612FAG81\",\n      \"US87612FAH64\",\n      \"US87612FAJ21\",\n      \"US87612FAK93\",\n      \"US87612FAL76\",\n      \"US87612FAM59\",\n      \"US87612FAN33\",\n      \"US87612FAP80\",\n      \"US87612FAQ63\",\n      \"US87612FAR47\",\n      \"US87612FAS20\",\n      \"US87612FAT03\",\n      \"US87612FAU75\",\n      \"US87612FAV58\",\n      \"US87612FAW32\",\n      \"US87612FAX15\",\n      \"US87612FAY97\",\n      \"US87612FAZ62\",\n      \"US87612FBA03\",\n      \"US87612FBB85\",\n      \"US87612FBC68\",\n      \"US87612FBD42\",\n      \"US87612FBE25\",\n      \"US87612FBF99\",\n      \"US87612FBG72\",\n      \"US87612FBH55\",\n      \"US87612FBJ12\",\n      \"US87612FBK84\",\n      \"US87612FBL67\",\n      \"US87612FBM41\",\n      \"US87612FBN24\",\n      \"US87612FBP71\",\n      \"US87612FBQ54\",\n      \"US87612FBR38\",\n      \"US87612FBS11\",\n      \"US87612FBT93\",\n      \"US87612FBU66\",\n      \"US87612FBV40\",\n      \"US87612FBW23\",\n      \"US87612FBX06\",\n      \"US87612FBY88\",\n      \"US87612FBZ53\",\n      \"US87612FCA93\",\n      \"US87612FCB76\"\n    ],\n    \"legal_entity_identifier\": \"8WDDFXB5T1Z6J0XC1L66\",\n    \"open_corporates_id\": \"897f2a7c-a5d4-e011-a886-001ec94ffe7f\",\n    \"open_supply_id\": null,\n    \"sec_central_index_key\": \"0000027419\",\n    \"uk_company_number\": null,\n    \"wikipedia\": \"Target Corporation\"\n  },\n  \"object_company\": {\n    \"id\": 3462751,\n    \"name\": \"Liberty Mills Limited\",\n    \"type\": \"Company\",\n    \"url\": \"https://staging.wikirate.org/Liberty_Mills_Limited.json\",\n    \"image\": \"\",\n    \"headquarters\": \"Pakistan\",\n    \"website\": null,\n    \"alias\": [\n\n    ],\n    \"australian_business_number\": null,\n    \"international_securities_identification_number\": [\n\n    ],\n    \"legal_entity_identifier\": null,\n    \"open_corporates_id\": null,\n    \"open_supply_id\": \"PK20211667P6DHE\",\n    \"sec_central_index_key\": null,\n    \"uk_company_number\": null,\n    \"wikipedia\": null\n  },\n  \"items\": [\n\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n    {\n      \"id\": 3411173,\n      \"name\": \"Commons\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/Commons.json\"\n    },\n    {\n      \"id\": 2929008,\n      \"name\": \"Supplied By\",\n      \"type\": \"Metric Title\",\n      \"url\": \"https://staging.wikirate.org/Supplied_By.json\"\n    },\n    {\n      \"id\": 42625,\n      \"name\": \"Target\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/Target.json\"\n    },\n    {\n      \"id\": 6532613,\n      \"name\": \"2021\",\n      \"type\": \"Year\",\n      \"url\": \"https://staging.wikirate.org/2021.json\"\n    },\n    {\n      \"id\": 3462751,\n      \"name\": \"Liberty Mills Limited\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/Liberty_Mills_Limited.json\"\n    },\n    {\n      \"id\": 2929009,\n      \"name\": \"Commons+Supplied By\",\n      \"type\": \"Metric\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By.json\",\n      \"codename\": \"commons_supplied_by\"\n    },\n    {\n      \"id\": 7178878,\n      \"name\": \"Commons+Supplied By+Target\",\n      \"type\": \"Record\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+Target.json\"\n    },\n    {\n      \"id\": 7179236,\n      \"name\": \"Commons+Supplied By+Target+2021\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+Target+2021.json\"\n    }\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Commons+Supplied_By+Target+2021+Liberty_Mills_Limited\",\n  \"created_at\": \"2021-04-02 10:39:43 UTC\",\n  \"updated_at\": \"2021-04-02 10:39:43 UTC\",\n  \"sources\": [\n    {\n      \"id\": 7175279,\n      \"name\": \"Source-000104212\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000104212.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/7175280/24702899.pdf\",\n      \"link\": \"\",\n      \"report_type\": [\n        \"Supplier List\",\n        \"Company Website\"\n      ],\n      \"title\": \"Target Supplier List 2021\",\n      \"year\": [\n        \"2021\"\n      ]\n    }\n  ],\n  \"checked_by\": {\n    \"id\": null,\n    \"name\": \"Commons+Supplied By+Target+2021+Liberty Mills Limited+checked by\",\n    \"type\": \"List\",\n    \"url\": \"https://staging.wikirate.org/Commons+Supplied_By+Target+2021+Liberty_Mills_Limited+checked_by.json\",\n    \"content\": [\n\n    ],\n    \"checks\": 0\n  },\n  \"requested_at\": \"2024-09-03 10:46:52 UTC\",\n  \"license\": \"Wikirate.org, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0). See https://staging.wikirate.org/Attribution_Guide.\"\n}"
                 }
             }
         }
