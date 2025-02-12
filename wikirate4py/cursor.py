@@ -1,6 +1,6 @@
 class Cursor(object):
 
-    def __init__(self, method, per_page=20, **kwargs):
+    def __init__(self, method, per_page=20, offset=0, **kwargs):
         self.method = method
         self.kwargs = kwargs
         if per_page > 200:
@@ -8,7 +8,7 @@ class Cursor(object):
         else:
             self.per_page = per_page
 
-        self.offset = 0
+        self.offset = offset
         self.limit = per_page
         self.items = None
 

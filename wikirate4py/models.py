@@ -41,9 +41,13 @@ class BaseEntity(WikirateEntity):
     @staticmethod
     def validate_entity(data, expected_type_id=None, expected_type_name=None):
         if expected_type_id and data.get("type", {}).get("id") != expected_type_id:
-            raise Wikirate4PyException('Invalid type of entity')
+            from wikirate4py import Wikirate4PyException
+            raise Wikirate4PyException(
+                f'Invalid type of entity: expected type id: {expected_type_id}, but received: {data.get("type").get("id")} ({data.get("type").get("name")})')
         if expected_type_name and data.get("type") != expected_type_name:
-            raise Wikirate4PyException('Invalid type of entity')
+            from wikirate4py import Wikirate4PyException
+            raise Wikirate4PyException(
+                f'Invalid type of entity: expected type: {expected_type_name}, but received: {data.get("type").get("name")}')
 
 
 class Company(BaseEntity):
@@ -344,7 +348,7 @@ class SourceItem(BaseEntity):
     )
 
     def __init__(self, data):
-        super().__init__(data, expected_type_name='Source')
+        super().__init__(data)
 
         self.id = data.get("id")
         self.name = data.get("name")
@@ -363,7 +367,7 @@ class Answer(BaseEntity):
     )
 
     def __init__(self, data):
-        super().__init__(data, expected_type_name="Answer")
+        super().__init__(data, expected_type_id=43678)
 
         self.id = data.get("id")
         self.metric = data["metric"]
@@ -396,7 +400,7 @@ class AnswerItem(BaseEntity):
         self.url = data.get("url").replace(".json", "")
 
 
-class RelationshipAnswer(BaseEntity):
+class Relationship(BaseEntity):
     __slots__ = (
         "id", "metric", "value", "year", "comments", "sources", "checked_by",
         "subject_company_name", "subject_company_id", "object_company_name", "object_company_id", "check_requested",
@@ -420,14 +424,14 @@ class RelationshipAnswer(BaseEntity):
         self.checked_by = self.extract_content(data, "checked_by")
         self.check_requested = self.extract_content(data.get("checked_by"), "check_requested")
 
-        self.subject_company_name = self.extract_name(data.get("subject_company") )
+        self.subject_company_name = self.extract_name(data.get("subject_company"))
         self.object_company_name = self.extract_name(data.get("object_company"))
         self.subject_company_id = self.extract_id(data.get("subject_company"))
         self.object_company_id = self.extract_id(data.get("object_company"))
         self.url = data.get("html_url")
 
 
-class RelationshipAnswerItem(BaseEntity):
+class RelationshipItem(BaseEntity):
     __slots__ = (
         "id", "metric", "metric_id", "value", "year", "comments", "sources",
         "subject_company_name", "object_company_name", "subject_company_id", "object_company_id",
@@ -435,7 +439,7 @@ class RelationshipAnswerItem(BaseEntity):
     )
 
     def __init__(self, data):
-        super().__init__(data, expected_type_name="Relationship Answer")
+        super().__init__(data, expected_type_name="Relationship")
 
         self.id = data.get("id")
         answer_name = data.get("name").split("+")

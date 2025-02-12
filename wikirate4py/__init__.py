@@ -5,7 +5,7 @@
 """
 wikirate4py Wikirate API library
 """
-__version__ = '1.2.8'
+__version__ = '2.0.0'
 __author__ = 'Vasiliki Gkatziaki'
 __license__ = 'GPL-3.0'
 
@@ -18,6 +18,6 @@ from wikirate4py.exceptions import (IllegalHttpMethod, Wikirate4PyException, HTT
 from wikirate4py.mixins import WikirateEntity
 from wikirate4py.models import (BaseEntity, Company, CompanyItem, Topic, TopicItem, Metric, MetricItem, ResearchGroup,
                                 ResearchGroupItem, Project, ProjectItem, CompanyGroup, CompanyGroupItem, Source,
-                                SourceItem, Answer, AnswerItem, RelationshipAnswer, RelationshipAnswerItem, Region,
+                                SourceItem, Answer, AnswerItem, Relationship, RelationshipItem, Region,
                                 Dataset, DatasetItem)
 from wikirate4py.utils import to_dataframe
