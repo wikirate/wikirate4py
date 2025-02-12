@@ -53,7 +53,7 @@ from wikirate4py import API
 from wikirate4py.utils import to_dataframe
 
 api = API('your_api_token')
-cursor = wikirate4py.Cursor(api.get_metric_answers,
+cursor = wikirate4py.Cursor(api.get_answers,
                             metric_name="Revenue EUR",
                             metric_designer="Clean Clothes Campaign",
                             year=2020)
