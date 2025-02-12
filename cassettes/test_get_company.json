@@ -27,58 +27,54 @@
                     "message": "OK"
                 },
                 "headers": {
-                    "ETag": [
-                        "W/\"5976f82fba3278b9ced8f24ebb1417f2\""
-                    ],
-                    "Content-Type": [
-                        "text/json; charset=utf-8"
-                    ],
-                    "Access-Control-Allow-Origin": [
-                        "*",
-                        "*"
-                    ],
                     "X-Runtime": [
-                        "0.165681"
-                    ],
-                    "Set-Cookie": [
-                        "_wikirate_session=TzZIbjVwY1VTTVEyZEd5ZTJwWWZrTkhGbXRlQ2J1VkFNV3k2Z1VsVjdvMlZ1RDc5THpLYVZQUEhrRkhweWlRMUs5dzVFY3F1cmptWi9Vd1hhZjVMOEhpeWg1aTRKc0h0V2lWcXdPZktnRUlNSFJlK0hZM3dTbmdpR3EyNVVlUE4tLVFLMGxiY2xXRFhrYUJkRXV0M2V4L2c9PQ%3D%3D--f9cd01ad2c3728d67bce2fea3028f90bce05834e; path=/; HttpOnly"
-                    ],
-                    "X-Frame-Options": [
-                        "ALLOWALL"
-                    ],
-                    "Cache-Control": [
-                        "max-age=0, private, must-revalidate"
-                    ],
-                    "Transfer-Encoding": [
-                        "chunked"
-                    ],
-                    "X-Request-Id": [
-                        "4781011c-397d-442f-9e92-3e45646ea7fc"
-                    ],
-                    "Keep-Alive": [
-                        "timeout=5, max=100"
+                        "0.242003"
                     ],
                     "vary": [
                         "Origin"
                     ],
-                    "Date": [
-                        "Tue, 03 Sep 2024 10:39:04 GMT"
+                    "Cache-Control": [
+                        "max-age=0, private, must-revalidate"
+                    ],
+                    "Set-Cookie": [
+                        "_decko_deck_session=Y3NLRTkwNDhid1JLNmlvYW9SL1hGdnhTaWxSRWVESEppNUJkS0FqUFpSTTFMc1VtbWc3ZngvK0RHbnc1RWQ2MEFtTjlvUWJEUzlPQ3l5cHNkdkpnUjN2N2xTTWhMdHFSSjY1eldPUk5KUGNubGxjbW5sNWg2ZmNKTDlGd2c2Y1AtLU8wSDFkWGRaSUgrekxEcGdvRlltcEE9PQ%3D%3D--e5a4d2820f3cf45338e8492e349959225876ea72; path=/; HttpOnly"
                     ],
                     "X-Powered-By": [
-                        "Phusion Passenger(R) 6.0.18"
+                        "Phusion Passenger(R) 6.0.23"
                     ],
-                    "Connection": [
-                        "Keep-Alive"
+                    "Date": [
+                        "Wed, 12 Feb 2025 16:21:44 GMT"
+                    ],
+                    "ETag": [
+                        "W/\"a9717acbe3b6646333ae97290a938b1b\""
+                    ],
+                    "Access-Control-Allow-Origin": [
+                        "*"
+                    ],
+                    "X-Request-Id": [
+                        "5715d824f7f470e42c656ac4dfba1abe"
                     ],
                     "Status": [
                         "200 OK"
                     ],
-                    "Server": [
-                        "Apache/2.4.52 (Ubuntu) Phusion_Passenger/6.0.18 OpenSSL/3.0.2"
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "Connection": [
+                        "keep-alive"
+                    ],
+                    "Strict-Transport-Security": [
+                        "max-age=31536000; includeSubDomains"
                     ]
                 },
                 "body": {
-                    "string": "{\n  \"id\": 18109,\n  \"name\": \"Puma\",\n  \"type\": {\n    \"id\": 651,\n    \"name\": \"Company\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Company.json\",\n    \"codename\": \"wikirate_company\"\n  },\n  \"url\": \"https://staging.wikirate.org/Puma.json\",\n  \"image\": {\n    \"id\": 1041284,\n    \"name\": \"Puma+Image\",\n    \"type\": \"Image\",\n    \"url\": \"https://staging.wikirate.org/Puma+Image.json\",\n    \"content\": \"https://dq06ugkuram52.cloudfront.net/files/1041284/20481499-medium.jpg\"\n  },\n  \"headquarters\": {\n    \"id\": 3184497,\n    \"name\": \"Puma+Headquarters\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://staging.wikirate.org/Puma+Headquarters.json\",\n    \"content\": [\n      \"Germany\"\n    ]\n  },\n  \"website\": {\n    \"id\": null,\n    \"name\": \"Puma+Website\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Puma+Website.json\"\n  },\n  \"alias\": {\n    \"id\": 2758277,\n    \"name\": \"Puma+Alias\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://staging.wikirate.org/Puma+Alias.json\",\n    \"content\": [\n      \"PUMA SE\",\n      \"Puma AG\",\n      \"PUMA International Trading Services Limited\"\n    ]\n  },\n  \"australian_business_number\": {\n    \"id\": null,\n    \"name\": \"Puma+Australian Business Number\",\n    \"type\": \"RichText\",\n    \"url\": \"https://staging.wikirate.org/Puma+Australian_Business_Number.json\"\n  },\n  \"international_securities_identification_number\": {\n    \"id\": 19519866,\n    \"name\": \"Puma+International Securities Identification Number\",\n    \"type\": \"RichText\",\n    \"url\": \"https://staging.wikirate.org/Puma+International_Securities_Identification_Number.json\",\n    \"content\": [\n      \"DE0006969603\",\n      \"US7458781082\",\n      \"US7458782072\"\n    ]\n  },\n  \"legal_entity_identifier\": {\n    \"id\": 19575916,\n    \"name\": \"Puma+Legal Entity Identifier\",\n    \"type\": \"RichText\",\n    \"url\": \"https://staging.wikirate.org/Puma+Legal_Entity_Identifier.json\",\n    \"content\": [\n      \"529900GRZ2BQY5ZM9N49\"\n    ]\n  },\n  \"open_corporates_id\": {\n    \"id\": 6783788,\n    \"name\": \"Puma+OpenCorporates ID\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Puma+OpenCorporates_ID.json\",\n    \"content\": [\n      \"D3304V_HRB13085\"\n    ]\n  },\n  \"open_supply_id\": {\n    \"id\": null,\n    \"name\": \"Puma+Open Supply ID\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Puma+Open_Supply_ID.json\"\n  },\n  \"sec_central_index_key\": {\n    \"id\": null,\n    \"name\": \"Puma+SEC Central Index Key\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Puma+SEC_Central_Index_Key.json\"\n  },\n  \"uk_company_number\": {\n    \"id\": null,\n    \"name\": \"Puma+UK Company Number\",\n    \"type\": \"RichText\",\n    \"url\": \"https://staging.wikirate.org/Puma+UK_Company_Number.json\"\n  },\n  \"wikipedia\": {\n    \"id\": 2783890,\n    \"name\": \"Puma+Wikipedia\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Puma+Wikipedia.json\",\n    \"content\": [\n      \"Puma (brand)\"\n    ]\n  },\n  \"items\": [\n\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Puma\",\n  \"created_at\": \"2014-09-15 15:31:34 UTC\",\n  \"updated_at\": \"2024-07-31 15:01:07 UTC\",\n  \"answers_url\": \"https://staging.wikirate.org/Puma+Answer.json\",\n  \"requested_at\": \"2024-09-03 10:39:04 UTC\",\n  \"license\": \"Wikirate.org, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0). See https://staging.wikirate.org/Attribution_Guide.\"\n}"
+                    "string": "{\n  \"id\": 18109,\n  \"name\": \"Puma\",\n  \"type\": {\n    \"id\": 651,\n    \"name\": \"Company\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Company.json\",\n    \"codename\": \"company\"\n  },\n  \"url\": \"https://staging.wikirate.org/Puma.json\",\n  \"image\": {\n    \"id\": 1041284,\n    \"name\": \"Puma+Image\",\n    \"type\": \"Image\",\n    \"url\": \"https://staging.wikirate.org/Puma+Image.json\",\n    \"content\": \"https://wikirate-production-storage.fra1.cdn.digitaloceanspaces.com/files/1041284/20481499-medium.jpg\"\n  },\n  \"headquarters\": {\n    \"id\": 3184497,\n    \"name\": \"Puma+Headquarters\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://staging.wikirate.org/Puma+Headquarters.json\",\n    \"content\": [\n      \"Germany\"\n    ]\n  },\n  \"website\": {\n    \"id\": null,\n    \"name\": \"Puma+Website\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Puma+Website.json\"\n  },\n  \"alias\": {\n    \"id\": 2758277,\n    \"name\": \"Puma+Alias\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://staging.wikirate.org/Puma+Alias.json\",\n    \"content\": [\n      \"PUMA SE\",\n      \"Puma AG\",\n      \"PUMA International Trading Services Limited\"\n    ]\n  },\n  \"australian_business_number\": {\n    \"id\": null,\n    \"name\": \"Puma+Australian Business Number\",\n    \"type\": \"RichText\",\n    \"url\": \"https://staging.wikirate.org/Puma+Australian_Business_Number.json\"\n  },\n  \"international_securities_identification_number\": {\n    \"id\": 19519866,\n    \"name\": \"Puma+International Securities Identification Number\",\n    \"type\": \"RichText\",\n    \"url\": \"https://staging.wikirate.org/Puma+International_Securities_Identification_Number.json\",\n    \"content\": [\n      \"DE0006969603\",\n      \"US7458781082\",\n      \"US7458782072\"\n    ]\n  },\n  \"legal_entity_identifier\": {\n    \"id\": 19575916,\n    \"name\": \"Puma+Legal Entity Identifier\",\n    \"type\": \"RichText\",\n    \"url\": \"https://staging.wikirate.org/Puma+Legal_Entity_Identifier.json\",\n    \"content\": [\n      \"529900GRZ2BQY5ZM9N49\"\n    ]\n  },\n  \"open_corporates_id\": {\n    \"id\": 6783788,\n    \"name\": \"Puma+OpenCorporates ID\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Puma+OpenCorporates_ID.json\",\n    \"content\": [\n      \"D3304V_HRB13085\"\n    ]\n  },\n  \"open_supply_id\": {\n    \"id\": null,\n    \"name\": \"Puma+Open Supply ID\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Puma+Open_Supply_ID.json\"\n  },\n  \"sec_central_index_key\": {\n    \"id\": null,\n    \"name\": \"Puma+SEC Central Index Key\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Puma+SEC_Central_Index_Key.json\"\n  },\n  \"uk_company_number\": {\n    \"id\": null,\n    \"name\": \"Puma+UK Company Number\",\n    \"type\": \"RichText\",\n    \"url\": \"https://staging.wikirate.org/Puma+UK_Company_Number.json\"\n  },\n  \"wikipedia\": {\n    \"id\": 2783890,\n    \"name\": \"Puma+Wikipedia\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Puma+Wikipedia.json\",\n    \"content\": [\n      \"Puma (brand)\"\n    ]\n  },\n  \"items\": [],\n  \"links\": [],\n  \"ancestors\": [],\n  \"html_url\": \"https://staging.wikirate.org/Puma\",\n  \"created_at\": \"2014-09-15 15:31:34 UTC\",\n  \"updated_at\": \"2024-08-27 19:54:00 UTC\",\n  \"answers_url\": \"https://staging.wikirate.org/Puma+Answer.json\",\n  \"requested_at\": \"2025-02-12 16:21:44 UTC\",\n  \"license\": \"Wikirate.org, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0). See https://staging.wikirate.org/Attribution_Guide.\"\n}"
                 }
             }
         }

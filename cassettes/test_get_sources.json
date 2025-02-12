@@ -33,61 +33,57 @@
                     "message": "OK"
                 },
                 "headers": {
-                    "ETag": [
-                        "W/\"ae17c6d1a4903d5cc24d933b2165c7fd\""
+                    "vary": [
+                        "Origin"
                     ],
-                    "Content-Type": [
-                        "text/json; charset=utf-8"
-                    ],
-                    "Access-Control-Allow-Origin": [
-                        "*",
-                        "*"
-                    ],
-                    "X-Runtime": [
-                        "1.004234"
-                    ],
-                    "Content-Disposition": [
-                        "attachment; filename=\"WikiRate-2024_09_03_103922-Source.json\""
-                    ],
-                    "X-Frame-Options": [
-                        "ALLOWALL"
-                    ],
-                    "Set-Cookie": [
-                        "_wikirate_session=Z3RLaEVmL1hZR2xKa1dRUktEVFE3SVNwZHRmQUxPVFhDUTl4cTNDZHNCL3ExU3UvTGFZYVdES1NuTEEzMzdQejVURWd6bXVWdStQVFFhWXd1UXVQLzB2YUdoQ3ozTXdSNGYwTkVDejhYTkxCeWIzYTNQVStza2U0QlQ0dzQ3R0YtLTR0bm1NN2FoUXJmVmR3eEptWHRscHc9PQ%3D%3D--2f4b6e53b43bbf374d9847c4814aa2727b30701c; path=/; HttpOnly"
-                    ],
-                    "Cache-Control": [
-                        "max-age=0, private, must-revalidate"
+                    "X-Request-Id": [
+                        "4d2b6ded4203a415b43f541525abe8ee"
                     ],
                     "Transfer-Encoding": [
                         "chunked"
                     ],
-                    "X-Request-Id": [
-                        "a9db6d0d-2fd1-41d2-9392-6592f283a79c"
-                    ],
-                    "Keep-Alive": [
-                        "timeout=5, max=100"
-                    ],
-                    "vary": [
-                        "Origin"
-                    ],
                     "Date": [
-                        "Tue, 03 Sep 2024 10:39:22 GMT"
+                        "Wed, 12 Feb 2025 16:23:07 GMT"
                     ],
-                    "X-Powered-By": [
-                        "Phusion Passenger(R) 6.0.18"
+                    "ETag": [
+                        "W/\"d856fc7c2da5bb81fcfc4438976dbaac\""
                     ],
-                    "Connection": [
-                        "Keep-Alive"
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
+                    "Set-Cookie": [
+                        "_decko_deck_session=M2JPaG5MTTBUdzVHMkI1UG53R0JwSk9pYVdGT3JobEx0MjljV3FsMkhLeWEzcE5mVnMwZ0h5SmdzcDZFZ041VUxYY21pQzJ5L09XVnhZMmdTSUhqaWJaS0lUNnRCT2pMVWhkVFIvWjBCZ0dhR0pmam1rdGpKMWVBSW1rVjY3dEQtLU9TMUJVamVuWGNpUXVkWlArNUhBVFE9PQ%3D%3D--0a427e3204e6d0c5b829540bb76530ff6344f521; path=/; HttpOnly"
                     ],
                     "Status": [
                         "200 OK"
                     ],
-                    "Server": [
-                        "Apache/2.4.52 (Ubuntu) Phusion_Passenger/6.0.18 OpenSSL/3.0.2"
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "X-Runtime": [
+                        "1.571853"
+                    ],
+                    "Connection": [
+                        "keep-alive"
+                    ],
+                    "Strict-Transport-Security": [
+                        "max-age=31536000; includeSubDomains"
+                    ],
+                    "Access-Control-Allow-Origin": [
+                        "*"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.23"
+                    ],
+                    "Cache-Control": [
+                        "max-age=0, private, must-revalidate"
+                    ],
+                    "Content-Disposition": [
+                        "attachment; filename=\"Wikirate-2025_02_12_162306-Source.json\""
                     ]
                 },
                 "body": {
-                    "string": "{\n  \"id\": 629,\n  \"name\": \"Source\",\n  \"type\": {\n    \"id\": 5,\n    \"name\": \"Cardtype\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Cardtype.json\",\n    \"codename\": \"cardtype\"\n  },\n  \"url\": \"https://staging.wikirate.org/Sources.json\",\n  \"codename\": \"source\",\n  \"items\": [\n    {\n      \"id\": 19615558,\n      \"name\": \"Source-000204387\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000204387.json\",\n      \"file\": \"https://d1leew03y1rvlv.cloudfront.net/files/19615560/48879339.pdf\",\n      \"link\": \"\",\n      \"report_type\": \"\",\n      \"title\": \"Testing file upload\",\n      \"year\": \"\"\n    },\n    {\n      \"id\": 19615551,\n      \"name\": \"Source-000204386\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000204386.json\",\n      \"file\": \"\",\n      \"link\": \"https://en.wikipedia.org/wiki/Target_Corporation\",\n      \"report_type\": \"\",\n      \"title\": \"wikipedia page of Target Corporation 2021\",\n      \"year\": [\n        \"2020\"\n      ]\n    },\n    {\n      \"id\": 19585552,\n      \"name\": \"Source-000204385\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000204385.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/19585553/48801878.pdf\",\n      \"link\": \"https://dq06ugkuram52.cloudfront.net/files/19582829/48798714.pdf\",\n      \"report_type\": [\n        \"Aggregate Data Report\",\n        \"Annual Report\"\n      ],\n      \"title\": \"Annual Report 2023\",\n      \"year\": [\n        \"2023\"\n      ]\n    },\n    {\n      \"id\": 19585542,\n      \"name\": \"Source-000204384\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000204384.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/19585543/48801867.pdf\",\n      \"link\": \"\",\n      \"report_type\": [\n        \"Member List\"\n      ],\n      \"title\": \"Textile Exchange Member\",\n      \"year\": [\n        \"2023\"\n      ]\n    },\n    {\n      \"id\": 19585526,\n      \"name\": \"Source-000204383\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000204383.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/19585527/48801849.pdf\",\n      \"link\": \"https://docs.google.com/spreadsheets/d/1TXqPmhwfFuhupTm2DqKfF_TsAq14FztTMPIxTwVTgx4/edit?gid=843332552#gid=843332552\",\n      \"report_type\": [\n        \"Corporate Social Responsibility Report\",\n        \"Communication on Progress\",\n        \"Supply Chain Policy document\"\n      ],\n      \"title\": \"Bangladesh Accord Signatory\",\n      \"year\": [\n        \"2023\"\n      ]\n    },\n    {\n      \"id\": 19585514,\n      \"name\": \"Source-000204382\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000204382.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/19585520/48801837.pdf\",\n      \"link\": \"https://www1.hkexnews.hk/listedco/listconews/sehk/2023/0417/2023041700805.pdf\",\n      \"report_type\": \"\",\n      \"title\": \"China Galaxy Securities Net Zero Goals Related Document 2024\",\n      \"year\": [\n        \"2024\"\n      ]\n    },\n    {\n      \"id\": 19585509,\n      \"name\": \"Source-000204381\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000204381.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/19585519/48801836.pdf\",\n      \"link\": \"https://www1.hkexnews.hk/listedco/listconews/sehk/2022/0428/2022042803197.pdf\",\n      \"report_type\": \"\",\n      \"title\": \"Shandong Gold Mining Net Zero Goals Related Document 2024\",\n      \"year\": [\n        \"2024\"\n      ]\n    },\n    {\n      \"id\": 19585504,\n      \"name\": \"Source-000204380\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000204380.json\",\n      \"file\": \"https://dq06ugkuram52.cloudfront.net/files/19585521/48801839.pdf\",\n      \"link\": \"https://www1.hkexnews.hk/listedco/listconews/sehk/2022/0325/2022032501601.pdf\",\n      \"report_type\": \"\",\n      \"title\": \"Anhui Conch Cement Net Zero Goals Related Document 2021\",\n      \"year\": [\n        \"2021\"\n      ]\n    },\n    {\n      \"id\": 19585499,\n      \"name\": \"Source-000204379\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000204379.json\",\n      \"file\": \"\",\n      \"link\": \"https://www1.hkexnews.hk/listedco/listconews/sehk/2021/0629/2021062901560.pdf\",\n      \"report_type\": \"\",\n      \"title\": \"Yuexiu Property Co Net Zero Goals Related Document 2021\",\n      \"year\": [\n        \"2021\"\n      ]\n    },\n    {\n      \"id\": 19585494,\n      \"name\": \"Source-000204378\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000204378.json\",\n      \"file\": \"\",\n      \"link\": \"https://www1.hkexnews.hk/listedco/listconews/sehk/2021/0527/2021052701324.pdf\",\n      \"report_type\": \"\",\n      \"title\": \"ANTA Sports Products Net Zero Goals Related Document 2022\",\n      \"year\": [\n        \"2022\"\n      ]\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Source\",\n  \"created_at\": \"2012-03-13 19:59:55 UTC\",\n  \"updated_at\": \"2023-06-15 10:13:22 UTC\",\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Source.json?item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2024-09-03 10:39:23 UTC\",\n  \"license\": \"Wikirate.org, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0). See https://staging.wikirate.org/Attribution_Guide.\"\n}"
+                    "string": "{\n  \"id\": 629,\n  \"name\": \"Source\",\n  \"type\": {\n    \"id\": 5,\n    \"name\": \"Cardtype\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Cardtype.json\",\n    \"codename\": \"cardtype\"\n  },\n  \"url\": \"https://staging.wikirate.org/Sources.json\",\n  \"codename\": \"source\",\n  \"items\": [\n    {\n      \"id\": 20270818,\n      \"name\": \"Source-000216644\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000216644.json\",\n      \"file\": \"https://wikirate-staging-storage.fra1.cdn.digitaloceanspaces.com/files/20270820/49867660.pdf\",\n      \"link\": \"\",\n      \"report_type\": \"\",\n      \"title\": \"Testing file upload\",\n      \"year\": \"\"\n    },\n    {\n      \"id\": 20270812,\n      \"name\": \"Source-000216643\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000216643.json\",\n      \"file\": \"\",\n      \"link\": \"https://en.wikipedia.org/wiki/Target_Corporation\",\n      \"report_type\": \"\",\n      \"title\": \"wikipedia page of Target Corporation 2021\",\n      \"year\": [\n        \"2020\"\n      ]\n    },\n    {\n      \"id\": 20270804,\n      \"name\": \"Source-000216642\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000216642.json\",\n      \"file\": \"https://wikirate-staging-storage.fra1.cdn.digitaloceanspaces.com/files/20270808/49867646.pdf\",\n      \"link\": \"https://nachhaltigkeitsbericht.vaude.com/2022/gri-wAssets/pdf/VAUDE-Supplier-List-2020.pdf\",\n      \"report_type\": \"\",\n      \"title\": \"Test source 2\",\n      \"year\": [\n        \"2023\"\n      ]\n    },\n    {\n      \"id\": 20270801,\n      \"name\": \"Source-000216641\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000216641.json\",\n      \"file\": \"https://wikirate-staging-storage.fra1.cdn.digitaloceanspaces.com/files/20270803/49867638.pdf\",\n      \"link\": \"\",\n      \"report_type\": \"\",\n      \"title\": \"Test source\",\n      \"year\": \"\"\n    },\n    {\n      \"id\": 20270730,\n      \"name\": \"Source-000216640\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000216640.json\",\n      \"file\": \"https://wikirate-staging-storage.fra1.cdn.digitaloceanspaces.com/files/20270731/49867001.pdf\",\n      \"link\": \"\",\n      \"report_type\": [\n        \"Terms of Service\"\n      ],\n      \"title\": \"TEST \",\n      \"year\": [\n        \"2023\"\n      ]\n    },\n    {\n      \"id\": 20270213,\n      \"name\": \"Source-000216639\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000216639.json\",\n      \"file\": \"https://wikirate-production-storage.fra1.cdn.digitaloceanspaces.com/files/20270214/49866360.pdf\",\n      \"link\": \"https://assets-dam.takeda.com/image/upload/global/investor/air/2024/takeda_2024_annual_integrated_report_en.pdf\",\n      \"report_type\": [\n        \"Corporate Social Responsibility Report\"\n      ],\n      \"title\": \"Takeda integrated report 2023/2024\",\n      \"year\": [\n        \"2023\"\n      ]\n    },\n    {\n      \"id\": 20270197,\n      \"name\": \"Source-000216638\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000216638.json\",\n      \"file\": \"https://wikirate-production-storage.fra1.cdn.digitaloceanspaces.com/files/20270198/49866332.pdf\",\n      \"link\": \"https://cms.norden.com/files/2024-02/NORDEN_AnnualReport_2023.pdf\",\n      \"report_type\": [\n        \"Corporate Social Responsibility Report\"\n      ],\n      \"title\": \"Annual report 2023 Enabling smarter global trade\",\n      \"year\": [\n        \"2023\"\n      ]\n    },\n    {\n      \"id\": 20270162,\n      \"name\": \"Source-000216637\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000216637.json\",\n      \"file\": \"https://wikirate-production-storage.fra1.cdn.digitaloceanspaces.com/files/20270163/49866297.pdf\",\n      \"link\": \"\",\n      \"report_type\": [\n        \"Sustainability Report\"\n      ],\n      \"title\": \"Cushman & Wakefield 2023 sustainability report\",\n      \"year\": [\n        \"2023\"\n      ]\n    },\n    {\n      \"id\": 20270013,\n      \"name\": \"Source-000216636\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000216636.json\",\n      \"file\": \"https://wikirate-production-storage.fra1.cdn.digitaloceanspaces.com/files/20270014/49866127.pdf\",\n      \"link\": \"\",\n      \"report_type\": [\n        \"Corporate Social Responsibility Report\"\n      ],\n      \"title\": \"Auchan Retail Sustainability Report\",\n      \"year\": [\n        \"2023\"\n      ]\n    },\n    {\n      \"id\": 20269983,\n      \"name\": \"Source-000216635\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000216635.json\",\n      \"file\": \"https://wikirate-production-storage.fra1.cdn.digitaloceanspaces.com/files/20269984/49866096.pdf\",\n      \"link\": \"\",\n      \"report_type\": [\n        \"Sustainability Report\"\n      ],\n      \"title\": \"Asahi Kasei Sustainability Report 2023.\",\n      \"year\": [\n        \"2023\"\n      ]\n    }\n  ],\n  \"links\": [],\n  \"ancestors\": [],\n  \"html_url\": \"https://staging.wikirate.org/Source\",\n  \"created_at\": \"2012-03-13 19:59:55 UTC\",\n  \"updated_at\": \"2024-08-30 09:16:04 UTC\",\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Source.json?item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2025-02-12 16:23:07 UTC\",\n  \"license\": \"Wikirate.org, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0). See https://staging.wikirate.org/Attribution_Guide.\"\n}"
                 }
             }
         }

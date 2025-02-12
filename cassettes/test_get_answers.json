@@ -33,61 +33,57 @@
                     "message": "OK"
                 },
                 "headers": {
+                    "X-Runtime": [
+                        "1.350183"
+                    ],
                     "vary": [
                         "Origin"
-                    ],
-                    "Date": [
-                        "Fri, 20 Sep 2024 15:42:05 GMT"
-                    ],
-                    "ETag": [
-                        "W/\"3aac16492041bf018b40c79b4e353b07\""
-                    ],
-                    "Set-Cookie": [
-                        "_wikirate_session=eFc2WVdFYktpYS8rSFZNRjhVL3BJRk12RWFUMXJzMVUxZE54dXJ4UnN1UVNMZ3c0aVM5anlBSlQ1RzU1TjFCRmM1ZkN2MXdDUEdiMzh6Zlp4QW1lTHIyTHJvZ2NDeitCbDNaK3cwL3lJcHhtQlZIZ0ZEY0VETXpwbkhTREVKV1ktLTNaYWYreHhoYmY2b1JkN1NINjZCVnc9PQ%3D%3D--0a11dc29cf1f5ed9ebbe4a4a71ef121c9d93c780; path=/; HttpOnly"
-                    ],
-                    "Keep-Alive": [
-                        "timeout=5, max=100"
                     ],
                     "Transfer-Encoding": [
                         "chunked"
                     ],
-                    "Cache-Control": [
-                        "max-age=0, private, must-revalidate"
-                    ],
-                    "X-Runtime": [
-                        "21.840979"
-                    ],
-                    "X-Frame-Options": [
-                        "ALLOWALL"
-                    ],
-                    "Content-Type": [
-                        "text/json; charset=utf-8"
-                    ],
-                    "Access-Control-Allow-Origin": [
-                        "*",
-                        "*"
-                    ],
-                    "Content-Disposition": [
-                        "attachment; filename=\"Wikirate-2024_09_20_154216-Company_Report_Available+Answer.json\""
-                    ],
-                    "X-Request-Id": [
-                        "06b142e5-f87b-4742-88d5-bf5a5b8fc909"
-                    ],
-                    "Connection": [
-                        "Keep-Alive"
-                    ],
-                    "X-Powered-By": [
-                        "Phusion Passenger(R) 6.0.18"
+                    "Strict-Transport-Security": [
+                        "max-age=31536000; includeSubDomains"
                     ],
                     "Status": [
                         "200 OK"
                     ],
-                    "Server": [
-                        "Apache/2.4.52 (Ubuntu) Phusion_Passenger/6.0.18 OpenSSL/3.0.2"
+                    "X-Request-Id": [
+                        "56e808141149ccf22bafa277544f2b9e"
+                    ],
+                    "ETag": [
+                        "W/\"118f175037e9f19541587ea632b4a6aa\""
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
+                    "Content-Disposition": [
+                        "attachment; filename=\"Wikirate-2025_02_12_162335-Company_Report_Available+Answer.json\""
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.23"
+                    ],
+                    "Date": [
+                        "Wed, 12 Feb 2025 16:23:36 GMT"
+                    ],
+                    "Access-Control-Allow-Origin": [
+                        "*"
+                    ],
+                    "Connection": [
+                        "keep-alive"
+                    ],
+                    "Cache-Control": [
+                        "max-age=0, private, must-revalidate"
+                    ],
+                    "Set-Cookie": [
+                        "_decko_deck_session=SWtHVVRMakNLU2gzQmJiVU5ZODkwNE5mekk5bE9sbExxUElrZjJZcEJCWENTY1pocEI3SVB6K0dRb0JZR3hOYlNQZjI4dFhqbUQwUTZRalpUNkNvRk5ndlhVdUZyRnV1dGVUK3kvR0txUGdROTBmYWJsK1l6blRpMStNK2JxZ2EtLW9hMi9aSzdybHJyZE8zZjhaMGgzQ3c9PQ%3D%3D--09040d71e6914db44817f7e0794cfcd6026ff024; path=/; HttpOnly"
                     ]
                 },
                 "body": {
-                    "string": "{\n  \"id\": null,\n  \"name\": \"Core+Company Report Available+Answers\",\n  \"type\": {\n    \"id\": 30,\n    \"name\": \"Search\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Search.json\",\n    \"codename\": \"search_type\"\n  },\n  \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Answers.json\",\n  \"items\": [\n    {\n      \"id\": 18035451,\n      \"name\": \"Core+Company Report Available+Asos+2023\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Asos+2023.json\",\n      \"content\": \"\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Asos\",\n      \"year\": 2023,\n      \"value\": \"Yes\",\n      \"comments\": \"Yes, the company published a report containing ESG information. Pooja Yadav[https://wikirate.org/Pooja_Yadav].....2024-06-29 10:40:10 UTC\",\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Asos.json\"\n    },\n    {\n      \"id\": 18037957,\n      \"name\": \"Core+Company Report Available+Compass Group+2023\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Compass_Group+2023.json\",\n      \"content\": \"\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Compass Group\",\n      \"year\": 2023,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Compass_Group.json\"\n    },\n    {\n      \"id\": 18084202,\n      \"name\": \"Core+Company Report Available+Sports Direct+2023\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Sports_Direct+2023.json\",\n      \"content\": \"\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Sports Direct\",\n      \"year\": 2023,\n      \"value\": \"Yes\",\n      \"comments\": \"Pages 35-56 have information on Sustainability Anthony Moreno[https://wikirate.org/Anthony_Moreno].....2024-03-20 21:06:20 UTC\",\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Sports_Direct.json\"\n    },\n    {\n      \"id\": 18043620,\n      \"name\": \"Core+Company Report Available+A.G. BARR plc+2023\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+A_G_BARR_plc+2023.json\",\n      \"content\": \"\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"A.G. BARR plc\",\n      \"year\": 2023,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+A_G_BARR_plc.json\"\n    },\n    {\n      \"id\": 18043557,\n      \"name\": \"Core+Company Report Available+Wm Morrison Supermarkets+2023\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Wm_Morrison_Supermarkets+2023.json\",\n      \"content\": \"\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Wm Morrison Supermarkets\",\n      \"year\": 2023,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Wm_Morrison_Supermarkets.json\"\n    },\n    {\n      \"id\": 18043934,\n      \"name\": \"Core+Company Report Available+Unilever+2023\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Unilever+2023.json\",\n      \"content\": \"\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Unilever\",\n      \"year\": 2023,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Unilever.json\"\n    },\n    {\n      \"id\": 18037338,\n      \"name\": \"Core+Company Report Available+Next PLC+2023\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Next_PLC+2023.json\",\n      \"content\": \"\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Next PLC\",\n      \"year\": 2023,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Next_PLC.json\"\n    },\n    {\n      \"id\": 18043926,\n      \"name\": \"Core+Company Report Available+Marks and Spencer Group plc+2023\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Marks_and_Spencer_Group_plc+2023.json\",\n      \"content\": \"\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Marks and Spencer Group plc\",\n      \"year\": 2023,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Marks_and_Spencer_Group_plc.json\"\n    },\n    {\n      \"id\": 15549282,\n      \"name\": \"Core+Company Report Available+Chelmer Foods Limited+2023\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Chelmer_Foods_Limited+2023.json\",\n      \"content\": \"\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Chelmer Foods Limited\",\n      \"year\": 2023,\n      \"value\": \"No\",\n      \"comments\": \"The company neither publishes any report nor provides any information on its website. Manali Rana[https://wikirate.org/Manali_Rana].....2023-10-03 11:03:41 UTC\",\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Chelmer_Foods_Limited.json\"\n    },\n    {\n      \"id\": 18084789,\n      \"name\": \"Core+Company Report Available+Burberry Group plc+2023\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Burberry_Group_plc+2023.json\",\n      \"content\": \"\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Burberry Group plc\",\n      \"year\": 2023,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"record_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Burberry_Group_plc.json\"\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n    {\n      \"id\": 3341237,\n      \"name\": \"Core\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/Core.json\"\n    },\n    {\n      \"id\": 3094885,\n      \"name\": \"Company Report Available\",\n      \"type\": \"Metric Title\",\n      \"url\": \"https://staging.wikirate.org/Company_Report_Available.json\"\n    },\n    {\n      \"id\": 43678,\n      \"name\": \"Answer\",\n      \"type\": \"Cardtype\",\n      \"url\": \"https://staging.wikirate.org/Answer.json\",\n      \"codename\": \"metric_answer\"\n    },\n    {\n      \"id\": 3094828,\n      \"name\": \"Core+Company Report Available\",\n      \"type\": \"Metric\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available.json\"\n    }\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Answers\",\n  \"created_at\": null,\n  \"updated_at\": null,\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Core+Company_Report_Available+Answers.json?filter%5Bcountry%5D=United+Kingdom&item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2024-09-20 15:42:33 UTC\",\n  \"license\": \"Wikirate.org, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0). See https://staging.wikirate.org/Attribution_Guide.\"\n}"
+                    "string": "{\n  \"id\": null,\n  \"name\": \"Core+Company Report Available+Answers\",\n  \"type\": {\n    \"id\": 30,\n    \"name\": \"Search\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Search.json\",\n    \"codename\": \"search_type\"\n  },\n  \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Answers.json\",\n  \"items\": [\n    {\n      \"id\": 18035451,\n      \"name\": \"Core+Company Report Available+Asos+2023\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Asos+2023.json\",\n      \"content\": \"\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Asos\",\n      \"year\": 2023,\n      \"value\": \"Yes\",\n      \"comments\": \"Yes, the company published a report containing ESG information. Pooja Yadav[https://wikirate.org/Pooja_Yadav].....2024-06-29 10:40:10 UTC\",\n      \"answer_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Asos.json\"\n    },\n    {\n      \"id\": 18037957,\n      \"name\": \"Core+Company Report Available+Compass Group+2023\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Compass_Group+2023.json\",\n      \"content\": \"\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Compass Group\",\n      \"year\": 2023,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"answer_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Compass_Group.json\"\n    },\n    {\n      \"id\": 18084202,\n      \"name\": \"Core+Company Report Available+Sports Direct+2023\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Sports_Direct+2023.json\",\n      \"content\": \"\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Sports Direct\",\n      \"year\": 2023,\n      \"value\": \"Yes\",\n      \"comments\": \"Pages 35-56 have information on Sustainability Anthony Moreno[https://wikirate.org/Anthony_Moreno].....2024-03-20 21:06:20 UTC\",\n      \"answer_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Sports_Direct.json\"\n    },\n    {\n      \"id\": 18043620,\n      \"name\": \"Core+Company Report Available+A.G. BARR plc+2023\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+A_G_BARR_plc+2023.json\",\n      \"content\": \"\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"A.G. BARR plc\",\n      \"year\": 2023,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"answer_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+A_G_BARR_plc.json\"\n    },\n    {\n      \"id\": 18043557,\n      \"name\": \"Core+Company Report Available+Wm Morrison Supermarkets+2023\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Wm_Morrison_Supermarkets+2023.json\",\n      \"content\": \"\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Wm Morrison Supermarkets\",\n      \"year\": 2023,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"answer_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Wm_Morrison_Supermarkets.json\"\n    },\n    {\n      \"id\": 18043934,\n      \"name\": \"Core+Company Report Available+Unilever+2023\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Unilever+2023.json\",\n      \"content\": \"\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Unilever\",\n      \"year\": 2023,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"answer_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Unilever.json\"\n    },\n    {\n      \"id\": 18037338,\n      \"name\": \"Core+Company Report Available+Next PLC+2023\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Next_PLC+2023.json\",\n      \"content\": \"\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Next PLC\",\n      \"year\": 2023,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"answer_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Next_PLC.json\"\n    },\n    {\n      \"id\": 18043926,\n      \"name\": \"Core+Company Report Available+Marks and Spencer Group plc+2023\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Marks_and_Spencer_Group_plc+2023.json\",\n      \"content\": \"\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Marks and Spencer Group plc\",\n      \"year\": 2023,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"answer_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Marks_and_Spencer_Group_plc.json\"\n    },\n    {\n      \"id\": 15549282,\n      \"name\": \"Core+Company Report Available+Chelmer Foods Limited+2023\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Chelmer_Foods_Limited+2023.json\",\n      \"content\": \"\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Chelmer Foods Limited\",\n      \"year\": 2023,\n      \"value\": \"No\",\n      \"comments\": \"The company neither publishes any report nor provides any information on its website. Manali Rana[https://wikirate.org/Manali_Rana].....2023-10-03 11:03:41 UTC\",\n      \"answer_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Chelmer_Foods_Limited.json\"\n    },\n    {\n      \"id\": 18084789,\n      \"name\": \"Core+Company Report Available+Burberry Group plc+2023\",\n      \"type\": \"Answer\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Burberry_Group_plc+2023.json\",\n      \"content\": \"\",\n      \"metric\": \"Core+Company Report Available\",\n      \"company\": \"Burberry Group plc\",\n      \"year\": 2023,\n      \"value\": \"Yes\",\n      \"comments\": null,\n      \"answer_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Burberry_Group_plc.json\"\n    }\n  ],\n  \"links\": [],\n  \"ancestors\": [\n    {\n      \"id\": 3341237,\n      \"name\": \"Core\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/Core.json\"\n    },\n    {\n      \"id\": 3094885,\n      \"name\": \"Company Report Available\",\n      \"type\": \"Metric Title\",\n      \"url\": \"https://staging.wikirate.org/Company_Report_Available.json\"\n    },\n    {\n      \"id\": 43678,\n      \"name\": \"Answer\",\n      \"type\": \"Cardtype\",\n      \"url\": \"https://staging.wikirate.org/Answer.json\",\n      \"codename\": \"answer\"\n    },\n    {\n      \"id\": 3094828,\n      \"name\": \"Core+Company Report Available\",\n      \"type\": \"Metric\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available.json\"\n    }\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Answers\",\n  \"created_at\": null,\n  \"updated_at\": null,\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Core+Company_Report_Available+Answers.json?filter%5Bcountry%5D=United+Kingdom&item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2025-02-12 16:23:36 UTC\",\n  \"license\": \"Wikirate.org, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0). See https://staging.wikirate.org/Attribution_Guide.\"\n}"
                 }
             }
         }

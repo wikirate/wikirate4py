@@ -27,58 +27,54 @@
                     "message": "OK"
                 },
                 "headers": {
-                    "ETag": [
-                        "W/\"c75a5a944c200e8c209a0d055d564d32\""
-                    ],
-                    "Content-Type": [
-                        "text/json; charset=utf-8"
-                    ],
-                    "Access-Control-Allow-Origin": [
-                        "*",
-                        "*"
-                    ],
-                    "X-Runtime": [
-                        "0.063346"
-                    ],
                     "Set-Cookie": [
-                        "_wikirate_session=N0gwdDlVQjNrVjFPOUhhT3Z0bXY5bm14WlVIa2pBVUpORzZ5eFlKMVZJdkZZTGFVaThucTFTbzVrRG5tVUl3SWFLNlhhVGFnVEV3RFJCdXNUSDI3ZDFTTVZTZGx6OUhLTnp5V3JIdTd3bUVsR0gzMy9xdTA5MklMdFVIeVQ5d3gtLXZORGVwNG1YMTBuNmppVEVmQ2pDQ3c9PQ%3D%3D--3ad702bcecf4a92eeffadfa997395f3762d06d9d; path=/; HttpOnly"
-                    ],
-                    "X-Frame-Options": [
-                        "ALLOWALL"
-                    ],
-                    "Cache-Control": [
-                        "max-age=0, private, must-revalidate"
+                        "_decko_deck_session=TnJtNUlEeUVTUm0xeDk3UENvS2JIZE1uK0RHMFhuWXJOMWlVSTRzbURWdjB0WUxYRlhNK2xQNGtTc1EwNmpuRDlPQ0RZbXVjbjY4SEswQ0MvbHZHcm1HUVdEbHQ2ZzB0amQzLzNrd05zQzBuUDg5VWc3b0RDdm1XR2hZZ3hmNVMtLTE0UmwvWG5wNnJOZnp3ZDQ4NmQ5b1E9PQ%3D%3D--a90fc09084d788295f2cb14d46c3e21162da4f50; path=/; HttpOnly"
                     ],
                     "Transfer-Encoding": [
                         "chunked"
                     ],
-                    "X-Request-Id": [
-                        "8005760c-02d0-422d-9106-dff71de272a0"
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
                     ],
-                    "Keep-Alive": [
-                        "timeout=5, max=100"
-                    ],
-                    "vary": [
-                        "Origin"
-                    ],
-                    "Date": [
-                        "Tue, 03 Sep 2024 10:39:15 GMT"
+                    "ETag": [
+                        "W/\"949393f55664ae6a30b093cf1fb4e345\""
                     ],
                     "X-Powered-By": [
-                        "Phusion Passenger(R) 6.0.18"
+                        "Phusion Passenger(R) 6.0.23"
                     ],
-                    "Connection": [
-                        "Keep-Alive"
+                    "Strict-Transport-Security": [
+                        "max-age=31536000; includeSubDomains"
                     ],
                     "Status": [
                         "200 OK"
                     ],
-                    "Server": [
-                        "Apache/2.4.52 (Ubuntu) Phusion_Passenger/6.0.18 OpenSSL/3.0.2"
+                    "Cache-Control": [
+                        "max-age=0, private, must-revalidate"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "X-Runtime": [
+                        "0.423494"
+                    ],
+                    "vary": [
+                        "Origin"
+                    ],
+                    "X-Request-Id": [
+                        "31631b206d908707d0b78ec760c23575"
+                    ],
+                    "Date": [
+                        "Wed, 12 Feb 2025 16:24:35 GMT"
+                    ],
+                    "Access-Control-Allow-Origin": [
+                        "*"
+                    ],
+                    "Connection": [
+                        "keep-alive"
                     ]
                 },
                 "body": {
-                    "string": "{\n  \"id\": 13655794,\n  \"name\": \"Scope 1 Greenhouse gas GHG Emission\",\n  \"type\": {\n    \"id\": 39830,\n    \"name\": \"Project\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Project.json\",\n    \"codename\": \"project\"\n  },\n  \"url\": \"https://staging.wikirate.org/Scope_1_Greenhouse_gas_GHG_Emission.json\",\n  \"items\": [\n\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Scope_1_Greenhouse_gas_GHG_Emission\",\n  \"created_at\": \"2022-10-06 05:54:25 UTC\",\n  \"updated_at\": \"2022-10-06 05:56:31 UTC\",\n  \"requested_at\": \"2024-09-03 10:39:15 UTC\",\n  \"license\": \"Wikirate.org, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0). See https://staging.wikirate.org/Attribution_Guide.\"\n}"
+                    "string": "{\n  \"id\": 13655794,\n  \"name\": \"Scope 1 Greenhouse gas GHG Emission\",\n  \"type\": {\n    \"id\": 39830,\n    \"name\": \"Project\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Project.json\",\n    \"codename\": \"project\"\n  },\n  \"url\": \"https://staging.wikirate.org/Scope_1_Greenhouse_gas_GHG_Emission.json\",\n  \"items\": [],\n  \"links\": [],\n  \"ancestors\": [],\n  \"html_url\": \"https://staging.wikirate.org/Scope_1_Greenhouse_gas_GHG_Emission\",\n  \"created_at\": \"2022-10-06 05:54:25 UTC\",\n  \"updated_at\": \"2022-10-06 05:56:31 UTC\",\n  \"requested_at\": \"2025-02-12 16:24:35 UTC\",\n  \"license\": \"Wikirate.org, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0). See https://staging.wikirate.org/Attribution_Guide.\"\n}"
                 }
             }
         }

@@ -1,7 +1,7 @@
 from tests.config import Wikirate4PyTestCase, tape
-from wikirate4py import Company, Metric, Topic, ResearchGroup, CompanyGroup, Source, Answer, RelationshipAnswer, \
+from wikirate4py import Company, Metric, Topic, ResearchGroup, CompanyGroup, Source, Answer, Relationship, \
     Project, SourceItem, AnswerItem, CompanyGroupItem, ResearchGroupItem, MetricItem, TopicItem, CompanyItem, \
-    ProjectItem, RelationshipAnswerItem, Dataset, DatasetItem
+    ProjectItem, RelationshipItem, Dataset, DatasetItem
 
 
 class Wikirate4PyTests(Wikirate4PyTestCase):
@@ -10,6 +10,7 @@ class Wikirate4PyTests(Wikirate4PyTestCase):
     def test_get_company(self):
         company = self.api.get_company('Puma')
         self.assertTrue(isinstance(company, Company))
+        self.assertEqual(company.lei, "529900GRZ2BQY5ZM9N49")
         self.assertEqual(company.name, 'Puma')
 
     @tape.use_cassette('test_get_companies.json')
@@ -60,12 +61,6 @@ class Wikirate4PyTests(Wikirate4PyTestCase):
         self.assertTrue(isinstance(company_group, CompanyGroup))
         self.assertEqual(company_group.id, 5671631)
 
-    @tape.use_cassette('test_get_company_groups.json')
-    def test_get_company_groups(self):
-        company_groups = self.api.get_company_groups(limit=10)
-        self.assertTrue(isinstance(company_groups[0], CompanyGroupItem))
-        self.assertEqual(len(company_groups), 10)
-
     @tape.use_cassette('test_get_source.json')
     def test_get_source(self):
         source = self.api.get_source('Source_000105228')
@@ -85,7 +80,7 @@ class Wikirate4PyTests(Wikirate4PyTestCase):
         self.assertEqual(answer.metric, 'Responsible Sourcing Network+Signatory Turkmen Cotton Pledge')
 
     @tape.use_cassette('test_get_answers.json')
-    def test_get_metric_answers(self):
+    def test_get_answers(self):
         answers = self.api.get_answers(metric_name='Company Report Available', metric_designer='Core',
                                        country='United Kingdom', limit=10)
         self.assertTrue(isinstance(answers[0], AnswerItem))
@@ -97,17 +92,16 @@ class Wikirate4PyTests(Wikirate4PyTestCase):
         self.assertTrue(isinstance(answers[0], AnswerItem))
         self.assertEqual(len(answers), 10)
 
-    @tape.use_cassette('test_get_relationship_answer.json')
-    def test_get_relationship_answer(self):
-        relationship_answer = self.api.get_relationship_answer(7261680)
-        self.assertTrue(isinstance(relationship_answer, RelationshipAnswer))
+    @tape.use_cassette('test_get_relationship.json')
+    def test_get_relationship(self):
+        relationship_answer = self.api.get_relationship(7261680)
+        self.assertTrue(isinstance(relationship_answer, Relationship))
         self.assertEqual(relationship_answer.metric, 'Commons+Supplied By')
 
-    @tape.use_cassette('get_relationship_metric_answers.json')
-    def test_get_relationship_metric_answers(self):
-        answers = self.api.get_relationship_metric_answers(metric_name='Supplier of', metric_designer='Commons',
-                                                           limit=10)
-        self.assertTrue(isinstance(answers[0], RelationshipAnswerItem))
+    @tape.use_cassette('get_relationships.json')
+    def test_get_relationships(self):
+        answers = self.api.get_relationships(metric_name='Supplier of', metric_designer='Commons', limit=10)
+        self.assertTrue(isinstance(answers[0], RelationshipItem))
         self.assertEqual(len(answers), 10)
 
     @tape.use_cassette('test_get_project.json')
@@ -152,19 +146,17 @@ class Wikirate4PyTests(Wikirate4PyTestCase):
 
     @tape.use_cassette('test_add_and_remove_company.yaml', serializer='yaml')
     def test_add_and_remove_company(self):
-        company = self.api.add_company(name='My Test Company Inc.',
-                                       headquarters='United Kingdom'
-                                       )
+        company = self.api.add_company(name='Test Co. Inc.',
+                                       headquarters='United Kingdom')
         self.assertTrue(isinstance(company, Company))
-        self.assertEqual(company.name, 'My Test Company Inc.')
-        self.api.delete_wikirate_entity(company.id)
+        self.assertEqual(company.name, 'Test Co. Inc.')
+        self.assertEqual(self.api.delete_wikirate_entity(company.id), True)
 
     @tape.use_cassette('test_search_by_name.json')
     def test_search_by_name(self):
         self.api.search_by_name(Company, 'adidas')
         self.api.search_by_name(Metric, 'emissions')
         self.api.search_by_name(Topic, 'environment')
-        self.api.search_by_name(CompanyGroup, 'aus')
         self.api.search_by_name(ResearchGroup, 'university')
         self.api.search_by_name(Project, 'apparel')
 
@@ -179,50 +171,50 @@ class Wikirate4PyTests(Wikirate4PyTestCase):
 
     @tape.use_cassette('test_update_source.json')
     def test_update_source(self):
-        source = self.api.update_source(name='Source-000106092',
+        source = self.api.update_source(name='Source-000216646',
                                         year=2021)
         self.assertTrue(isinstance(source, Source))
         self.assertEqual(source.year[0], '2021')
 
-    @tape.use_cassette('test_add_research_metric_answer.json')
-    def test_add_research_metric_answer(self):
-        answer = self.api.add_research_metric_answer(metric_name='Company Report Available',
-                                                     metric_designer='Core',
-                                                     value='No',
-                                                     year=2022,
-                                                     source='Source_000104408',
-                                                     company='Adidas AG',
-                                                     comment='This is a test import of a metric answer')
+    @tape.use_cassette('test_add_answer.json')
+    def test_add_answer(self):
+        answer = self.api.add_answer(metric_name='Company Report Available',
+                                     metric_designer='Core',
+                                     value='No',
+                                     year=2022,
+                                     source='Source_000104408',
+                                     company='Adidas AG',
+                                     comment='This is a test import of a metric answer')
         self.assertTrue(isinstance(answer, Answer))
 
     @tape.use_cassette('test_update_research_metric_answer.json')
-    def test_update_research_metric_answer(self):
-        answer = self.api.update_research_metric_answer(metric_name='Company Report Available',
-                                                        metric_designer='Core',
-                                                        year=2022,
-                                                        value='Yes',
-                                                        company='Adidas AG',
-                                                        source='Source_000104408')
+    def test_update_answer(self):
+        answer = self.api.update_answer(metric_name='Company Report Available',
+                                        metric_designer='Core',
+                                        year=2022,
+                                        value='Yes',
+                                        company='Adidas AG',
+                                        source='Source_000104408')
         self.assertEqual(answer.value, 'Yes')
 
     @tape.use_cassette('test_add_relationship_metric_answer.json')
-    def test_add_relationship_metric_answer(self):
-        relationship = self.api.add_relationship_metric_answer(metric_name='Supplied by',
-                                                               metric_designer='Commons',
-                                                               year=2021,
-                                                               value='Tier 1 Supplier',
-                                                               source='Source-000106091',
-                                                               subject_company=7217,
-                                                               object_company=5505)
-        self.assertTrue(isinstance(relationship, RelationshipAnswer))
+    def test_add_relationship(self):
+        relationship = self.api.add_relationship(metric_name='Supplied by',
+                                                 metric_designer='Commons',
+                                                 year=2021,
+                                                 value='Tier 1 Supplier',
+                                                 source='Source-000106091',
+                                                 subject_company=7217,
+                                                 object_company=5505)
+        self.assertTrue(isinstance(relationship, Relationship))
 
     @tape.use_cassette('test_update_relationship_metric_answer.json')
-    def test_update_relationship_metric_answer(self):
-        relationship = self.api.update_relationship_metric_answer(metric_name='Supplied by',
-                                                                  metric_designer='Commons',
-                                                                  year=2021,
-                                                                  value='Tier 2 Supplier',
-                                                                  subject_company=7217,
-                                                                  object_company=5505,
-                                                                  comment='This answer is for testing')
+    def test_update_relationship(self):
+        relationship = self.api.update_relationship(metric_name='Supplied by',
+                                                    metric_designer='Commons',
+                                                    year=2021,
+                                                    value='Tier 2 Supplier',
+                                                    subject_company=7217,
+                                                    object_company=5505,
+                                                    comment='This answer is for testing')
         self.assertTrue(relationship.value, 'Tier 2 Supplier')

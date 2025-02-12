@@ -33,61 +33,57 @@
                     "message": "OK"
                 },
                 "headers": {
-                    "ETag": [
-                        "W/\"5027866eac855d3a322bd884fbd12cf9\""
-                    ],
-                    "Content-Type": [
-                        "text/json; charset=utf-8"
-                    ],
-                    "Access-Control-Allow-Origin": [
-                        "*",
-                        "*"
-                    ],
-                    "X-Runtime": [
-                        "0.609600"
-                    ],
-                    "Content-Disposition": [
-                        "attachment; filename=\"WikiRate-2024_09_03_103924-Topic.json\""
-                    ],
-                    "X-Frame-Options": [
-                        "ALLOWALL"
-                    ],
-                    "Set-Cookie": [
-                        "_wikirate_session=bTNZQXFOdFNPTmZDeWFNc2Z2WUl5SEJjU0FOTTVxZU5US0RxeG5BNU9pdldlZWYzM3RGT3RTRnhCeEYraSthNHN2UTNjNlI2dnNJUmJMSVJHcmNVYmtmaTdvbE5NeE52bC9wWm44R2xDY1F5YURxYkhFVGdxN3ludDhwN2FWYXgtLVN3WlVxTExhS3BVRGYzbkttOUtnMHc9PQ%3D%3D--3599997a0d1016e8bfa19f4dd0c460c076dd7f8e; path=/; HttpOnly"
-                    ],
-                    "Cache-Control": [
-                        "max-age=0, private, must-revalidate"
-                    ],
                     "Transfer-Encoding": [
                         "chunked"
                     ],
-                    "X-Request-Id": [
-                        "5b2317c5-4841-4d9d-aa8b-677a34888ff3"
+                    "X-Runtime": [
+                        "0.550362"
                     ],
-                    "Keep-Alive": [
-                        "timeout=5, max=100"
+                    "Content-Disposition": [
+                        "attachment; filename=\"Wikirate-2025_02_12_162212-Topic.json\""
+                    ],
+                    "Set-Cookie": [
+                        "_decko_deck_session=b0RTTkVaMkNwRnYyQ0tnY3BBUDlHMHJZTlBoWU55aHFKU2Q1UmdtTW13L2pHMm05RHkzSWJJOTExWVF5QmNRek84ZW5HM0VOeXQ2eTZzQkhnZmVBMlBadkVXRTBTT1lzNlJsRWJEYzJYUjFaSXVuNTlkYy8veDdnRUl0dWNTeFItLW0rNHgrNHZTR1NjT1MyTlhkVXRKdXc9PQ%3D%3D--150da539e3235903ecec9599cdb78a1fc46e5034; path=/; HttpOnly"
+                    ],
+                    "X-Request-Id": [
+                        "b2915dbe8934f0ed45040d3398e0383a"
                     ],
                     "vary": [
                         "Origin"
                     ],
-                    "Date": [
-                        "Tue, 03 Sep 2024 10:39:24 GMT"
-                    ],
-                    "X-Powered-By": [
-                        "Phusion Passenger(R) 6.0.18"
+                    "ETag": [
+                        "W/\"4da4f403fe4bb000544f2e7ead371b84\""
                     ],
                     "Connection": [
-                        "Keep-Alive"
+                        "keep-alive"
+                    ],
+                    "Cache-Control": [
+                        "max-age=0, private, must-revalidate"
+                    ],
+                    "Strict-Transport-Security": [
+                        "max-age=31536000; includeSubDomains"
+                    ],
+                    "Date": [
+                        "Wed, 12 Feb 2025 16:22:13 GMT"
                     ],
                     "Status": [
                         "200 OK"
                     ],
-                    "Server": [
-                        "Apache/2.4.52 (Ubuntu) Phusion_Passenger/6.0.18 OpenSSL/3.0.2"
+                    "Access-Control-Allow-Origin": [
+                        "*"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.23"
                     ]
                 },
                 "body": {
-                    "string": "{\n  \"id\": 1010,\n  \"name\": \"Topic\",\n  \"type\": {\n    \"id\": 5,\n    \"name\": \"Cardtype\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Cardtype.json\",\n    \"codename\": \"cardtype\"\n  },\n  \"url\": \"https://staging.wikirate.org/Topics.json\",\n  \"codename\": \"wikirate_topic\",\n  \"items\": [\n    {\n      \"id\": 14427,\n      \"name\": \"GRI\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/GRI.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 7,\n      \"metrics\": 593,\n      \"datasets\": 74\n    },\n    {\n      \"id\": 39152,\n      \"name\": \"Environment\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Environment.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 4,\n      \"metrics\": 569,\n      \"datasets\": 42\n    },\n    {\n      \"id\": 801870,\n      \"name\": \"Social\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Social.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 0,\n      \"metrics\": 472,\n      \"datasets\": 82\n    },\n    {\n      \"id\": 1099754,\n      \"name\": \"SDG12: Responsible Consumption and Production\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/SDG12_Responsible_Consumption_and_Production.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 3,\n      \"metrics\": 360,\n      \"datasets\": 24\n    },\n    {\n      \"id\": 2551732,\n      \"name\": \"University Metrics\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/University_Metrics.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 1,\n      \"metrics\": 275,\n      \"datasets\": 1\n    },\n    {\n      \"id\": 1172,\n      \"name\": \"Human Rights\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Human_Rights.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 7,\n      \"metrics\": 268,\n      \"datasets\": 46\n    },\n    {\n      \"id\": 1232,\n      \"name\": \"Supply Chain Transparency\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Supply_Chain_Transparency.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 6,\n      \"metrics\": 242,\n      \"datasets\": 65\n    },\n    {\n      \"id\": 1079430,\n      \"name\": \"Corporate Accountability\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Corporate_Accountability.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 0,\n      \"metrics\": 218,\n      \"datasets\": 10\n    },\n    {\n      \"id\": 1226,\n      \"name\": \"Transparency\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Transparency.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 3,\n      \"metrics\": 210,\n      \"datasets\": 15\n    },\n    {\n      \"id\": 614,\n      \"name\": \"Supply Chain\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Supply_Chain.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 3,\n      \"metrics\": 198,\n      \"datasets\": 3\n    }\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Topic\",\n  \"created_at\": \"2012-04-17 22:33:44 UTC\",\n  \"updated_at\": \"2023-06-15 10:15:09 UTC\",\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Topic.json?filter%5Bname%5D=&item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2024-09-03 10:39:24 UTC\",\n  \"license\": \"Wikirate.org, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0). See https://staging.wikirate.org/Attribution_Guide.\"\n}"
+                    "string": "{\n  \"id\": 1010,\n  \"name\": \"Topic\",\n  \"type\": {\n    \"id\": 5,\n    \"name\": \"Cardtype\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Cardtype.json\",\n    \"codename\": \"cardtype\"\n  },\n  \"url\": \"https://staging.wikirate.org/Topics.json\",\n  \"codename\": \"topic\",\n  \"items\": [\n    {\n      \"id\": 1172,\n      \"name\": \"Human Rights\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Human_Rights.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 7,\n      \"metrics\": 269,\n      \"datasets\": 47\n    },\n    {\n      \"id\": 1232,\n      \"name\": \"Supply Chain Transparency\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Supply_Chain_Transparency.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 6,\n      \"metrics\": 262,\n      \"datasets\": 65\n    },\n    {\n      \"id\": 586,\n      \"name\": \"Climate Change\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Climate_Change.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 9,\n      \"metrics\": 225,\n      \"datasets\": 13\n    },\n    {\n      \"id\": 1079430,\n      \"name\": \"Corporate Accountability\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Corporate_Accountability.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 0,\n      \"metrics\": 219,\n      \"datasets\": 10\n    },\n    {\n      \"id\": 614,\n      \"name\": \"Supply Chain\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Supply_Chain.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 3,\n      \"metrics\": 216,\n      \"datasets\": 3\n    },\n    {\n      \"id\": 1226,\n      \"name\": \"Transparency\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Transparency.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 3,\n      \"metrics\": 213,\n      \"datasets\": 16\n    },\n    {\n      \"id\": 844758,\n      \"name\": \"Emissions\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Emissions.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 3,\n      \"metrics\": 169,\n      \"datasets\": 8\n    },\n    {\n      \"id\": 818753,\n      \"name\": \"Financial\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Financial.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 0,\n      \"metrics\": 161,\n      \"datasets\": 8\n    },\n    {\n      \"id\": 1198,\n      \"name\": \"Waste Management\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Waste_Management.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 6,\n      \"metrics\": 160,\n      \"datasets\": 10\n    },\n    {\n      \"id\": 40491,\n      \"name\": \"Annual Reporting\",\n      \"type\": \"Topic\",\n      \"url\": \"https://staging.wikirate.org/Annual_Reporting.json\",\n      \"content\": \"\",\n      \"bookmarkers\": 0,\n      \"metrics\": 147,\n      \"datasets\": 1\n    }\n  ],\n  \"links\": [],\n  \"ancestors\": [],\n  \"html_url\": \"https://staging.wikirate.org/Topic\",\n  \"created_at\": \"2012-04-17 22:33:44 UTC\",\n  \"updated_at\": \"2023-06-15 10:15:09 UTC\",\n  \"paging\": {\n    \"next\": \"https://staging.wikirate.org/Topic.json?filter%5Btopic_framework%5D=Wikirate+ESG+Topics&item=name&limit=10&offset=10\"\n  },\n  \"requested_at\": \"2025-02-12 16:22:13 UTC\",\n  \"license\": \"Wikirate.org, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0). See https://staging.wikirate.org/Attribution_Guide.\"\n}"
                 }
             }
         }

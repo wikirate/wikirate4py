@@ -5,7 +5,7 @@
             "request": {
                 "method": "POST",
                 "uri": "https://staging.wikirate.org/card/update",
-                "body": "card%5Btype%5D=Source&card%5Bname%5D=Source-000106092&card%5Bskip%5D=requirements&format=json&success%5Bformat%5D=json&card%5Bsubcards%5D%5B%2Byear%5D=2021",
+                "body": "card%5Btype%5D=Source&card%5Bname%5D=Source-000216646&card%5Bskip%5D=requirements&format=json&success%5Bformat%5D=json&card%5Bsubcards%5D%5B%2Byear%5D=2021",
                 "headers": {
                     "User-Agent": [
                         "python-requests/2.32.3"
@@ -33,65 +33,61 @@
                     "message": "See Other"
                 },
                 "headers": {
-                    "Content-Type": [
-                        "text/html; charset=utf-8"
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.23"
                     ],
-                    "Access-Control-Allow-Origin": [
-                        "*",
-                        "*"
-                    ],
-                    "X-Runtime": [
-                        "0.716307"
-                    ],
-                    "Set-Cookie": [
-                        "_wikirate_session=T2h6VFBKazU0RjZ0Mk9KZk80M1AzMW5JU2lJam13YUVrZkNOQmtOL1duVVlFVTlOVU1SdFY5U3pOTHhpQjk3d3hNaEhHam9UWHZGM2toMW1kYThwTW5jdEZwTnRnZzZzYWdTM2JzRTVLOVN1Q3RvVkFRaFVXeDRuVTM5anhaQTAtLVgvNnBpUlpRazVDeXI4NzUxdGtnd0E9PQ%3D%3D--da6e8e456931657f997a9a2f0ad666c36061ac79; path=/; HttpOnly"
-                    ],
-                    "X-Frame-Options": [
-                        "ALLOWALL"
+                    "Connection": [
+                        "keep-alive"
                     ],
                     "Cache-Control": [
                         "no-cache"
                     ],
-                    "Transfer-Encoding": [
-                        "chunked"
+                    "X-Frame-Options": [
+                        "ALLOWALL"
                     ],
-                    "Location": [
-                        "https://staging.wikirate.org/Source_000106092.json"
-                    ],
-                    "X-Request-Id": [
-                        "dbffba4c-0999-4236-87ee-0f65d1e9aecd"
-                    ],
-                    "Keep-Alive": [
-                        "timeout=5, max=100"
-                    ],
-                    "vary": [
-                        "Origin"
+                    "Strict-Transport-Security": [
+                        "max-age=31536000; includeSubDomains"
                     ],
                     "Date": [
-                        "Tue, 03 Sep 2024 10:39:39 GMT"
+                        "Wed, 12 Feb 2025 16:33:05 GMT"
                     ],
-                    "X-Powered-By": [
-                        "Phusion Passenger(R) 6.0.18"
-                    ],
-                    "Connection": [
-                        "Keep-Alive"
+                    "Transfer-Encoding": [
+                        "chunked"
                     ],
                     "Status": [
                         "303 See Other"
                     ],
-                    "Server": [
-                        "Apache/2.4.52 (Ubuntu) Phusion_Passenger/6.0.18 OpenSSL/3.0.2"
+                    "vary": [
+                        "Origin"
+                    ],
+                    "Location": [
+                        "https://staging.wikirate.org/Source_000216646.json"
+                    ],
+                    "Content-Type": [
+                        "text/html; charset=utf-8"
+                    ],
+                    "X-Runtime": [
+                        "0.616202"
+                    ],
+                    "Set-Cookie": [
+                        "_decko_deck_session=T28zUnBPK2ZPaHFQb2QxQTAzdU9hOHQrUFhOVHBtbXQrOEJrWjkwK1NsaGV3QWRlOEpBSklVS0Fya3RwcnBKNWFDVjhlTzlJQjBNUHVUWG5qcDlyMzZBeFVkSUR3ZXBWUGN3c2Qyd1FTNytBQjNxRW9NVndiazd6a2dQd3M1QnUtLU01Vk56WEtNcWFnb0hQQWxlQnlDbVE9PQ%3D%3D--58104f74933d8b13330b6e4ba0b34576f65e4472; path=/; HttpOnly"
+                    ],
+                    "X-Request-Id": [
+                        "a7f5957f4f1760f4c9377eda1ea164a0"
+                    ],
+                    "Access-Control-Allow-Origin": [
+                        "*"
                     ]
                 },
                 "body": {
-                    "string": "<html><body>You are being <a href=\"https://staging.wikirate.org/Source_000106092.json\">redirected</a>.</body></html>"
+                    "string": ""
                 }
             }
         },
         {
             "request": {
                 "method": "GET",
-                "uri": "https://staging.wikirate.org/Source_000106092.json",
+                "uri": "https://staging.wikirate.org/Source_000216646.json",
                 "body": null,
                 "headers": {
                     "User-Agent": [
@@ -107,7 +103,7 @@
                         "keep-alive"
                     ],
                     "Cookie": [
-                        "_wikirate_session=T2h6VFBKazU0RjZ0Mk9KZk80M1AzMW5JU2lJam13YUVrZkNOQmtOL1duVVlFVTlOVU1SdFY5U3pOTHhpQjk3d3hNaEhHam9UWHZGM2toMW1kYThwTW5jdEZwTnRnZzZzYWdTM2JzRTVLOVN1Q3RvVkFRaFVXeDRuVTM5anhaQTAtLVgvNnBpUlpRazVDeXI4NzUxdGtnd0E9PQ%3D%3D--da6e8e456931657f997a9a2f0ad666c36061ac79"
+                        "_decko_deck_session=T28zUnBPK2ZPaHFQb2QxQTAzdU9hOHQrUFhOVHBtbXQrOEJrWjkwK1NsaGV3QWRlOEpBSklVS0Fya3RwcnBKNWFDVjhlTzlJQjBNUHVUWG5qcDlyMzZBeFVkSUR3ZXBWUGN3c2Qyd1FTNytBQjNxRW9NVndiazd6a2dQd3M1QnUtLU01Vk56WEtNcWFnb0hQQWxlQnlDbVE9PQ%3D%3D--58104f74933d8b13330b6e4ba0b34576f65e4472"
                     ]
                 }
             },
@@ -117,58 +113,54 @@
                     "message": "OK"
                 },
                 "headers": {
-                    "ETag": [
-                        "W/\"76bc514ccac83c5c0ee3b1e980526a4b\""
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.23"
                     ],
-                    "Content-Type": [
-                        "text/json; charset=utf-8"
-                    ],
-                    "Access-Control-Allow-Origin": [
-                        "*",
-                        "*"
-                    ],
-                    "X-Runtime": [
-                        "0.197686"
-                    ],
-                    "Set-Cookie": [
-                        "_wikirate_session=OS9NZUxVUHd5WGUwN0RZVzNKVCtyRHBNTUJNSjdaRkJtdGd2ZXR3b0t3Q3BpSUlDNFBHVm1ETmRlZHpUUlN1ZG5RdktxV0xJNVFNYmlJNHUyQWV1Ni9paCtSalg1ZWRzbjYzbFlpd0J0MXB2SlI1b0JMd2FXbE9aY2dCc2M0NGwtLUlRZEt3ZmRqN0R3M2w3M3RMeGlBMFE9PQ%3D%3D--ea769a06b3b8ca5950ea7c721d02e8f8a96802a1; path=/; HttpOnly"
-                    ],
-                    "X-Frame-Options": [
-                        "ALLOWALL"
+                    "Connection": [
+                        "keep-alive"
                     ],
                     "Cache-Control": [
                         "max-age=0, private, must-revalidate"
                     ],
-                    "Transfer-Encoding": [
-                        "chunked"
+                    "ETag": [
+                        "W/\"e98aa675c76a9cc757fae2360ea17253\""
                     ],
-                    "X-Request-Id": [
-                        "fa090819-7f9e-4c42-afa3-5a06ec6c8ac0"
+                    "X-Frame-Options": [
+                        "ALLOWALL"
                     ],
-                    "Keep-Alive": [
-                        "timeout=5, max=99"
-                    ],
-                    "vary": [
-                        "Origin"
+                    "Strict-Transport-Security": [
+                        "max-age=31536000; includeSubDomains"
                     ],
                     "Date": [
-                        "Tue, 03 Sep 2024 10:39:39 GMT"
+                        "Wed, 12 Feb 2025 16:33:06 GMT"
                     ],
-                    "X-Powered-By": [
-                        "Phusion Passenger(R) 6.0.18"
-                    ],
-                    "Connection": [
-                        "Keep-Alive"
+                    "Transfer-Encoding": [
+                        "chunked"
                     ],
                     "Status": [
                         "200 OK"
                     ],
-                    "Server": [
-                        "Apache/2.4.52 (Ubuntu) Phusion_Passenger/6.0.18 OpenSSL/3.0.2"
+                    "vary": [
+                        "Origin"
+                    ],
+                    "X-Runtime": [
+                        "0.377875"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ],
+                    "Set-Cookie": [
+                        "_decko_deck_session=TXY3b1Y5OWM3RHNlSFdqRVduUGZ4VXhCMDNpV0hKcUJvbEU5T0dKNGx4VEExZXBMcDZyRDliaTBpejNDaUw0dEtQTjVCZXZRdmsvQjhzc05GYm1KaVJZcWJIQ3NEWXFmelVMQ1dRSzZzSzZKMnF1NjBpYTg4WGx3em9rbHlnMFUtLUxTSGhBRnZhN3RZbXNXRmkxR3ZCSGc9PQ%3D%3D--e22fac0c1d37f7b126a0dab806c6ae3517c5c590; path=/; HttpOnly"
+                    ],
+                    "X-Request-Id": [
+                        "db96ac21c6a2b2f2e1feacddeaf74d9d"
+                    ],
+                    "Access-Control-Allow-Origin": [
+                        "*"
                     ]
                 },
                 "body": {
-                    "string": "{\n  \"id\": 7447250,\n  \"name\": \"Source-000106092\",\n  \"type\": {\n    \"id\": 629,\n    \"name\": \"Source\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Source.json\",\n    \"codename\": \"source\"\n  },\n  \"url\": \"https://staging.wikirate.org/Source_000106092.json\",\n  \"file\": {\n    \"id\": 7447253,\n    \"name\": \"Source-000106092+File\",\n    \"type\": \"File\",\n    \"url\": \"https://staging.wikirate.org/Source_000106092+File.json\",\n    \"content\": \"https://dq06ugkuram52.cloudfront.net/files/7447253/25128410.pdf\"\n  },\n  \"link\": {\n    \"id\": 7447251,\n    \"name\": \"Source-000106092+Link\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Source_000106092+Link.json\",\n    \"content\": \"https://sciencebasedtargets.org/companies-taking-action/?sector=Textiles%2C%20Apparel%2C%20Footwear%20and%20Luxury%20Goods#table\"\n  },\n  \"report_type\": {\n    \"id\": 7447318,\n    \"name\": \"Source-000106092+Report Type\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://staging.wikirate.org/Source_000106092+Report_Type.json\",\n    \"content\": [\n      \"Aggregate Data Report\"\n    ]\n  },\n  \"title\": {\n    \"id\": 7447863,\n    \"name\": \"Source-000106092+Title\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Source_000106092+Title.json\",\n    \"content\": \"Science Based Targets Initiative Database\"\n  },\n  \"year\": {\n    \"id\": 7447320,\n    \"name\": \"Source-000106092+Year\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://staging.wikirate.org/Source_000106092+Year.json\",\n    \"content\": [\n      \"2021\"\n    ]\n  },\n  \"items\": [\n\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Source_000106092\",\n  \"created_at\": \"2021-06-24 10:10:20 UTC\",\n  \"updated_at\": \"2024-09-03 10:39:39 UTC\",\n  \"description\": {\n    \"id\": null,\n    \"name\": \"Source-000106092+description\",\n    \"type\": \"RichText\",\n    \"url\": \"https://staging.wikirate.org/Source_000106092+description.json?card%5Bname%5D=Source-000106092%2Bdescription\"\n  },\n  \"discussion\": {\n    \"id\": null,\n    \"name\": \"Source-000106092+Discussion\",\n    \"type\": \"RichText\",\n    \"url\": \"https://staging.wikirate.org/Source_000106092+Discussion.json?card%5Bname%5D=Source-000106092%2BDiscussion\"\n  },\n  \"company\": {\n    \"id\": 7447319,\n    \"name\": \"Source-000106092+Company\",\n    \"type\": \"Pointer\",\n    \"url\": \"https://staging.wikirate.org/Source_000106092+Company.json\",\n    \"content\": [\n      \"Aigle International SA\",\n      \"Aditya Birla Fashion & Retail Ltd\",\n      \"Ted Baker\"\n    ]\n  },\n  \"metric\": {\n    \"id\": null,\n    \"name\": \"Source-000106092+Metric\",\n    \"type\": \"List\",\n    \"url\": \"https://staging.wikirate.org/Source_000106092+Metric.json\",\n    \"content\": [\n      \"Science Based Targets Initiative (SBTi)+Science Based Targets Status\"\n    ]\n  },\n  \"answer\": {\n    \"id\": null,\n    \"name\": \"Source-000106092+Answer\",\n    \"type\": \"Search\",\n    \"url\": \"https://staging.wikirate.org/Source_000106092+Answer.json\"\n  },\n  \"requested_at\": \"2024-09-03 10:39:40 UTC\",\n  \"license\": \"Wikirate.org, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0). See https://staging.wikirate.org/Attribution_Guide.\"\n}"
+                    "string": "{\n  \"id\": 20270830,\n  \"name\": \"Source-000216646\",\n  \"type\": {\n    \"id\": 629,\n    \"name\": \"Source\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Source.json\",\n    \"codename\": \"source\"\n  },\n  \"url\": \"https://staging.wikirate.org/Source_000216646.json\",\n  \"file\": {\n    \"id\": null,\n    \"name\": \"Source-000216646+File\",\n    \"type\": \"File\",\n    \"url\": \"https://staging.wikirate.org/Source_000216646+File.json?card%5Bname%5D=Source-000216646%2BFile\"\n  },\n  \"link\": {\n    \"id\": 20270832,\n    \"name\": \"Source-000216646+Link\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Source_000216646+Link.json\",\n    \"content\": \"https://en.wikipedia.org/wiki/Target_Corporation\"\n  },\n  \"report_type\": {\n    \"id\": null,\n    \"name\": \"Source-000216646+Report Type\",\n    \"type\": \"List\",\n    \"url\": \"https://staging.wikirate.org/Source_000216646+Report_Type.json?card%5Bname%5D=Source-000216646%2BReport+Type\"\n  },\n  \"title\": {\n    \"id\": 20270831,\n    \"name\": \"Source-000216646+Title\",\n    \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Source_000216646+Title.json\",\n    \"content\": \"wikipedia page of Target Corporation 2021\"\n  },\n  \"year\": {\n    \"id\": 20270834,\n    \"name\": \"Source-000216646+Year\",\n    \"type\": \"List\",\n    \"url\": \"https://staging.wikirate.org/Source_000216646+Year.json\",\n    \"content\": [\n      \"2021\"\n    ]\n  },\n  \"items\": [],\n  \"links\": [],\n  \"ancestors\": [],\n  \"html_url\": \"https://staging.wikirate.org/Source_000216646\",\n  \"created_at\": \"2025-02-12 16:31:53 UTC\",\n  \"updated_at\": \"2025-02-12 16:31:53 UTC\",\n  \"description\": {\n    \"id\": null,\n    \"name\": \"Source-000216646+description\",\n    \"type\": \"RichText\",\n    \"url\": \"https://staging.wikirate.org/Source_000216646+description.json?card%5Bname%5D=Source-000216646%2Bdescription\"\n  },\n  \"discussion\": {\n    \"id\": null,\n    \"name\": \"Source-000216646+Discussion\",\n    \"type\": \"RichText\",\n    \"url\": \"https://staging.wikirate.org/Source_000216646+Discussion.json?card%5Bname%5D=Source-000216646%2BDiscussion\"\n  },\n  \"company\": {\n    \"id\": 20270833,\n    \"name\": \"Source-000216646+Company\",\n    \"type\": \"List\",\n    \"url\": \"https://staging.wikirate.org/Source_000216646+Company.json\",\n    \"content\": [\n      \"Target\"\n    ]\n  },\n  \"metric\": {\n    \"id\": null,\n    \"name\": \"Source-000216646+Metric\",\n    \"type\": \"List\",\n    \"url\": \"https://staging.wikirate.org/Source_000216646+Metric.json\",\n    \"content\": []\n  },\n  \"answer\": {\n    \"id\": null,\n    \"name\": \"Source-000216646+Answer\",\n    \"type\": \"Search\",\n    \"url\": \"https://staging.wikirate.org/Source_000216646+Answer.json\"\n  },\n  \"requested_at\": \"2025-02-12 16:33:06 UTC\",\n  \"license\": \"Wikirate.org, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0). See https://staging.wikirate.org/Attribution_Guide.\"\n}"
                 }
             }
         }

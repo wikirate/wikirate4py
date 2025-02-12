@@ -1,0 +1,168 @@
+{
+    "version": 1,
+    "interactions": [
+        {
+            "request": {
+                "method": "POST",
+                "uri": "https://staging.wikirate.org/card/create",
+                "body": "card%5Btype%5D=Answer&card%5Bname%5D=Core%2BCompany+Report+Available%2BAdidas_AG%2B2022&card%5Bsubcards%5D%5B%2B%3Avalue%5D=No&card%5Bsubcards%5D%5B%2B%3Asource%5D=Source_000104408&format=json&success%5Bformat%5D=json&card%5Bsubcards%5D%5B%2B%3Adiscussion%5D=This+is+a+test+import+of+a+metric+answer",
+                "headers": {
+                    "User-Agent": [
+                        "python-requests/2.32.3"
+                    ],
+                    "Accept-Encoding": [
+                        "gzip, deflate"
+                    ],
+                    "Accept": [
+                        "*/*"
+                    ],
+                    "Connection": [
+                        "keep-alive"
+                    ],
+                    "Content-Length": [
+                        "299"
+                    ],
+                    "Content-Type": [
+                        "application/x-www-form-urlencoded"
+                    ]
+                }
+            },
+            "response": {
+                "status": {
+                    "code": 303,
+                    "message": "See Other"
+                },
+                "headers": {
+                    "Set-Cookie": [
+                        "_decko_deck_session=UzArZ09YWk5VMy94c1ZGZHRmL0xPUk1nS0hwc1Bac1IvOGlOdC8yNlhXQjJ6SmZwanRPdXl0dXJxVFNLck5WUzRjYXJpUElUWmNHcFcxNGV4RmdWRHZoZlM2My9HUnJoQ3hlZkl2Y1REeDdpcXNSZUpiQXc2RWdpWUV5YWdSSUotLXc0TCtNUWVLU1hOcVU1VGdPODJYZXc9PQ%3D%3D--485148b262453588ccad9c1391733b92dc84df77; path=/; HttpOnly"
+                    ],
+                    "Cache-Control": [
+                        "no-cache"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Status": [
+                        "303 See Other"
+                    ],
+                    "Strict-Transport-Security": [
+                        "max-age=31536000; includeSubDomains"
+                    ],
+                    "X-Request-Id": [
+                        "18d65824b65ca3e5b5e15ffd8e4c0acb"
+                    ],
+                    "Connection": [
+                        "keep-alive"
+                    ],
+                    "Date": [
+                        "Wed, 12 Feb 2025 16:34:44 GMT"
+                    ],
+                    "vary": [
+                        "Origin"
+                    ],
+                    "X-Runtime": [
+                        "0.831139"
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.23"
+                    ],
+                    "Location": [
+                        "https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG+2022.json?flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-bs-dismiss%3D%22alert%22+class%3D%22btn-close%22+aria-label%3D%22Close%22%3E%3C%2Fbutton%3E%0A%3Ch4+class%3D%27mt-0%27%3ESuccess%21%3C%2Fh4%3E%0A%3Cp%3E%0AThank+you%21+Your+research+efforts+are+helping+make+information+about+companies%0Aaccessible%2C+comparable%2C+and+free+for+all.%0A%3C%2Fp%3E%0A%3Cp+class%3D%27answer-success-in-project%27%3E%0ATo+keep+researching%2C+go+back+to+the%0A%3Ca+class%3D%27_to_question_phase%27+href%3D%27%23%27%3E%0Aquestion+section%0A%3C%2Fa%3E%0Aand+select+a+different+year%2C+metric%2C+or+company.%0A%3C%2Fp%3E%0A%3C%2Fdiv%3E"
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "Access-Control-Allow-Origin": [
+                        "*"
+                    ],
+                    "Content-Type": [
+                        "text/html; charset=utf-8"
+                    ]
+                },
+                "body": {
+                    "string": ""
+                }
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "uri": "https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG+2022.json?flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-bs-dismiss%3D%22alert%22+class%3D%22btn-close%22+aria-label%3D%22Close%22%3E%3C%2Fbutton%3E%0A%3Ch4+class%3D%27mt-0%27%3ESuccess%21%3C%2Fh4%3E%0A%3Cp%3E%0AThank+you%21+Your+research+efforts+are+helping+make+information+about+companies%0Aaccessible%2C+comparable%2C+and+free+for+all.%0A%3C%2Fp%3E%0A%3Cp+class%3D%27answer-success-in-project%27%3E%0ATo+keep+researching%2C+go+back+to+the%0A%3Ca+class%3D%27_to_question_phase%27+href%3D%27%23%27%3E%0Aquestion+section%0A%3C%2Fa%3E%0Aand+select+a+different+year%2C+metric%2C+or+company.%0A%3C%2Fp%3E%0A%3C%2Fdiv%3E",
+                "body": null,
+                "headers": {
+                    "User-Agent": [
+                        "python-requests/2.32.3"
+                    ],
+                    "Accept-Encoding": [
+                        "gzip, deflate"
+                    ],
+                    "Accept": [
+                        "*/*"
+                    ],
+                    "Connection": [
+                        "keep-alive"
+                    ],
+                    "Cookie": [
+                        "_decko_deck_session=UzArZ09YWk5VMy94c1ZGZHRmL0xPUk1nS0hwc1Bac1IvOGlOdC8yNlhXQjJ6SmZwanRPdXl0dXJxVFNLck5WUzRjYXJpUElUWmNHcFcxNGV4RmdWRHZoZlM2My9HUnJoQ3hlZkl2Y1REeDdpcXNSZUpiQXc2RWdpWUV5YWdSSUotLXc0TCtNUWVLU1hOcVU1VGdPODJYZXc9PQ%3D%3D--485148b262453588ccad9c1391733b92dc84df77"
+                    ]
+                }
+            },
+            "response": {
+                "status": {
+                    "code": 200,
+                    "message": "OK"
+                },
+                "headers": {
+                    "Set-Cookie": [
+                        "_decko_deck_session=dEhvVFRwY2dwYlNMRGU3eGd3Tmh3T3U3UnI0ZnRrWHFsYW9lYzI5Z1lpcGM2S2J1cDRaRjdjUmdET2luSHJSdnNINUFJM1lMSUlGSzRldklscFBDWnlYbHlmMndpb0RwZCtNMWNpb2ViSGFZMVlFWkJMZ0NHdFJkTksrb2pZKy8tLVJxbFVOL2lwUGtMRDVNVUt3Ymcwdnc9PQ%3D%3D--b69d37c3954c3205fd88a5ed823dc4457a00ccea; path=/; HttpOnly"
+                    ],
+                    "Cache-Control": [
+                        "max-age=0, private, must-revalidate"
+                    ],
+                    "X-Frame-Options": [
+                        "ALLOWALL"
+                    ],
+                    "Status": [
+                        "200 OK"
+                    ],
+                    "Strict-Transport-Security": [
+                        "max-age=31536000; includeSubDomains"
+                    ],
+                    "X-Request-Id": [
+                        "f5d6c203cdbedafef4f59538b3279b7b"
+                    ],
+                    "Connection": [
+                        "keep-alive"
+                    ],
+                    "Date": [
+                        "Wed, 12 Feb 2025 16:34:45 GMT"
+                    ],
+                    "vary": [
+                        "Origin"
+                    ],
+                    "X-Runtime": [
+                        "0.679918"
+                    ],
+                    "ETag": [
+                        "W/\"346b5607806db4c7fb365216e9c5f3bc\""
+                    ],
+                    "X-Powered-By": [
+                        "Phusion Passenger(R) 6.0.23"
+                    ],
+                    "Transfer-Encoding": [
+                        "chunked"
+                    ],
+                    "Access-Control-Allow-Origin": [
+                        "*"
+                    ],
+                    "Content-Type": [
+                        "text/json; charset=utf-8"
+                    ]
+                },
+                "body": {
+                    "string": "{\n  \"id\": 20270836,\n  \"name\": \"Core+Company Report Available+Adidas AG+2022\",\n  \"type\": {\n    \"id\": 43678,\n    \"name\": \"Answer\",\n    \"type\": \"Cardtype\",\n    \"url\": \"https://staging.wikirate.org/Answer.json\",\n    \"codename\": \"answer\"\n  },\n  \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG+2022.json?flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-bs-dismiss%3D%22alert%22+class%3D%22btn-close%22+aria-label%3D%22Close%22%3E%3C%2Fbutton%3E%0A%3Ch4+class%3D%27mt-0%27%3ESuccess%21%3C%2Fh4%3E%0A%3Cp%3E%0AThank+you%21+Your+research+efforts+are+helping+make+information+about+companies%0Aaccessible%2C+comparable%2C+and+free+for+all.%0A%3C%2Fp%3E%0A%3Cp+class%3D%27answer-success-in-project%27%3E%0ATo+keep+researching%2C+go+back+to+the%0A%3Ca+class%3D%27_to_question_phase%27+href%3D%27%23%27%3E%0Aquestion+section%0A%3C%2Fa%3E%0Aand+select+a+different+year%2C+metric%2C+or+company.%0A%3C%2Fp%3E%0A%3C%2Fdiv%3E\",\n  \"content\": \"\",\n  \"metric\": \"Core+Company Report Available\",\n  \"company\": \"Adidas AG\",\n  \"year\": 2022,\n  \"value\": \"No\",\n  \"comments\": \"This is a test import of a metric answer\",\n  \"answer_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG.json\",\n  \"items\": [],\n  \"links\": [],\n  \"ancestors\": [\n    {\n      \"id\": 3341237,\n      \"name\": \"Core\",\n      \"type\": \"Research Group\",\n      \"url\": \"https://staging.wikirate.org/Core.json\"\n    },\n    {\n      \"id\": 3094885,\n      \"name\": \"Company Report Available\",\n      \"type\": \"Metric Title\",\n      \"url\": \"https://staging.wikirate.org/Company_Report_Available.json\"\n    },\n    {\n      \"id\": 7217,\n      \"name\": \"Adidas AG\",\n      \"type\": \"Company\",\n      \"url\": \"https://staging.wikirate.org/Adidas_AG.json\"\n    },\n    {\n      \"id\": 8200409,\n      \"name\": \"2022\",\n      \"type\": \"Year\",\n      \"url\": \"https://staging.wikirate.org/2022.json\"\n    },\n    {\n      \"id\": 3094828,\n      \"name\": \"Core+Company Report Available\",\n      \"type\": \"Metric\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available.json\"\n    },\n    {\n      \"id\": 5621383,\n      \"name\": \"Core+Company Report Available+Adidas AG\",\n      \"type\": \"Record\",\n      \"url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG.json\"\n    }\n  ],\n  \"html_url\": \"https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG+2022\",\n  \"created_at\": \"2025-02-12 16:34:44 UTC\",\n  \"updated_at\": \"2025-02-12 16:34:44 UTC\",\n  \"sources\": [\n    {\n      \"id\": 7269817,\n      \"name\": \"Source-000104408\",\n      \"type\": \"Source\",\n      \"url\": \"https://staging.wikirate.org/Source_000104408.json\",\n      \"file\": \"https://wikirate-production-storage.fra1.cdn.digitaloceanspaces.com/files/7269818/24831535.pdf\",\n      \"link\": \"https://www.meiji.com/global/sustainability/report_downloads/\",\n      \"report_type\": [\n        \"Sustainability Report\",\n        \"Company Website\",\n        \"Communication on Progress\",\n        \"Corporate Social Responsibility Report\"\n      ],\n      \"title\": \"Download Sustainability Reports\",\n      \"year\": [\n        \"2020\",\n        \"2021\"\n      ]\n    }\n  ],\n  \"checked_by\": [],\n  \"requested_at\": \"2025-02-12 16:34:45 UTC\",\n  \"license\": \"Wikirate.org, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0). See https://staging.wikirate.org/Attribution_Guide.\"\n}"
+                }
+            }
+        }
+    ]
+}

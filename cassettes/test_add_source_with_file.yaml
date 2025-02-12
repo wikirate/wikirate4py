@@ -1,16 +1,16 @@
 interactions:
 - request:
     body: !!binary |
-      LS1kNTQwMTYyNzZlZjFmMzEwN2Q0YWEyOWQwOTBhNWQ2MQ0KQ29udGVudC1EaXNwb3NpdGlvbjog
-      Zm9ybS1kYXRhOyBuYW1lPSJjYXJkW3R5cGVdIg0KDQpTb3VyY2UNCi0tZDU0MDE2Mjc2ZWYxZjMx
-      MDdkNGFhMjlkMDkwYTVkNjENCkNvbnRlbnQtRGlzcG9zaXRpb246IGZvcm0tZGF0YTsgbmFtZT0i
-      Y2FyZFtzdWJjYXJkc11bK3RpdGxlXSINCg0KVGVzdGluZyBmaWxlIHVwbG9hZA0KLS1kNTQwMTYy
-      NzZlZjFmMzEwN2Q0YWEyOWQwOTBhNWQ2MQ0KQ29udGVudC1EaXNwb3NpdGlvbjogZm9ybS1kYXRh
-      OyBuYW1lPSJjYXJkW3NraXBdIg0KDQpyZXF1aXJlbWVudHMNCi0tZDU0MDE2Mjc2ZWYxZjMxMDdk
-      NGFhMjlkMDkwYTVkNjENCkNvbnRlbnQtRGlzcG9zaXRpb246IGZvcm0tZGF0YTsgbmFtZT0iZm9y
-      bWF0Ig0KDQpqc29uDQotLWQ1NDAxNjI3NmVmMWYzMTA3ZDRhYTI5ZDA5MGE1ZDYxDQpDb250ZW50
+      LS0yZmM1NmUyYTFhNjExMmVlZTk1YTA2MDkzMjAyOWNjYw0KQ29udGVudC1EaXNwb3NpdGlvbjog
+      Zm9ybS1kYXRhOyBuYW1lPSJjYXJkW3R5cGVdIg0KDQpTb3VyY2UNCi0tMmZjNTZlMmExYTYxMTJl
+      ZWU5NWEwNjA5MzIwMjljY2MNCkNvbnRlbnQtRGlzcG9zaXRpb246IGZvcm0tZGF0YTsgbmFtZT0i
+      Y2FyZFtzdWJjYXJkc11bK3RpdGxlXSINCg0KVGVzdGluZyBmaWxlIHVwbG9hZA0KLS0yZmM1NmUy
+      YTFhNjExMmVlZTk1YTA2MDkzMjAyOWNjYw0KQ29udGVudC1EaXNwb3NpdGlvbjogZm9ybS1kYXRh
+      OyBuYW1lPSJjYXJkW3NraXBdIg0KDQpyZXF1aXJlbWVudHMNCi0tMmZjNTZlMmExYTYxMTJlZWU5
+      NWEwNjA5MzIwMjljY2MNCkNvbnRlbnQtRGlzcG9zaXRpb246IGZvcm0tZGF0YTsgbmFtZT0iZm9y
+      bWF0Ig0KDQpqc29uDQotLTJmYzU2ZTJhMWE2MTEyZWVlOTVhMDYwOTMyMDI5Y2NjDQpDb250ZW50
       LURpc3Bvc2l0aW9uOiBmb3JtLWRhdGE7IG5hbWU9InN1Y2Nlc3NbZm9ybWF0XSINCg0KanNvbg0K
-      LS1kNTQwMTYyNzZlZjFmMzEwN2Q0YWEyOWQwOTBhNWQ2MQ0KQ29udGVudC1EaXNwb3NpdGlvbjog
+      LS0yZmM1NmUyYTFhNjExMmVlZTk1YTA2MDkzMjAyOWNjYw0KQ29udGVudC1EaXNwb3NpdGlvbjog
       Zm9ybS1kYXRhOyBuYW1lPSJjYXJkW3N1YmNhcmRzXVsrZmlsZV1bZmlsZV0iOyBmaWxlbmFtZT0i
       VGVzdFNvdXJjZS5wZGYiDQoNCiVQREYtMS43DQoltbW1tQ0KMSAwIG9iag0KPDwvVHlwZS9DYXRh
       bG9nL1BhZ2VzIDIgMCBSL0xhbmcoZW4tVVMpIC9TdHJ1Y3RUcmVlUm9vdCAxMCAwIFIvTWFya0lu
@@ -517,7 +517,7 @@ interactions:
       Zg0KMCAwDQp0cmFpbGVyDQo8PC9TaXplIDIzL1Jvb3QgMSAwIFIvSW5mbyA5IDAgUi9JRFs8ODM1
       MkZDNEU4QjZCNUY0M0I2Q0JFQkE2NDZBNzUxNjk+PDgzNTJGQzRFOEI2QjVGNDNCNkNCRUJBNjQ2
       QTc1MTY5Pl0gL1ByZXYgMjc5NzYvWFJlZlN0bSAyNzY5Mz4+DQpzdGFydHhyZWYNCjI4NTkyDQol
-      JUVPRg0KLS1kNTQwMTYyNzZlZjFmMzEwN2Q0YWEyOWQwOTBhNWQ2MS0tDQo=
+      JUVPRg0KLS0yZmM1NmUyYTFhNjExMmVlZTk1YTA2MDkzMjAyOWNjYy0tDQo=
     headers:
       Accept:
       - '*/*'
@@ -528,47 +528,44 @@ interactions:
       Content-Length:
       - '29456'
       Content-Type:
-      - multipart/form-data; boundary=d54016276ef1f3107d4aa29d090a5d61
+      - multipart/form-data; boundary=2fc56e2a1a6112eee95a060932029ccc
       User-Agent:
       - python-requests/2.32.3
     method: POST
     uri: https://staging.wikirate.org/card/create
   response:
     body:
-      string: <html><body>You are being <a href="https://staging.wikirate.org/Source_000204387.json">redirected</a>.</body></html>
+      string: ''
     headers:
       Access-Control-Allow-Origin:
-      - '*'
       - '*'
       Cache-Control:
       - no-cache
       Connection:
-      - Keep-Alive
+      - keep-alive
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Tue, 03 Sep 2024 10:38:34 GMT
-      Keep-Alive:
-      - timeout=5, max=100
+      - Wed, 12 Feb 2025 16:25:25 GMT
       Location:
-      - https://staging.wikirate.org/Source_000204387.json
-      Server:
-      - Apache/2.4.52 (Ubuntu) Phusion_Passenger/6.0.18 OpenSSL/3.0.2
+      - https://staging.wikirate.org/Source_000216645.json
       Set-Cookie:
-      - _wikirate_session=Ykp1Z2NHKzRJSzdwN1VmdEd4S1gyczBuVXlrTHZEYVB2aEhQTkhOTC9wbVdaTU1kc2FuYWhET3NRa1V6WU9zMnNFWEVFQ3pIY1dFSDZBK05TZUZ1eDQ3Zmd4am81amM4UGYweVdpK3NZTHhhQ3BrOFRpamhMUUxjejNnTytCZ0QtLTBJQjh3Ly9ETlplU210UlB4T3JMdmc9PQ%3D%3D--35c4989714d0fa48b972b4395db01cccd364bda3;
+      - _decko_deck_session=aC81cFF4MmIySXJXU1hQMlByVWlQQ2hlTUxEUkFVWkhqdjZEWjR1ZTgvR29JL3VucFBlTENwQlB3SENSVHd5azR6UUlQbVFKb2E0SVNpeVozdTlac1EwUitWLyt1K3d0TEJvdk1mTmNkTHYvczZ6TXJDMHo2Y2xGV3BJNU1OYUMtLWhoNFRsTEhWYlg4eU5kaXo4d1NVUUE9PQ%3D%3D--2d7869643e0b98559803d8091ca11ab590bf9219;
         path=/; HttpOnly
       Status:
       - 303 See Other
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
       Transfer-Encoding:
       - chunked
       X-Frame-Options:
       - ALLOWALL
       X-Powered-By:
-      - Phusion Passenger(R) 6.0.18
+      - Phusion Passenger(R) 6.0.23
       X-Request-Id:
-      - f19449b4-f49e-434f-9b62-e9b2b1b9fff3
+      - 9f42758b623e755cfb919b6874b8c094
       X-Runtime:
-      - '1.496152'
+      - '1.093545'
       vary:
       - Origin
     status:
@@ -584,78 +581,75 @@ interactions:
       Connection:
       - keep-alive
       Cookie:
-      - _wikirate_session=Ykp1Z2NHKzRJSzdwN1VmdEd4S1gyczBuVXlrTHZEYVB2aEhQTkhOTC9wbVdaTU1kc2FuYWhET3NRa1V6WU9zMnNFWEVFQ3pIY1dFSDZBK05TZUZ1eDQ3Zmd4am81amM4UGYweVdpK3NZTHhhQ3BrOFRpamhMUUxjejNnTytCZ0QtLTBJQjh3Ly9ETlplU210UlB4T3JMdmc9PQ%3D%3D--35c4989714d0fa48b972b4395db01cccd364bda3
+      - _decko_deck_session=aC81cFF4MmIySXJXU1hQMlByVWlQQ2hlTUxEUkFVWkhqdjZEWjR1ZTgvR29JL3VucFBlTENwQlB3SENSVHd5azR6UUlQbVFKb2E0SVNpeVozdTlac1EwUitWLyt1K3d0TEJvdk1mTmNkTHYvczZ6TXJDMHo2Y2xGV3BJNU1OYUMtLWhoNFRsTEhWYlg4eU5kaXo4d1NVUUE9PQ%3D%3D--2d7869643e0b98559803d8091ca11ab590bf9219
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.wikirate.org/Source_000204387.json
+    uri: https://staging.wikirate.org/Source_000216645.json
   response:
     body:
-      string: "{\n  \"id\": 19615558,\n  \"name\": \"Source-000204387\",\n  \"type\":
+      string: "{\n  \"id\": 20270821,\n  \"name\": \"Source-000216645\",\n  \"type\":
         {\n    \"id\": 629,\n    \"name\": \"Source\",\n    \"type\": \"Cardtype\",\n
         \   \"url\": \"https://staging.wikirate.org/Source.json\",\n    \"codename\":
-        \"source\"\n  },\n  \"url\": \"https://staging.wikirate.org/Source_000204387.json\",\n
-        \ \"file\": {\n    \"id\": 19615560,\n    \"name\": \"Source-000204387+File\",\n
-        \   \"type\": \"File\",\n    \"url\": \"https://staging.wikirate.org/Source_000204387+File.json\",\n
-        \   \"content\": \"https://d1leew03y1rvlv.cloudfront.net/files/19615560/48879339.pdf\"\n
-        \ },\n  \"link\": {\n    \"id\": null,\n    \"name\": \"Source-000204387+Link\",\n
-        \   \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Source_000204387+Link.json?card%5Bname%5D=Source-000204387%2BLink\"\n
-        \ },\n  \"report_type\": {\n    \"id\": null,\n    \"name\": \"Source-000204387+Report
-        Type\",\n    \"type\": \"List\",\n    \"url\": \"https://staging.wikirate.org/Source_000204387+Report_Type.json?card%5Bname%5D=Source-000204387%2BReport+Type\"\n
-        \ },\n  \"title\": {\n    \"id\": 19615559,\n    \"name\": \"Source-000204387+Title\",\n
-        \   \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Source_000204387+Title.json\",\n
+        \"source\"\n  },\n  \"url\": \"https://staging.wikirate.org/Source_000216645.json\",\n
+        \ \"file\": {\n    \"id\": 20270823,\n    \"name\": \"Source-000216645+File\",\n
+        \   \"type\": \"File\",\n    \"url\": \"https://staging.wikirate.org/Source_000216645+File.json\",\n
+        \   \"content\": \"https://wikirate-staging-storage.fra1.cdn.digitaloceanspaces.com/files/20270823/49867663.pdf\"\n
+        \ },\n  \"link\": {\n    \"id\": null,\n    \"name\": \"Source-000216645+Link\",\n
+        \   \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Source_000216645+Link.json?card%5Bname%5D=Source-000216645%2BLink\"\n
+        \ },\n  \"report_type\": {\n    \"id\": null,\n    \"name\": \"Source-000216645+Report
+        Type\",\n    \"type\": \"List\",\n    \"url\": \"https://staging.wikirate.org/Source_000216645+Report_Type.json?card%5Bname%5D=Source-000216645%2BReport+Type\"\n
+        \ },\n  \"title\": {\n    \"id\": 20270822,\n    \"name\": \"Source-000216645+Title\",\n
+        \   \"type\": \"Phrase\",\n    \"url\": \"https://staging.wikirate.org/Source_000216645+Title.json\",\n
         \   \"content\": \"Testing file upload\"\n  },\n  \"year\": {\n    \"id\":
-        null,\n    \"name\": \"Source-000204387+Year\",\n    \"type\": \"List\",\n
-        \   \"url\": \"https://staging.wikirate.org/Source_000204387+Year.json?card%5Bname%5D=Source-000204387%2BYear\"\n
-        \ },\n  \"items\": [\n\n  ],\n  \"links\": [\n\n  ],\n  \"ancestors\": [\n\n
-        \ ],\n  \"html_url\": \"https://staging.wikirate.org/Source_000204387\",\n
-        \ \"created_at\": \"2024-09-03 10:38:35 UTC\",\n  \"updated_at\": \"2024-09-03
-        10:38:35 UTC\",\n  \"description\": {\n    \"id\": null,\n    \"name\": \"Source-000204387+description\",\n
-        \   \"type\": \"RichText\",\n    \"url\": \"https://staging.wikirate.org/Source_000204387+description.json?card%5Bname%5D=Source-000204387%2Bdescription\"\n
-        \ },\n  \"discussion\": {\n    \"id\": null,\n    \"name\": \"Source-000204387+Discussion\",\n
-        \   \"type\": \"RichText\",\n    \"url\": \"https://staging.wikirate.org/Source_000204387+Discussion.json?card%5Bname%5D=Source-000204387%2BDiscussion\"\n
-        \ },\n  \"company\": {\n    \"id\": null,\n    \"name\": \"Source-000204387+Company\",\n
-        \   \"type\": \"List\",\n    \"url\": \"https://staging.wikirate.org/Source_000204387+Company.json?card%5Bname%5D=Source-000204387%2BCompany\"\n
-        \ },\n  \"metric\": {\n    \"id\": null,\n    \"name\": \"Source-000204387+Metric\",\n
-        \   \"type\": \"List\",\n    \"url\": \"https://staging.wikirate.org/Source_000204387+Metric.json\",\n
-        \   \"content\": [\n\n    ]\n  },\n  \"answer\": {\n    \"id\": null,\n    \"name\":
-        \"Source-000204387+Answer\",\n    \"type\": \"Search\",\n    \"url\": \"https://staging.wikirate.org/Source_000204387+Answer.json\"\n
-        \ },\n  \"requested_at\": \"2024-09-03 10:38:37 UTC\",\n  \"license\": \"Wikirate.org,
+        null,\n    \"name\": \"Source-000216645+Year\",\n    \"type\": \"List\",\n
+        \   \"url\": \"https://staging.wikirate.org/Source_000216645+Year.json?card%5Bname%5D=Source-000216645%2BYear\"\n
+        \ },\n  \"items\": [],\n  \"links\": [],\n  \"ancestors\": [],\n  \"html_url\":
+        \"https://staging.wikirate.org/Source_000216645\",\n  \"created_at\": \"2025-02-12
+        16:25:24 UTC\",\n  \"updated_at\": \"2025-02-12 16:25:24 UTC\",\n  \"description\":
+        {\n    \"id\": null,\n    \"name\": \"Source-000216645+description\",\n    \"type\":
+        \"RichText\",\n    \"url\": \"https://staging.wikirate.org/Source_000216645+description.json?card%5Bname%5D=Source-000216645%2Bdescription\"\n
+        \ },\n  \"discussion\": {\n    \"id\": null,\n    \"name\": \"Source-000216645+Discussion\",\n
+        \   \"type\": \"RichText\",\n    \"url\": \"https://staging.wikirate.org/Source_000216645+Discussion.json?card%5Bname%5D=Source-000216645%2BDiscussion\"\n
+        \ },\n  \"company\": {\n    \"id\": null,\n    \"name\": \"Source-000216645+Company\",\n
+        \   \"type\": \"List\",\n    \"url\": \"https://staging.wikirate.org/Source_000216645+Company.json?card%5Bname%5D=Source-000216645%2BCompany\"\n
+        \ },\n  \"metric\": {\n    \"id\": null,\n    \"name\": \"Source-000216645+Metric\",\n
+        \   \"type\": \"List\",\n    \"url\": \"https://staging.wikirate.org/Source_000216645+Metric.json\",\n
+        \   \"content\": []\n  },\n  \"answer\": {\n    \"id\": null,\n    \"name\":
+        \"Source-000216645+Answer\",\n    \"type\": \"Search\",\n    \"url\": \"https://staging.wikirate.org/Source_000216645+Answer.json\"\n
+        \ },\n  \"requested_at\": \"2025-02-12 16:25:25 UTC\",\n  \"license\": \"Wikirate.org,
         licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0). See
         https://staging.wikirate.org/Attribution_Guide.\"\n}"
     headers:
       Access-Control-Allow-Origin:
       - '*'
-      - '*'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Connection:
-      - Keep-Alive
+      - keep-alive
       Content-Type:
       - text/json; charset=utf-8
       Date:
-      - Tue, 03 Sep 2024 10:38:36 GMT
+      - Wed, 12 Feb 2025 16:25:25 GMT
       ETag:
-      - W/"3b9084e168e413f2de4f1fe742a947ae"
-      Keep-Alive:
-      - timeout=5, max=99
-      Server:
-      - Apache/2.4.52 (Ubuntu) Phusion_Passenger/6.0.18 OpenSSL/3.0.2
+      - W/"aee272b2a8f9a8ae6e6d69d95d0b64ae"
       Set-Cookie:
-      - _wikirate_session=RDNMSnIvVXFyWTFZOFgrOXNTQ2RqTFJaZDlFM2t0cXdvNEIrcnFnekFKRGlYbVM0MTFCUE4xd011ZGZuKytOYUNVckNCbCt3OXlXU2lTNmIrOEJVLzg4YmsvSUNSZGtIbEY0UExHVmJ0dGU1NCswZUdlaXNYNzdISEthSExnQWYtLTlsR0VFRTRlZnRWZTJFVHJUVW4wcFE9PQ%3D%3D--490b3f5877d389cdd3ed3c6768890b637f782b31;
+      - _decko_deck_session=aU5vQjBtM29SN2RZeHArSmZQWWxTcjFUMlVKM1FzU2xHZkdiMzd5NFlucTl2MzR6NXlOcjYxalRHTEhZM1NzVzR4MXhVMU8veC9FNDJnb3VhcDJNR3A5UG0ybU5TWlhkQkNIeEx3YWtEMTlFaFlZZGlFNFhGU2ZyUmNXd0s2QnUtLVBQTTQzeTIvc0hQajgyQTQvTjJ0QUE9PQ%3D%3D--59b15ae78b741383d0eb8b5ecbdc4b834c48ff86;
         path=/; HttpOnly
       Status:
       - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
       Transfer-Encoding:
       - chunked
       X-Frame-Options:
       - ALLOWALL
       X-Powered-By:
-      - Phusion Passenger(R) 6.0.18
+      - Phusion Passenger(R) 6.0.23
       X-Request-Id:
-      - 89f1bea3-8948-488c-8281-59938ee2d471
+      - 76165c160a1d0248327fbe6b4202fc06
       X-Runtime:
-      - '1.102766'
+      - '0.394220'
       vary:
       - Origin
     status:
