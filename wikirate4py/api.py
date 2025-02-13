@@ -3,6 +3,7 @@ import logging
 import os
 import sys
 import re
+from typing import List
 
 import requests
 from os import environ
@@ -215,7 +216,7 @@ class API(object):
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
     @objectify(CompanyItem, list=True)
-    def get_companies(self, identifier=None, **kwargs) -> list[CompanyItem]:
+    def get_companies(self, identifier=None, **kwargs) -> List[CompanyItem]:
         """get_companies(*, offset, limit)
 
         Returns a list of Wikirate Companies
@@ -256,7 +257,7 @@ class API(object):
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
     @objectify(TopicItem, True)
-    def get_topics(self, identifier=None, **kwargs) -> list[TopicItem]:
+    def get_topics(self, identifier=None, **kwargs) -> List[TopicItem]:
         """get_topics(*, offset, limit)
 
         Returns a list of Wikirate Topics
@@ -322,7 +323,7 @@ class API(object):
         return self.get(f"/{card_name}.json")
 
     @objectify(MetricItem, list=True)
-    def get_metrics(self, identifier=None, **kwargs) -> list[MetricItem]:
+    def get_metrics(self, identifier=None, **kwargs) -> List[MetricItem]:
         """
         Retrieves a list of Wikirate Metrics based on the specified criteria.
 
@@ -414,7 +415,7 @@ class API(object):
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
     @objectify(ResearchGroupItem, list=True)
-    def get_research_groups(self, **kwargs) -> list[ResearchGroupItem]:
+    def get_research_groups(self, **kwargs) -> List[ResearchGroupItem]:
         """
         Retrieves a list of Wikirate Research Groups based on the specified criteria.
 
@@ -432,7 +433,7 @@ class API(object):
 
         Returns
         -------
-        list[ResearchGroupItem]
+        List[ResearchGroupItem]
             A list of `ResearchGroupItem` objects that match the specified criteria.
 
         Raises
@@ -485,7 +486,7 @@ class API(object):
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
     @objectify(CompanyGroupItem, True)
-    def get_company_groups(self, **kwargs) -> list[CompanyGroupItem]:
+    def get_company_groups(self, **kwargs) -> List[CompanyGroupItem]:
         """
         Retrieves a list of Wikirate Company Groups based on the specified criteria.
 
@@ -503,7 +504,7 @@ class API(object):
 
         Returns
         -------
-        list[CompanyGroupItem]
+        List[CompanyGroupItem]
             A list of `CompanyGroupItem` objects that match the specified criteria.
 
         Raises
@@ -556,7 +557,7 @@ class API(object):
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
     @objectify(SourceItem, True)
-    def get_sources(self, **kwargs) -> list[SourceItem]:
+    def get_sources(self, **kwargs) -> List[SourceItem]:
         """
         Retrieves a list of Wikirate Sources based on the specified criteria.
 
@@ -581,7 +582,7 @@ class API(object):
 
         Returns
         -------
-        list[SourceItem]
+        List[SourceItem]
             A list of `SourceItem` objects that match the specified criteria.
 
         Raises
@@ -636,7 +637,7 @@ class API(object):
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
     @objectify(AnswerItem, list=True)
-    def get_answers(self, metric_name=None, metric_designer=None, identifier=None, **kwargs) -> list[AnswerItem]:
+    def get_answers(self, metric_name=None, metric_designer=None, identifier=None, **kwargs) -> List[AnswerItem]:
         """
         Retrieves a list of Wikirate Answers by entity. The entity can be a metric name/ID, dataset name/ID, company name/ID, or source name/ID.
 
@@ -702,7 +703,7 @@ class API(object):
 
         Returns
         -------
-        list[AnswerItem]
+        List[AnswerItem]
             A list of `AnswerItem` objects that match the specified criteria.
 
         Raises
@@ -765,7 +766,7 @@ class API(object):
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
     @objectify(RelationshipItem, True)
-    def get_relationships(self, metric_name=None, metric_designer=None, identifier=None, **kwargs) -> list[RelationshipItem]:
+    def get_relationships(self, metric_name=None, metric_designer=None, identifier=None, **kwargs) -> List[RelationshipItem]:
         """
         Retrieves a list of Wikirate Relationships based on the specified criteria.
 
@@ -832,7 +833,7 @@ class API(object):
 
         Returns
         -------
-        list[RelationshipItem]
+        List[RelationshipItem]
             A list of `RelationshipItem` objects that match the specified criteria.
 
         Raises
