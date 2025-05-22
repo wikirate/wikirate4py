@@ -61,7 +61,7 @@ Update Source
     source = self.api.update_source(name='Source-000106092',
                                         year=2021)
 
-Add an Answer
+Add Answer
 ----------------------------
 .. code-block:: python
 
@@ -74,7 +74,7 @@ Add an Answer
                                      comment='This is a test import of a metric answer')
 
 
-Update an Answer
+Update Answer
 -------------------------------
 .. code-block:: python
 
@@ -84,7 +84,7 @@ Update an Answer
                                         company='BORA 2 LTD',
                                         source='Source_000104409')
 
-Update an Answer By ID
+Update Answer By ID
 -------------------------------
 An answer can be identified either by its cardname comprised of matric_designer+metric_name+company+year either from
 its numerical identifier. If you want to update the company/year of a specific answer you need to provide its numerical
@@ -96,7 +96,7 @@ identifier as highlighted below:
                                         year=2024)
 
 
-Add a Relationship
+Add Relationship
 ------------------------------
 .. code-block:: python
 
@@ -108,7 +108,7 @@ Add a Relationship
                                              subject_company=7217,
                                              object_company=7457810)
 
-Update a Relationship
+Update Relationship
 ---------------------------------
 .. code-block:: python
 
@@ -120,7 +120,7 @@ Update a Relationship
                                                    object_company=7457810,
                                                    comment='This a relationship answer')
 
-Update a Relationship by ID
+Update Relationship by ID
 ---------------------------------
 A relationship can be identified either by its cardname, comprised of matric_designer+metric_name+subject_company+object_company+year either from
 its numerical identifier. If you want to update the subject_company/object_company/year of a specific relationship you need to provide its numerical
