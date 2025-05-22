@@ -16,7 +16,7 @@ Hello wikirate4py
 
     api = wikirate4py.API('you_api_token')
 
-    # requesting to get details about a specific WikiRate company based on name
+    # requesting to get details about a specific Wikirate company based on name
     # wikirate4py models the response into a Company object
     company = api.get_company('Puma')
 
@@ -30,21 +30,21 @@ Hello wikirate4py
     for alias in company.aliases:
         print(alias)
 
-This example will retrieve details of the given WikiRate company. wikirate4py models the response into a `Company` object
+This example will retrieve details of the given Wikirate company. wikirate4py models the response into a `Company` object
 and the above script print's company's details in json and then prints the raw json response. Finally, prints all company's
 aliases.
 
 API
 ---
 
-The API class provides access to almost the entire WikiRate RESTful API methods. Each method can accept various parameters
+The API class provides access to almost the entire Wikirate RESTful API methods. Each method can accept various parameters
 and return responses. For more information about these methods please refer to :ref:`API Reference <api_reference>`.
 
 Models
 ------
 
 When you invoke an API method most of the times, it returns back a wikirate4py model class instance. This contains the
-data from WikiRate which we then use inside the application. wikirate4py simplifies WikiRate's response but you can
+data from Wikirate which we then use inside the application. wikirate4py simplifies Wikirate's response but you can
 access the raw json by calling the raw_json method. For example the following code returns to us a Metric model:
 
 .. code-block:: python

@@ -64,10 +64,10 @@ def construct_endpoint(entity_id, entity_type):
 
 
 """
-Client library for interacting with the WikiRate API.
+Client library for interacting with the Wikirate API.
 
 This module contains the `API` class and helper functions for making
-authenticated requests and retrieving or modifying entities on the WikiRate platform.
+authenticated requests and retrieving or modifying entities on the Wikirate platform.
 
 Entities include:
 - Company, Topic, Metric, Source

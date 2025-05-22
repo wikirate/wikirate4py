@@ -17,13 +17,13 @@ If you are reporting a bug, please include:
 Fix Bugs
 ~~~~~~~~
 
-Look through the GitHub issues for bugs. Anything tagged with "bug" is open to be implemented by the WikiRate team but
+Look through the GitHub issues for bugs. Anything tagged with "bug" is open to be implemented by the Wikirate team but
 also to the community.
 
 Implement Features
 ~~~~~~~~~~~~~~~~~~
 
-Look through the GitHub issues for features. Anything tagged with "feature" is open be implemented by the WikiRate team
+Look through the GitHub issues for features. Anything tagged with "feature" is open be implemented by the Wikirate team
 but also to the community.
 
 Write Documentation

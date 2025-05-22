@@ -7,7 +7,7 @@ This tutorial describes details on pagination with Cursor objects
 Introduction
 ------------
 
-We use pagination a lot in WikiRate API development. Iterating through companies, metrics, answers, relationship answers,
+We use pagination a lot in Wikirate API development. Iterating through companies, metrics, answers, relationship answers,
 sources, topics, projects etc. In order to perform pagination, we must supply an offset and a limit parameters with each
 of our requests. This requires a lot of boiler plate code just to manage the pagination loop. To facilitate iteration and
 require less code, wikirate4py provides the `Cursor` object.
@@ -63,7 +63,7 @@ into the Cursor constructor method as demonstrated below:
 Limits
 ------
 
-By default, WikiRate allows 20 items per page, however users can request from WikiRate's API to return more items in one
+By default, Wikirate allows 20 items per page, however users can request from Wikirate's API to return more items in one
 go. If you would like to request more items in one go using the Cursor then you need to define an additional parameter
 called per_page.
 
