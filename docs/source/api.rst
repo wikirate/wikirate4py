@@ -3,7 +3,7 @@
 .. currentmodule:: wikirate4py
 
 *************************************************
-:class:`wikirate4py.API` --- WikiRate API wrapper
+:class:`wikirate4py.API` --- Wikirate API wrapper
 *************************************************
 
 .. autoclass:: API
