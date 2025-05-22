@@ -22,7 +22,7 @@ sys.path.insert(0, os.path.abspath('.'))
 # -- Project information -----------------------------------------------------
 
 project = 'wikirate4py'
-copyright = '2021, WikiRate'
+copyright = '2025, Wikirate'
 author = 'Vasiliki Gkatziaki'
 
 # -- General configuration ---------------------------------------------------
