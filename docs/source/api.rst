@@ -24,18 +24,16 @@ Answer Methods
 ---------------
 .. automethod:: API.get_answer
 .. automethod:: API.get_answers
-.. automethod:: API.get_answers_by_metric_id
-.. automethod:: API.add_research_metric_answer
-.. automethod:: API.update_research_metric_answer
+.. automethod:: API.add_answer
+.. automethod:: API.update_answer
 
 
 Relationship Answer Methods
 ---------------------------
-.. automethod:: API.get_relationship_answer
-.. automethod:: API.get_relationship_answers
-.. automethod:: API.get_relationship_answers_by_metric_id
-.. automethod:: API.add_relationship_metric_answer
-.. automethod:: API.update_relationship_metric_answer
+.. automethod:: API.get_relationship
+.. automethod:: API.get_relationships
+.. automethod:: API.add_relationship
+.. automethod:: API.update_relationship
 
 Source methods
 --------------
