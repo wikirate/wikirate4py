@@ -8,7 +8,7 @@ Introduction
 Here, you can find some code snippets to help you use wikirate4py successfully. Contributions enhancing this section are \
 more than welcome!
 
-Get Verified Metric Answers
+Get Verified Answers
 ---------------------------
 .. code-block:: python
 
@@ -34,8 +34,7 @@ Add Company
 
     company = self.api.add_company(name='A Company',
                                    headquarters='United Kingdom',
-                                   oar_id='OAR_ID_123'
-                                   )
+                                   os_id='OAR_ID_123')
 
 Delete Company
 --------------
@@ -62,7 +61,7 @@ Update Source
     source = self.api.update_source(name='Source-000106092',
                                         year=2021)
 
-Add Researched Metric Answer
+Add an Answer
 ----------------------------
 .. code-block:: python
 
@@ -75,7 +74,7 @@ Add Researched Metric Answer
                                      comment='This is a test import of a metric answer')
 
 
-Update Researched Metric Answer
+Update an Answer
 -------------------------------
 .. code-block:: python
 
@@ -85,7 +84,7 @@ Update Researched Metric Answer
                                         company='BORA 2 LTD',
                                         source='Source_000104409')
 
-Update Researched Metric Answer By ID
+Update an Answer By ID
 -------------------------------
 An answer can be identified either by its cardname comprised of matric_designer+metric_name+company+year either from
 its numerical identifier. If you want to update the company/year of a specific answer you need to provide its numerical
