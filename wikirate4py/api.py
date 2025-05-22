@@ -63,6 +63,18 @@ def construct_endpoint(entity_id, entity_type):
     return endpoint
 
 
+"""
+Client library for interacting with the WikiRate API.
+
+This module contains the `API` class and helper functions for making
+authenticated requests and retrieving or modifying entities on the WikiRate platform.
+
+Entities include:
+- Company, Topic, Metric, Source
+- Answer, Relationship
+- Dataset, Project, Region, and more.
+"""
+
 class API(object):
     allowed_methods = ['post', 'get', 'delete']
     content_type_specified = True
@@ -230,7 +242,7 @@ class API(object):
 
         Returns
         -------
-            :py:class:`List`\[:class:`~wikirate4py.models.CompanyItem`]
+            :py:class:`List`\\[:class:`~wikirate4py.models.CompanyItem`]
 
         """
         endpoint = construct_endpoint(entity_id=identifier, entity_type="Companies")
@@ -273,7 +285,7 @@ class API(object):
 
         Returns
         -------
-        :py:class:`List`\[:class:`~wikirate4py.models.TopicItem`]
+        :py:class:`List`\\[:class:`~wikirate4py.models.TopicItem`]
 
         """
         endpoint = construct_endpoint(entity_id=identifier, entity_type="Topics")
@@ -896,7 +908,7 @@ class API(object):
 
         Returns
         -------
-            :py:class:`List`\[:class:`~wikirate4py.models.ProjectItem`]
+            :py:class:`List`\\[:class:`~wikirate4py.models.ProjectItem`]
 
         """
         return self.get("/Projects.json", endpoint_params=('limit', 'offset'), filters=('name', 'wikirate_status'),
@@ -936,7 +948,7 @@ class API(object):
 
         Returns
         -------
-            :py:class:`List`\[:class:`~wikirate4py.models.DatasetItem`]
+            :py:class:`List`\\[:class:`~wikirate4py.models.DatasetItem`]
 
         """
         return self.get("/Datasets.json", endpoint_params=('limit', 'offset'), filters=('name', 'topic'),
@@ -957,7 +969,7 @@ class API(object):
 
         Returns
         -------
-            :py:class:`List`\[:class:`~wikirate4py.models.Region`]
+            :py:class:`List`\\[:class:`~wikirate4py.models.Region`]
 
         """
         return self.get("/Region.json", endpoint_params=('limit', 'offset'), **kwargs)
@@ -1049,7 +1061,7 @@ class API(object):
 
         Returns
         -------
-            :py:class:`List`\[:class:`~wikirate4py.models.Source`]
+            :py:class:`List`\\[:class:`~wikirate4py.models.Source`]
 
                 """
         kwargs = {
