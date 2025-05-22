@@ -1214,7 +1214,7 @@ class API(object):
         # Prepare main params
         params = {
             "card[type]": "Answer",
-            "card[name]": f"{kwargs['metric_designer']}+{kwargs['metric_name']}+{generate_url_key(kwargs['company'])}+{kwargs['year']}",
+            "card[name]": f"{kwargs['metric_designer']}+{kwargs['metric_name']}+{build_card_identifier(kwargs['company'])}+{kwargs['year']}",
             "card[subcards][+:value]": kwargs['value'] if not isinstance(kwargs['value'], list) else '\n'.join(
                 kwargs['value']),
             "card[subcards][+:source]": kwargs['source'] if not isinstance(kwargs['source'], list) else '\n'.join(
@@ -1279,7 +1279,7 @@ class API(object):
 
         card_name = f"~{kwargs['identifier']}" if 'identifier' in kwargs \
             else (f"{generate_url_key(kwargs['metric_designer'])}+{generate_url_key(kwargs['metric_name'])}"
-                  f"+{generate_url_key(kwargs['company'])}+{kwargs['year']}")
+                  f"+{build_card_identifier(kwargs['company'])}+{kwargs['year']}")
 
         # Prepare main params for the update request
         params = {
