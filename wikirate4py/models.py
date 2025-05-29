@@ -8,7 +8,7 @@ class BaseEntity(WikirateEntity):
     @staticmethod
     def extract_content(data, field, expected_type=None, default=None):
         """Extracts the 'content' field from a dictionary, with default handling."""
-        content = data.get(field, {}).get("content", default)
+        content = (data.get(field) or {}).get("content", default)
         if content is None:
             return default
         elif expected_type == str:
