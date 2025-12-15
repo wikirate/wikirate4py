@@ -3,7 +3,7 @@ import logging
 import os
 import sys
 import re
-from typing import List
+from typing import List, Dict, Any, Iterable
 
 import requests
 from os import environ
@@ -74,6 +74,7 @@ Entities include:
 - Answer, Relationship
 - Dataset, Project, Region, and more.
 """
+
 
 class API(object):
     allowed_methods = ['post', 'get', 'delete']
@@ -192,6 +193,67 @@ class API(object):
         for t in list:
             value_str += t + '\n'
         return value_str
+
+    @staticmethod
+    def _warn_unexpected(kwargs: Dict[str, Any], allowed: Iterable[str]) -> None:
+        """
+        Log a warning for any keyword arguments that are not explicitly allowed.
+
+        This helper is intentionally *non-fatal*: it does NOT raise an exception.
+        It is used to surface likely mistakes (e.g. typos or unsupported fields)
+        without breaking backward compatibility or existing client code.
+
+        Typical use cases:
+        - Create/update methods where only a fixed set of fields is supported
+        - Defensive validation for public-facing APIs
+        - Easier debugging when users pass silently-ignored parameters
+
+        Parameters
+        ----------
+        kwargs : Dict[str, Any]
+            The keyword arguments passed to a public API method.
+        allowed : Iterable[str]
+            The set of parameter names that are explicitly supported.
+
+        Returns
+        -------
+        None
+            Logs a warning if unexpected parameters are found.
+        """
+        allowed_set = set(allowed)
+        unexpected = [k for k in kwargs.keys() if k not in allowed_set]
+        if unexpected:
+            log.warning("Unexpected parameters: %s", unexpected)
+
+    @staticmethod
+    def _require(kwargs: Dict[str, Any], required: Iterable[str],
+                 message_prefix: str = "Missing required params") -> None:
+        """
+        Enforce the presence of required keyword arguments.
+
+        This helper performs *strict validation*: if any required parameter
+        is missing or explicitly set to None, a Wikirate4PyException is raised.
+
+        Typical use case:
+        - Create endpoints where certain fields are mandatory
+
+        Parameters
+        ----------
+        kwargs : Dict[str, Any]
+            The keyword arguments passed to a public API method.
+        required : Iterable[str]
+            Names of parameters that must be present and non-None.
+        message_prefix : str, optional
+            Custom error message prefix for clearer error reporting.
+
+        Raises
+        ------
+        Wikirate4PyException
+            If any required parameter is missing or None.
+        """
+        missing = [k for k in required if k not in kwargs or kwargs[k] is None]
+        if missing:
+            raise Wikirate4PyException(f"{message_prefix}: {', '.join(missing)}")
 
     @objectify(Company)
     def get_company(self, identifier) -> Company:
@@ -778,7 +840,8 @@ class API(object):
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
     @objectify(RelationshipItem, True)
-    def get_relationships(self, metric_name=None, metric_designer=None, identifier=None, **kwargs) -> List[RelationshipItem]:
+    def get_relationships(self, metric_name=None, metric_designer=None, identifier=None, **kwargs) -> List[
+        RelationshipItem]:
         """
         Retrieves a list of Wikirate Relationships based on the specified criteria.
 
@@ -1101,6 +1164,8 @@ class API(object):
                            'international_securities_identification_number', 'legal_entity_identifier',
                            'sec_central_index_key', 'uk_company_number', 'australian_business_number'}
 
+        self._warn_unexpected(kwargs, optional_params)
+
         params = {
             "card[type]": "Company",
             "card[name]": name,
@@ -1114,10 +1179,6 @@ class API(object):
             f"card[subcards][+{k}]": str(v) if not isinstance(v, list) else '\n'.join(v) for k, v in kwargs.items()
             if v is not None and k in optional_params
         })
-
-        unexpected_params = [k for k in kwargs if k not in optional_params]
-        if unexpected_params:
-            log.warning(f"Unexpected parameters: {unexpected_params}")
 
         if 'open_corporates_id' not in kwargs:
             params['card[skip]'] = "update_oc_mapping_due_to_headquarters_entry"
@@ -1210,13 +1271,10 @@ class API(object):
         Wikirate4PyException
             If any required parameter is missing.
         """
-        required_params = ['metric_designer', 'metric_name', 'company', 'year', 'value', 'source']
-        optional_params = ['comment', 'unpublished']
-
-        # Check for missing required parameters
-        missing_params = [p for p in required_params if p not in kwargs and not locals().get(p)]
-        if missing_params:
-            raise Wikirate4PyException(f"Invalid set of params! Missing required params: {', '.join(missing_params)}")
+        required_params = ('metric_designer', 'metric_name', 'company', 'year', 'value', 'source')
+        optional_params = ('comment', 'unpublished')
+        self._require(kwargs, required_params)
+        self._warn_unexpected(kwargs, required_params + optional_params)
 
         # Prepare main params
         params = {
@@ -1275,14 +1333,10 @@ class API(object):
         Wikirate4PyException
             If any required parameter is missing.
         """
-        required_params = ['metric_designer', 'metric_name', 'company', 'year']
-        optional_params = ['value', 'company', 'year', 'source', 'comment', 'unpublished']
-
-        # Ensure we have either the full set of required_params_1 or 'identifier'
-        if not ('identifier' in kwargs or all(p in kwargs and kwargs[p] is not None for p in required_params)):
-            raise Wikirate4PyException(
-                f"Invalid set of params! You need to provide either `identifier` or all of the following: {', '.join(required_params)}."
-            )
+        required_params = ('metric_designer', 'metric_name', 'company', 'year')
+        optional_params = ('value', 'company', 'year', 'source', 'comment', 'unpublished')
+        self._require(kwargs, required_params)
+        self._warn_unexpected(kwargs, required_params + optional_params)
 
         card_name = f"~{kwargs['identifier']}" if 'identifier' in kwargs \
             else (f"{build_card_identifier(kwargs['metric_designer'])}+{build_card_identifier(kwargs['metric_name'])}"
@@ -1306,11 +1360,8 @@ class API(object):
         return self.post("/card/update", params=params)
 
     def update_card(self, identifier, **kwargs):
-        required_param = 'json'
+        self._require(kwargs, required=("json",), message_prefix="Missing required param")
 
-        if required_param not in kwargs:
-            raise Wikirate4PyException(
-                """Invalid set of params! You need to define all the following params to update the research answer: """ + required_param.__str__())
         params = {
             "card[name]": f'~{identifier}',
             "card[content]": kwargs['json'],
@@ -1373,11 +1424,8 @@ class API(object):
         """
         required_params = ('metric_designer', 'metric_name', 'subject_company', 'object_company', 'year', 'value',
                            'source')
-
-        # Check for missing required parameters
-        for k in required_params:
-            if k not in kwargs or kwargs[k] is None:
-                raise Wikirate4PyException(f"Invalid set of params! Missing required param: {k}")
+        self._require(kwargs, required=required_params)
+        self._warn_unexpected(kwargs, allowed=required_params + ['comment'])
 
         card_name = '+'.join([
             build_card_identifier(kwargs['metric_designer']),
@@ -1448,14 +1496,19 @@ class API(object):
             :py:class:`~wikirate4py.models.Metric`
 
         """
-        required_params = ['designer', 'name', 'metric_type', 'value_type']
+        required_params = ('designer', 'name', 'metric_type', 'value_type')
         optional_params = (
-            'question', 'about', 'methodology', 'unit', 'topics', 'value_options', 'research_policy', 'report_type')
-
-        for k in required_params:
-            if k not in kwargs:
-                raise Wikirate4PyException("""Invalid set of params! You need to define all the following params to create
-                                a new metric in Wikirate platform: """ + required_params.__str__())
+            'question',
+            'about',
+            'methodology',
+            'unit',
+            'topics',
+            'value_options',
+            'research_policy',
+            'report_type'
+        )
+        self._require(kwargs, required_params)
+        self._warn_unexpected(required_params + optional_params)
 
         params = {
             "card[type]": "Metric",
@@ -1526,6 +1579,7 @@ class API(object):
         optional_params = (
             'metric_type', 'value_type', 'question', 'about', 'methodology', 'unit', 'topics', 'value_options',
             'research_policy', 'report_type', 'unpublished')
+        self._warn_unexpected(kwargs, optional_params)
 
         params = {
             "card[type]": "Metric",
@@ -1598,15 +1652,10 @@ class API(object):
         """
         required_params = ('metric_designer', 'metric_name', 'subject_company', 'year', 'object_company')
         optional_params = ('year', 'value', 'source', 'comment')
-
-        # Ensure we have either the full set of required_params_1 or 'identifier'
-        if not ('identifier' in kwargs or all(p in kwargs and kwargs[p] is not None for p in required_params)):
-            raise Wikirate4PyException(
-                f"Invalid set of params! You need to provide either `identifier` or all of the following: {', '.join(required_params)}."
-            )
+        self._require(kwargs, required_params)
+        self._warn_unexpected(kwargs, required_params + optional_params)
 
         # Construct the card name
-
         card_name = f"~{kwargs['identifier']}" if 'identifier' in kwargs else '+'.join([
             build_card_identifier(kwargs['metric_designer']),
             build_card_identifier(kwargs['metric_name']),
@@ -1676,17 +1725,13 @@ class API(object):
         )
         ```
         """
-        required_params = ['title']
-        optional_params = ['link', 'company', 'report_type', 'year', 'file']
-
-        # Validate required parameters
-        missing_params = [p for p in required_params if p not in kwargs]
-        if missing_params:
-            raise Wikirate4PyException(f"Invalid set of params! Missing required params: {', '.join(missing_params)}")
-
+        required_params = ('title',)
+        optional_params = ('link', 'company', 'report_type', 'year', 'file')
         # Ensure either 'link' or 'file' is provided
         if 'link' not in kwargs and 'file' not in kwargs:
             raise Wikirate4PyException("You must provide either a 'link' or a 'file' to create a source.")
+        self._require(kwargs, required_params)
+        self._warn_unexpected(kwargs, required_params + optional_params)
 
         # Prepare main parameters
         params = {
@@ -1804,11 +1849,8 @@ class API(object):
         """
         required_params = ('name',)
         optional_params = ('title', 'company', 'report_type', 'year')
-
-        # Validate required parameter
-        missing_params = [p for p in required_params if p not in kwargs]
-        if missing_params:
-            raise Wikirate4PyException(f"Invalid set of params! Missing required param: {', '.join(missing_params)}")
+        self._require(kwargs, required_params)
+        self._warn_unexpected(kwargs, required_params + optional_params)
 
         # Prepare main parameters
         params = {
