@@ -94,17 +94,21 @@ class CompanyItem(BaseEntity):
 
 
 class Topic(BaseEntity):
-    __slots__ = ("id", "name", "metrics", "projects", "bookmarkers", "url", "raw")
+    __slots__ = ("id", "name", "title", "framework", "family", "parent", "children", "metrics", "datasets", "url", "raw")
 
     def __init__(self, data):
         super().__init__(data, expected_type_id=1010)
 
         self.id = data.get("id")
         self.name = data["name"]
-        self.metrics = data.get("metrics", 0)
-        self.projects = data.get("projects", 0)
-        self.bookmarkers = data.get("bookmarkers", 0)
-        self.url = data.get("html_url")
+        self.title = data.get("title")
+        self.framework = data.get("framework")
+        self.family = data.get("family")
+        self.parent = data.get("parent")
+        self.children = data.get("children", [])
+        self.metrics = data.get("metrics")
+        self.datasets = data.get("datasets")
+        self.url = data.get("url").replace(".json", "")
 
 
 class Project(BaseEntity):
@@ -172,16 +176,20 @@ class DatasetItem(BaseEntity):
 
 
 class TopicItem(BaseEntity):
-    __slots__ = ("id", "name", "metrics", "projects", "bookmarkers", "url", "raw")
+    __slots__ = ("id", "name", "title", "framework", "family", "parent", "children", "metrics", "datasets", "url", "raw")
 
     def __init__(self, data):
         super().__init__(data, expected_type_name="Topic")
 
         self.id = data.get("id")
         self.name = data["name"]
-        self.metrics = data.get("metrics", 0)
-        self.projects = data.get("projects", 0)
-        self.bookmarkers = data.get("bookmarkers", 0)
+        self.title = data.get("title")
+        self.framework = data.get("framework")
+        self.family = data.get("family")
+        self.parent = data.get("parent")
+        self.children = data.get("children", [])
+        self.metrics = data.get("metrics")
+        self.datasets = data.get("datasets")
         self.url = data.get("url").replace(".json", "")
 
 
