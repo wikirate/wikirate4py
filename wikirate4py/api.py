@@ -891,8 +891,7 @@ class API(object):
 
         """
 
-        url_key = generate_url_key(identifier) if isinstance(identifier, str) else f"~{identifier}"
-        return self.get(f"/{url_key}.json")
+        return self.get(f"/{build_card_identifier(identifier)}.json")
 
     @objectify(ProjectItem, True)
     def get_projects(self, **kwargs):
@@ -930,8 +929,7 @@ class API(object):
 
         """
 
-        url_key = generate_url_key(identifier) if isinstance(identifier, str) else f"~{identifier}"
-        return self.get(f"/{url_key}.json")
+        return self.get(f"/{build_card_identifier(identifier)}.json")
 
     @objectify(DatasetItem, True)
     def get_datasets(self, **kwargs):
@@ -989,8 +987,7 @@ class API(object):
             :py:class:`~wikirate4py.models.Project`
 
         """
-        url_key = generate_url_key(identifier) if isinstance(identifier, str) else f"~{identifier}"
-        return self.get(f"/{url_key}.json")
+        return self.get(f"/{build_card_identifier(identifier)}.json")
 
     def search_by_name(self, entity, name, **kwargs):
         """
@@ -1176,10 +1173,8 @@ class API(object):
         if unexpected_params:
             log.warning(f"Unexpected parameters: {unexpected_params}")
 
-        url_key = generate_url_key(identifier) if isinstance(identifier, str) else f"~{identifier}"
-
         log.debug("Company update parameters: %r", params)
-        return self.post(f"/update/{url_key}", params=params)
+        return self.post(f"/update/{build_card_identifier(identifier)}", params=params)
 
     @objectify(Answer)
     def add_answer(self, **kwargs) -> Answer:
@@ -1226,7 +1221,7 @@ class API(object):
         # Prepare main params
         params = {
             "card[type]": "Answer",
-            "card[name]": f"{kwargs['metric_designer']}+{kwargs['metric_name']}+{build_card_identifier(kwargs['company'])}+{kwargs['year']}",
+            "card[name]": f"{build_card_identifier(kwargs['metric_designer'])}+{build_card_identifier(kwargs['metric_name'])}+{build_card_identifier(kwargs['company'])}+{kwargs['year']}",
             "card[subcards][+:value]": kwargs['value'] if not isinstance(kwargs['value'], list) else '\n'.join(
                 kwargs['value']),
             "card[subcards][+:source]": kwargs['source'] if not isinstance(kwargs['source'], list) else '\n'.join(
@@ -1290,7 +1285,7 @@ class API(object):
             )
 
         card_name = f"~{kwargs['identifier']}" if 'identifier' in kwargs \
-            else (f"{generate_url_key(kwargs['metric_designer'])}+{generate_url_key(kwargs['metric_name'])}"
+            else (f"{build_card_identifier(kwargs['metric_designer'])}+{build_card_identifier(kwargs['metric_name'])}"
                   f"+{build_card_identifier(kwargs['company'])}+{kwargs['year']}")
 
         # Prepare main params for the update request
