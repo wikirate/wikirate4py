@@ -196,7 +196,7 @@ class TopicItem(BaseEntity):
 class Metric(BaseEntity):
     __slots__ = (
         "id", "name", "designer", "question", "metric_type", "about", "methodology", "value_type",
-        "value_options", "report_type", "research_policy", "unit", "range", "hybrid", "topics", "scores",
+        "value_options", "report_type", "research_policy", "unit", "range", "hybrid", "topics", "topic_frameworks","scores",
         "formula", "answers", "bookmarkers", "projects", "calculations", "answers_url", "url", "raw")
 
     def __init__(self, data):
@@ -220,6 +220,7 @@ class Metric(BaseEntity):
         self.range = self.extract_content(data, "reange")
         self.hybrid = self.extract_content(data, "hybrid")
         self.topics = self.extract_content(data, "topics")
+        self.topic_frameworks = self.extract_content(data, "topic_frameworks")
         self.scores = self.extract_content(data, "scores")
         self.formula = self.extract_content(data, "formula")
         self.answers = data.get("answers")
@@ -234,7 +235,7 @@ class Metric(BaseEntity):
 class MetricItem(BaseEntity):
     __slots__ = (
         "id", "name", "designer", "question", "metric_type", "about", "methodology", "value_type",
-        "value_options", "report_type", "research_policy", "unit", "range", "hybrid", "topics", "scores",
+        "value_options", "report_type", "research_policy", "unit", "range", "hybrid", "topics", "topic_frameworks","scores",
         "formula", "answers", "bookmarkers", "projects", "calculations", "answers_url", "url", "raw")
 
     def __init__(self, data):
@@ -260,6 +261,7 @@ class MetricItem(BaseEntity):
         self.range = data.get("range")
         self.hybrid = data.get("hybrid")
         self.topics = data.get("topics")
+        self.topic_frameworks = data.get("topic_frameworks")
         self.scores = data.get("scores")
         self.formula = data.get("formula")
         self.answers = data.get("answers")
