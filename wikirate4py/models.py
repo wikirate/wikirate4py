@@ -94,7 +94,8 @@ class CompanyItem(BaseEntity):
 
 
 class Topic(BaseEntity):
-    __slots__ = ("id", "name", "title", "framework", "family", "parent", "children", "metrics", "datasets", "url", "raw")
+    __slots__ = (
+    "id", "name", "title", "framework", "family", "parent", "children", "metrics", "datasets", "url", "raw")
 
     def __init__(self, data):
         super().__init__(data, expected_type_id=1010)
@@ -176,7 +177,8 @@ class DatasetItem(BaseEntity):
 
 
 class TopicItem(BaseEntity):
-    __slots__ = ("id", "name", "title", "framework", "family", "parent", "children", "metrics", "datasets", "url", "raw")
+    __slots__ = (
+    "id", "name", "title", "framework", "family", "parent", "children", "metrics", "datasets", "url", "raw")
 
     def __init__(self, data):
         super().__init__(data, expected_type_name="Topic")
@@ -196,7 +198,8 @@ class TopicItem(BaseEntity):
 class Metric(BaseEntity):
     __slots__ = (
         "id", "name", "designer", "question", "metric_type", "about", "methodology", "value_type",
-        "value_options", "report_type", "research_policy", "unit", "range", "hybrid", "topics", "topic_frameworks","scores",
+        "value_options", "report_type", "research_policy", "unit", "range", "hybrid", "topics", "topic_frameworks",
+        "scores",
         "formula", "answers", "bookmarkers", "projects", "calculations", "answers_url", "url", "raw")
 
     def __init__(self, data):
@@ -235,7 +238,8 @@ class Metric(BaseEntity):
 class MetricItem(BaseEntity):
     __slots__ = (
         "id", "name", "designer", "question", "metric_type", "about", "methodology", "value_type",
-        "value_options", "report_type", "research_policy", "unit", "range", "hybrid", "topics", "topic_frameworks","scores",
+        "value_options", "report_type", "research_policy", "unit", "range", "hybrid", "topics", "topic_frameworks",
+        "scores",
         "formula", "answers", "bookmarkers", "projects", "calculations", "answers_url", "url", "raw")
 
     def __init__(self, data):
@@ -406,7 +410,10 @@ class AnswerItem(BaseEntity):
         self.value = data.get("value")
         self.year = data.get("year")
         self.comments = data.get("comments")
-        self.sources = [SourceItem(item) for item in data.get("sources", {})]
+        self.sources = [
+            SourceItem(**item) if isinstance(item, dict) else item
+            for item in data.get("sources", [])
+        ]
         self.url = data.get("url").replace(".json", "")
 
 
