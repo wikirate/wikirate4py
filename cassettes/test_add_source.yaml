@@ -1,0 +1,146 @@
+interactions:
+- request:
+    body: card%5Btype%5D=Source&card%5Bsubcards%5D%5B%2Btitle%5D=wikipedia+page+of+Target+Corporation+2021&card%5Bskip%5D=requirements&format=json&success%5Bformat%5D=json&card%5Bsubcards%5D%5B%2Blink%5D=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FTarget_Corporation&card%5Bsubcards%5D%5B%2Bcompany%5D=Target&card%5Bsubcards%5D%5B%2Byear%5D=2020
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '331'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.5
+    method: POST
+    uri: https://staging.wikirate.org/card/create
+  response:
+    body:
+      string: ''
+    headers:
+      CF-RAY:
+      - 9af0cea41fb4d7bd-ATH
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Tue, 16 Dec 2025 20:07:29 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=KyhaPeCI%2FmaxvbDvmlACXRjYbHzcfDuIqkdimV2sqtVZMLuBreBHftG8c6%2BLiRllKsK0jgThpobN0%2FyBJMHtFjZcDCYctOXQjbUMiz7xb75wiMtia1QqiKjQYTPv"}]}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - _decko_deck_session=UHJvVGczR255VWhNbERldmV1WmlqcnFPaWh0ZUtiaTk4Tnh2UkM3UjdZaVJhZzU5TllFMnVoVFFRNG1wNXN0SVZJeFdJUGthRUtBTStMZmtEM3h1UTd3QXZqSmlkczFJMlBlN0FLMmlyQUxaMmtuRGg2TysrdlVyM2Q3eXBRR3EtLVRQMmhZNVltS0NNOHpwS0RHd0tleHc9PQ%3D%3D--d45606647225c152da6d2538a658cfbafbd218b4;
+        path=/; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      cf-cache-status:
+      - DYNAMIC
+      location:
+      - https://staging.wikirate.org/Source_000241609.json
+      status:
+      - 303 See Other
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      vary:
+      - Origin
+      x-frame-options:
+      - ALLOWALL
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.27
+      x-request-id:
+      - 68e198b6cb0a077d39c1befabb9e9d94
+      x-runtime:
+      - '0.824793'
+    status:
+      code: 303
+      message: See Other
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Cookie:
+      - _decko_deck_session=UHJvVGczR255VWhNbERldmV1WmlqcnFPaWh0ZUtiaTk4Tnh2UkM3UjdZaVJhZzU5TllFMnVoVFFRNG1wNXN0SVZJeFdJUGthRUtBTStMZmtEM3h1UTd3QXZqSmlkczFJMlBlN0FLMmlyQUxaMmtuRGg2TysrdlVyM2Q3eXBRR3EtLVRQMmhZNVltS0NNOHpwS0RHd0tleHc9PQ%3D%3D--d45606647225c152da6d2538a658cfbafbd218b4
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.wikirate.org/Source_000241609.json
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAA/7VVXWvbMBR9768QhsJGk9hxk5QExmhctpcORpMxyihGtW8TrbbsSfK6UPrfpw/H
+        1rxk8ZL0zbrSOTpHR1d+PkHIIbEzQb4/8MfnF15HVShOQdacWVawCLqe5/mD/sgbO3pWrHI1+yy/
+        1+iRP+6Y4Z9Qp6yWECfALNbfZb1giSovhcj5xHW5wAtCF70n8kgYFtDL2MI1TL3vPKNrWJTFsN6I
+        m43kxItW154yrHzV5M4DSZrmaJEkG93VB3P2QcEaZu3aPqo0qZb2PpLndjqcqu1Ph1fvmtuf+lO9
+        WXUICaGPDRdlwP4uJ9cK2nDyeckwP8yLom1kSAVQYTMB1SQ5xARrFjVy55gtQIRBxvJM8hNJUflk
+        IGsi3HAj24R2o9Fobl3IteNrwsVBfg13qLjbRmggZ1pO5VAQ8deFLKPs7/I319jjZ6l5t4VZJYhy
+        vACUPSATILICRL7n92uPK8Bss8XBLou3Cnrs7BTpFnvfdEGWpAPP0YO7ygcRkHK16K5qQmuIaQRc
+        ZMwqLUWahPtING9VxEAuiEOsD14qGnb7frc/ksc78S4m/hh9mQdmaZHHbZfGwCNGct1o/99TNrqR
+        yw2JlnP4dVg2Fn/bvrIlVVnFhEcF5/uZvKrBr+Gxpm9r0RJUOYyyNMd0tbmxzndZDEr0sXur5N3V
+        XubNaDZYCoKRaI/APhngsc0Y2m1eat2Y8idge+i+NMCG7pl8n6LlQcoNsVFu/U1/FPKJavdMJCQC
+        yrWer9ZWHVROxKigMTAUBGh6iwY9D71ZS9TvFvkJ8oamGeVaYYni7v3KlYvf9tAMAP3T1KWQp39f
+        qL4OPxYkhp5z8vIbKRIfltIKAAA=
+    headers:
+      CF-RAY:
+      - 9af0cea9ed9bd7bd-ATH
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Dec 2025 20:07:30 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=jCmnT3HWyjLiCOuun74%2B2Ipj6m0rW5%2FP23BuSIvrYyUnFpJsvYpUL9sRUagvLJUtzh26baOQt79AhymCgbF8t5Rc5T6J%2Fb%2Bi6bon%2FeWBFmHOJUD5B9EnOA3lgk9j"}]}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - _decko_deck_session=Ykh4T1JqTEZic2JLU3dsZ2YzZWRxeTRwM3BrdnNvVXBiZVhSaWJWdUJkUU0wSkV3ell6Q1gyaUtGTjNxT2tIQnRlQjlwQnRYN3VTdExMZkk5Um5ybzF3bmpVdkhkSVBCQXo2OTNqRHhPZWp1MzlNejk3eVpNOWpOVTVxbnpzRHYtLTNuQldkWXFYYzduY2ttNytqc1RQYkE9PQ%3D%3D--232f7f3f9510398bdf960f3e0bdc2180a91df0f0;
+        path=/; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      cf-cache-status:
+      - DYNAMIC
+      etag:
+      - W/"fd2e733334814dff082f293b004890bc"
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      vary:
+      - Origin
+      x-cache-status:
+      - BYPASS
+      x-frame-options:
+      - ALLOWALL
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.27
+      x-request-id:
+      - a34f7b610be764b24c24bc0aeb9d07bd
+      x-runtime:
+      - '0.395898'
+    status:
+      code: 200
+      message: OK
+version: 1

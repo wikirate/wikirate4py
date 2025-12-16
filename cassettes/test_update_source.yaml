@@ -1,0 +1,155 @@
+interactions:
+- request:
+    body: card%5Btype%5D=Source&card%5Bname%5D=Source-000216646&card%5Bskip%5D=requirements&format=json&success%5Bformat%5D=json&card%5Bsubcards%5D%5B%2Byear%5D=2021
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '155'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.5
+    method: POST
+    uri: https://staging.wikirate.org/card/update
+  response:
+    body:
+      string: ''
+    headers:
+      CF-RAY:
+      - 9af0cf193dbdf4fa-ATH
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Tue, 16 Dec 2025 20:07:47 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=IKlDrGF8EcjKveNmQWko0D4ZhUWqGc9HW%2FAyBd0rPNPsfI4Ep2cLzfelbhmrDMqH3sh9WH%2FxkHA%2BZhBJmK0BF0bk%2F%2BnmGZdpPL0ALE8va%2F91cwBTPITOdeLjh3%2FS"}]}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - _decko_deck_session=b0tTUFd6N0FxNTVCQTM2Y0xCTkZnZFdLc0FPVk9WQk1VdlV0NFBlL1hEcXBjY0R6RU52b2lSbE1zOEtIelpQd1ZkVi9iREZJcWx2anIwTVZVT3l4S0xVaGFEYTdqbmNiNzRmSHppdjlZYzVNQi9pZVkweXE0WkZZRjdZcVlqWHYtLUxPVEhoVHA2bmVVTnRDb3ZxMFlqaVE9PQ%3D%3D--9da17b18e29b71f2d093d61654c4e8d1ef2777b8;
+        path=/; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      cf-cache-status:
+      - DYNAMIC
+      location:
+      - https://staging.wikirate.org/Source_000216646.json
+      status:
+      - 303 See Other
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      vary:
+      - Origin
+      x-frame-options:
+      - ALLOWALL
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.27
+      x-request-id:
+      - a9c31a04d33d56049dd200898241b623
+      x-runtime:
+      - '0.319682'
+    status:
+      code: 303
+      message: See Other
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Cookie:
+      - _decko_deck_session=b0tTUFd6N0FxNTVCQTM2Y0xCTkZnZFdLc0FPVk9WQk1VdlV0NFBlL1hEcXBjY0R6RU52b2lSbE1zOEtIelpQd1ZkVi9iREZJcWx2anIwTVZVT3l4S0xVaGFEYTdqbmNiNzRmSHppdjlZYzVNQi9pZVkweXE0WkZZRjdZcVlqWHYtLUxPVEhoVHA2bmVVTnRDb3ZxMFlqaVE9PQ%3D%3D--9da17b18e29b71f2d093d61654c4e8d1ef2777b8
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.wikirate.org/Source_000216646.json
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAA/7RXbW/aSBD+3l8xQoouUWNj85YE6XQihNJIuQpBTlV1qtDGXmAv9q5vd02Kqv73
+        m13b4DikcIRKkQK7M8/MMzM7M3x/B1BjYa0LDa9x4V21vHNzwklM8aw2EakMqON5XsPvdFqdmr3V
+        q8TcfsfPhXancXWefX2uWstPc5Van8jQfs7PUxmZ44XWierW60qTOeNz94k9Mkk0dYWc1zMk9x8l
+        eKEWiJAWhlRmCC9+WO/2h5yueW3AazMWVcnlofG3MtwE5/0Ho1ohXD47xDMLWuHONeW6jFQgOIkU
+        YRpoJrijtJBkTt2ZJL4bhNwN2ZxpEomAEq4SElDlBiKuG76qXlCst64uOxd+p+0m4WwT04jxx0pQ
+        eBpFuwJyZ9QqARktJFFvC4mBtSH5I8ByOmlfGwdO2je/Vx04aVxbF9Y8JE2E1NMtBZwHoLmL0tgi
+        wH2phgtmd0zpN/HKsKcG+5WM/20P8KgvJMoiEkxEwEgEY6oSwRV7YBHTK8igcgCUn6ToAuPkleve
+        fC7p3MDdEE1eXN+i/bmxFr646os4TjkLiCk6wL+RFIilVNl2kkQr6C/QARiJiAUrCEWQxobTWmpI
+        eUgljMgKhiQp7Njbr+v8aaZfe52NXZm7t7rHr0aL+9oLhV5/0IPJqAeOcbQJeKcwBKEN5gwzwm36
+        0JSmNiBrritK5Haq7V1UvxjVY1enAd1VluigX80ZQ2LKCH1dt5LSV+RPTasqHS10HE0PcTFr4IGk
+        JrhTYhOAHrUc33caF+Bddptt/IO/7vuZaJqEz0Xbjt9w/A74zW6z0/VLoiFVgWSJqfIDGmFZu5KX
+        MQsW9/Tb23JTwt+3MZZdWucqZCpIlTqM5M1G+Vdw3MDvS7Hk0JohjryE8NX2h9XaRbGfax/7beW4
+        u55XD2c3TJJe9YnFVEsWHJCyPzPFY9PJYHexGUbiwU4u0+kRFG450wwHyZK+H8RJJFaUqnMYjm/B
+        9xrOpUPgdCZkTCVOkyG+as8hZ6UB8hO4EZUx4Wgf6HGBP6aIC2M2X2gFt5jEAP8PJaNL29jAbFch
+        nCLoxzG2ln1hb3Eq4IaLWGIG5lFKFuOsMI8187vldRw/x20e5u0EGyXlRgJtfKJPYOc0o1IV/v6P
+        +BKpHc1iuj2+wYv4PuwJPOBLJgU3kxFFcLfQ1K63MPiW4MLAdIq7hvV38Knp7+3vurxgwO1OEYIW
+        uHvIzM4dJUtaBNp3mtUCues9jzluYxS3tyXlKa2c3rGlsf0ZV/Fi9zkNmUQWm1Cd7aGjsiUqMEvU
+        IUWEwDK13R6jhbwmmvAQOyi2vrazhc0HGpOIwpOQj1gRv0GCe9kpUUAgofjYMUzoHOK+kDqrNif8
+        tfFE5QHNqZcpVprTBNeQYPGm9pQBZ+2p9NPg3xQ3kW3bQMPrehfd1uVmG8CcUK6sP59Lps4hvwgh
+        tdtsvw/XX6DlenBauGjXE0wPDqIYd0HrYa6l6g+rOgqfuTChFH5KqqexxT6kJqHTYYp5dmvvfvwH
+        AAD//wMAxkYYVs4PAAA=
+    headers:
+      CF-RAY:
+      - 9af0cf1bef76f4fa-ATH
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Dec 2025 20:07:48 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=TNg3ue1PxQiUlotYJqK%2Fr2QxFZC1M8CQzFPH3JgvdYFhC%2BFv%2FGwFvYTYgCXDPRaKJJclfvJ5ypWvimEhsHePszqtB4kEtsXYocT0IEJcGBN01xjMj17GM5%2FIJAVN"}]}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - _decko_deck_session=VUlST0RSM0tDT3V4Wk90a1hSMWR5ZG1mRnVYWjZkcStCMmczeURTZFMrbEVFblltOThmRWU0b3QyWTJORXFTUFNsZ2VZczdZVlY3NXp3OURVTjc2VVhMeng4OVBEWnN3NHdkcnpHK1d3WDZJOGRvWWhGTm13UFNjVER1SGdBTUMtLXoxS3U3anVSRjNrUVhMa1N5Z3hxNFE9PQ%3D%3D--e5052ee6e0bd3cdce08a64b11d7312dccfdb8062;
+        path=/; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      cf-cache-status:
+      - DYNAMIC
+      etag:
+      - W/"1babfc86526b2e12e02bc0e28df405d9"
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      vary:
+      - Origin
+      x-cache-status:
+      - BYPASS
+      x-frame-options:
+      - ALLOWALL
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.27
+      x-request-id:
+      - 9f56c6b7300cea2e2739aeea637c0bf2
+      x-runtime:
+      - '0.390199'
+    status:
+      code: 200
+      message: OK
+version: 1

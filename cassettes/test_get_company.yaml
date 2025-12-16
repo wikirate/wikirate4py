@@ -1,0 +1,84 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.wikirate.org/Puma.json
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAA/61WbW+bMBD+vl9h5dOmNcQ2ECDf2rTqIu2l68umbZqQA27iFQyzzbpo2n+fDSQB
+        Qpt0qvIlHHfP3fPYd8efFwAMWDyYAOQjGByZR05Sqg2DiyIlg9KiVrmx/NH/1+5jFx1Vj2v3aZbm
+        hK8GtbmOGUyJiMv/tb0QiTEvlcrlZDSSiiwYX1j37I4JoqiVicWohrJ+yIyv46IsputUUZ1Kv/lb
+        FngIqKGzRRywlCy6pBB0EPadDjET+HpWune4tYyH1lBBdbhxRblqhq/DhrnI4iJSLONDqTJhQm8F
+        QVYUcytmC6ZIkkWUcJmTiEpLSzO6ZQmVo5rMCEPHR04QDFMasyK1fuSLrXBLSuKfBRGKCtkRw0a+
+        4wRenxhvmlEdTS4ypsmIJ6vSxHxAnG+lQZvOqUjr8wfg+4bMPZ1LpkwVvEiS0kQSRrrEsOf62Osl
+        dly6PxOjEmwflYubd8fg6qz2AFUd4Pi8YTAeM1MBJ+YakARcCxLrnOCKil9Mnzp4y1JNPO4KQgqp
+        hJGAh/NCMk6lDHmRzjWZpkZbr7qxepxYs4BQ0qgQTDEqQ6bbUrFbFpXvtpGtvgpcFPjjcW9jtZhd
+        bYDBrAUM3lfAnbO5ZNHymv5WT2/CFp9t2rCdNqzS7jvF0zMI4TjQP2hvT+7mynNc39OD1ce7Vgw9
+        3D2whC50NaYAtdoo2yen5waoV863BgGclQgbCZ9RtxI/rPDDLf4+gVwcBBCeX37FJx+/uF/fBe+d
+        oEs+y6m5gSLPTEpzs7o7x/Ntz/f7aH/QsdNNKJid7jTxUhD59Fndxg1np3tvgm1D51P45vIE2dB3
+        eznKIs+TVcVv02C6pcJIg+lODBmP6e/wjq6aDsXdI+1pKo+JIruiYQzHjodhn2qf66gevf77gqwx
+        D9DqI3I9XdzOGNcIud5VZGdu+7YfPEikCnmeY9/g7R3fZlq/nAvC41ddHnoip2b3fPte9Tbjd41H
+        wvXg1gu9YVqqNAkPrbH6iokE1cY4JOXHA4bIGcJgiFyA3ImNJrYDbq6nlWuRxy1X7A6hN8QYwGDi
+        wImDtq76a+Jer+Hw8FVXBjS+rgT9WWh67XQID9FYT6+JG0xwI12idxiX5Xl9bkAfgfpFDArdEAJM
+        p+DkC3AsCF6uSyr5s19Ud0aacVlWVEfJ0Xw10s6vLL1VKHiUxLFSgs2LcuKfF3rwWoMXf/8BTiZ6
+        MxwLAAA=
+    headers:
+      CF-RAY:
+      - 9af0c2be9c6f8a17-ATH
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Dec 2025 19:59:21 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=808NKr%2Fdvw1P%2B73y%2Bo5F3joHmR6bFwaAdAHpSHebArsA7nkJGlZIStznorQkqkOf0zhDRCfyQayzWm6lD5Jk1gWh95vx8ibZsIuPs3CDfvKMAcvNUfoyS6qa1kZe"}]}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - _decko_deck_session=SVdZREhyR0xqOS9iNFR4SDRHR0xkdjZtek9yZys2cmg4a0Z4c2NYQVV3bmdKZGY5d3NDR3kvNStYaElXc3BUcnBDSlh3MWdILzdwTkJOdkNETGtYRGlNRnBZbGRXQlVZYlRKemtzUkhINnlBRmVpM1FZOTVPbjhFWnhiTVBQdk8tLWZBZ2tacUZjNlMvdXdVMFkwS0tRRlE9PQ%3D%3D--d9414065bb0b3370360df1663cbb94eaa0ba91bd;
+        path=/; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      cf-cache-status:
+      - DYNAMIC
+      etag:
+      - W/"27e18ad28c8d28b666ca0915fcf95127"
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      vary:
+      - Origin
+      x-cache-status:
+      - BYPASS
+      x-frame-options:
+      - ALLOWALL
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.27
+      x-request-id:
+      - f69d10ca55e2306c3db0f5ffc2e079d4
+      x-runtime:
+      - '0.375170'
+    status:
+      code: 200
+      message: OK
+version: 1

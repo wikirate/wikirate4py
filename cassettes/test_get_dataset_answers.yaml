@@ -1,0 +1,95 @@
+interactions:
+- request:
+    body: limit=10
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '8'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.wikirate.org/ShareAction_Workforce_Insights_Data+Answers.json
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAA/+1aXU/jOBR951dYkQbtikLbQCmDhFYFtCzSzq60nRVarVaRm7iNl8TO2E471Yj/
+        PtfOJ7ShIW2nfeAtseN7z70+58Zx/O0AIYt61iVicRC09B3DIYF7a+hjQQauopyhBy4ex1y4BN0z
+        SSe+kugWK3w0YHJGhLTMQDWP9MBvcJ0ZPe20krvcKMHC9a20NR1h3WDhmeu0PRaBbvaViuRluy0V
+        nlA2OZnRRyqwIidcTNqJpZP/JWfZMJd7JHMkTbdjrELvk0FYy24RtpOH7WRhO+WwC+cWVSSUYPtf
+        gyRJQZaE7nm33+nZaSqWZ/jojk+JYJhBiodKxK6KBUGYeegTZnhCQsLU0eD6DzQIBT+yO7Zt5eay
+        LCaoivY3RluC4OQQHIDgPIfg5BDKyQd/IVGCug0CK0y4PIwwm5to0mCLzjlMKfRoz3nbFAdxErxS
+        AoNHNjHGBVGYMn03gzmEuWqhWwpAJFVz88A9c4NYAsAW+lXPsIcCPOKxMJ0hEEkwJAMMQ5Ln/TjE
+        DIGP8Zi6j2C4he4Ig8dQhOeIfInBMDQJSqYmVj1m5lOpAoJGAZ9pKJHgLpGSAJjfjLm/iASXbtEg
+        DMla6BNkBQfIJzhQPqLg2CcmkijALmmhP103jrDOb/GU9ijxmGgcYDjiQNkReDcuDODPIs2JftQj
+        UxLwSOe/hR5gJlCgWyRqo4BOTeagEbA8mAQiwiYL05Wiz3lvGoem8bjT6XQ/2rbdt9Ku//Jh2BDV
+        2SY/E2oah0+tak3219fkSHgMRYG7S1FqDE6GYbuqzMKtKctK0S0RzwpNNJXp6srwJvY3E99eayaj
+        Tz3RnHbXF43rcrFLweT+tysW7WZdoTR+O73tVZSobK9pqrNZk6IX61PUox6WaHC3S5oaDE6KYbtU
+        zcJ9X269L7caMLSeLnv2+rq8H8C08zjapS7vB06BYbu6zMJde73VWCqvk3+v2ZnNU012flyfnVSg
+        3ylUJ4/skp9UOGUU22VoEfLG3h2r6u0CR5es0iuV8Lz0N3+r7DXzCwbU435/A7tToDTmKT5jaDjY
+        JftzHE6KY7v8L4e9bpV+zs1VMqhaYOw1M8uzU5ObG9ilkVzukpKZ++0yEby8L98Xlu97rQaYsnoi
+        uNjArouUGA0gvfOdSkFipwCxZUFkAf/g1XPdAt5US4vrn8oPyv1mf8aFmhq42IQGuEsBsIeuBVVU
+        +jAJ3JO73sHPYTkpLMfA+kGb+q8kpaZymjJ5ycJ9+WZKvU+CfFXf+M3ylh8Wq7aNVr1l91yblYws
+        q/UgxWMFlD2aAJJbbV0qLip/ivfP7HPYqX1N0VXHDhY1qlslUY1FWvWnf1VdOjs97y8WpZcVo+KY
+        Q02YibUXBaB81CFhwcv58FUYOBs+8JCcdXAFMbzAqnxsJI68Ja2RcVicCmHkq9r4EYxfxjRQRHzo
+        XadFzdGp+dC7vTrU5zKu9N1hQEOqrrqdQz4eA1XgqjgXIkDRwNYMvQU1rnfctY+751DuLjunlz0b
+        /f35xkqJ7hImTeYfSqhbKO3wUGwqxc0Nuv4HnZ100E9ZtCZzUGAAZgglzgSbjpLt0bwND/98goaE
+        oNcZAXWFjmKTnzvzjW8dPH0HU39OAMojAAA=
+    headers:
+      CF-RAY:
+      - 9af0c93c4fb91604-ATH
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Dec 2025 20:03:52 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=Uvu5CmqV4sYanEF39QVnpdMyiDaGU35b%2BKyserV2bK6DdzgXycf0E%2BcduNiBoWiJX44OXia3k06fwAkYqa0Fg%2BwcQHsfYQ%2FFMVGdpLUavpifhC2HjMeeN8iXloPS"}]}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - _decko_deck_session=OEhtVzU3UEU2N1BEL1d2Z2tIcGVHcjB1NXRLb1BHVVZqeWppOW4vVm5zV2MzYnlnRmxpYmhSemlqNVJORkl5VTQzdUVBR0FaemprZ1pyQm1FQm9jQ3lyS09uY3ltVUVKeVArei9CNkFnZTFicHZzLzdmeTV0THNrbkljdFFvdXUtLXpUY0sxY0dQQ3l4QkhOVk9Qb2Q2dmc9PQ%3D%3D--b34289c6980d8d9891539da38f5935124044af8b;
+        path=/; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      cf-cache-status:
+      - DYNAMIC
+      content-disposition:
+      - attachment; filename="Wikirate-2025_12_16_200347-ShareAction_Workforce_Insights_Data+Answers.json"
+      etag:
+      - W/"d9004459bdaf1cb3c216c11ae55b971e"
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      vary:
+      - Origin
+      x-cache-status:
+      - BYPASS
+      x-frame-options:
+      - ALLOWALL
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.27
+      x-request-id:
+      - 6544698fc8a6049f893c481df146435a
+      x-runtime:
+      - '4.941115'
+    status:
+      code: 200
+      message: OK
+version: 1

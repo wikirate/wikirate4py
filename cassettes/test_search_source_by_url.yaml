@@ -1,0 +1,78 @@
+interactions:
+- request:
+    body: query%5Burl%5D=https%3A%2F%2Fcorporate.target.com%2Fcorporate-responsibility%2Freporting-progress%2Fcorporate-responsibility-reports
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '132'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.wikirate.org/Source_by_url.json
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAA/5VRy06EMBTd+xU3jQtNZngNjAM7ZeHG3WiMkQnh0UAdKNgWDZnw75ZSHDYa3fWe
+        V+9pTxcAiOQoANfbeY7vr0aAJjWWENo3HcswpD10rEKKEn07Uid5np0bazVN3zacsKxEGtUOFCYs
+        V2eNj5ESLoVoeWCaXCQFoYXxSY6EJQIbDSvMKcl44w2dbVmT4/kiruhYpUp2UBv+KVcVi9M+lupz
+        vAynAlMx+k8QqdUjOUT6JSK0ilhEQQKMFKWI26rjo+A1Qg+EHiUPo0/HTNZLeUWEYDjAMF1CBK75
+        aDqosZLGxZjQDHPRsAVUirqK/11LN2JYsnmcqFKOZe/WtrO2fbA3ge0H7g08PYaTtGvzH6XONnC9
+        s5Th905uuRA7nhJvwbECyws227O4IhmmXH3Y82LbFWgih47mmEEYwt0LuIYFV3NLtT35wFlT1w3l
+        qqR2cTPtTSm+NmCPMfz6LrdCMJJ2gjQ0vu9Ijg10MXwB4bV2c/sCAAA=
+    headers:
+      CF-RAY:
+      - 9af0cbb7c9713c3d-ATH
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Dec 2025 20:05:36 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=BfsaiFnt%2BHD05l1dkolWIcqW3Y4gAErXjUwqyoPi1xNva0uhwLrauAlo4CKKmjUo6bqGmKHGu979NqpqexjpU91UQiyxcMEMKomT4ZhS0v2hCCJXlwp71SntVT5N"}]}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - _decko_deck_session=YldVT295dklYN0NtWUV6MkZzWW1OUUNvb3BFdmlTeVJEcmM3Q2tPSE8vd0VHSVFEQ1NPb3pDc0pUWVl4bExmTkM3ZnlMK21IU3JERTJ5eEdQY1hNWFlYWVhlQk14NC9hUnF4S0pnazZBSkFXRU1mS1VFN24wc1FFcWlNZStDS2QtLTM4alBSZG1Xd3pwRDgvbmZydEZiYmc9PQ%3D%3D--ddf3a5ad26da067d3b6f29dd18bcf935636bf48b;
+        path=/; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      cf-cache-status:
+      - DYNAMIC
+      etag:
+      - W/"33c2b559d436b35f49b0b5859ae7c34b"
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      vary:
+      - Origin
+      x-cache-status:
+      - BYPASS
+      x-frame-options:
+      - ALLOWALL
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.27
+      x-request-id:
+      - e2ea5863f395f602fac06489458679ea
+      x-runtime:
+      - '7.459083'
+    status:
+      code: 200
+      message: OK
+version: 1

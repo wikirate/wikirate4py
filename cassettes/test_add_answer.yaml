@@ -1,0 +1,155 @@
+interactions:
+- request:
+    body: card%5Btype%5D=Answer&card%5Bname%5D=Core%2BCompany_Report_Available%2BAdidas_AG%2B2015&card%5Bsubcards%5D%5B%2B%3Avalue%5D=No&card%5Bsubcards%5D%5B%2B%3Asource%5D=Source_000104408&format=json&success%5Bformat%5D=json&card%5Bsubcards%5D%5B%2B%3Adiscussion%5D=This+is+a+test+import+of+a+metric+answer
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '299'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.5
+    method: POST
+    uri: https://staging.wikirate.org/card/create
+  response:
+    body:
+      string: ''
+    headers:
+      CF-RAY:
+      - 9af0d16c1ef2557e-ATH
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Tue, 16 Dec 2025 20:09:23 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=Fqzq%2F2WO%2BxTpAr4DstDbrlEv%2Bx%2FJ88je9FBYoLdHUODY2YdVgYVE%2F5QuNcyxXe3gFRLnQ22wWGFVkRGgdKwRmNCvJ3GY9eXDHDHX0nwtJemeN1FouyAfJLVwmSad"}]}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - _decko_deck_session=TlFUdFUwR0ZIS1lBQnVmaE5PRjI2cmRZcFhBOFVlNG1SY2xPbFRBZy9VUW1PR3crQXhzWnZrT1dKQkZyaEpkZFlKcExET0dOaEh3a3NUQ1BIdTJicnFVdStGb0hyTFlxcHBiakw3WmYxK2FrTEYyeklHMkpKNkZ1N2IzMlNTN0wtLUpoNmxqVWZ1YkR2QlZGQVR6a2hmRnc9PQ%3D%3D--b37c022a4357b704aeb8604631e1492e17d1b3b1;
+        path=/; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      cf-cache-status:
+      - DYNAMIC
+      location:
+      - https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG+2015.json?flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-bs-dismiss%3D%22alert%22+class%3D%22btn-close%22+aria-label%3D%22Close%22%3E%3C%2Fbutton%3E%0A%3Ch4+class%3D%27mt-0%27%3ESuccess%21%3C%2Fh4%3E%0A%3Cp%3E%0AThank+you%21+Your+research+efforts+are+helping+make+information+about+companies%0Aaccessible%2C+comparable%2C+and+free+for+all.%0A%3C%2Fp%3E%0A%3Cp+class%3D%27answer-success-in-project%27%3E%0ATo+keep+researching%2C+go+back+to+the%0A%3Ca+class%3D%27_to_question_phase%27+href%3D%27%23%27%3E%0Aquestion+section%0A%3C%2Fa%3E%0Aand+select+a+different+year%2C+metric%2C+or+company.%0A%3C%2Fp%3E%0A%3C%2Fdiv%3E
+      status:
+      - 303 See Other
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      vary:
+      - Origin
+      x-frame-options:
+      - ALLOWALL
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.27
+      x-request-id:
+      - b34f79b18843f1acc348479a6fd62e1a
+      x-runtime:
+      - '1.226224'
+    status:
+      code: 303
+      message: See Other
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Cookie:
+      - _decko_deck_session=TlFUdFUwR0ZIS1lBQnVmaE5PRjI2cmRZcFhBOFVlNG1SY2xPbFRBZy9VUW1PR3crQXhzWnZrT1dKQkZyaEpkZFlKcExET0dOaEh3a3NUQ1BIdTJicnFVdStGb0hyTFlxcHBiakw3WmYxK2FrTEYyeklHMkpKNkZ1N2IzMlNTN0wtLUpoNmxqVWZ1YkR2QlZGQVR6a2hmRnc9PQ%3D%3D--b37c022a4357b704aeb8604631e1492e17d1b3b1
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG+2015.json?flash%5B%5D=%3Cdiv+class%3D%22text-center+alert+alert-success+alert-dismissible+%22+role%3D%22alert%22%3E%3Cbutton+type%3D%22button%22+data-bs-dismiss%3D%22alert%22+class%3D%22btn-close%22+aria-label%3D%22Close%22%3E%3C%2Fbutton%3E%0A%3Ch4+class%3D%27mt-0%27%3ESuccess%21%3C%2Fh4%3E%0A%3Cp%3E%0AThank+you%21+Your+research+efforts+are+helping+make+information+about+companies%0Aaccessible%2C+comparable%2C+and+free+for+all.%0A%3C%2Fp%3E%0A%3Cp+class%3D%27answer-success-in-project%27%3E%0ATo+keep+researching%2C+go+back+to+the%0A%3Ca+class%3D%27_to_question_phase%27+href%3D%27%23%27%3E%0Aquestion+section%0A%3C%2Fa%3E%0Aand+select+a+different+year%2C+metric%2C+or+company.%0A%3C%2Fp%3E%0A%3C%2Fdiv%3E
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAA/61WbWvrNhT+fn+FCAQ2VDuO7TRpYYw03fppY7Qdl3IZQbFPYjW25Ulyu3Dpf9+R
+        ZCdOm77kUgixdV6e836s718I6fG0d07CMA7PovHpiaGUrACk9WZCAp2JomLlhlxDJaQm0wfGc7bI
+        gU5TnjJFplc0DIajntXUm8pofsf3FjmOTseTE0dogaelegTZa6iNUm/GZGrfG3otc0POtK7U+WCg
+        NFvxcuU/8jWXTIMv5GrgkPx7JcpWLREptIaYM4SMJ+vfRyC7Uc9d1PPnUc+bqK3hX5c5U1l/dNEf
+        Xf7Sj2Ypf6AJklQ/uuyHoYb/tJdAqUFSloPU7t9TdZKAUs0p5argSnFjA5WoFDk4fcvHZz/6DcEX
+        tdaipCZPju0IRiVlmnkL1ULta3c9WujSS3KhwNCZ5MzD2CB3zFnDcOb64e+NATwGU6RkcQdqXGgv
+        wAdyb1w4/XDo1LJ4q1K5t9uMlWu6ETXK0DtRSypBAZNJRmG5xDRjLjD1GeQVFoUWbA2Ul8gomOYY
+        M1uIWtPEVoaDQkRmTZqc9cOZ40jWnFiZ0qUEoAiAOc595wt6Vu0c64bieqUti8dLr5LiHhLt4jMB
+        CLoGqLZuo5fG0krQBUvWVAuqM3DIrIs812L+bw3KRDGvMmbyO6aZhKXj98Noa6OVowot43PrNXN8
+        E5aCHJmU0ZQvlyCxtegGHTK+FKAlT8wbRu1StTkUOR6wTfHo5tapvTvzTriBtYPc7gDHMV6YZYKT
+        Yc8PLK/tHP4pnIDCqmN2kfTNDqtbFO2qGIenZ5Ph+KQltlN8Y7W8IAiGQRwHk95Wol0dTmJH/8ic
+        O535FrW7RBBiyXPoYrS6pivS2tbGU1pItgJ/KdnQT9LST/mKa5aLBLCbKoah+pitgcFSAxfeZBDG
+        k2g4ikZ+lS539nJervfsPT76BfB7bhFWuViwfKBqDIWXbMFzrjcD6bZTKh7LXLBUDXZwDatJ0LeG
+        jIybPYimxFs9YjrAFf8rLBTX8IxV1CVP7DwS/P0lxQqnQe0LSYTETJEbkXCWowlViRLH9DWLF7Xi
+        JaK8Lzkty9oiWkZD/2fXDly7ol02GSEHo92523ZsJz9hEAZdk3gePjuHW8v2+fSl8cFMRoHTaPq7
+        d5txRfDHiMaJJrywoySWSHDTRtjuK9h8qOaf+H3atXMPq1jYmXNemk7rHFmJbYqN/NpURlE8DKOX
+        U2n8eDmJ181uJFdS1NVxE2kQn01h92OeGIMu4yeH/AzO4slkdMDPN5bZnu9/uLrc2i460vPD5XDR
+        vO7zODyw7vaX6v4VqVm9Rzn3rCXeyOAkDl7mb3u72/PkzgzOUW5s70vv1TCcHOw1emwhj28++qN1
+        HJ2Gw2gSHec3faPQ14Ddnn5iBPRgF2w3V6aLfP7Zt+PmuiABldM5066bwpE3DL3hKV4TzoOz8zAk
+        f9/OnGhdpR8VTTJI1ii62Ow2mQR7e3oDIN4B5Bzv5Mom+2snwBPSMFJSlylIMpuRizsS+wH5qU2M
+        jYg/gFn3+LmyeWm01GCxGaDwzz65ASBvz6XGLsXbtbkVXtU8Bb/35el/mpc8dJMNAAA=
+    headers:
+      CF-RAY:
+      - 9af0d1748b5c557e-ATH
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Dec 2025 20:09:24 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=9AlVCEjNgOBqpR139zrAlK%2FchJM0p9OEQn8TxMBdvYEvFM973O5fw5EF3Zh1XPfAFs78l4Y5YH8i18wjaKGCR5um7c8FSU1L5gYhQ8TjwQaEt1TWEniDljv6gSds"}]}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - _decko_deck_session=TTlOT2ZNRHpEQm96ZXBHdjdjak9jbVFhTHhZUnBYZFFkR1BvWkhBa3ArUzQ1Wk1zR2NVWnI1T3RoaENwZkpCNUtDbmh1TlplQmRXWFNSTk85aWpjWjc0SkRWWTQyNUpyMSsyV1lGNEg1TUFEYXBjaUV4RjVHY1A1NXRkNmNyMnQtLS9NbHJqWXR5SVUrL2Y0U05pdXJLMkE9PQ%3D%3D--e14e78b1234b69f477cc4c75164b9bd554fe5152;
+        path=/; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      cf-cache-status:
+      - DYNAMIC
+      etag:
+      - W/"41ffd7f07680837ea1e1adb288a78142"
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      vary:
+      - Origin
+      x-cache-status:
+      - BYPASS
+      x-frame-options:
+      - ALLOWALL
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.27
+      x-request-id:
+      - 97aea699120a36a3ee2f33fe4ea6ab4f
+      x-runtime:
+      - '0.320055'
+    status:
+      code: 200
+      message: OK
+version: 1
