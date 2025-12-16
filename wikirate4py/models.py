@@ -44,7 +44,7 @@ class BaseEntity(WikirateEntity):
             from wikirate4py import Wikirate4PyException
             raise Wikirate4PyException(
                 f'Invalid type of entity: expected type id: {expected_type_id}, but received: {data.get("type").get("id")} ({data.get("type").get("name")})')
-        if expected_type_name and data.get("type") != expected_type_name:
+        if expected_type_name and (data.get("type") != expected_type_name and data.get("type").get("name") != expected_type_name):
             from wikirate4py import Wikirate4PyException
             raise Wikirate4PyException(
                 f'Invalid type of entity: expected type: {expected_type_name}, but received: {data.get("type").get("name")}')
@@ -411,7 +411,7 @@ class AnswerItem(BaseEntity):
         self.year = data.get("year")
         self.comments = data.get("comments")
         self.sources = [
-            SourceItem(**item) if isinstance(item, dict) else item
+            SourceItem(item) if isinstance(item, dict) else item
             for item in data.get("sources", [])
         ]
         self.url = data.get("url").replace(".json", "")
