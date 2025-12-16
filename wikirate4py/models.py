@@ -8,7 +8,7 @@ class BaseEntity(WikirateEntity):
     @staticmethod
     def extract_content(data, field, expected_type=None, default=None):
         """Extracts the 'content' field from a dictionary, with default handling."""
-        content = data.get(field, {}).get("content", default)
+        content = (data.get(field) or {}).get("content", default)
         if content is None:
             return default
         elif expected_type == str:
@@ -44,7 +44,7 @@ class BaseEntity(WikirateEntity):
             from wikirate4py import Wikirate4PyException
             raise Wikirate4PyException(
                 f'Invalid type of entity: expected type id: {expected_type_id}, but received: {data.get("type").get("id")} ({data.get("type").get("name")})')
-        if expected_type_name and data.get("type") != expected_type_name:
+        if expected_type_name and (data.get("type") != expected_type_name and data.get("type").get("name") != expected_type_name):
             from wikirate4py import Wikirate4PyException
             raise Wikirate4PyException(
                 f'Invalid type of entity: expected type: {expected_type_name}, but received: {data.get("type").get("name")}')
@@ -94,17 +94,22 @@ class CompanyItem(BaseEntity):
 
 
 class Topic(BaseEntity):
-    __slots__ = ("id", "name", "metrics", "projects", "bookmarkers", "url", "raw")
+    __slots__ = (
+    "id", "name", "title", "framework", "family", "parent", "children", "metrics", "datasets", "url", "raw")
 
     def __init__(self, data):
         super().__init__(data, expected_type_id=1010)
 
         self.id = data.get("id")
         self.name = data["name"]
-        self.metrics = data.get("metrics", 0)
-        self.projects = data.get("projects", 0)
-        self.bookmarkers = data.get("bookmarkers", 0)
-        self.url = data.get("html_url")
+        self.title = data.get("title")
+        self.framework = data.get("framework")
+        self.family = data.get("family")
+        self.parent = data.get("parent")
+        self.children = data.get("children", [])
+        self.metrics = data.get("metrics")
+        self.datasets = data.get("datasets")
+        self.url = data.get("url").replace(".json", "")
 
 
 class Project(BaseEntity):
@@ -172,23 +177,29 @@ class DatasetItem(BaseEntity):
 
 
 class TopicItem(BaseEntity):
-    __slots__ = ("id", "name", "metrics", "projects", "bookmarkers", "url", "raw")
+    __slots__ = (
+    "id", "name", "title", "framework", "family", "parent", "children", "metrics", "datasets", "url", "raw")
 
     def __init__(self, data):
         super().__init__(data, expected_type_name="Topic")
 
         self.id = data.get("id")
         self.name = data["name"]
-        self.metrics = data.get("metrics", 0)
-        self.projects = data.get("projects", 0)
-        self.bookmarkers = data.get("bookmarkers", 0)
+        self.title = data.get("title")
+        self.framework = data.get("framework")
+        self.family = data.get("family")
+        self.parent = data.get("parent")
+        self.children = data.get("children", [])
+        self.metrics = data.get("metrics")
+        self.datasets = data.get("datasets")
         self.url = data.get("url").replace(".json", "")
 
 
 class Metric(BaseEntity):
     __slots__ = (
         "id", "name", "designer", "question", "metric_type", "about", "methodology", "value_type",
-        "value_options", "report_type", "research_policy", "unit", "range", "hybrid", "topics", "scores",
+        "value_options", "report_type", "research_policy", "unit", "range", "hybrid", "topics", "topic_frameworks",
+        "scores",
         "formula", "answers", "bookmarkers", "projects", "calculations", "answers_url", "url", "raw")
 
     def __init__(self, data):
@@ -212,6 +223,7 @@ class Metric(BaseEntity):
         self.range = self.extract_content(data, "reange")
         self.hybrid = self.extract_content(data, "hybrid")
         self.topics = self.extract_content(data, "topics")
+        self.topic_frameworks = self.extract_content(data, "topic_frameworks")
         self.scores = self.extract_content(data, "scores")
         self.formula = self.extract_content(data, "formula")
         self.answers = data.get("answers")
@@ -226,7 +238,8 @@ class Metric(BaseEntity):
 class MetricItem(BaseEntity):
     __slots__ = (
         "id", "name", "designer", "question", "metric_type", "about", "methodology", "value_type",
-        "value_options", "report_type", "research_policy", "unit", "range", "hybrid", "topics", "scores",
+        "value_options", "report_type", "research_policy", "unit", "range", "hybrid", "topics", "topic_frameworks",
+        "scores",
         "formula", "answers", "bookmarkers", "projects", "calculations", "answers_url", "url", "raw")
 
     def __init__(self, data):
@@ -252,6 +265,7 @@ class MetricItem(BaseEntity):
         self.range = data.get("range")
         self.hybrid = data.get("hybrid")
         self.topics = data.get("topics")
+        self.topic_frameworks = data.get("topic_frameworks")
         self.scores = data.get("scores")
         self.formula = data.get("formula")
         self.answers = data.get("answers")
@@ -396,7 +410,10 @@ class AnswerItem(BaseEntity):
         self.value = data.get("value")
         self.year = data.get("year")
         self.comments = data.get("comments")
-        self.sources = [SourceItem(item) for item in data.get("sources", {})]
+        self.sources = [
+            SourceItem(item) if isinstance(item, dict) else item
+            for item in data.get("sources", [])
+        ]
         self.url = data.get("url").replace(".json", "")
 
 

@@ -1,0 +1,78 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.wikirate.org/Wikirate_ESG_Topics+Environment.json
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAA/62U32/aMBDH3/tXWHmYNhVCYqBt8tamrC+bNAkqNFVTZGIveDh2ZjutUMX/Psf5
+        AZQs6ta+xZfPfe/OvrvnMwAcip0QjAN/CgflkaOMGIOzpBsqkSZgNr8DC5HTRJ3P+COVgmeEa8fC
+        epuX8LP5bpR8z/cG1bmRst5ObaxdnAhJbL9reyFZaV5rnatwNFIapZSn7lOdhitkOrJC7i8leOOV
+        CEyaMNqGMfadze01gk2RsSkyPi1yH8rRVDMb5eQOfkoT/0nIzV9uraZQRtm2UyBHsvzu807WlGFD
+        GeihKrzreZZI6fY+u4AbKjB9JFJRve3jIiqTgiEJZongIutnGc1KU7RGPO2NPuNEpr1a88K8EuVo
+        xQi4TiU1SehCkte6zIs8Z9syE8pVn9PSnGUf8E0wVmi677Mu6AviGNwrAj6AW5JKhJH1MA4/7KNl
+        RMvyBd/YhOdfrU7VCCYGUkS/XfS2EqpUqSZZKflQJc4o3xwcEU+I0kKqtvuqeW8nPriaTi6CYNBY
+        e1aI00LNHrB28Lkdohb4z/k9XA8vFgRRaayrNOzv3aCjGgihP7mE/kk1L+e2o4qFXRL/VEHntjnN
+        /CB2lXrbZWudsfgddl29aCQxCI6R3UfQ86dDDw69MfCCcDoJ/TG4X0QVWuT4CIUGvRoaAnqhB0N4
+        gEryuzAtdAz7cOhfmOYJp0EIL/cwownh6qiByvwHoP6BQcExkSCKwM13MHE98LGp22ZvFlwiskxw
+        ZcuuvdRotR0Z+JML5oSA3pu61mbgVnb+47uCYuI6Z7s/Bns+FiwHAAA=
+    headers:
+      CF-RAY:
+      - 9af0c2e28ffd323a-ATH
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Dec 2025 19:59:27 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=MvdM%2BisrEgDZgGexnw5eSeg4T4FjA8pdTQ1COZWvON%2Bfl5m8J4F5dB7aW4a1jAVSBKX4Ov603h8XNEKZHA7%2BWLxXL836%2FwETCUk%2B801P3A%2FdEpWFHnuqAduFEnae"}]}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - _decko_deck_session=eVZubE1yYktXbERtTWY2V0xIQjYvck9TYjlhdHJyR2pabXoxUjNqNHRjN2RxeVdwbkpVQXFXRm1sM2ZmbDZtSmQ1RVc2OEdGVFFqTWFGbDFSbHJMS0ZRWWEzSnprS2pQZld0akJ4UXV6M3h4eUZrbUpOSG5mRVVhVW91U2s3dzAtLVdxVmlZYkdtRUFpeGVzb2FqbmVsdWc9PQ%3D%3D--0c1e798eecf51728aecc9748f14eedcbfa7c0d75;
+        path=/; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      cf-cache-status:
+      - DYNAMIC
+      etag:
+      - W/"1c15f11b0a3b5671ce247f4899179252"
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      vary:
+      - Origin
+      x-cache-status:
+      - BYPASS
+      x-frame-options:
+      - ALLOWALL
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.27
+      x-request-id:
+      - f2cc96cbf53c7a2b75d5cb54491a5a51
+      x-runtime:
+      - '0.316977'
+    status:
+      code: 200
+      message: OK
+version: 1

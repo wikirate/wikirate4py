@@ -1,0 +1,150 @@
+interactions:
+- request:
+    body: card%5Btype%5D=Answer&card%5Bname%5D=Core%2BCompany_Report_Available%2BAdidas_AG%2B2022&format=json&success%5Bformat%5D=json&card%5Bsubcards%5D%5B%2B%3Ayear%5D=2022&card%5Bsubcards%5D%5B%2B%3Avalue%5D=Yes&card%5Bsubcards%5D%5B%2B%3Acompany%5D=Adidas+AG&card%5Bsubcards%5D%5B%2B%3Asource%5D=Source_000104408
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '306'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.5
+    method: POST
+    uri: https://staging.wikirate.org/card/update
+  response:
+    body:
+      string: ''
+    headers:
+      CF-RAY:
+      - 9af0d1d29a128a17-ATH
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Tue, 16 Dec 2025 20:09:39 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=sJmxqdPwZHuhHbiPasxXBw5pfu7CNUwb7mrC%2FGu%2FKzNlWESTAXxJS7PYvkuRDbJ99FB%2Fetge3VFDI8kVCt4Od4iUi1BqJhWgpTypwB3Qj6uIAPwxjKfKli0Pzg%2Bq"}]}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - _decko_deck_session=NnpjaDVUOXFYU1BoaE5PK2NmZVI3WE9DcHdRU1Bid1BydE9aak96MGVMMzNDV0lnSVZ3bjNwY1dqYkg1cVU3a2ZjeWlnSFdJOGwwWXFhR0phVzlqb2hPZEFoaTFuZ1N2ZW91OW9ERUllVUR3VjFIOUN2a3VYV1p0Nm9HbWVHek4tLU5vTjFBeWFZL0NpUmxHWFFsZHBWZ3c9PQ%3D%3D--fe91b6962ddf5ac99d0f39bbfbb0a689be79ab2e;
+        path=/; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      cf-cache-status:
+      - DYNAMIC
+      location:
+      - https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG+2022.json
+      status:
+      - 303 See Other
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      vary:
+      - Origin
+      x-frame-options:
+      - ALLOWALL
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.27
+      x-request-id:
+      - 828952ad5ede452248707966b942680e
+      x-runtime:
+      - '0.650693'
+    status:
+      code: 303
+      message: See Other
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Cookie:
+      - _decko_deck_session=NnpjaDVUOXFYU1BoaE5PK2NmZVI3WE9DcHdRU1Bid1BydE9aak96MGVMMzNDV0lnSVZ3bjNwY1dqYkg1cVU3a2ZjeWlnSFdJOGwwWXFhR0phVzlqb2hPZEFoaTFuZ1N2ZW91OW9ERUllVUR3VjFIOUN2a3VYV1p0Nm9HbWVHek4tLU5vTjFBeWFZL0NpUmxHWFFsZHBWZ3c9PQ%3D%3D--fe91b6962ddf5ac99d0f39bbfbb0a689be79ab2e
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.wikirate.org/Core+Company_Report_Available+Adidas_AG+2022.json
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAA/61WbW/aMBD+3l9h5dMmIO+0gW+MSf00aVo7TdU0IRO74DaxM9spQlX/+y62QwKl
+        L0yVkIjPd8/dPfeSPJ4h5DHiTVEcp/EkSdJhI+G4pCDz5kLSwVyUFeZb9INWQmo0e8CswMuCDmaE
+        EazQ7HIQh3HsGUu9rRrLR3hukdPk/CIbWkELPONqQ6XnpM7Im2NJzLOT17JoxGutKzUNAqXxivGV
+        v2H3TGJNfSFXgUXy75TgrVkuCG0dYesILp5MfO+B7Ge9sFkvDrNeuKw7x15JtWT5m7RZ5dzeGi5a
+        Gu3NlmLZ1APAzfkBF7VJ5YYqq6FELXM4TNFvk7Alu6X7Ij6fZNHFsBW2TFwZq1EYhlGYpmHm7TRa
+        +q1GJ38PV9ZmsUPtFwIgbllB+xit7aiSgtS5ZoKPlBYSr6h/K3Hk54T7hK2YxoXIKVSvwpCqD3QF
+        DZYKbHpZEKdZEo2TsV+R285fwfj9nr/Nxi8pu2MGYVWIJS4CVUMqjOMlK5jeBtJWmIgNLwQmKujg
+        3JUj6LcTw8XVHoSr8c4ONS1gq/+LLhXT9OCqrDnLcZM9gt93KVaSKrWvJAESmEJXIme4ABeqElyx
+        Fz1+qRXjgPK25ozz2iCaCyf/07UD07ZoXx0j6Gi2Xbhty/b4ge4N+y7hHB2c4/1zNN5FYv6fzlxM
+        zaiUlOum373rNVMIfhhpqjRipZktcQsCO34Id5vFDf/iA2e+N+5Q1dLMoI2y6bzeEXNoW2jsl6YU
+        Nm0UJ8+ntInj+WRCSYHifI0upair0ya0QTyYyv6CzBuHlvHhsTjDSZpl4yNxvrLd9mL/Zutybbrq
+        xMiPl8Nm83LMF/GR9be/ZfdfO24XnxTcQUu8HE0Wh2EaTp4FtDcCu1humlE6KZDuLfRGFePsaLcN
+        Ti3l6e03+N9Kjs/jKMmS0+IevFLqHxT6nXxgBoOjfbDbXWtdFouP/uZwXxCSgjFZYO26aTyK4lF0
+        jqJkmqTTZIx+Xs+tal2R96rma5rfg+py2+0ySf/WsMyOAcThNJxM07ADKFhOuTJk/+olOETugqCa
+        EyrRfI6+3KDUD9GnlhiTEXugzcKHF5jhxVmpYLkNQPmzj64oRa9PpoYuXdbN23VxWTNCfe/s6R9Y
+        7AWV6QoAAA==
+    headers:
+      CF-RAY:
+      - 9af0d1d76ae38a17-ATH
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Dec 2025 20:09:40 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=RPi3WIo7LWdDiE%2F5JdJoenXEHwiItTJvJ3bYxorbjXgVxlLLQIZqdRQ7R9ow5ksl98NnVZi2Gs95EpC3QeFUCpkfi5eyHhQH35VRK0cVMmZOGwaUSbfDRdKV9czv"}]}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - _decko_deck_session=RUl4Y0FtSzU2RUhYZ1hpRkF1NUY5L0FUTThmdDY4WENYSjBDd2pDY0kva2drTVlOUmc4TUtpbkRvNU9qbDVaRy85WElvZ2E0RkwrL1dRVVM3OTNsWHNGZWVpYTc4anFXT1VuUE5NaFNTTk5lUUIvM1pUTXkrcEdNeHFnRHprTW0tLWhPeWlwaXRhY2puc3FJVjdINGJnMlE9PQ%3D%3D--93f820babb98a638cb718a2e32fdc25b5ec0eb25;
+        path=/; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      cf-cache-status:
+      - DYNAMIC
+      etag:
+      - W/"c1be4b7928efb3eb0464cc3dcd632970"
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      vary:
+      - Origin
+      x-cache-status:
+      - BYPASS
+      x-frame-options:
+      - ALLOWALL
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.27
+      x-request-id:
+      - c6b710c709d464fbae3a7cd8a420a340
+      x-runtime:
+      - '0.371897'
+    status:
+      code: 200
+      message: OK
+version: 1

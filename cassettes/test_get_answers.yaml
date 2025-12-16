@@ -1,0 +1,94 @@
+interactions:
+- request:
+    body: filter%5Bcountry%5D=United+Kingdom&limit=10
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '43'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.wikirate.org/Core+Company_Report_Available+Answers.json
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAA/8VZ7W7bNhT9n6cgBDTYkNihRMmWDQSD4wLFsGYIandD0RYCLdExF5nUSMqtUeTd
+        S1FSbMffjeQE+SFRJO895x7y0pc/zgCwaGR1AUvj+DJ7Y3hK9LvV54Jc9Pk0wWwOPpCECwV6M0xj
+        PIrJRY/Jb0RIywxR8yQb8kM/l9MheJm/ldMNCBbhxCpaixFWH4vIPBftqYiz5olSiexeXUmF7ym7
+        b36jD1RgRZpc3F/lMzX/k5yVw0IekdKQNJ8DM6v++mg8PGTeZcBBDjhYA7wwa1FFplLP+tn4kIMv
+        4TsQea7d8i7L1sNYvUnFiAgxB+8ETxOQxOGFAx3Xepqm5C33ZtH+cnyl6cCYDkrTyzRrO1OiBA33
+        AlkMCPMe2Yh1cItucx00Q5vjPrXNcJwasJ+IXPSUPBUhWfBuGgemsQEhdOy25zlW8enr0zBsCAvq
+        4CmnyBh6vNyoBafT8iA8VgvDnKjTKWAYLAxWGfcCSC3RbvkI1RntgpPDYoyOjfE/PMJjzkixJO5O
+        uN5L04WO76pf7+vg6lKAu64A7ceUMCVz8liK49LpzCZ4n4YUgz+/Kxym888ljSv0mS5B0eVrM/vL
+        hjZsp2G3gN3uItiFPvg47FvV6249OnsVaLvtVttpH6nAnt7MIkIY6ElJFLjFDN+TjLmTCbH0IDAe
+        BM88qFCPW6HWIUvH9hx7tyy/WMMJAUkqEi4J4GOgJlQCkUPRT4qDRPAZjUiuWZlqdinDIxpTNW8I
+        EmuCIxBRGcZcpoKAMRcAj0TEsuTaBF+sX9e514Ce0bndRX7XdWvS+dbg75O77UMXdZzWkXK/xeJB
+        AswiMEgIC4lYPWmhUwje+BBoH4LCh9UjF6pQ8jvgbhI9eqHoIfRdr8ZsvIO5/Qna9V0HepUkaPR6
+        CRqdPEG/UBR2x3ZhnUe041Ol3jsyLThHamGQvUvwlgoSqpPJILcaLFmtUAErkOrZETptb3cavNM7
+        vgTIa3gtMMEzAijTeWyKFeUM6P/BStoDPaYmXOO71WAZ35zSij5B3mfp7AZRw4H6qNSFra5+qCen
+        rUTssDyG3CO1+JHRmMyIOJkMVwxWqMBy3prSEWzVuPOUvh8QY9RGyD8yxn+T7wrcve+fLMaZwaA0
+        WGGMSyD1xLht+zXGuOTkoJzS9juVFPzQ6xX80MkLfhWkmA56tYLfWWHTiil7ME7mr1gfT6XiYluB
+        GCHXdtDmX+vr0f9A8qr280LaoeieBXW5XB5mBrfrGsGO6/ubjs37hFD6fmsUBIZULX89zPPNIdm3
+        Fl3Uaq9vts9X0JYriAN9y2fbwWuuv33MOkcmhW30VrgxbFT3RE3joLJLlPz+JBQkK2AEWC1fP6VJ
+        tKE1MaYWd0xMb8sVXuj8MaaxIuKNdxPylCkxf+O9vdbpXTty8ZeeN+LT8+y65zoL0nlMp1Rd2/Cc
+        j8e6aqGfFhdNgvyf6oVfArBMKSUvGTq6Xoh0NeXp2Kn3jJAwacL475Ljl6D4EIGURfpHe78Pbj4B
+        twnBbyVgQx6dkewkzZk0eItR8mo0v9Kdf2+CASFgt4yVVs8ozc7awbtUl5qa1tnjTzqd+b0VHAAA
+    headers:
+      CF-RAY:
+      - 9af0c9003ffbb68a-ATH
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Dec 2025 20:03:38 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=NwjoCTMi2MKdZUTzNILTORDzcvx%2BSZnJ0OctKwaUHLWONerfHuPZ3eaDwM96znMZn9WOS0u5JxuLf%2BRHia%2BEGNqAOv3AjysaQa9yVEVzUh0CMh4vmOEMVMMUMiYk"}]}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - _decko_deck_session=TVVIRllGZDN6NHcvUGZ1NnROcFdmb2lHMzNUa05WMVQ1a1VVZS94RnVnWnFYendtQVROeHhaK0tsSnFZcUhqSVliWVIwc0dwWFBUekg4Q0xwSWNmdWdmdVpFcjZ0eDdmRTJTMnJ1THdTTDArWmpTamtFSjZTRzZPRGh2ait1T2otLVV5VlZHN2ZBblpEVGpNeWE3VHFiWVE9PQ%3D%3D--04ffc30ccdeb9741ac6cd68546eaa24d70d0c8c7;
+        path=/; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      cf-cache-status:
+      - DYNAMIC
+      content-disposition:
+      - attachment; filename="Wikirate-2025_12_16_200337-Company_Report_Available+Answer.json"
+      etag:
+      - W/"3fe56bcb4e2d637938513000ab834434"
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      vary:
+      - Origin
+      x-cache-status:
+      - BYPASS
+      x-frame-options:
+      - ALLOWALL
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.27
+      x-request-id:
+      - 02ea10fd7eac263e5994a29ab1cbe887
+      x-runtime:
+      - '1.285229'
+    status:
+      code: 200
+      message: OK
+version: 1

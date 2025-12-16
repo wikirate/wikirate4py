@@ -1,0 +1,88 @@
+interactions:
+- request:
+    body: limit=10
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '8'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.wikirate.org/Research_Groups.json
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAA/82Xa0/bMBSGv+9XWJVAm9SL7VyaVMAEQSAk2Id1qELTZJnWbT3SJLNdtoL477Od
+        hLRrgVIVDamqmuPLed/Hl5zefwCgxge1DsAORF6A6yaQ0AnTodpXJhkV/TE4Fek0q9k2NctM273+
+        XQ716vlDOSyiYmC7FfFiyFJ8KmITHiuVyU6rJRUd8WTU/M1vuKCKNVMxapVjmj9lmpQD++mAlcn6
+        5aS66cEqXGfa0hmxzmQ1+8Lcouw1qvxzxSZSN363UnIMJQjHbQcaY70MlvNcJvyWCcnVDKRD0Evj
+        OE1G+gMOo+gKIQQWQQMMUVB7nKXEt2I11sZYKSDpkFQKSKGALAIhRsE8cgsmUSxRJlXNxh7qKxD4
+        judBz3sBwZdUKa1xTCegAS40cZGAbkx1j9kyCwzfkkUlheRCSCFkGQmGGyHxXB+6CG0TCQrfCRIU
+        boQEOwj6MFxCcnp21DX22prBMZukiVRao9YCzhnVSuSYZ0CNdfLRWFPJUmEat8vCaDDO2mRBAakU
+        kEIBeVTwNIS97OCE3YHjO5rwa7bXyg6eweIgNwzdcKs7pf1edkp7o50SQBfiMHgJCb2lQtAVdwd6
+        U/t52hU3BdrIrBMGoR8uX55RTKUESC/3+jvhsK/e/rVihRFE1t0VWtTW3jQ5rPAJWPi9wsL/BRZy
+        fD+EYXv5HPUa5xREIpWSmfOCwVMWt3J8euSckjybOSb4H4ObbQTXdZ1g+Yo4u4jA5QnodlFQmRpt
+        35TOQy5PiMlT2RmtZUd//7BVZcyTG1tV5o806TOpUjEXGqtJTF5f2hZFrWC6eUCoTa53kd9AuIF9
+        veIdjDsOApfforzrNBssdMVOAwYNjAAMO8jvQKfqmtns1Z+BhP1Rr5RnCX0e8lgxseMdmaXb8Y73
+        d02VvW+edmM+4Wofwd10OJTM/KoqfcF+TTWnebWeMYasMYg7rl+pjXmfJdKudm9OUB0UDQMwTfT5
+        A1EEjq6A24TgY2nE4tOHtp9OTEVgfRSjZOt61tKdPzVBlzHwrPVDpQS/niqeJuR0ygesWfvw8BeF
+        55itgg0AAA==
+    headers:
+      CF-RAY:
+      - 9af0c7bcad721fff-ATH
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Dec 2025 20:02:46 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=iXmspqkjoE709BeF4tsogLgd3mNJ4Nvfl6CZ1gKN9t1qr5DL4xkfrZpL3teAQjzk9qGkmyyL1T6h7rW8aJSHBkEtT7t9Fh%2BeEvEpLs3ET3CvKk5P%2BEIj2%2B%2BfjtRA"}]}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - _decko_deck_session=V2xMM0lxV2N4Y2RhbzZKVlZGdXAxeWx3UkpVZFVaR3BzVFAvcmVFTktWV1BPVnp1QWJ0bW55V1hhRStudW5tSzNMY0dXeFVBTlNGMlF4MWV6M2RmeGdCWVlSQmJzbHF1WGtlSmJYNDhvdjRFSFM5ZnlrYUgwQ252OXRHcFYvdUItLWg5dWZ6Nk9YNmZ4ZzNPMi9SbUFVUkE9PQ%3D%3D--fd0cc71b2c84463f8f2c4d659af9d36d743a5075;
+        path=/; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      cf-cache-status:
+      - DYNAMIC
+      content-disposition:
+      - attachment; filename="Wikirate-2025_12_16_200246-Research_Group.json"
+      etag:
+      - W/"94d70d612942b7257c378bcd3754b0d9"
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      vary:
+      - Origin
+      x-cache-status:
+      - BYPASS
+      x-frame-options:
+      - ALLOWALL
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.27
+      x-request-id:
+      - 2178c95f7ae95095431aad09d77dff8c
+      x-runtime:
+      - '0.359087'
+    status:
+      code: 200
+      message: OK
+version: 1

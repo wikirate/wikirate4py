@@ -1,0 +1,74 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.wikirate.org/~3478301.json
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAA/41Sy26DMBC89ytWnFopPOxAi7ilHHJvG0VRVVkEHOIGbGqbVlGUfnuNA4Jcqkg+
+        eMezM/vw6Q7AYYWTwDx8iucBmnUAz2pqIGfF2TeViukjiB2sRVUJXpoDizTdIITghSqayXwPSyna
+        BnCAYscq6GPTKZzMfTDARj2K8ewCDRbXCk7/2qc7aSYLe+/xVlYdvNe6UYnvK52VjJfeDzswmWnq
+        CVn6gyKxit6nEnxIz0VBB2M50EprbAhnW/ktFr/9sEZxI8015bpLvQBM01qZ8P3DhhXjh0mY8Zwq
+        LeQE2uu6Ire4j1shYkfGrZB+K+R6AmTcSi6pESlIZuvscDcIXTQHhJJ5mAQIVm/phdo2xRUVh24Q
+        uxhBECcRTlA0UiX9ak0zU3LkIuyiR/MhkgAnGI/kiuWUK7uB9aSpGfQPBbS8oBLSFJ43EHoB3A/D
+        sNWb1nNR14IrO4s+S/nbo2/IDx68Ugr/jm+htWTbVjPBybJlBfWcu/MfWCEz9QgDAAA=
+    headers:
+      CF-RAY:
+      - 9af0c7298f0ff1a2-ATH
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Dec 2025 20:02:22 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=OS9NbfxMxJVCv4i3965OfXDFgtUYvjxSmZetYJyuTcWx2g34wPXaWTpk7wBk0mE8vy8LIlaK9tyfVKclPxGhRSKWvJC13EbImGcIPbF1H0A4fZqqYug0JnhOsQfV"}]}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - _decko_deck_session=TVhCSUJvQVFGZDJaeWNYVTh5dWNXNkIrZFlvWGpVUzNxNTgxT05iTG5WMGU5MG83bGZ0Z1VlSGN4aGFmS3M2a2ZyS2lHbjJHWGV1VWFXcjg5ekZJeWhObHFCenpaWmJHTEY3encyRnFtU0x2L3ZEclE5bE5zVDVUMFF0Ym9JV24tLW5VS09PZjhyYkhGWW5GR2dVN2N0N0E9PQ%3D%3D--42b6327c871e9bc5e0a4f38991313c8b2eca7353;
+        path=/; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      cf-cache-status:
+      - DYNAMIC
+      etag:
+      - W/"dd526c810466bd41135e30584376174c"
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      vary:
+      - Origin
+      x-cache-status:
+      - BYPASS
+      x-frame-options:
+      - ALLOWALL
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.27
+      x-request-id:
+      - 4ca900c43576eda2fd771193c6917955
+      x-runtime:
+      - '0.265133'
+    status:
+      code: 200
+      message: OK
+version: 1

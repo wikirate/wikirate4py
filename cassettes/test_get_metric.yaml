@@ -1,0 +1,91 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.wikirate.org/Commons+Supplier_of.json
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAA/7VY/27bNhD+v09x8F9bm9iW7MSJl6XoMrTosJ+Nh2BYBoOWaIu1RHIkFdcr8i59
+        lj7ZjqQsKYrTOnYMFIVzvPv43XdHiuTHZwAtFreGEJ6Gp93g6MAaOMkomloXIssE1y8ucylTRhWI
+        acs5mKW0Dh/x9yq+3zsaHB94wyr+F2oUi1qFtQhqXRAVu9+FPVepNSfGSD3sdLQhM8Zn7QWbM0UM
+        bQs163ik9nst+CosEjFdTZT5iXDg1vHbBLKZ3FhMK/xWTDWbcapqMhSpM5O6Oe+J8m9OtWEIcFeY
+        Xr/XHfT6DWnWSPvijwJANxX7PSWMj+gH8xjJ1uRXzdBQkhvKjUW8SliUQCQySTijGmKB/5mE6c+f
+        9Iqp+7EEI15WgvsCjNf0he+r4w3Sf+5BoN4bpQKCIUe1a/7PazwfkuAtv6FKU3hHU+LKWSZJJiI3
+        jfQGJyfHvaPuBum9ctGNvN6h3E9RWAf+UEZnErRZpvT769YUrYea/UeHEBy1Q/nhu+vW+VVCOcxS
+        MSHpqrhRgh2ngSgKQhLs7ANsCq7zDKWBlERzyCh2CJ9N8xQYnwqVObHAaQSLhGKkSShTIJWI88ho
+        WFhbRmIKhMeQ8xh1WSTEWOSY+baEH4UNWwIu7UlKQYuIkRQJCYWmG6YEzzArZ2JKUS0xillPqUhk
+        WET1S7hiJrEs6rmAUYRriQnxaHlg50AyTMP7XBvgAhYE55jCnIuFFfysI8+v1TX/mnSjhMKUKcTQ
+        hkpUAhOcI0BDx0xYOUoGxs6cESmtJ1KBcm2poul0wqSGCTULirUp12P78yfL7M66S0QsUjFbrm3M
+        YIPGrGPsqT1rUzzcpOdnqA7/mt6oXEwMgYRYfZw4aUojQ2NUUol8loCmGTskuRHYk9ZMo4Qzuzu3
+        4crVXQrtm4aZCkdHikh0nyqRVQVJmTZ2B8Q2df0r8wmaEvSbLF3pqtqcdSz/87sFuiFpTtfti/6z
+        cLRBfRzEPnfFiuMDxeF5mjYyEtJ/qe4mZR03zmgF0UjqZ1T8aTIqJvBJlfwVlUKZdSXZkP07BwCj
+        NQV5Cu4efjwqy1F9f7SmWme+Jvd7qbfJR6iC2E8vVRM8tNBtVM6ZWYL3pXHt3Ib27YriIpspJYpo
+        umtGFrnZQoTPtm0eF7oXog66wTRZTpSjtwXVIrbBdSRms3Rnrh67QdYIyaItt5SRjd3HcnTA64iO
+        pwr5LISa70IZXq9Q9kZ+XE7RSENHeCzZkvyljW1SvqRERcmupB10g6o9YOYp2Y7r6yK4eQ8V0yml
+        l5Ficmehiyma+0Q+sdfS7TYKH9vg/NPlb7/uvE845AbVG6KYPXFv2Q7Pq/g9MK7Qm19Erhfujh6E
+        pyen7pLZmggxz4ia400FB7zNnhg1NZWhPLVZS9g9GXgrSaO8OIDjwN+e9UZ03/IYbxJqWRL8p0ZQ
+        j7f+nLr42rsEMzRz3Dx+yvi89ifheAEyQlXsfS2rg0IQBIPioHC/pK1yoLwAUO3WNLzBo7Wsxh+R
+        T/0c0Hi2iYpp3djtwRrC/vWgf49w8/HlDmn/WAQj91LzKMr33oI8s7KcicnSbWvp6xcpai8lY+LO
+        QmE3GBx28d8phOGwPxiGXfhzdOFdcxnfcQ17h90T9IYgGPZOhmG/clXUPT7VnY8Og/AwOIawO7T+
+        QeWc4i2Za6fUVY3zARQDq7v5xQX88Bf02134ZpWrY89uaFE4l2oRpTuTZQedv23DJaXwRXVeGSzQ
+        JLfrbPwmZzFtt57d/g9hOX1sixQAAA==
+    headers:
+      CF-RAY:
+      - 9af0d48e09898a17-ATH
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Dec 2025 20:11:31 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=1bj%2BrinExjCM4L0QodJhu5Yyvi57Lrkiudlx9ArYHjuovEhOvNDo2jPYkRoQtnIxLBxdrwjJzpS04Ci6RpAr8Z6HjBlKktukHVOOMh7%2FNdsiBdsCPRGBFn0s%2FDNw"}]}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - _decko_deck_session=MG9md3BiYmY2NWVkZnNrVVFjVXNJMjVvUnVIajhFZGZ1MnM4Wk52RHFxeHZKeitLR0hld3Z1NXB1M2xDL1RvRjVTQ3J5TTUzeE9YQkFtS21jck1VMlJZVXp3dFBQeW5zYmdkM3V3U2ZBUWlDc0owVFFXclR1UjNaMW80RnoxR1ktLTB6M3MxRjFaWlYvWC9jMlNOUEoxK2c9PQ%3D%3D--969aca0934cdf267ad22fd2ccc5e3be64d1e5b85;
+        path=/; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      cf-cache-status:
+      - DYNAMIC
+      etag:
+      - W/"69b883608d0bb9cbc619561013e5d731"
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      vary:
+      - Origin
+      x-cache-status:
+      - BYPASS
+      x-frame-options:
+      - ALLOWALL
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.27
+      x-request-id:
+      - 6459a003274d9f15f430d1a022539345
+      x-runtime:
+      - '0.744599'
+    status:
+      code: 200
+      message: OK
+version: 1

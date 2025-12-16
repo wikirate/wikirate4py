@@ -1,0 +1,162 @@
+interactions:
+- request:
+    body: card%5Btype%5D=Relationship&card%5Bname%5D=Commons%2BSupplied_by%2B~7217%2B2020%2B~5505&format=json&success%5Bformat%5D=json&card%5Bsubcards%5D%5B%2B%3Ayear%5D=2020&card%5Bsubcards%5D%5B%2B%3Avalue%5D=Tier+2+Supplier&card%5Bsubcards%5D%5B%2B%3Adiscussion%5D=This+answer+is+for+testing
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '284'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.5
+    method: POST
+    uri: https://staging.wikirate.org/card/update
+  response:
+    body:
+      string: ''
+    headers:
+      CF-RAY:
+      - 9af0d437ea31eecc-ATH
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Tue, 16 Dec 2025 20:11:17 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=4ALLBazZBwdrGJkjXr5BUzr6UcoDuoO1acLjtDfQU%2FOb0MnNPP4orlK26%2BY4vv2dDL8vCamWAMD0O1vCnD%2B8ygtYVQN%2BoLIba%2F5L9dLrmOwmvcT4mA57IHEupFwy"}]}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - _decko_deck_session=L2UySVl5Mkc5K3pwUEVNci9FQ3A2d1M2MkpQT3hzenJDenVCenVCcHdOWFh3RmtBS2Y3RitOUy92azF4N3BJMHhMdjVvRkE4em5xR3dQMWhMelFPWXlSNWthNThCSUx5ZndUYmQ0MFdDUG91ZlgzbGRmMlZYRHQ5dnZaR21TVWMtLWM4UHhYYTlvaU1YTmxFbVpGWFRCRGc9PQ%3D%3D--f4aa48a9efbcde84343aa04c4f78942316dcd623;
+        path=/; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      cf-cache-status:
+      - DYNAMIC
+      location:
+      - https://staging.wikirate.org/Commons+Supplied_By+Adidas_AG+2020+Gap_inc.json
+      status:
+      - 303 See Other
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      vary:
+      - Origin
+      x-frame-options:
+      - ALLOWALL
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.27
+      x-request-id:
+      - 25c004b24163480eccbba3140f0aa192
+      x-runtime:
+      - '0.729105'
+    status:
+      code: 303
+      message: See Other
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Cookie:
+      - _decko_deck_session=L2UySVl5Mkc5K3pwUEVNci9FQ3A2d1M2MkpQT3hzenJDenVCenVCcHdOWFh3RmtBS2Y3RitOUy92azF4N3BJMHhMdjVvRkE4em5xR3dQMWhMelFPWXlSNWthNThCSUx5ZndUYmQ0MFdDUG91ZlgzbGRmMlZYRHQ5dnZaR21TVWMtLWM4UHhYYTlvaU1YTmxFbVpGWFRCRGc9PQ%3D%3D--f4aa48a9efbcde84343aa04c4f78942316dcd623
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.wikirate.org/Commons+Supplied_By+Adidas_AG+2020+Gap_inc.json
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      CF-RAY:
+      - 9af0d43d1d5feecc-ATH
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Dec 2025 20:11:18 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=HKERt6SIn9AFFlsdmdNaG5SEHLaX0kHo32w58x6TWV43zgNCTsHDeItosF5Rkupp8DCX20QsB%2Bi2yP9%2B86AWejW3grOXGl%2FtlXIs0dqbsg%2BfubVFSDbdlx6rAdTf"}]}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - _decko_deck_session=MU9WV25uVGk3cDAyUnl1YXR2QXc2MUtTMGV0QmpGNDNxdUJqTmxmQURERHZMbjlDMk1nUFBYUmt6M2FrRDRkeTUweGtPL1V5UEdGZnpxdmRjOW94a002bEU0TjJOSW1mbkxWOTZoRHB6R1dvQlp0ckhVR1lyeTJLSmZCMDMyQ20tLTVaZVdBelpod2xZc1NEMmpxdExpQUE9PQ%3D%3D--56e1a5d34640bff3f565c566be8737ce2a2ec126;
+        path=/; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      cf-cache-status:
+      - DYNAMIC
+      etag:
+      - W/"128f746762cc95f171f754d6e541b684"
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      vary:
+      - Origin
+      x-cache-status:
+      - BYPASS
+      x-frame-options:
+      - ALLOWALL
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.27
+      x-request-id:
+      - 8e9b393d77361956c01e853fd23e36a8
+      x-runtime:
+      - '0.792867'
+    status:
+      code: 200
+      message: OK
+version: 1

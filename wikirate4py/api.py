@@ -3,13 +3,11 @@ import logging
 import os
 import sys
 import re
-from typing import List
+from typing import List, Dict, Any, Iterable
 
 import requests
 from os import environ
-from urllib.parse import (
-    urlparse, urljoin
-)
+from urllib.parse import urljoin
 
 from wikirate4py.exceptions import IllegalHttpMethod, BadRequestException, UnauthorizedException, \
     ForbiddenException, NotFoundException, TooManyRequestsException, WikirateServerErrorException, HTTPException, \
@@ -21,9 +19,9 @@ from wikirate4py.models import (Company, Topic, Metric, ResearchGroup, CompanyGr
 
 log = logging.getLogger(__name__)
 
-WIKIRATE_API_URL = environ.get(
-    'WIKIRATE_API_URL', 'https://wikirate.org/')
-WIKIRATE_API_PATH = urlparse(WIKIRATE_API_URL).path
+WIKIRATE_API_URL = environ.get('WIKIRATE_API_URL', 'https://wikirate.org/')
+
+DEFAULT_TIMEOUT_SECONDS = 480
 
 
 def generate_url_key(input_string):
@@ -38,21 +36,6 @@ def build_card_identifier(card):
     return f"~{card}" if isinstance(card, int) or card.isdigit() else generate_url_key(card)
 
 
-def objectify(wikirate_obj, list=False):
-    def decorator(method):
-        @functools.wraps(method)
-        def wrapper(*args, **kwargs):
-            payload = method(*args, **kwargs).json()
-            if not list:
-                return wikirate_obj(payload)
-            else:
-                return [wikirate_obj(item) for item in payload.get("items")]
-
-        return wrapper
-
-    return decorator
-
-
 def construct_endpoint(entity_id, entity_type):
     if entity_id is not None:
         prefix = f"~{entity_id}" if str(entity_id).isdigit() or isinstance(entity_id, int) else generate_url_key(
@@ -61,6 +44,21 @@ def construct_endpoint(entity_id, entity_type):
     else:
         endpoint = f"{entity_type}.json"
     return endpoint
+
+
+def objectify(wikirate_obj, many=False):
+    def decorator(method):
+        @functools.wraps(method)
+        def wrapper(*args, **kwargs):
+            payload = method(*args, **kwargs).json()
+            if not many:
+                return wikirate_obj(payload)
+            else:
+                return [wikirate_obj(item) for item in payload.get("items")]
+
+        return wrapper
+
+    return decorator
 
 
 """
@@ -75,42 +73,208 @@ Entities include:
 - Dataset, Project, Region, and more.
 """
 
+
 class API(object):
     allowed_methods = ['post', 'get', 'delete']
-    content_type_specified = True
 
     def __init__(self, oauth_token, wikirate_api_url=WIKIRATE_API_URL, auth=()):
-        self.oauth_token = oauth_token
         self.wikirate_api_url = wikirate_api_url
-        self.auth = auth
         self.session = requests.Session()
+        self.session.headers["X-API-Key"] = oauth_token
+        self.session.auth = auth
 
-    @property
-    def headers(self):
-        headers = {
-            'X-API-Key': self.oauth_token
-        }
-        return headers
+    def __enter__(self):
+        return self
 
-    def request(self, method, path, headers, params, files={}):
-        method = method.strip().lower()
-        if method not in self.allowed_methods:
-            msg = "The '{0}' method is not accepted by the Wikirate " \
-                  "client.".format(method)
-            raise IllegalHttpMethod(msg)
+    def __exit__(self, exc_type, exc, tb):
+        self.close()
+        return False
 
-        # if an error was returned throw an exception
+    # API owns a persistent requests.Session; use as a context manager or call close() when finished.
+    def close(self):
+        self.session.close()
+
+    def request(self, method, path, params, files=None):
+        method = self._normalize_method(method)
+
+        files_payload = files or {}
+
         try:
-            response = self.session.request(method, path, auth=self.auth, data=params, headers=headers, timeout=480,
-                                            files=files)
-
-            if files.get("card[subcards][+file][file]") is not None:
-                files.get("card[subcards][+file][file]").close()
+            # Extended timeout for large uploads or long-running operations
+            response = self.session.request(method,
+                                            path,
+                                            data=params,
+                                            timeout=DEFAULT_TIMEOUT_SECONDS,
+                                            files=files_payload)
         except Exception as e:
             raise Wikirate4PyException(f'Failed to send request: {e}').with_traceback(sys.exc_info()[2])
         finally:
-            self.session.close()
+            # Close any file handles passed for multipart upload to avoid leaking file descriptors.
+            for f in files_payload.values():
+                close = getattr(f, "close", None)
+                if callable(close):
+                    try:
+                        close()
+                    except Exception:
+                        # Best-effort cleanup; ignore close errors.
+                        pass
+        self._raise_for_status(response=response)
+        return response
 
+    def get(self, path, endpoint_params=(), filters=(), **kwargs):
+        params = self._build_query_params(endpoint_params=endpoint_params, filters=filters, **kwargs)
+
+        log.debug("PARAMS: %r", params)
+        # Get the function path
+        path = self.format_path(path, self.wikirate_api_url)
+        return self.request('get', path, params=params or {})
+
+    def post(self, path, params=None, files=None):
+        path = self.format_path(path, self.wikirate_api_url)
+        return self.request('post', path, params=params or {}, files=files)
+
+    def delete(self, path, params=None):
+        path = self.format_path(path, self.wikirate_api_url)
+        return self.request('delete', path, params=params or {})
+
+    def format_path(self, path, wikirate_api_url=WIKIRATE_API_URL):
+        # Probably a webhook path
+        if path.startswith(wikirate_api_url):
+            return path
+
+        # Using the HTTP shortcut
+        if path.startswith("/"):
+            return urljoin(wikirate_api_url, path.lstrip('/'))
+
+    def list_to_str(self, items):
+        value_str = ''
+        for t in items:
+            value_str += t + '\n'
+        return value_str
+
+    def _apply_filter_param(self, params: Dict[str, Any], key: str, value: Any) -> None:
+        if key in ("value_from", "value_to"):
+            params[f"filter[value][{re.sub(r'.*_', '', key)}]"] = str(value)
+            return
+
+        if key in ("subject_company_name", "object_company_name", "object_company_id", "subject_company_id"):
+            params[f"filter[{key}][]"] = value
+            return
+
+        if key == "company":
+            if isinstance(value, list):
+                for item in value:
+                    params.setdefault("filter[company][]", []).append(
+                        f"~{item}" if isinstance(item, int) else f"{item}"
+                    )
+            else:
+                params["filter[company][]"] = value if isinstance(value, str) else f"~{value}"
+            return
+
+        if key == "company_identifier":
+            params["filter[company_identifier[value]]"] = (
+                ", ".join(value) if isinstance(value, list) else str(value)
+            )
+            return
+
+        # Default filter handling
+        if isinstance(value, list):
+            for item in value:
+                params.setdefault(f"filter[{key}][]", []).append(
+                    f"~{item}" if isinstance(item, int) and key != "year" else f"{item}"
+                )
+        else:
+            params[f"filter[{key}]"] = (
+                f"~{value}" if isinstance(value, int) and key not in ("value", "year") else f"{value}"
+            )
+
+    def _build_query_params(self, endpoint_params: Iterable[str], filters: Iterable[str], **kwargs: Any) -> Dict[
+        str, Any]:
+        params: Dict[str, Any] = {}
+        endpoint_param_set = set(endpoint_params)
+        filter_set = set(filters)
+
+        for param_name, value in kwargs.items():
+            if value is None:
+                continue
+
+            if param_name in filter_set:
+                self._apply_filter_param(params, param_name, value)
+            elif param_name in endpoint_param_set:
+                params[param_name] = str(value)
+
+        return params
+
+    def _normalize_method(self, method: str) -> str:
+        normalized = method.strip().lower()
+        if normalized not in self.allowed_methods:
+            msg = "The '{0}' method is not accepted by the Wikirate client.".format(normalized)
+            raise IllegalHttpMethod(msg)
+        return normalized
+
+    @staticmethod
+    def _warn_unexpected(kwargs: Dict[str, Any], allowed: Iterable[str]) -> None:
+        """
+        Log a warning for any keyword arguments that are not explicitly allowed.
+
+        This helper is intentionally *non-fatal*: it does NOT raise an exception.
+        It is used to surface likely mistakes (e.g. typos or unsupported fields)
+        without breaking backward compatibility or existing client code.
+
+        Typical use cases:
+        - Create/update methods where only a fixed set of fields is supported
+        - Defensive validation for public-facing APIs
+        - Easier debugging when users pass silently-ignored parameters
+
+        Parameters
+        ----------
+        kwargs : Dict[str, Any]
+            The keyword arguments passed to a public API method.
+        allowed : Iterable[str]
+            The set of parameter names that are explicitly supported.
+
+        Returns
+        -------
+        None
+            Logs a warning if unexpected parameters are found.
+        """
+        allowed_set = set(allowed)
+        unexpected = [k for k in kwargs.keys() if k not in allowed_set]
+        if unexpected:
+            log.warning("Unexpected parameters: %s", unexpected)
+
+    @staticmethod
+    def _require(kwargs: Dict[str, Any], required: Iterable[str],
+                 message_prefix: str = "Missing required params") -> None:
+        """
+        Enforce the presence of required keyword arguments.
+
+        This helper performs *strict validation*: if any required parameter
+        is missing or explicitly set to None, a Wikirate4PyException is raised.
+
+        Typical use case:
+        - Create endpoints where certain fields are mandatory
+
+        Parameters
+        ----------
+        kwargs : Dict[str, Any]
+            The keyword arguments passed to a public API method.
+        required : Iterable[str]
+            Names of parameters that must be present and non-None.
+        message_prefix : str, optional
+            Custom error message prefix for clearer error reporting.
+
+        Raises
+        ------
+        Wikirate4PyException
+            If any required parameter is missing or None.
+        """
+        missing = [k for k in required if k not in kwargs or kwargs[k] is None]
+        if missing:
+            raise Wikirate4PyException(f"{message_prefix}: {', '.join(missing)}")
+
+    @staticmethod
+    def _raise_for_status(response=None):
         if response.status_code == 400:
             raise BadRequestException(response)
         if response.status_code == 401:
@@ -125,73 +289,6 @@ class API(object):
             raise WikirateServerErrorException(response)
         if response.status_code and not 200 <= response.status_code < 300:
             raise HTTPException(response)
-
-        # else return the response
-        return response
-
-    def get(self, path, endpoint_params=(), filters=(), **kwargs):
-        headers = self.headers
-        if 'content-type' in headers:
-            headers.pop('content-type')
-
-        params = {}
-        for k, arg in kwargs.items():
-            if arg is None:
-                continue
-            if k not in endpoint_params and k not in filters:
-                log.warning(f'Unexpected parameter: {k}')
-            if k in filters:
-                if k == 'value_from' or k == 'value_to':
-                    params['filter[value]' + '[' + re.sub(r'.*_', '', k) + ']'] = str(arg)
-                elif k in ['subject_company_name', 'object_company_name', 'object_company_id', 'subject_company_id']:
-                    params['filter[' + k + '][]'] = arg if isinstance(arg, str) else arg
-                elif k == 'company':
-                    if isinstance(arg, list):
-                        for item in arg:
-                            params.setdefault('filter[' + k + '][]', []).append(
-                                f'~{item}' if isinstance(item, int) else f'{item}')
-                    else:
-                        params['filter[' + k + '][]'] = arg if isinstance(arg, str) else f"~{arg}"
-                elif k == 'company_identifier':
-                    params[f"filter[company_identifier[value]]"] = ', '.join(arg) if isinstance(arg, list) else str(arg)
-                else:
-                    if isinstance(arg, list):
-                        for item in arg:
-                            params.setdefault('filter[' + k + '][]', []).append(
-                                f'~{item}' if isinstance(item, int) and k != 'year' else f'{item}')
-                    else:
-                        params['filter[' + k + ']'] = f'~{arg}' if isinstance(arg, int) and k not in ['value',
-                                                                                                      'year'] else f'{arg}'
-            else:
-                params[k] = str(arg)
-
-        log.debug("PARAMS: %r", params)
-        # Get the function path
-        path = self.format_path(path, self.wikirate_api_url)
-        return self.request('get', path, headers=headers, params=params or {})
-
-    def post(self, path, params={}, files={}):
-        path = self.format_path(path, self.wikirate_api_url)
-        return self.request('post', path, headers=self.headers, params=params or {}, files=files)
-
-    def delete(self, path, params={}):
-        path = self.format_path(path, self.wikirate_api_url)
-        return self.request('delete', path, headers=self.headers, params=params or {})
-
-    def format_path(self, path, wikirate_api_url=WIKIRATE_API_URL):
-        # Probably a webhook path
-        if path.startswith(wikirate_api_url):
-            return path
-
-        # Using the HTTP shortcut
-        if path.startswith("/"):
-            return urljoin(wikirate_api_url, path.lstrip('/'))
-
-    def list_to_str(self, list):
-        value_str = ''
-        for t in list:
-            value_str += t + '\n'
-        return value_str
 
     @objectify(Company)
     def get_company(self, identifier) -> Company:
@@ -227,7 +324,7 @@ class API(object):
         """
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
-    @objectify(CompanyItem, list=True)
+    @objectify(CompanyItem, many=True)
     def get_companies(self, identifier=None, **kwargs) -> List[CompanyItem]:
         """get_companies(*, offset, limit)
 
@@ -268,7 +365,7 @@ class API(object):
         """
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
-    @objectify(TopicItem, True)
+    @objectify(TopicItem, many=True)
     def get_topics(self, identifier=None, **kwargs) -> List[TopicItem]:
         """get_topics(*, offset, limit)
 
@@ -334,7 +431,7 @@ class API(object):
 
         return self.get(f"/{card_name}.json")
 
-    @objectify(MetricItem, list=True)
+    @objectify(MetricItem, many=True)
     def get_metrics(self, identifier=None, **kwargs) -> List[MetricItem]:
         """
         Retrieves a list of Wikirate Metrics based on the specified criteria.
@@ -352,8 +449,10 @@ class API(object):
         ------------------
         bookmark : bool, optional
             Filter metrics that are bookmarked by the user.
-        topic : str, optional
-            Filter metrics related to a specific topic.
+        topic : str or list of str, optional
+            Filter metrics related to specific topic(s).
+        topic_framework : str or list of str, optional
+            Filter metrics related to specific topic framework(s).
         designer : str, optional
             Filter metrics designed by a specific user or organization.
         published : bool, optional
@@ -389,7 +488,7 @@ class API(object):
         """
         endpoint = construct_endpoint(entity_id=identifier, entity_type="Metrics")
         return self.get(f"/{endpoint}", endpoint_params=('limit', 'offset'), filters=(
-            'bookmark', 'topic', 'designer', 'published', 'metric_type', 'value_type',
+            'bookmark', 'topic', 'topic_framework', 'designer', 'published', 'metric_type', 'value_type',
             'metric_keyword', 'research_policy', 'dataset'), **kwargs)
 
     @objectify(ResearchGroup)
@@ -426,7 +525,7 @@ class API(object):
         """
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
-    @objectify(ResearchGroupItem, list=True)
+    @objectify(ResearchGroupItem, many=True)
     def get_research_groups(self, **kwargs) -> List[ResearchGroupItem]:
         """
         Retrieves a list of Wikirate Research Groups based on the specified criteria.
@@ -497,7 +596,7 @@ class API(object):
         """
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
-    @objectify(CompanyGroupItem, True)
+    @objectify(CompanyGroupItem, many=True)
     def get_company_groups(self, **kwargs) -> List[CompanyGroupItem]:
         """
         Retrieves a list of Wikirate Company Groups based on the specified criteria.
@@ -568,7 +667,7 @@ class API(object):
         """
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
-    @objectify(SourceItem, True)
+    @objectify(SourceItem, many=True)
     def get_sources(self, **kwargs) -> List[SourceItem]:
         """
         Retrieves a list of Wikirate Sources based on the specified criteria.
@@ -648,7 +747,7 @@ class API(object):
         """
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
-    @objectify(AnswerItem, list=True)
+    @objectify(AnswerItem, many=True)
     def get_answers(self, metric_name=None, metric_designer=None, identifier=None, **kwargs) -> List[AnswerItem]:
         """
         Retrieves a list of Wikirate Answers by entity. The entity can be a metric name/ID, dataset name/ID, company name/ID, or source name/ID.
@@ -679,6 +778,18 @@ class API(object):
             Filter answers by global company identifiers such as ISIN, LEI, or OpenCorporates ID.
         company_name : str, optional
             Filter answers by the full or partial company name.
+        metric_type : str, optional
+            Filter by their metric type (e.g., "Score", "Research").
+        value_type : str, optional
+            Filter answers by the value type of values they store (e.g., "Number", "Text").
+        research_policy : str, optional
+            Filter answers by their metrics research policy.
+        dataset : str, optional
+            Filter answers associated with a specific dataset.
+        topic : str or list of str, optional
+            Filter answers related to specific topic(s).
+        topic_framework : str or list of str, optional
+            Filter answers related to specific topic framework(s).
         value : str or int, optional
             Match answers with the specified value.
         value_from : int, optional
@@ -740,7 +851,8 @@ class API(object):
                         filters=('year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to',
                                  'updated', 'company', 'company_keyword', 'dataset', 'updater', 'source',
                                  'verification', 'bookmark', 'published', 'metric_name', 'metric_keyword', 'designer',
-                                 'metric_type', 'company_identifier', 'metric', 'sort_by', 'sort_dir'),
+                                 'metric_type', 'company_identifier', 'metric', 'sort_by', 'sort_dir', 'topic',
+                                 'topic_framework', 'value_type', 'research_policy'),
                         **kwargs)
 
     @objectify(Relationship)
@@ -777,8 +889,9 @@ class API(object):
         """
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
-    @objectify(RelationshipItem, True)
-    def get_relationships(self, metric_name=None, metric_designer=None, identifier=None, **kwargs) -> List[RelationshipItem]:
+    @objectify(RelationshipItem, many=True)
+    def get_relationships(self, metric_name=None, metric_designer=None, identifier=None, **kwargs) -> List[
+        RelationshipItem]:
         """
         Retrieves a list of Wikirate Relationships based on the specified criteria.
 
@@ -891,10 +1004,9 @@ class API(object):
 
         """
 
-        url_key = generate_url_key(identifier) if isinstance(identifier, str) else f"~{identifier}"
-        return self.get(f"/{url_key}.json")
+        return self.get(f"/{build_card_identifier(identifier)}.json")
 
-    @objectify(ProjectItem, True)
+    @objectify(ProjectItem, many=True)
     def get_projects(self, **kwargs):
         """
         Returns a list of Wikirate Projects
@@ -930,10 +1042,9 @@ class API(object):
 
         """
 
-        url_key = generate_url_key(identifier) if isinstance(identifier, str) else f"~{identifier}"
-        return self.get(f"/{url_key}.json")
+        return self.get(f"/{build_card_identifier(identifier)}.json")
 
-    @objectify(DatasetItem, True)
+    @objectify(DatasetItem, many=True)
     def get_datasets(self, **kwargs):
         """
 
@@ -945,6 +1056,11 @@ class API(object):
             default value 0, the (zero-based) offset of the first item in the collection to return
         limit
             default value 20, the maximum number of entries to return. If the value exceeds the maximum, then the maximum value will be used.
+        name: str
+            Filter datasets by input string
+        topic : str or list of str, optional
+            Filter datasets related to specific topic(s).
+
 
         Returns
         -------
@@ -954,7 +1070,7 @@ class API(object):
         return self.get("/Datasets.json", endpoint_params=('limit', 'offset'), filters=('name', 'topic'),
                         **kwargs)
 
-    @objectify(RegionItem, True)
+    @objectify(RegionItem, many=True)
     def get_regions(self, **kwargs):
         """
 
@@ -989,18 +1105,17 @@ class API(object):
             :py:class:`~wikirate4py.models.Project`
 
         """
-        url_key = generate_url_key(identifier) if isinstance(identifier, str) else f"~{identifier}"
-        return self.get(f"/{url_key}.json")
+        return self.get(f"/{build_card_identifier(identifier)}.json")
 
-    def search_by_name(self, entity, name, **kwargs):
+    def search_by_name(self, entity_type, name, **kwargs):
         """
         Searches for a Company or Metric or Topic or Company Group or Research Group or Project by a given name.
         If offset and limit are not defined it returns the first 20 search results.
 
         Parameters
         -------------------
-        entity
-            allowed entities:
+        entity_type
+            allowed entity types:
                 - :py:class:`~wikirate4py.models.Company`,
                 - :py:class:`~wikirate4py.models.Metric`,
                 - :py:class:`~wikirate4py.models.Topic`,
@@ -1027,22 +1142,22 @@ class API(object):
             - A :py:class:`List` of :py:class:`~wikirate4py.models.ProjectItem`
 
         """
-        if entity is Company:
-            return self.get_companies(name=name, **kwargs)
-        elif entity is Metric:
-            return self.get_metrics(metric_keyword=name, **kwargs)
-        elif entity is Topic:
-            return self.get_topics(name=name, **kwargs)
-        elif entity is CompanyGroup:
-            return self.get_company_groups(name=name, **kwargs)
-        elif entity is ResearchGroup:
-            return self.get_research_groups(name=name, **kwargs)
-        elif entity is Project:
-            return self.get_projects(name=name, **kwargs)
-        else:
-            raise Wikirate4PyException(f"Type of parameter 'entity' ({type(entity)}) is not allowed")
 
-    @objectify(SourceItem, True)
+        # Dispatch map from model class to the corresponding list endpoint.
+        search_functions: dict = {Company: self.get_companies,
+                                  Metric: self.get_metrics,
+                                  Topic: self.get_topics,
+                                  CompanyGroup: self.get_company_groups,
+                                  ResearchGroup: self.get_research_groups,
+                                  Project: self.get_projects}
+
+        search_endpoint = search_functions.get(entity_type)
+
+        if search_endpoint is not None:
+            return search_endpoint(name=name, **kwargs)
+        raise Wikirate4PyException(f"Type of parameter 'entity_type' ({type(entity_type)}) is not allowed")
+
+    @objectify(SourceItem, many=True)
     def search_source_by_url(self, url, **kwargs):
         """search_source_by_url(url, *, offset, limit)
 
@@ -1064,9 +1179,8 @@ class API(object):
             :py:class:`List`\\[:class:`~wikirate4py.models.Source`]
 
                 """
-        kwargs = {
-            "query[url]": url
-        }
+        kwargs["query[url]"] = url
+
         return self.get("/Source_by_url.json",
                         endpoint_params=('query[url]', 'limit', 'offset'),
                         filters=(),
@@ -1104,6 +1218,8 @@ class API(object):
                            'international_securities_identification_number', 'legal_entity_identifier',
                            'sec_central_index_key', 'uk_company_number', 'australian_business_number'}
 
+        self._warn_unexpected(kwargs, optional_params)
+
         params = {
             "card[type]": "Company",
             "card[name]": name,
@@ -1118,17 +1234,13 @@ class API(object):
             if v is not None and k in optional_params
         })
 
-        unexpected_params = [k for k in kwargs if k not in optional_params]
-        if unexpected_params:
-            log.warning(f"Unexpected parameters: {unexpected_params}")
-
         if 'open_corporates_id' not in kwargs:
             params['card[skip]'] = "update_oc_mapping_due_to_headquarters_entry"
 
         log.debug("Company creation parameters: %r", params)
         return self.post("/card/create", params=params)
 
-    @objectify(Company, False)
+    @objectify(Company)
     def update_company(self, identifier, **kwargs) -> Company:
         """
         Update an existing company with the given identifier and optional parameters.
@@ -1176,10 +1288,8 @@ class API(object):
         if unexpected_params:
             log.warning(f"Unexpected parameters: {unexpected_params}")
 
-        url_key = generate_url_key(identifier) if isinstance(identifier, str) else f"~{identifier}"
-
         log.debug("Company update parameters: %r", params)
-        return self.post(f"/update/{url_key}", params=params)
+        return self.post(f"/update/{build_card_identifier(identifier)}", params=params)
 
     @objectify(Answer)
     def add_answer(self, **kwargs) -> Answer:
@@ -1215,18 +1325,15 @@ class API(object):
         Wikirate4PyException
             If any required parameter is missing.
         """
-        required_params = ['metric_designer', 'metric_name', 'company', 'year', 'value', 'source']
-        optional_params = ['comment', 'unpublished']
-
-        # Check for missing required parameters
-        missing_params = [p for p in required_params if p not in kwargs and not locals().get(p)]
-        if missing_params:
-            raise Wikirate4PyException(f"Invalid set of params! Missing required params: {', '.join(missing_params)}")
+        required_params = ('metric_designer', 'metric_name', 'company', 'year', 'value', 'source')
+        optional_params = ('comment', 'unpublished')
+        self._require(kwargs, required_params)
+        self._warn_unexpected(kwargs, required_params + optional_params)
 
         # Prepare main params
         params = {
             "card[type]": "Answer",
-            "card[name]": f"{kwargs['metric_designer']}+{kwargs['metric_name']}+{build_card_identifier(kwargs['company'])}+{kwargs['year']}",
+            "card[name]": f"{build_card_identifier(kwargs['metric_designer'])}+{build_card_identifier(kwargs['metric_name'])}+{build_card_identifier(kwargs['company'])}+{kwargs['year']}",
             "card[subcards][+:value]": kwargs['value'] if not isinstance(kwargs['value'], list) else '\n'.join(
                 kwargs['value']),
             "card[subcards][+:source]": kwargs['source'] if not isinstance(kwargs['source'], list) else '\n'.join(
@@ -1280,17 +1387,13 @@ class API(object):
         Wikirate4PyException
             If any required parameter is missing.
         """
-        required_params = ['metric_designer', 'metric_name', 'company', 'year']
-        optional_params = ['value', 'company', 'year', 'source', 'comment', 'unpublished']
-
-        # Ensure we have either the full set of required_params_1 or 'identifier'
-        if not ('identifier' in kwargs or all(p in kwargs and kwargs[p] is not None for p in required_params)):
-            raise Wikirate4PyException(
-                f"Invalid set of params! You need to provide either `identifier` or all of the following: {', '.join(required_params)}."
-            )
+        required_params = ('metric_designer', 'metric_name', 'company', 'year')
+        optional_params = ('value', 'company', 'year', 'source', 'comment', 'unpublished')
+        self._require(kwargs, required_params)
+        self._warn_unexpected(kwargs, required_params + optional_params)
 
         card_name = f"~{kwargs['identifier']}" if 'identifier' in kwargs \
-            else (f"{generate_url_key(kwargs['metric_designer'])}+{generate_url_key(kwargs['metric_name'])}"
+            else (f"{build_card_identifier(kwargs['metric_designer'])}+{build_card_identifier(kwargs['metric_name'])}"
                   f"+{build_card_identifier(kwargs['company'])}+{kwargs['year']}")
 
         # Prepare main params for the update request
@@ -1311,11 +1414,8 @@ class API(object):
         return self.post("/card/update", params=params)
 
     def update_card(self, identifier, **kwargs):
-        required_param = 'json'
+        self._require(kwargs, required=("json",), message_prefix="Missing required param")
 
-        if required_param not in kwargs:
-            raise Wikirate4PyException(
-                """Invalid set of params! You need to define all the following params to update the research answer: """ + required_param.__str__())
         params = {
             "card[name]": f'~{identifier}',
             "card[content]": kwargs['json'],
@@ -1378,11 +1478,8 @@ class API(object):
         """
         required_params = ('metric_designer', 'metric_name', 'subject_company', 'object_company', 'year', 'value',
                            'source')
-
-        # Check for missing required parameters
-        for k in required_params:
-            if k not in kwargs or kwargs[k] is None:
-                raise Wikirate4PyException(f"Invalid set of params! Missing required param: {k}")
+        self._require(kwargs, required=required_params)
+        self._warn_unexpected(kwargs, allowed=required_params + ('comment',))
 
         card_name = '+'.join([
             build_card_identifier(kwargs['metric_designer']),
@@ -1409,7 +1506,7 @@ class API(object):
 
     @objectify(Metric)
     def add_metric(self, **kwargs):
-        """add_metric(designer, name, question, about, methodology, topics, value_type, options, research_policy, report_type)
+        """add_metric(designer, name, question, about, methodology, topic, topic_framework, value_type, options, research_policy, report_type)
 
         Creates and Returns a new Metric
 
@@ -1430,8 +1527,11 @@ class API(object):
         methodology
             metric's methodology (plain text/html can be given as input)
 
-        topics
-            a list of metrics
+        topic
+            a topic or a list of topic(s)
+
+        topic_framework
+            a topic framework or a list of topic framework(s)
 
         value_type
             value type
@@ -1453,14 +1553,20 @@ class API(object):
             :py:class:`~wikirate4py.models.Metric`
 
         """
-        required_params = ['designer', 'name', 'metric_type', 'value_type']
+        required_params = ('designer', 'name', 'metric_type', 'value_type')
         optional_params = (
-            'question', 'about', 'methodology', 'unit', 'topics', 'value_options', 'research_policy', 'report_type')
-
-        for k in required_params:
-            if k not in kwargs:
-                raise Wikirate4PyException("""Invalid set of params! You need to define all the following params to create
-                                a new metric in Wikirate platform: """ + required_params.__str__())
+            'question',
+            'about',
+            'methodology',
+            'unit',
+            'topic',
+            'topic_framework'
+            'value_options',
+            'research_policy',
+            'report_type'
+        )
+        self._require(kwargs, required_params)
+        self._warn_unexpected(kwargs, required_params + optional_params)
 
         params = {
             "card[type]": "Metric",
@@ -1474,7 +1580,7 @@ class API(object):
 
         for k in optional_params:
             if k in kwargs.keys():
-                if k in ['topics', 'value_options']:
+                if k in ['topic', 'value_options']:
                     params['card[subcards][+' + k + ']'] = self.list_to_str(kwargs[k])
                 else:
                     params['card[subcards][+' + k + ']'] = str(kwargs[k])
@@ -1484,7 +1590,7 @@ class API(object):
 
     @objectify(Metric)
     def update_metric(self, identifier, **kwargs):
-        """add_metric(designer, name, question, about, methodology, topics, value_type, options, research_policy, report_type, title)
+        """add_metric(designer, name, question, about, methodology, topic, topic_framework, value_type, options, research_policy, report_type, title)
 
         Creates and Returns a new Metric
 
@@ -1505,8 +1611,11 @@ class API(object):
         methodology
             metric's methodology (plain text/html can be given as input)
 
-        topics
-            a list of metrics
+        topic
+            a topic or a list of topics
+
+        topic_framework
+            a topic framework or a list of topic frameworks
 
         value_type
             value type
@@ -1529,8 +1638,9 @@ class API(object):
 
         """
         optional_params = (
-            'metric_type', 'value_type', 'question', 'about', 'methodology', 'unit', 'topics', 'value_options',
-            'research_policy', 'report_type', 'unpublished')
+            'metric_type', 'value_type', 'question', 'about', 'methodology', 'unit', 'topic', 'topic_framework',
+            'value_options', 'research_policy', 'report_type', 'unpublished')
+        self._warn_unexpected(kwargs, optional_params)
 
         params = {
             "card[type]": "Metric",
@@ -1542,7 +1652,7 @@ class API(object):
 
         for k in optional_params:
             if k in kwargs.keys():
-                if k in ['topics', 'value_options']:
+                if k in ['topic', 'value_options']:
                     params['card[subcards][+' + k + ']'] = self.list_to_str(kwargs[k])
                 else:
                     params['card[subcards][+' + k + ']'] = str(kwargs[k])
@@ -1603,15 +1713,10 @@ class API(object):
         """
         required_params = ('metric_designer', 'metric_name', 'subject_company', 'year', 'object_company')
         optional_params = ('year', 'value', 'source', 'comment')
-
-        # Ensure we have either the full set of required_params_1 or 'identifier'
-        if not ('identifier' in kwargs or all(p in kwargs and kwargs[p] is not None for p in required_params)):
-            raise Wikirate4PyException(
-                f"Invalid set of params! You need to provide either `identifier` or all of the following: {', '.join(required_params)}."
-            )
+        self._require(kwargs, required_params)
+        self._warn_unexpected(kwargs, required_params + optional_params)
 
         # Construct the card name
-
         card_name = f"~{kwargs['identifier']}" if 'identifier' in kwargs else '+'.join([
             build_card_identifier(kwargs['metric_designer']),
             build_card_identifier(kwargs['metric_name']),
@@ -1681,17 +1786,13 @@ class API(object):
         )
         ```
         """
-        required_params = ['title']
-        optional_params = ['link', 'company', 'report_type', 'year', 'file']
-
-        # Validate required parameters
-        missing_params = [p for p in required_params if p not in kwargs]
-        if missing_params:
-            raise Wikirate4PyException(f"Invalid set of params! Missing required params: {', '.join(missing_params)}")
-
+        required_params = ('title',)
+        optional_params = ('link', 'company', 'report_type', 'year', 'file')
         # Ensure either 'link' or 'file' is provided
         if 'link' not in kwargs and 'file' not in kwargs:
             raise Wikirate4PyException("You must provide either a 'link' or a 'file' to create a source.")
+        self._require(kwargs, required_params)
+        self._warn_unexpected(kwargs, required_params + optional_params)
 
         # Prepare main parameters
         params = {
@@ -1809,11 +1910,8 @@ class API(object):
         """
         required_params = ('name',)
         optional_params = ('title', 'company', 'report_type', 'year')
-
-        # Validate required parameter
-        missing_params = [p for p in required_params if p not in kwargs]
-        if missing_params:
-            raise Wikirate4PyException(f"Invalid set of params! Missing required param: {', '.join(missing_params)}")
+        self._require(kwargs, required_params)
+        self._warn_unexpected(kwargs, required_params + optional_params)
 
         # Prepare main parameters
         params = {
@@ -1872,9 +1970,9 @@ class API(object):
             log.error(f"Failed to delete Wikirate entity with ID {identifier}. Response: {response.text}")
             return False
 
-    def add_companies_to_group(self, group_id, list=[]):
+    def add_companies_to_group(self, group_id, items=[]):
         ids = ""
-        for item in list:
+        for item in items:
             ids += '~[[' + item + ']]\n'
         params = {
             "card[type]": "List",
@@ -1886,9 +1984,9 @@ class API(object):
 
         return self.post("/card/update", params)
 
-    def add_companies_to_dataset(self, dataset_id, list=[]):
+    def add_companies_to_dataset(self, dataset_id, items=[]):
         ids = []
-        for item in list:
+        for item in items:
             ids.append(f'~{item.__str__()}')
         params = {
             "card[type]": "List",
@@ -1900,9 +1998,9 @@ class API(object):
 
         return self.post("/card/update", params)
 
-    def add_metrics_to_dataset(self, dataset_id, list=[]):
+    def add_metrics_to_dataset(self, dataset_id, items=[]):
         ids = ""
-        for item in list:
+        for item in items:
             ids += '~[[' + item.__str__() + ']]\n'
         params = {
             "card[type]": "List",

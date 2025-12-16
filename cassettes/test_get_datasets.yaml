@@ -1,0 +1,86 @@
+interactions:
+- request:
+    body: limit=10
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '8'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.wikirate.org/Datasets.json
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAA/72W30/bMBDH3/krrEggkPojceKkjYQmCIO97GUdQtM0WSEx1CNxOtsZQ4j/fbYb
+        p6lggzaoL5Vzubvvfe7c9h73AHBo7sQgmsLQnU4G2sDSkiiTc5bKVBDpGKN8WGjjozrbGDRYPlj/
+        JOW5cWvsTcgze80LbZ5LuRDxeCxkekvZ7eie3lGeSjKq+O3Yxox+iorZwKzKiRXLbFL16slU+Ja0
+        DZJYpV1LmneJqSSlUNbvRnwJbtEh9P1JGMKBtdoMH+/nKbiqypQJcMnob8IFlQ8AuhCBIZidXQDP
+        V4cLXtULEDltvO1Vt+dvbpYWxUtRvBLFWhQrSez52AjiqNtOw84kYVILOMb2NPgnLELbwMIWNtwV
+        LGxgwx6wwaTfZNGuJ4v6wHpbwE5a1mBHrJMGNeiB6ge9UP0do/o9UGG0GaomRS0p3BEpakhhH1J3
+        c9KgJfV2RBo0pN72pCh84fpefTp5gXQma/W3JgX4QgRJeTY37O+FqjRfQLWa2Goa+K1xgyB8Ptjz
+        BIj6eq3iXijnCV7m27pMfxo+//1MKiYkrzNJKwayqlykjBJhTgVNWUbAPZVz8Hl2Ag4lEfLonXC6
+        urjVxStdrHWx0sVa9lVo9fnDLEMFZXdmGVo+6lRCVrxjmsuywBvsYM32xYmy5zg1quq+eEN3OvQi
+        dV1jiGI/Apdfk6VrvcjXXdHQDYcwBB6KYRSrQ+u6MLKrdZWRP/KtdZmefLihhSR8H53qie6js+MD
+        vQ4e66eDgpZUHnvuQXVzowLUabWEcvKrVp1ZL9ODQy/URG4Qo06ZBc0IE2baV51KBqB5kYOa5YSD
+        JAGn30AwcsGhJTB9U988NdlSzdwANFFifP0wVs5HIzAjBPyX+URKTq9rc10uapqTkbP39BeHN+C2
+        FgwAAA==
+    headers:
+      CF-RAY:
+      - 9af0cae88b19a157-ATH
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Dec 2025 20:04:56 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=UDjt8Mf8seOuEoQHrIyD%2FBXKPcZGF51crIeA7ChCV3g6ZwvUZCMTMeXVouyjABG2UXiJ8xLRIPQeVeGKMBXccGnl8UbtLiOWr4yfbAQQMHm82EB7Ja5mCrRw2d27"}]}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - _decko_deck_session=Wm5HL1VJNVlwd1QwNFZHYzM1Sk1zb1FWL0owVlpuN3VlMmRMRGtVM2lGZk03Q05CRUtHM0FBRGtMTGNUUFZXb1cwMExXRThRUkV4dTVGdjBzaURhQm1FNG43bTNLcXRuZGJvZWY2dHNPUWNzMnl5cE9KRk1reG0rTXZISUFhYjctLXFSMXJSWU8zR0ZzNlZxU3ZFR29zd1E9PQ%3D%3D--1519e6ca34d34547cbbdfda0fda0ff3b224c7a51;
+        path=/; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      cf-cache-status:
+      - DYNAMIC
+      content-disposition:
+      - attachment; filename="Wikirate-2025_12_16_200455-Dataset.json"
+      etag:
+      - W/"77776b626026bccc9b3558c853e44218"
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      vary:
+      - Origin
+      x-cache-status:
+      - BYPASS
+      x-frame-options:
+      - ALLOWALL
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.27
+      x-request-id:
+      - e3b6d1327aa259a50308108e0d394303
+      x-runtime:
+      - '0.348720'
+    status:
+      code: 200
+      message: OK
+version: 1

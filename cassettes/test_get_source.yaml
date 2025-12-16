@@ -1,0 +1,81 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.wikirate.org/Source_000105228.json
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAA/7VWXWvbMBR9768QhsLG6i81TpvAGG3K9tLBaDJGGSWokppotWVPkpeF0v8+SXZi
+        1SRzSZo3+0r3+Jx7dK/8dASAx4g3BGen8DQZ9E9MgKOM6pA3zkuBqR9FURwlEJ57dlUtC7P6pJ9X
+        yX04OKleX6Z6dbRO8UZIEPtcx0uRmvBcqUIOw1AqNGN8FizYIxNI0SAXs7BCCn7JnK/ScE7o6kOy
+        +pBeeLbsXg85XetqwL0HlrbFVZU52yiwqc2HzyazpdeN7ULMgrakc0W5cpFWCH4hclJixXLuS5UL
+        NKPBg0BxgAkPCJsxhdIcU8RlgTCVAc6z0MiVYa0whL1BAnsJDAry0FQ0ZfxxQ0n6EewqybXJbJXk
+        21wguV9RDGxnURaLQGgolXOjNCgfw0IwQn3GfY3ny7Io0qV/r7n4DPbOG7mCFrlQ0w2nvCrToEv1
+        jQUAE+ecr8XnTDMVe6mv4KcGfksRftqADo2NSEYFuGZSeTZ6t9apmNpy1M+7FE5s6tsba3G3OQtu
+        aju1mowpSsCEIvBCIoARjBsnlxSJjQc37hJ4azIP4J3B7TJtpcH1SsvNpNl0t+5I5xVx3c664Z3Q
+        XGXpdBeK1RTEguoNZIps5Q0jP0r8qA/iZJjEw94AfJ+Mqq1lQV67lVCJBSvMgGrZwss07fLEzW5Z
+        c8PwfEL/qr28cfCtRZ+wvqyOk0tD6Di5+tgmdAwvXUprrwiTuJRyN5FXTfIhNDbwr5XoEFor1BdH
+        gfhyY2tFXQpHdfIBuquG7mqw9hxpN1tGlWB4B/O+VoktZXb27iOrgt2mquGtL/YFFTvwvqgSW7zH
+        elbh+V7MK+CKuXO//i71uHJHRuLH0I/7enwPo9NhBJuRkTJMubR8fjifOgH1AgElJ3r6j0bg8hb0
+        ggi8W1G0M4z9ofq0ZuYnwDCss2R4vwz15vcBGFMK/ivqQunq35emx6dfSv0HEXhHz/8AA95+xjcL
+        AAA=
+    headers:
+      CF-RAY:
+      - 9af0c8222cc14faf-ATH
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Dec 2025 20:03:02 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=efo7Elv%2FahKqmpE7YB2XOyoixyK3K1Biq0eaGSPgQ7GqbXeIZwqGbI5YD3NzSGgYIrgYXKlE2L5bm350aRaVCqWC75AEvPTFtqTPR9cFDUesM%2F89rJfD3JZXQQ%2Bm"}]}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - _decko_deck_session=eXV6SzhJSkErRGkxYUEyVC9Va1FOa3JobUxuTCtPZG5HL281UVNxS3ZsSVlsZVVBeDMrZXYvbWhIZXFWUnhUZFBjWjFBb1VMcEYrYVExOTB0Tm1vR1A3aS9HTi9weVIzZG50ejgyYlNqbHltMTR3eDdMczBLaml3WUVKNy9rQ04tLXRnVHUzSytRbE9FRktxQldKTHFDZ2c9PQ%3D%3D--3a83a356abd661660cbd5ab19a24060ef8fcd7a7;
+        path=/; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      cf-cache-status:
+      - DYNAMIC
+      etag:
+      - W/"9b7c0d3092d67386978a643a11eeb733"
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      vary:
+      - Origin
+      x-cache-status:
+      - BYPASS
+      x-frame-options:
+      - ALLOWALL
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.27
+      x-request-id:
+      - 9d03014b60bd76dada8e763b2a353698
+      x-runtime:
+      - '0.542988'
+    status:
+      code: 200
+      message: OK
+version: 1

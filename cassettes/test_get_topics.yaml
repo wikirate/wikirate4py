@@ -1,0 +1,101 @@
+interactions:
+- request:
+    body: limit=10
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '8'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.wikirate.org/Topics.json
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAA/9Vae2/bNhD/v5+CMNCgRR6WHT8aI82QOKnboUGDOkUxLINAS7TNVSI1kkpnJP7u
+        O1KSH4kUMakcLMgfsSgef3fHe/Gom1cI1ahf66GG03B29BPDIYHn2iWPqFczQ2oW6aEb+J1Nb+8k
+        D9nsPha+mZaOpyT3xmMR6OGpUpHs1etS4Qllk72f9AcVWJE9Lib1jGbvb8lZRuhxn2RgXrYovJob
+        Dm2WNQLJ5aJrS6qltFSRUMLYnwY4EToTu9loddv775ydbDSj/54iobPhACVI25cCMxlhQZg3qy0o
+        Ms0s9WutmAzEBRA3B2RVYRqJqiCBymVkLID3n1z8KOB/ZSYOaTDT0wb8mgiGmUeWb83CqkgJeRTe
+        lAY+EC2UbEbzqIcxKIIyPKIBVTO0Zd59JREXCrSzWNGO2pruE1Nkogd9e5qLeBRQz4z0eRhSFYJS
+        ZBnVMWMxDh4jURQFM9SfglhobVtTur8WSg6JEnoXf9Wots/NQsvd87HCkqgKVj5NVkp4n+/k+Fuj
+        0W1a+drHOMQMfaWT6YrSq/Y1A+ImIEW+ls/IU3xtyD2KA1s/uzvb3sdWOUanMUGn4C4TsuqxBZQD
+        Qcm1dm10TrwpZlSGpRbf13yhz3jERdnUc4jPgqFhgCGEzMpmf+DCI5Yrf2K+lpDHEl0QHgVE3t2x
+        Iu45G4Obq93j8Zh4OkAcC4JLyc4phBOm0HewACLQheAKqClnslq/XTXQav12beVyvzV5snFglycX
+        YTogaDXAbc6RVxDdBNFNEIu82oLFp7j4GbumgjOdKmz9PJfkMQkVmKdgg31wLsTH8J/5saesUyko
+        4BzeCQg2pWb/mXuQ3IY8Fp5tbtOsHcc+hVC0hc45o4oLTVupmxRuf7U+Uwxjkfg6zkG32+o8OvkV
+        RPBNpkIXIN0F5B0X8jgUU4k5H047R4dSgfVOjhJFS/STqilK9hIZb0NXtZsb91aLO59f1XqH9ZTi
+        sA7kV+KKHUZHMGM7JbqFvxEW8/lhPToqycdFutl8ds6vCqoK9esbsLnAfwfHMg20O++srNhk7myn
+        tkyuBA5NgKJJrtyUMRvkTMYU113iFiWFRzD8f67/vuMJQblHxKJKSxDi81Bnj2MpNa6Wtrx0CgJd
+        9FwTdILFBOKgRU7IdPoRckhpujkLo4DPdGbUe6AE9soLut/5CA2JFws4IJbNvSQihHCuhYXtPoVq
+        l0oJCe5CI1GPyPIFQjjnYTEztlJ6ojT7rdfnUHJSUnGtWGL01UaRMjCLhHiw77Qsy8mSEqf6ajIB
+        dDWgy8duClhcTJYx+Ey1pEVV+2tlVr5eqq6yClBsTylNuw5DP6ChHgINscnmCqsUxk1gikyoiJmX
+        cQhZ5z6Jb7PyZgMhbApHdoIGWKI3g4+Dt+hMh+C1VFsEicUIwvYHzlUEBwql3W7V5Mvov8nEU5Nl
+        vozHxl537OS8hHxHTI1g0qyJeegiwFUf/9dtp1o3u7N2uXN1DxpOu9O18q0HG0lVe9gCzF2CPe+h
+        5fY2oFK3ewtPLQ8r5CWeV/K0Xq2F5iJYJoH9d63Htaoevo/YWL/KwJo3C9DSllUJq89zDZR/BVVJ
+        EydHJxvq4+QhWRpYq+U8xcCGSk+YzJ7LsjI8S6O6z95LuFTUP7MrPp2JoRzg6CSWlBEp78tU1NNP
+        u6BaD3AMBtK1csjuSnIpCDjoF/gtdch99CLQi9XFRVJmbKhXum4gG/WwBci6c71KZaoFlP0wN/TJ
+        o1afhD7xytBUhYFr/VFA+jkA3OTAjY6Ljdk1nUZz12ntNrqo2ezt7/daLfTtsp9MjSN/bWoT5jV3
+        G23wdT210VlOjQzo8usJRv5VdlwZH/xtTAOws9ftE/OFgrvwr9ft0/eZKrVFbyeq3NJfL7zXEWYL
+        Cjaq3jecLW6qVfi1/F5CkH9i0NmqCG0jQgc1nZ7T7Dn7SxGgOidMroUszeUOSl/4KGa+Ps720ckf
+        qLXnoDeZdEan0PLx4Epcd9K0cCmVrI9mdZj8dg8aMAQ9qI9jBcY2irW3uoOY+mSv9mr+H8aDtjK8
+        IgAA
+    headers:
+      CF-RAY:
+      - 9af0c6b13bc1eef8-ATH
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Dec 2025 20:02:03 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=YPMpsdCfZpSKsRKF61hfo%2BEvMUjRDZJKZMWqQgP4ZbKNElFuFCTSPXOsKqmcdRijvtCM1GshBn6MWAra5dktxmf2d7nN5CEQOm37QXaSm4wmCupk3CtbklFqCoj%2F"}]}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - _decko_deck_session=SnhHNVhTcUtlTnVocnhWNHpWRDZnaGNpayt5UWZlRVF3MWQxRHI3d2MrSTh5Lzl6TDNBWDBSZElnNHJPSzVlNTVvdDlyMUFLYk15RjNTcFZsOG1vTStvVlZVUmtoaURTVVdlSFRBMEVjWTZKUzI2U1ZndHo5SzljYzJrS3d4R2EtLW05dTlEdCtnOUU5THBZV1pRTEFKTlE9PQ%3D%3D--4c6a9c001646a9ab41092b72d0d8000af95f15e6;
+        path=/; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      cf-cache-status:
+      - DYNAMIC
+      content-disposition:
+      - attachment; filename="Wikirate-2025_12_16_200203-Topic.json"
+      etag:
+      - W/"2ae3b10fb43de7cbaf4a4b5008b2e4b6"
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      vary:
+      - Origin
+      x-cache-status:
+      - BYPASS
+      x-frame-options:
+      - ALLOWALL
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.27
+      x-request-id:
+      - 3d7a1c654ddad5b112fe61ed6464cd6d
+      x-runtime:
+      - '0.606637'
+    status:
+      code: 200
+      message: OK
+version: 1

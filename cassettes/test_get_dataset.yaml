@@ -1,0 +1,77 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.wikirate.org/Tea_Supply_Chain_Tracker_Supply_Chain_Relationships.json
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAA/7VUwY6bMBC971eMOLXaAA4lIeG2oVJPvXRTVVUUIS8eJW7AUNt0hVb77zXGbOCy
+        2ktu9vPMezNvBl7uADzOvBQ2q/hLTMiiBwSt0EDeHik8tk1TdpCdKRewl7S4oAR/Dv/AkmpeC3Xm
+        jfIshe6anuLFnEeFZButyXazGKBR4yvVVKH2HOzyvIxKZs8Ob2XZw2etG5WGodL0xMUpeOYXLqnG
+        oJan0FEFf1QtxryiZjhKMSdlXl5tkR8hNR7kQ7O5bTZ3HszBmQPXAoy80Ch0r3I4ZHVVmZD7N1s5
+        Mth1x+MQyzVWykQejvZacnGx16GRd4ucMOcjc77rhkJM/sBIRYFK13IictZVmd/IBueARMPBcmpN
+        iEi09JeRTxIgSbpap4TAz302hLYNm4fGPon9aAvLJCXrNEquoVSoZ5TqVqXfP1j+ySAr1JIXtxP8
+        bvlnm1M1VHC8nWRmFbqJpsS/rdmQ6QhW/bSWa4hISuI03lxHUPIChbIf1q9JKQtwDwxawcy/Istg
+        9xvigMCnsQW7E/wfFsPa2g5clgqfutAEfw7gERHebfpBG8+e2r6j/FvLGQbe3et/gyPmldIEAAA=
+    headers:
+      CF-RAY:
+      - 9af0cabb5ab59e21-ATH
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Dec 2025 20:04:48 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=k41BDI4hvtbynXkWOOqTMCIeqqAH%2BbwBC1v6EuwFvwu%2FC6%2FHFaXEc%2BDA2k77%2Bh551ivd8VLnwA1KoImAi5dH4PIphFw5N2JXUh3vdxEb0JTJBe%2FGmNCTlSeg8CMw"}]}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - _decko_deck_session=TDNKUkRKOHBOVk5SeXVENDFNbWNSM0tiU3pkLzFFVXhFdVk4ZmJUK2MvMEp4bHBpenZ4d3h3NU55ZEdEWU5NLzhxeGxzUTBBQnhnc1RJbGJOUzZ1WDZpT3BxRys4bytmeFZreVQ5cG1TSnNYL1pKU0U4aHdRS2JnZ2YrQ1FMSjYtLWlIQWs1Y0pTSkFTWVFyNzR0bVN4UEE9PQ%3D%3D--7a4ca56b286de662b543adaad70d99c7f4091c40;
+        path=/; HttpOnly
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-origin:
+      - '*'
+      cf-cache-status:
+      - DYNAMIC
+      content-disposition:
+      - attachment; filename="Wikirate-2025_12_16_200448-Tea_Supply_Chain_Tracker_Supply_Chain_Relationships.json"
+      etag:
+      - W/"20e6370fa1fbd73f14f55457ce0c3d12"
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+      vary:
+      - Origin
+      x-cache-status:
+      - BYPASS
+      x-frame-options:
+      - ALLOWALL
+      x-powered-by:
+      - Phusion Passenger(R) 6.0.27
+      x-request-id:
+      - 5177ce807e176a044ce3aeb84678b9d1
+      x-runtime:
+      - '0.363286'
+    status:
+      code: 200
+      message: OK
+version: 1
