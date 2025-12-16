@@ -7,9 +7,7 @@ from typing import List, Dict, Any, Iterable
 
 import requests
 from os import environ
-from urllib.parse import (
-    urlparse, urljoin
-)
+from urllib.parse import urljoin
 
 from wikirate4py.exceptions import IllegalHttpMethod, BadRequestException, UnauthorizedException, \
     ForbiddenException, NotFoundException, TooManyRequestsException, WikirateServerErrorException, HTTPException, \
@@ -23,7 +21,6 @@ log = logging.getLogger(__name__)
 
 WIKIRATE_API_URL = environ.get(
     'WIKIRATE_API_URL', 'https://wikirate.org/')
-WIKIRATE_API_PATH = urlparse(WIKIRATE_API_URL).path
 
 
 def generate_url_key(input_string):
@@ -38,12 +35,12 @@ def build_card_identifier(card):
     return f"~{card}" if isinstance(card, int) or card.isdigit() else generate_url_key(card)
 
 
-def objectify(wikirate_obj, list=False):
+def objectify(wikirate_obj, many=False):
     def decorator(method):
         @functools.wraps(method)
         def wrapper(*args, **kwargs):
             payload = method(*args, **kwargs).json()
-            if not list:
+            if not many:
                 return wikirate_obj(payload)
             else:
                 return [wikirate_obj(item) for item in payload.get("items")]
@@ -78,63 +75,55 @@ Entities include:
 
 class API(object):
     allowed_methods = ['post', 'get', 'delete']
-    content_type_specified = True
 
     def __init__(self, oauth_token, wikirate_api_url=WIKIRATE_API_URL, auth=()):
-        self.oauth_token = oauth_token
         self.wikirate_api_url = wikirate_api_url
-        self.auth = auth
         self.session = requests.Session()
+        self.session.headers["X-API-Key"] = oauth_token
+        self.session.auth = auth
 
-    @property
-    def headers(self):
-        headers = {
-            'X-API-Key': self.oauth_token
-        }
-        return headers
+    def __enter__(self):
+        return self
 
-    def request(self, method, path, headers, params, files={}):
+    def __exit__(self, exc_type, exc, tb):
+        self.close()
+        return False
+
+    # API owns a persistent requests.Session; use as a context manager or call close() when finished.
+    def close(self):
+        self.session.close()
+
+    def request(self, method, path, params, files=None):
         method = method.strip().lower()
         if method not in self.allowed_methods:
-            msg = "The '{0}' method is not accepted by the Wikirate " \
-                  "client.".format(method)
+            msg = "The '{0}' method is not accepted by the Wikirate client.".format(method)
             raise IllegalHttpMethod(msg)
 
-        # if an error was returned throw an exception
-        try:
-            response = self.session.request(method, path, auth=self.auth, data=params, headers=headers, timeout=480,
-                                            files=files)
+        files_payload = files or {}
 
-            if files.get("card[subcards][+file][file]") is not None:
-                files.get("card[subcards][+file][file]").close()
+        try:
+            # Extended timeout for large uploads or long-running operations
+            response = self.session.request(method,
+                                            path,
+                                            data=params,
+                                            timeout=480,
+                                            files=files_payload)
         except Exception as e:
             raise Wikirate4PyException(f'Failed to send request: {e}').with_traceback(sys.exc_info()[2])
         finally:
-            self.session.close()
-
-        if response.status_code == 400:
-            raise BadRequestException(response)
-        if response.status_code == 401:
-            raise UnauthorizedException(response)
-        if response.status_code == 403:
-            raise ForbiddenException(response)
-        if response.status_code == 404:
-            raise NotFoundException(response)
-        if response.status_code == 429:
-            raise TooManyRequestsException(response)
-        if response.status_code >= 500:
-            raise WikirateServerErrorException(response)
-        if response.status_code and not 200 <= response.status_code < 300:
-            raise HTTPException(response)
-
-        # else return the response
+            # Close any file handles passed for multipart upload to avoid leaking file descriptors.
+            for f in files_payload.values():
+                close = getattr(f, "close", None)
+                if callable(close):
+                    try:
+                        close()
+                    except Exception:
+                        # Best-effort cleanup; ignore close errors.
+                        pass
+        self._raise_for_status(response=response)
         return response
 
     def get(self, path, endpoint_params=(), filters=(), **kwargs):
-        headers = self.headers
-        if 'content-type' in headers:
-            headers.pop('content-type')
-
         params = {}
         for k, arg in kwargs.items():
             if arg is None:
@@ -169,15 +158,15 @@ class API(object):
         log.debug("PARAMS: %r", params)
         # Get the function path
         path = self.format_path(path, self.wikirate_api_url)
-        return self.request('get', path, headers=headers, params=params or {})
+        return self.request('get', path, params=params or {})
 
     def post(self, path, params={}, files={}):
         path = self.format_path(path, self.wikirate_api_url)
-        return self.request('post', path, headers=self.headers, params=params or {}, files=files)
+        return self.request('post', path, params=params or {}, files=files)
 
     def delete(self, path, params={}):
         path = self.format_path(path, self.wikirate_api_url)
-        return self.request('delete', path, headers=self.headers, params=params or {})
+        return self.request('delete', path, params=params or {})
 
     def format_path(self, path, wikirate_api_url=WIKIRATE_API_URL):
         # Probably a webhook path
@@ -188,9 +177,9 @@ class API(object):
         if path.startswith("/"):
             return urljoin(wikirate_api_url, path.lstrip('/'))
 
-    def list_to_str(self, list):
+    def list_to_str(self, items):
         value_str = ''
-        for t in list:
+        for t in items:
             value_str += t + '\n'
         return value_str
 
@@ -255,6 +244,23 @@ class API(object):
         if missing:
             raise Wikirate4PyException(f"{message_prefix}: {', '.join(missing)}")
 
+    @staticmethod
+    def _raise_for_status(response=None):
+        if response.status_code == 400:
+            raise BadRequestException(response)
+        if response.status_code == 401:
+            raise UnauthorizedException(response)
+        if response.status_code == 403:
+            raise ForbiddenException(response)
+        if response.status_code == 404:
+            raise NotFoundException(response)
+        if response.status_code == 429:
+            raise TooManyRequestsException(response)
+        if response.status_code >= 500:
+            raise WikirateServerErrorException(response)
+        if response.status_code and not 200 <= response.status_code < 300:
+            raise HTTPException(response)
+
     @objectify(Company)
     def get_company(self, identifier) -> Company:
         """
@@ -289,7 +295,7 @@ class API(object):
         """
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
-    @objectify(CompanyItem, list=True)
+    @objectify(CompanyItem, many=True)
     def get_companies(self, identifier=None, **kwargs) -> List[CompanyItem]:
         """get_companies(*, offset, limit)
 
@@ -330,7 +336,7 @@ class API(object):
         """
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
-    @objectify(TopicItem, True)
+    @objectify(TopicItem, many=True)
     def get_topics(self, identifier=None, **kwargs) -> List[TopicItem]:
         """get_topics(*, offset, limit)
 
@@ -396,7 +402,7 @@ class API(object):
 
         return self.get(f"/{card_name}.json")
 
-    @objectify(MetricItem, list=True)
+    @objectify(MetricItem, many=True)
     def get_metrics(self, identifier=None, **kwargs) -> List[MetricItem]:
         """
         Retrieves a list of Wikirate Metrics based on the specified criteria.
@@ -488,7 +494,7 @@ class API(object):
         """
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
-    @objectify(ResearchGroupItem, list=True)
+    @objectify(ResearchGroupItem, many=True)
     def get_research_groups(self, **kwargs) -> List[ResearchGroupItem]:
         """
         Retrieves a list of Wikirate Research Groups based on the specified criteria.
@@ -559,7 +565,7 @@ class API(object):
         """
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
-    @objectify(CompanyGroupItem, True)
+    @objectify(CompanyGroupItem, many=True)
     def get_company_groups(self, **kwargs) -> List[CompanyGroupItem]:
         """
         Retrieves a list of Wikirate Company Groups based on the specified criteria.
@@ -630,7 +636,7 @@ class API(object):
         """
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
-    @objectify(SourceItem, True)
+    @objectify(SourceItem, many=True)
     def get_sources(self, **kwargs) -> List[SourceItem]:
         """
         Retrieves a list of Wikirate Sources based on the specified criteria.
@@ -710,7 +716,7 @@ class API(object):
         """
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
-    @objectify(AnswerItem, list=True)
+    @objectify(AnswerItem, many=True)
     def get_answers(self, metric_name=None, metric_designer=None, identifier=None, **kwargs) -> List[AnswerItem]:
         """
         Retrieves a list of Wikirate Answers by entity. The entity can be a metric name/ID, dataset name/ID, company name/ID, or source name/ID.
@@ -839,7 +845,7 @@ class API(object):
         """
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
-    @objectify(RelationshipItem, True)
+    @objectify(RelationshipItem, many=True)
     def get_relationships(self, metric_name=None, metric_designer=None, identifier=None, **kwargs) -> List[
         RelationshipItem]:
         """
@@ -956,7 +962,7 @@ class API(object):
 
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
-    @objectify(ProjectItem, True)
+    @objectify(ProjectItem, many=True)
     def get_projects(self, **kwargs):
         """
         Returns a list of Wikirate Projects
@@ -994,7 +1000,7 @@ class API(object):
 
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
-    @objectify(DatasetItem, True)
+    @objectify(DatasetItem, many=True)
     def get_datasets(self, **kwargs):
         """
 
@@ -1015,7 +1021,7 @@ class API(object):
         return self.get("/Datasets.json", endpoint_params=('limit', 'offset'), filters=('name', 'topic'),
                         **kwargs)
 
-    @objectify(RegionItem, True)
+    @objectify(RegionItem, many=True)
     def get_regions(self, **kwargs):
         """
 
@@ -1052,15 +1058,15 @@ class API(object):
         """
         return self.get(f"/{build_card_identifier(identifier)}.json")
 
-    def search_by_name(self, entity, name, **kwargs):
+    def search_by_name(self, entity_type, name, **kwargs):
         """
         Searches for a Company or Metric or Topic or Company Group or Research Group or Project by a given name.
         If offset and limit are not defined it returns the first 20 search results.
 
         Parameters
         -------------------
-        entity
-            allowed entities:
+        entity_type
+            allowed entity types:
                 - :py:class:`~wikirate4py.models.Company`,
                 - :py:class:`~wikirate4py.models.Metric`,
                 - :py:class:`~wikirate4py.models.Topic`,
@@ -1087,22 +1093,22 @@ class API(object):
             - A :py:class:`List` of :py:class:`~wikirate4py.models.ProjectItem`
 
         """
-        if entity is Company:
-            return self.get_companies(name=name, **kwargs)
-        elif entity is Metric:
-            return self.get_metrics(metric_keyword=name, **kwargs)
-        elif entity is Topic:
-            return self.get_topics(name=name, **kwargs)
-        elif entity is CompanyGroup:
-            return self.get_company_groups(name=name, **kwargs)
-        elif entity is ResearchGroup:
-            return self.get_research_groups(name=name, **kwargs)
-        elif entity is Project:
-            return self.get_projects(name=name, **kwargs)
-        else:
-            raise Wikirate4PyException(f"Type of parameter 'entity' ({type(entity)}) is not allowed")
 
-    @objectify(SourceItem, True)
+        # Dispatch map from model class to the corresponding list endpoint.
+        search_functions: dict = {Company: self.get_companies,
+                                  Metric: self.get_metrics,
+                                  Topic: self.get_topics,
+                                  CompanyGroup: self.get_company_groups,
+                                  ResearchGroup: self.get_research_groups,
+                                  Project: self.get_projects}
+
+        search_endpoint = search_functions.get(entity_type)
+
+        if search_endpoint is not None:
+            return search_endpoint(name=name, **kwargs)
+        raise Wikirate4PyException(f"Type of parameter 'entity_type' ({type(entity_type)}) is not allowed")
+
+    @objectify(SourceItem, many=True)
     def search_source_by_url(self, url, **kwargs):
         """search_source_by_url(url, *, offset, limit)
 
@@ -1124,9 +1130,8 @@ class API(object):
             :py:class:`List`\\[:class:`~wikirate4py.models.Source`]
 
                 """
-        kwargs = {
-            "query[url]": url
-        }
+        kwargs["query[url]"] = url
+
         return self.get("/Source_by_url.json",
                         endpoint_params=('query[url]', 'limit', 'offset'),
                         filters=(),
@@ -1186,7 +1191,7 @@ class API(object):
         log.debug("Company creation parameters: %r", params)
         return self.post("/card/create", params=params)
 
-    @objectify(Company, False)
+    @objectify(Company)
     def update_company(self, identifier, **kwargs) -> Company:
         """
         Update an existing company with the given identifier and optional parameters.
@@ -1508,7 +1513,7 @@ class API(object):
             'report_type'
         )
         self._require(kwargs, required_params)
-        self._warn_unexpected(required_params + optional_params)
+        self._warn_unexpected(kwargs, required_params + optional_params)
 
         params = {
             "card[type]": "Metric",
@@ -1909,9 +1914,9 @@ class API(object):
             log.error(f"Failed to delete Wikirate entity with ID {identifier}. Response: {response.text}")
             return False
 
-    def add_companies_to_group(self, group_id, list=[]):
+    def add_companies_to_group(self, group_id, items=[]):
         ids = ""
-        for item in list:
+        for item in items:
             ids += '~[[' + item + ']]\n'
         params = {
             "card[type]": "List",
@@ -1923,9 +1928,9 @@ class API(object):
 
         return self.post("/card/update", params)
 
-    def add_companies_to_dataset(self, dataset_id, list=[]):
+    def add_companies_to_dataset(self, dataset_id, items=[]):
         ids = []
-        for item in list:
+        for item in items:
             ids.append(f'~{item.__str__()}')
         params = {
             "card[type]": "List",
@@ -1937,9 +1942,9 @@ class API(object):
 
         return self.post("/card/update", params)
 
-    def add_metrics_to_dataset(self, dataset_id, list=[]):
+    def add_metrics_to_dataset(self, dataset_id, items=[]):
         ids = ""
-        for item in list:
+        for item in items:
             ids += '~[[' + item.__str__() + ']]\n'
         params = {
             "card[type]": "List",
