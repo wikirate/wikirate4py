@@ -849,7 +849,7 @@ class API(object):
 
         return self.get(f"/{endpoint}", endpoint_params=('limit', 'offset', 'view'),
                         filters=('year', 'status', 'company_group', 'country', 'value', 'value_from', 'value_to',
-                                 'updated', 'company', 'company_keyword', 'dataset', 'updater', 'source',
+                                 'updated', 'company', 'company_keyword', 'company_category','dataset', 'updater', 'source',
                                  'verification', 'bookmark', 'published', 'metric_name', 'metric_keyword', 'designer',
                                  'metric_type', 'company_identifier', 'metric', 'sort_by', 'sort_dir', 'topic',
                                  'topic_framework', 'value_type', 'research_policy'),
