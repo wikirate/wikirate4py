@@ -113,3 +113,9 @@ Bug reports and feature suggestions are welcome on GitHub at https://github.com/
 ## License
 
 The library is available as Open Source under the terms of the [GNU General Public License v3 (GPLv3)](https://www.gnu.org/licenses/gpl-3.0.txt).
+
+### 🎉 Acknowledgements
+
+This project was supported by [NLnet foundation](https://nlnet.nl/).
+
+![Image](https://nlnet.nl/logo/banner-160x60.png)
