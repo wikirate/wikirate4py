@@ -89,6 +89,24 @@ class API(object):
     def __exit__(self, exc_type, exc, tb):
         self.close()
         return False
+    
+    def set_header(self, key: str, value: str) -> None:
+        """
+        Set a custom header for all requests made by this API client.
+
+        Parameters
+        ----------
+        key : str
+            The name of the header to set (e.g., "X-Custom-Header").
+        value : str
+            The value of the header to set.
+
+        Returns
+        -------
+        None
+            This method does not return anything. It modifies the session headers in place.
+        """
+        self.session.headers[key] = value
 
     # API owns a persistent requests.Session; use as a context manager or call close() when finished.
     def close(self):
