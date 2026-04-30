@@ -1578,7 +1578,7 @@ class API(object):
             'methodology',
             'unit',
             'topic',
-            'topic_framework'
+            'topic_framework',
             'value_options',
             'research_policy',
             'report_type'
