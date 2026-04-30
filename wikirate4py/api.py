@@ -1524,16 +1524,16 @@ class API(object):
 
     @objectify(Metric)
     def add_metric(self, **kwargs):
-        """add_metric(designer, name, question, about, methodology, topic, topic_framework, value_type, options, research_policy, report_type)
+        """add_metric(metric_designer, metric_name, question, about, methodology, topic, topic_framework, value_type, options, research_policy, report_type)
 
         Creates and Returns a new Metric
 
         Parameters
         -------------------
-        designer
+        metric_designer
             designer of the metric
 
-        name
+        metric_name
             name of the metric
 
         question
@@ -1571,7 +1571,7 @@ class API(object):
             :py:class:`~wikirate4py.models.Metric`
 
         """
-        required_params = ('designer', 'name', 'metric_type', 'value_type')
+        required_params = ('metric_designer', 'metric_name', 'metric_type', 'value_type')
         optional_params = (
             'question',
             'about',
@@ -1588,7 +1588,7 @@ class API(object):
 
         params = {
             "card[type]": "Metric",
-            "card[name]": kwargs['designer'] + '+' + kwargs['name'],
+            "card[name]": kwargs['metric_designer'] + '+' + kwargs['metric_name'],
             "card[subcards][+value_type]": kwargs['value_type'],
             "card[subcards][+*metric_type]": kwargs['metric_type'],
             "card[skip]": "requirements",
@@ -1607,8 +1607,8 @@ class API(object):
         return self.post("/card/create", params=params)
 
     @objectify(Metric)
-    def update_metric(self, identifier, **kwargs):
-        """add_metric(designer, name, question, about, methodology, topic, topic_framework, value_type, options, research_policy, report_type, title)
+    def update_metric(self, identifier=None, metric_name=None, metric_designer=None, **kwargs):
+        """add_metric(metric_designer, metric_name, question, about, methodology, topic, topic_framework, value_type, options, research_policy, report_type, title)
 
         Creates and Returns a new Metric
 
@@ -1617,7 +1617,7 @@ class API(object):
         designer
             designer of the metric
 
-        name
+        metric_name
             name of the metric
 
         question
@@ -1655,6 +1655,16 @@ class API(object):
             :py:class:`~wikirate4py.models.Metric`
 
         """
+        if identifier is None:
+            if not metric_name or not metric_designer:
+                raise Wikirate4PyException(
+                    "You must provide either `identifier` or both `metric_name` and `metric_designer`."
+                )
+        
+        card_name = build_card_identifier(identifier) if identifier is not None else '+'.join([
+            build_card_identifier(metric_designer),
+            build_card_identifier(metric_name)])
+
         optional_params = (
             'metric_type', 'value_type', 'question', 'about', 'methodology', 'unit', 'topic', 'topic_framework',
             'value_options', 'research_policy', 'report_type', 'unpublished')
@@ -1662,7 +1672,6 @@ class API(object):
 
         params = {
             "card[type]": "Metric",
-            # "card[name]": kwargs['designer'] + '+' + kwargs['name'],
             "card[skip]": "requirements",
             "format": "json",
             "success[format]": "json"
@@ -1676,7 +1685,7 @@ class API(object):
                     params['card[subcards][+' + k + ']'] = str(kwargs[k])
 
         log.debug("PARAMS: %r", params)
-        return self.post(f"/update/~{identifier}", params=params)
+        return self.post(f"/update/{card_name}", params=params)
 
     @objectify(Relationship)
     def update_relationship(self, **kwargs) -> Relationship:
